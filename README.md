@@ -1,2 +1,2 @@
 # dsfr-plus
-Design system from the french state - React
+Design system from the French state - React extended version
