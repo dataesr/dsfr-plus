@@ -1,8 +1,9 @@
 name: Publish package to Npmjs and notify on Mattermost
+
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
 
 env:
   DEPLOYMENT_URL: https://datasupr.staging.dataesr.ovh
