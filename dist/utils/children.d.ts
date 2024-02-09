@@ -1,0 +1,4 @@
+export declare function getChildrenOfType(children: React.ReactNode[] | React.ReactNode, type: any): (string | number | import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>> | Iterable<import("react").ReactNode> | import("react").ReactPortal)[];
+export declare function getChildrenOfTypes(children: React.ReactNode[] | React.ReactNode, types: any[]): (string | number | import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>> | Iterable<import("react").ReactNode> | import("react").ReactPortal)[];
+export declare function filterChildrenOfTypes(children: React.ReactNode[] | React.ReactNode, types: any[]): (string | number | import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>> | Iterable<import("react").ReactNode> | import("react").ReactPortal)[];
+//# sourceMappingURL=children.d.ts.map

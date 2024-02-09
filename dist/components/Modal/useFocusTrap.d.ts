@@ -1,0 +1,2 @@
+export declare function useFocusTrap(ref: React.MutableRefObject<HTMLDialogElement | null>, active: boolean, prevElement: HTMLElement | null): import("react").MutableRefObject<HTMLDialogElement | null>;
+//# sourceMappingURL=useFocusTrap.d.ts.map
