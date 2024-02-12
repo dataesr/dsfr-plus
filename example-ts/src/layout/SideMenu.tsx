@@ -26,9 +26,6 @@ export function Side() {
               <Link current={is('/composants/accordion')} href="/composants/accordion">
                 Accordéon - Accordion
               </Link>
-              <Link current={is('/composants/autocomplete')} href="/composants/autocomplete">
-                Autocomplete
-              </Link>
               <Link current={is('/composants/alert')} href="/composants/alert">
                 Alerte - Alert
               </Link>
@@ -53,11 +50,20 @@ export function Side() {
               <Link current={is('/composants/interrupteur')} href="/composants/interrupteur">
                 Interrupteur - Toggle
               </Link>
-              <Link current={is('/composants/menu-lateral')} href="/composants/menu-lateral">
-                Menu latéral - Sidemenu
-              </Link>
               <Link current={is('/composants/listbox')} href="/composants/listbox">
                 Listbox
+              </Link>
+              <Link current={is('/composants/select')} href="/composants/select">
+                Select
+              </Link>
+              <Link current={is('/composants/menu-button')} href="/composants/menu-button">
+                MenuButton
+              </Link>
+              <Link current={is('/composants/autocomplete')} href="/composants/autocomplete">
+                Autocomplete
+              </Link>
+              <Link current={is('/composants/menu-lateral')} href="/composants/menu-lateral">
+                Menu latéral - Sidemenu
               </Link>
               <Link current={is('/composants/modal')} href="/composants/modal">
                 Modale - Modal

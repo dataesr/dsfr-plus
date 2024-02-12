@@ -1,0 +1,8 @@
+.popover {
+  &:focus {
+
+    &[data-focus-visible=false] {
+      outline: none !important;
+    }
+  }
+}

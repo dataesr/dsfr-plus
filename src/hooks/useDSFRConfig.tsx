@@ -62,7 +62,7 @@ export const DSFRConfig = ({
 
   const setLocale = useCallback((lang: string) => {
     window.localStorage.setItem('locale', lang);
-    document.documentElement.setAttribute('lang', 'en');
+    document.documentElement.setAttribute('lang', lang);
     switchLang(lang);
   }, []);
 
