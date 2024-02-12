@@ -1,0 +1,12 @@
+.fr-select-btn {
+  text-align: start;
+  --idle: transparent !important;
+  --hover-tint: var(--background-contrast-grey) !important;
+  --active-tint: var(--background-contrast-grey) !important;
+
+  &:focus[data-focus-visible=false] {
+    outline: none !important;
+  }
+
+  min-height: 2.5rem;
+}

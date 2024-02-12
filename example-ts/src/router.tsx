@@ -21,7 +21,10 @@ import { Buttons } from './pages/components/Buttons';
 import { Badges } from './pages/components/Badges';
 import { Side } from './layout/SideMenu';
 import { Layout } from './layout/Layout';
-// import { Listboxes } from './pages/components/Listbox';
+import { Listboxes } from './pages/components/Listboxes';
+import { Selects } from './pages/components/Select';
+import { Menus } from './pages/components/Menu';
+import { Autocompletes } from './pages/components/Autocomplete';
 
 export default function Router() {
   return (
@@ -32,8 +35,10 @@ export default function Router() {
           <Route path="demarrage-rapide" element={<QuickStart />} />
         </Route>
         <Route path="/composants" element={<Side />}>
-          {/* <Route path="autocomplete" element={<Autocompletes />} /> */}
-          {/* <Route path="listbox" element={<Listboxes />} /> */}
+          <Route path="autocomplete" element={<Autocompletes />} />
+          <Route path="listbox" element={<Listboxes />} />
+          <Route path="select" element={<Selects />} />
+          <Route path="menu-button" element={<Menus />} />
           <Route path="ajout-de-fichier" element={<FileUploads />} />
           <Route path="badge" element={<Badges />} />
           <Route path="button" element={<Buttons />} />

@@ -1,0 +1,18 @@
+import { useEffect, useId } from 'react';
+import styles from './spinner.module.scss';
+
+
+
+export function Spinner({ size = 24 }: { size?: number }) {
+  const id = useId();
+  useEffect(() => {
+    document?.getElementById(id)?.style.setProperty('width', `${size}px`);
+    document?.getElementById(id)?.style.setProperty('height', `${size}px`);
+  }, [size, id]);
+
+  return (
+    <svg id={id} className={styles.spinner} viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <circle className={styles["internal-circle"]} cx="60" cy="60" r="30" />
+    </svg>
+  );
+}
