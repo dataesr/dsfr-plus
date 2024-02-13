@@ -1,5 +1,6 @@
 {
   "name": "@dataesr/dsfr-plus",
+  "homepage": "https://dataesr.github.io/dsfr-plus/",
   "private": false,
   "version": "0.0.7",
   "type": "module",
@@ -23,7 +24,6 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "deploy": "git pull origin main --rebase --tags && npm version $npm_config_level && git push origin main --tags",
-    "deploy-staging": "git pull origin staging --rebase --tags && npm version $npm_config_level && git push origin staging --tags",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint --fix 'src/**/*.{jsx,ts,tsx}'",
     "preview": "vite preview",
