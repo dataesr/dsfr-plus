@@ -1,6 +1,5 @@
 {
   "name": "@dataesr/dsfr-plus",
-  "homepage": "https://dataesr.github.io/dsfr-plus/",
   "private": false,
   "version": "0.0.7",
   "type": "module",
