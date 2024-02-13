@@ -1,4 +1,4 @@
-name: Publish package to Npmjs and notify on Mattermost
+name: Deploy on Github Pages
 
 on:
   push:
@@ -15,21 +15,6 @@ permissions:
   id-token: write
 
 jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@dataesr'
-      - run: npm ci
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
   deploy-examples:
     environment:
       name: github-pages
@@ -58,7 +43,7 @@ jobs:
     
 
   notify:
-    needs: publish
+    needs: deploy-examples
     if: always()
     runs-on: ubuntu-latest
     steps:
