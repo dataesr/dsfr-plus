@@ -35,8 +35,8 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(({
       className={cn({
         'fr-link': isSimple,
         [`fr-link-${size}`]: size !== 'md',
-        [`fr-icon-${icon}`]: isSimple && !!icon,
-        [`fr-link--icon-${iconPosition}`]: (isSimple && icon),
+        [`fr-icon-${icon}`]: !!icon,
+        [`fr-link--icon-${iconPosition}`]: (icon && iconPosition),
       }, className)}
       {...props as React.AnchorHTMLAttributes<HTMLAnchorElement>}
     >
