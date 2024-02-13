@@ -29,7 +29,7 @@ const ScrollToTop = (): ReactNode => {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <HashRouter>
+    <HashRouter basename='/dsfr-plus'>
       <ScrollToTop />
       <DSFRConfig routerComponent={RouterLink}>
         <Routes />
