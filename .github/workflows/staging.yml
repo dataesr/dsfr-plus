@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 env:
-  DEPLOYMENT_URL: https://datasupr.staging.dataesr.ovh
-  MM_NOTIFICATION_CHANNEL: 'bots'
+  DEPLOYMENT_URL: https://www.npmjs.com/package/@dataesr/dsfr-plus
+  MM_NOTIFICATION_CHANNEL: bots
 
 permissions:
   contents: read
