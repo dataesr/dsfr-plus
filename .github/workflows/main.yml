@@ -6,7 +6,7 @@ on:
       - "v[0-9]+.[0-9]+.[0-9]+"
 env:
   DEPLOYMENT_URL: https://datasupr.staging.dataesr.ovh
-  MM_NOTIFICATION_CHANNEL: 'bots'
+  MM_NOTIFICATION_CHANNEL: "bots"
 
 permissions:
   contents: read
@@ -21,10 +21,11 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@dataesr'
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+          scope: "@dataesr"
       - run: npm ci
+      - run: npm run build
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
