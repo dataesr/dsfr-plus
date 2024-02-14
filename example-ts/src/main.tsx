@@ -1,7 +1,7 @@
 import React, { ReactNode, useLayoutEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import Routes from './router.js'
-import { BrowserRouter, Link, useLocation } from 'react-router-dom';
+import { HashRouter, Link, useLocation } from 'react-router-dom';
 import { DSFRConfig } from '@dataesr/react-dsfr';
 import '@gouvfr/dsfr/dist/utility/utility.css';
 import '@gouvfr/dsfr/dist/dsfr.css';
@@ -29,11 +29,11 @@ const ScrollToTop = (): ReactNode => {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter basename='/'>
       <ScrollToTop />
       <DSFRConfig routerComponent={RouterLink}>
         <Routes />
       </DSFRConfig>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
 )

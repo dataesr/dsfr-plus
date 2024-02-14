@@ -15,9 +15,9 @@ export function QuickStart() {
         <Col xs={12}>
           <Title as="h1">Démarrage rapide</Title>
           <Text>Installer la librarie en utilisant votre manager de paquets favori:</Text>
-          <Code code="npm install @dataesr/react-dsfr" />
-          <Code code="yarn add @dataesr/react-dsfr" />
-          <Code code="pnpm install @dataesr/react-dsfr" />
+          <Code code="npm install @dataesr/dsfr-plus" />
+          <Code code="yarn add @dataesr/dsfr-plus" />
+          <Code code="pnpm install @dataesr/dsfr-plus" />
         </Col>
       </Row>
     </Container>
