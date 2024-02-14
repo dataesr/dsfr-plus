@@ -1,9 +1,11 @@
-name: Publish package to Npmjs and notify on Mattermost
+name: Deploy on Github Pages
 
 on:
   push:
-    tags:
-      - "v[0-9]+.[0-9]+.[0-9]+"
+    branches:
+      - staging
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 env:
   DEPLOYMENT_URL: https://datasupr.staging.dataesr.ovh
@@ -14,22 +16,12 @@ permissions:
   pages: write
   id-token: write
 
-jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@dataesr'
-      - run: npm ci
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+# Allow one concurrent deployment
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
 
+jobs:
   deploy-examples:
     environment:
       name: github-pages
@@ -48,17 +40,17 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           # Upload build repository
           path: './example-ts/dist'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
     
 
   notify:
-    needs: publish
+    needs: deploy-examples
     if: always()
     runs-on: ubuntu-latest
     steps:
