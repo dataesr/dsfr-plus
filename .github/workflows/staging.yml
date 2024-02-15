@@ -1,4 +1,4 @@
-name: Deploy on Github Pages
+name: Build test for staging push
 
 on:
   push:
