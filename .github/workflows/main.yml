@@ -1,8 +1,8 @@
-name: Publish package to Npmjs and notify on Mattermost
+name: Publish documentation on github pages and notify on Mattermost
 
 on:
   push:
-    branch:
+    branches:
       - main
 
 env:
