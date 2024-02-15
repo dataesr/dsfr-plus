@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   types: [
     { types: ['feat', 'feature'], label: '🎉 Nouvelle fonctionalité' },
     { types: ['fix', 'bugfix'], label: '🐛 Réparation de bug' },
