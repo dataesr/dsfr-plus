@@ -1,62 +1,59 @@
-import type { AriaListBoxOptions } from 'react-aria';
-import cn from 'classnames';
-import { useFocusRing, useListBox } from 'react-aria';
-import React, { useRef } from 'react';
-import ListboxOption from './listbox-option';
-import styles from './styles.module.scss'
+import type { AriaListBoxProps } from 'react-aria';
+import { Item, ItemProps, Section, SectionProps, useListState } from 'react-stately';
 import { Argument } from 'classnames';
 import type { DSFRColors } from '../../types/colors';
-import { ListState } from 'react-stately';
-import ListboxGroup from './listbox-section';
+import ListBox from './listbox-wrapper';
 
 export type ListboxCss = {
   base?: Argument;
   list?: Argument;
-  top?: Argument;
-  bottom?: Argument;
 }
 
-export type ListboxProps<T> = {
+export type ListboxProps = {
   className?: Argument;
   css?: ListboxCss;
   color?: DSFRColors;
   topContent?: React.ReactNode;
   bottomContent?: React.ReactNode;
-  state: ListState<T>;
-  triggerRef?: React.RefObject<HTMLButtonElement>;
-  listBoxRef?: React.MutableRefObject<null>;
 }
 
-
-
-export default function Listbox<T extends object>(props: AriaListBoxOptions<T> & ListboxProps<T>) {
-  const ref = useRef(null);
-  const { listBoxRef = ref, state, className, css = {}, color, topContent, bottomContent, ...rest } = props;
-  const { listBoxProps } = useListBox(rest, state, listBoxRef);
-  const { isFocusVisible } = useFocusRing();
-
-  const ElementType: React.ElementType = [...state.collection].find((item) => item.props.href) ? 'div' : 'ul';
+export function Listbox<T extends object>(props: AriaListBoxProps<T> & ListboxProps) {
+  // Create state based on the incoming props
+  const state = useListState(props);
 
   return (
-    <div className={cn(styles.listbox, className, css.base)} style={{ minWidth: props?.triggerRef?.current?.offsetWidth || "auto" }}>
-      <span className={cn(styles["listbox-top"], css.top)}>
-        {topContent && topContent}
-      </span>
-      <ElementType
-        className={cn(styles["listbox-content"], css.list, { [styles[`listbox--${color}`]]: color, })}
-        ref={listBoxRef}
-        data-focus-visible={isFocusVisible}
-        {...listBoxProps}
-      >
-        {[...state.collection].map((item) => {
-          return (item.type === 'section')
-            ? <ListboxGroup {...item.props} key={item.key} section={item} state={state} />
-            : <ListboxOption {...item.props} key={item.key} item={item} state={state} />
-        })}
-      </ElementType>
-      <span className={cn(styles["listbox-bottom"], css.bottom)}>
-        {bottomContent && bottomContent}
-      </span>
-    </div>
+    <ListBox {...props} state={state} />
   );
 }
+
+export type ListboxItemProps = {
+  showDivider?: boolean;
+  className?: Argument;
+  color?: DSFRColors;
+  description?: React.ReactNode;
+  startContent?: React.ReactNode;
+  endContent?: React.ReactNode;
+}
+
+export const ListboxItem = Item as <T extends object>(
+  props: ListboxItemProps & ItemProps<T>,
+) => JSX.Element;
+
+export type ListboxSectionCss = {
+  base?: Argument;
+  title?: Argument;
+  list?: Argument;
+}
+
+export type ListboxSectionProps = {
+  showDivider?: boolean;
+  className?: Argument;
+  css?: ListboxSectionCss;
+}
+
+export const ListboxSection = Section as <T extends object>(
+  props: ListboxSectionProps & SectionProps<T>,
+) => JSX.Element;
+
+
+

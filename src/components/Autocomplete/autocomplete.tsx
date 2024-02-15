@@ -5,7 +5,7 @@ import type { LoadingState } from "@react-types/shared";
 import { Item, ItemProps, useAsyncList, useComboBoxState } from "react-stately";
 import { useComboBox, useFilter } from "react-aria";
 
-import Listbox from "../Listbox/listbox";
+import Listbox from "../Listbox/listbox-wrapper";
 import Popover from "../Popover";
 import { DSFRColors } from "../../types/colors";
 

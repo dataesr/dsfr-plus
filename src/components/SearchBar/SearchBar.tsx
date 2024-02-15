@@ -17,6 +17,7 @@ export type SearchBarBaseProps = {
   onSearch: (text?: string) => void;
   isLarge?: boolean;
   id?: string;
+  placeholder?: string;
 }
 
 export type SearchBarProps = Merge<React.HTMLAttributes<HTMLInputElement>, SearchBarBaseProps>;
@@ -28,6 +29,7 @@ export const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(({
   isLarge,
   label,
   onSearch,
+  placeholder,
   ...props
 }, ref) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -46,6 +48,7 @@ export const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(({
         type="search"
         id={id}
         onKeyDown={onKeyDown}
+        placeholder={placeholder}
         {...forwardProps(props as React.HTMLAttributes<HTMLInputElement>)}
       />
       <button
