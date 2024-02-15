@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   types: [
     { types: ['feat', 'feature'], label: '🎉 Nouvelle fonctionalité' },
     { types: ['fix', 'bugfix'], label: '🐛 Réparation de bug' },
@@ -13,5 +13,5 @@ export default {
     { types: ['other'], label: 'Autres changements' },
   ],
 
-  excludeTypes: ['other', 'perf', 'test', 'tests', 'style', 'chore', 'doc', 'docs'],
+  excludeTypes: ['other', 'perf', 'test', 'tests', 'style', 'chore', 'build', 'ci'],
 };
