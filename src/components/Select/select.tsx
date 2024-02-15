@@ -5,7 +5,7 @@ import { AriaSelectProps, HiddenSelect, mergeProps, useButton, useFocusRing, use
 import { Argument } from 'classnames';
 
 import { DSFRColors } from '../../types/colors';
-import Listbox from "../Listbox/listbox";
+import Listbox from "../Listbox/listbox-wrapper";
 import Popover from '../Popover';
 import styles from './styles.module.scss';
 
