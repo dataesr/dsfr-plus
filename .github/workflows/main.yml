@@ -4,9 +4,10 @@ on:
   push:
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+"
+
 env:
-  DEPLOYMENT_URL: https://datasupr.staging.dataesr.ovh
-  MM_NOTIFICATION_CHANNEL: "bots"
+  DEPLOYMENT_URL: https://www.npmjs.com/package/@dataesr/dsfr-plus
+  MM_NOTIFICATION_CHANNEL: bots
 
 permissions:
   contents: read
