@@ -94,7 +94,7 @@ export function Autocomplete<T extends object>(props: AutocompleteProps<T>) {
 }
 
 export type AutocompleteItemProps = {
-  href: string;
+  href?: string;
   showDivider?: boolean;
   className?: Argument;
   color?: DSFRColors;
