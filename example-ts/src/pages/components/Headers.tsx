@@ -1,5 +1,54 @@
-import { Header, Service, Logo, FastAccess, Link, Nav, NavItem, Button, Breadcrumb, SearchBar, Container, Title, Text, Row, Col } from '@dataesr/react-dsfr';
+import {
+  Header, Service, Logo, FastAccess, Link, Nav, NavItem, Button,
+  Breadcrumb, SearchBar, Container, Title, Text, Row, Col,
+  Autocomplete, AutocompleteItem, useAutocompleteList,
+} from '@dataesr/react-dsfr';
 import Playground from '../../components/Playground';
+
+const autocomplete = `
+() => {
+  const list = useAutocompleteList({
+    async load({ signal, filterText }) {
+      const res = await fetch(
+        "https://swapi.py4e.com/api/people/?search=" + filterText,
+        { signal }
+      );
+      const json = await res.json();
+      return { items: json.results };
+    }
+  });
+
+  return (
+    <Header>
+      <Logo text="Gouvernement" />
+      <Service name="React DSFR" tagline="Une bibliothèque de composants React" />
+      <Autocomplete
+        label="Star Wars Character Lookup"
+        items={list.items}
+        inputValue={list.filterText}
+        onInputChange={list.setFilterText}
+        loadingState={list.loadingState}
+        menuTrigger="focus"
+        size="md"
+        onSubmit={(text) => alert(text)}
+      >
+        {(item) => (
+          <AutocompleteItem
+            href="#"
+            startContent={<span className="fr-mr-3v fr-icon--md fr-icon-user-line" />}
+            description="go to page directly"
+            key={item.name}
+            endContent={item.key === "__default" && <span className="fr-text--sm fr-ml-1v fr-px-3v fr-py-1v"> ⏎ Enter </span>}
+            className={item.key === "__default" && "fr-py-2w"}
+          >
+            {item.name}
+          </AutocompleteItem>
+        )}
+      </Autocomplete >
+    </Header>
+  );
+}
+`
 
 const simplestHeader = `
 <Header>
@@ -158,6 +207,12 @@ export function Headers() {
             de page simple et de la barre de recherche medium.
           </Text>
           <Playground code={headerWithSearchBar} scope={{ Header, Logo, Service, SearchBar }} />
+        </Col>
+        <Col xs={12}>
+          <Title as="h2" look="h4">En-tête avec autocomplete</Title>
+          <Text>
+          </Text>
+          <Playground code={autocomplete} scope={{ Header, Logo, Service, Autocomplete, AutocompleteItem, useAutocompleteList }} />
         </Col>
         <Col xs={12}>
           <Title as="h2" look="h4">En-tête avec acceès rapide et barre de recherche</Title>
