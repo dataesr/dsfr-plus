@@ -1,6 +1,6 @@
 import cn, { Argument } from 'classnames';
 import { useId, isValidElement } from "react";
-import { getChildrenOfType } from "../../utils/children";
+import { getChildrenOfType, getChildrenOfTypes } from "../../utils/children";
 import { Merge } from '../../types/polymophic';
 import { Service } from './Service';
 import { FastAccess } from './FastAccess';
@@ -8,6 +8,7 @@ import { Operator } from './Operator';
 import { SearchBar } from '../SearchBar';
 import { Nav } from '../Navigation';
 import { Logo } from '../Logo';
+import { Autocomplete } from '../Autocomplete';
 
 interface HeaderCss {
   "fr-header__body"?: Argument;
@@ -37,7 +38,7 @@ export const Header = ({ children, className, css = {}, ...props }: HeaderProps)
   const menuId = useId();
   const service = getChildrenOfType(children, Service)?.[0];
   const fastAccess = getChildrenOfType(children, FastAccess)?.[0];
-  const searchBar = getChildrenOfType(children, SearchBar)?.[0];
+  const searchBar = getChildrenOfTypes(children, [SearchBar, Autocomplete])?.[0];
   const menu = getChildrenOfType(children, Nav)?.[0];
   const logo = getChildrenOfType(children, Logo);
   const operator = getChildrenOfType(children, Operator);
