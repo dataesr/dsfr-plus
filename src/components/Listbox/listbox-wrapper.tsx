@@ -37,8 +37,10 @@ export default function Listbox<T extends object>(props: AriaListBoxOptions<T> &
 
   const ElementType: React.ElementType = [...state.collection].find((item) => item.props.href) ? 'div' : 'ul';
 
+  const triggerWidth = props?.triggerRef?.current?.offsetWidth || 0;
+
   return (
-    <div className={cn(styles.listbox, className, css.base)} style={{ minWidth: props?.triggerRef?.current?.offsetWidth || "auto" }}>
+    <div className={cn(styles.listbox, className, css.base)} style={{ minWidth: triggerWidth || "auto", maxWidth: ((triggerWidth) > 150) ? triggerWidth : "auto" }}>
       <span className={cn(styles["listbox-top"], css.top)}>
         {topContent && topContent}
       </span>
