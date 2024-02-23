@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useOption } from "react-aria";
 import styles from './styles.module.scss';
 import { ListState, Node } from 'react-stately';
+import { Link } from '../Link';
 
 type OptionProps = {
   item: Node<unknown>;
@@ -15,7 +16,7 @@ export default function ListboxOption({ item, state }: OptionProps) {
   const { optionProps, descriptionProps, labelProps, isFocused, isFocusVisible } = useOption({ key: item.key }, state, ref);
 
   const { description, startContent, endContent, color, showDivider, href, className } = item.props || {};
-  const ElementType: React.ElementType = href ? 'a' : 'li';
+  const ElementType = href ? Link : 'li';
 
   return (
     <ElementType
