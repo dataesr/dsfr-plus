@@ -24,7 +24,7 @@ const autocomplete = `
         onInputChange={list.setFilterText}
         loadingState={list.loadingState}
         menuTrigger="focus"
-        size="lg"
+        size="md"
         onSubmit={(text) => alert(text)}
       >
         {(item) => (
