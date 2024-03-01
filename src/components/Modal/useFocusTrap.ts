@@ -9,7 +9,6 @@ const FOCUSABLE_ELEMENTS =
 export function useFocusTrap(ref: React.MutableRefObject<HTMLDialogElement | null>, active: boolean, prevElement: HTMLElement | null) {
   // Focus trap function
   function handleFocus(event: KeyboardEvent) {
-    
     const focusableEls = [
       ...ref.current?.querySelectorAll(FOCUSABLE_ELEMENTS)!,
     ].filter((el) => !el.hasAttribute('disabled')) as HTMLElement[]
@@ -25,7 +24,6 @@ export function useFocusTrap(ref: React.MutableRefObject<HTMLDialogElement | nul
     // Logic to focus only the current modal focusable items.
     if (!isTabPressed) return;
     
-    console.log('handleFocus', event);
     if (event.shiftKey) {
       if (document.activeElement === firstFocusableEl) {
         lastFocusableEl.focus()
@@ -41,15 +39,10 @@ export function useFocusTrap(ref: React.MutableRefObject<HTMLDialogElement | nul
   }
   
   useEffect(() => {
-    
     if (active) {
-      console.log('here');
-      
       const focusableEls = [
         ...ref.current?.querySelectorAll(FOCUSABLE_ELEMENTS)!,
       ].filter((el) => !el.hasAttribute('disabled')) as HTMLElement[]
-      console.log('focusableEls', focusableEls[0]);
-      // focusableEls[0].focus()
       document.addEventListener('keydown', handleFocus)
     } else {
       prevElement?.focus();
