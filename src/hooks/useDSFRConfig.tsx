@@ -17,10 +17,9 @@ type ConfigContextObject = {
   locale?: string;
   setLocale?: (lang: string) => void;
 }
-export type DSFRConfigProps = React.PropsWithChildren<ConfigContextObject>
+export type DSFRConfigProps = React.PropsWithChildren<ConfigContextObject>;
 
 const ConfigContext = createContext<ConfigContextObject>({});
-
 
 export const DSFRConfig = ({
   children,
@@ -80,6 +79,5 @@ export const DSFRConfig = ({
     </ConfigContext.Provider>
   );
 };
-
 
 export const useDSFRConfig = () => useContext(ConfigContext);

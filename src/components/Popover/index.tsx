@@ -6,8 +6,8 @@ import styles from './styles.module.scss';
 
 interface PopoverProps extends Omit<AriaPopoverProps, "popoverRef"> {
   children: React.ReactNode;
-  state: OverlayTriggerState;
   popoverRef?: React.RefObject<HTMLDivElement>;
+  state: OverlayTriggerState;
 }
 
 export default function Popover({ children, state, ...props }: PopoverProps) {
