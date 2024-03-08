@@ -24,16 +24,7 @@ export function Tags() {
         <Col xs={12}>
           <Title as="h1">Tag - Tag</Title>
           <Text>
-            Le fil d’Ariane est un système de navigation secondaire qui permet à l’utilisateur de se situer sur le site qu’il consulte.
-            Le fil d’Ariane donne des informations sur l’architecture du site.
-            Il indique à l’utilisateur sa position courante et lui permet de se repérer dans l’arborescence du site.
-            Le fil d’Ariane est présent sur l’ensemble des pages à l’exception de la page d'accueil.
-            Sa position dans la page doit toujours être la même, de préférence entre le header et le contenu principal de la page.
-            L’ensemble de ses éléments sont cliquables, à l’exception de la page consultée.
-          </Text>
-          <Text>
-            Pour utiliser le fil d'Ariane, wrappez simplement des composants Link dans un composant Breadcrumb.
-            Le dernier élément doit coorespondre à la page actuelle et n'est pas cliquable.
+            Le tag catégorise/classe/organise les contenus à l'aide de mots-clés. Il aide les utilisateurs à rechercher et à trouver facilement une information.
           </Text>
           <Playground code={tag} scope={{ Tag, TagGroup, SelectableTag, DissmissibleTag }} defaultShowCode />
         </Col>
