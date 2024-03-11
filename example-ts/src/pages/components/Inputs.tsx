@@ -1,5 +1,6 @@
-import { Breadcrumb, Link, TextInput, TextArea, Container, Col, Row, Title, Text } from '@dataesr/react-dsfr';
+import { Breadcrumb, Link, TextInput, TextArea, Container, Col, Row, Title, Text } from '@dataesr/dsfr-plus';
 import { useState } from 'react';
+
 import Playground from '../../components/Playground';
 
 const uncontrolled = `

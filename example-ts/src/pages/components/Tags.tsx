@@ -1,4 +1,5 @@
-import { Breadcrumb, Container, Tag, TagGroup, SelectableTag, DissmissibleTag, Title, Text, Row, Col, Link } from '@dataesr/react-dsfr';
+import { Breadcrumb, Container, Tag, TagGroup, SelectableTag, DissmissibleTag, Title, Text, Row, Col, Link } from '@dataesr/dsfr-plus';
+
 import Playground from '../../components/Playground';
 
 const tag = `

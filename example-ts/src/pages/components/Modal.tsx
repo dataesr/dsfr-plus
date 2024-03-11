@@ -1,5 +1,6 @@
-import { Button, Container, Title, Text, Row, Col, Breadcrumb, Link, ModalContent, ButtonGroup, Modal, ModalFooter, ModalTitle } from '@dataesr/react-dsfr';
+import { Button, Container, Title, Text, Row, Col, Breadcrumb, Link, ModalContent, ButtonGroup, Modal, ModalFooter, ModalTitle } from '@dataesr/dsfr-plus';
 import { useState } from 'react';
+
 import Playground from '../../components/Playground';
 
 const modal = `

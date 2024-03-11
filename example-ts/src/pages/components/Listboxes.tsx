@@ -1,4 +1,4 @@
-import { Text, Breadcrumb, Col, Container, Link, Listbox, ListboxItem, ListboxSection, Row, Title } from '@dataesr/react-dsfr';
+import { Text, Breadcrumb, Col, Container, Link, Listbox, ListboxItem, ListboxSection, Row, Title } from '@dataesr/dsfr-plus';
 import Playground from '../../components/Playground';
 
 const dynamic = `

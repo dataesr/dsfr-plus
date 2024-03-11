@@ -1,4 +1,5 @@
-import { FileUpload, Breadcrumb, Container, Title, Text, Row, Col, Link } from '@dataesr/react-dsfr';
+import { FileUpload, Breadcrumb, Container, Title, Text, Row, Col, Link } from '@dataesr/dsfr-plus';
+
 import Playground from '../../components/Playground';
 
 const fileUpload = `
