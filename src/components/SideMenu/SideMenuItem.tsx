@@ -44,7 +44,7 @@ export const SideMenuItem = ({
         aria-current={current || undefined}
         {...props}
       >
-        <span className={icon && `react-dsfr-sidemenu-title--icon fr-icon-${icon} fr-icon--sm`}>{title}</span>
+        <span className={icon && `dsfr-plus-sidemenu-title--icon fr-icon-${icon} fr-icon--sm`}>{title}</span>
       </button>
       <div className="fr-collapse" id={id}>
         <ul className={cn("fr-sidemenu__list", css["fr-sidemenu__list"])}>

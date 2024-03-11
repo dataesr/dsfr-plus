@@ -30,7 +30,7 @@ export const SideMenuLink = ({
       aria-current={current || undefined}
       {...props}
     >
-      <span className={icon && `react-dsfr-sidemenu-title--icon fr-icon-${icon} fr-icon--sm`}>
+      <span className={icon && `dsfr-plus-sidemenu-title--icon fr-icon-${icon} fr-icon--sm`}>
         {children}
       </span>
     </Link>

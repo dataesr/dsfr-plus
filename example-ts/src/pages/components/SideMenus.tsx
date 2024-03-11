@@ -1,4 +1,5 @@
-import { Breadcrumb, SideMenu, SideMenuItem, Link, Container, Title, Text, Row, Col } from '@dataesr/react-dsfr';
+import { Breadcrumb, SideMenu, SideMenuItem, Link, Container, Title, Text, Row, Col } from '@dataesr/dsfr-plus';
+
 import Playground from '../../components/Playground';
 
 const sidemenu = `

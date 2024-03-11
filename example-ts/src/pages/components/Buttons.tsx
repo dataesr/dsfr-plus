@@ -1,4 +1,5 @@
-import { Alert, Button, ButtonGroup, Container, Row, Col, Title, Text, Link, Breadcrumb } from '@dataesr/react-dsfr';
+import { Alert, Button, ButtonGroup, Container, Row, Col, Title, Text, Link, Breadcrumb } from '@dataesr/dsfr-plus';
+
 import Playground from '../../components/Playground';
 
 const button = `
@@ -181,10 +182,10 @@ export function Buttons() {
         </Col>
         <Col xs={12}>
           <Title as="h2" look="h4">Bouton de couleur</Title>
-          <Alert className='fr-my-2w' variant="warning" title="Ajout du react-dsfr" description="Ceci est un ajout du react-dsfr et n'est pas recommandé par le système de design de l'état.
+          <Alert className='fr-my-2w' variant="warning" title="Ajout du dsfr-plus" description="Ceci est un ajout du dsfr-plus et n'est pas recommandé par le système de design de l'état.
           Ne l'utilisez pas sur un site grand public." />
           <Text>
-            La version React offre la possibilité d'utiliser des boutons avec les couleurs définis par le design system.
+            La version React offre la possibilité d'utiliser des boutons avec les couleurs définies par le design system.
           </Text>
           <Playground code={colors} scope={{ Button, ButtonGroup }} />
         </Col>

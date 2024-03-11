@@ -1,4 +1,5 @@
-import { Accordion, AccordionGroup, Container, Title, Text, Row, Col, Breadcrumb, Link } from '@dataesr/react-dsfr';
+import { Accordion, AccordionGroup, Container, Title, Text, Row, Col, Breadcrumb, Link } from '@dataesr/dsfr-plus';
+
 import Playground from '../../components/Playground';
 
 const accodion = `

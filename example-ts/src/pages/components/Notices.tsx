@@ -1,4 +1,5 @@
-import { Breadcrumb, Link, Notice, Container, Row, Col, Title, Text, Alert } from '@dataesr/react-dsfr';
+import { Breadcrumb, Link, Notice, Container, Row, Col, Title, Text, Alert } from '@dataesr/dsfr-plus';
+
 import Playground from '../../components/Playground';
 
 const main = `<Notice>
@@ -75,7 +76,7 @@ export function Notices() {
         </Col>
         <Col xs={12}>
           <Title as="h2">Bandeau de couleur</Title>
-          <Alert className='fr-my-2w' variant="warning" title="Ajout du react-dsfr" description="Ceci est un ajout du react-dsfr et n'est pas recommandé par le système de design de l'état.
+          <Alert className='fr-my-2w' variant="warning" title="Ajout du dsfr-plus" description="Ceci est un ajout du dsfr-plus et n'est pas recommandé par le système de design de l'état.
           Ne l'utilisez pas sur un site grand public." />
           <Text>
             La version React offre la possibilité d'utiliser le bandeau avec les couleurs 'warning', 'error' et 'success'.
