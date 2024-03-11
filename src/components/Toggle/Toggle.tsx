@@ -1,7 +1,8 @@
-import { forwardRef, useId } from 'react';
 import cn, { Argument } from 'classnames';
-import { forwardProps } from '../../utils/props';
+import { forwardRef, useId } from 'react';
+
 import { Merge } from '../../types/polymophic';
+import { forwardProps } from '../../utils/props';
 
 type ToggleCss = {
   "fr-toggle__input"?: Argument;
@@ -12,20 +13,20 @@ type ToggleCss = {
 export type ToggleProps = Merge<React.InputHTMLAttributes<HTMLInputElement>, {
   className?: Argument;
   css?: ToggleCss;
-  hasSeparator?: string;
   hasLabelLeft?: string;
-  label?: string;
-  id?: string;
+  hasSeparator?: string;
   hint?: string;
+  id?: string;
+  label?: string;
 }>;
 
 export const Toggle = forwardRef<HTMLInputElement, ToggleProps>(({
   className,
   css = {},
-  hasSeparator,
   hasLabelLeft,
-  label,
+  hasSeparator,
   hint,
+  label,
   ...props
 }, ref) => {
   const _id = useId();
@@ -54,7 +55,7 @@ export const Toggle = forwardRef<HTMLInputElement, ToggleProps>(({
       >
         {label}
       </label>
-      {(hint) && <p className={cn("fr-hint-text", css["fr-hint-text"])}>{hint}</p>}
+      {hint && <p className={cn("fr-hint-text", css["fr-hint-text"])}>{hint}</p>}
     </div>
   );
 });

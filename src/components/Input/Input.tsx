@@ -23,8 +23,8 @@ export type TextInputBaseProps = {
 };
 
 export type TextInputProps = Merge<React.InputHTMLAttributes<HTMLInputElement>, TextInputBaseProps>;
-export type TextAreaProps = Merge<React.TextareaHTMLAttributes<HTMLTextAreaElement>, TextInputBaseProps>;
 
+export type TextAreaProps = Merge<React.TextareaHTMLAttributes<HTMLTextAreaElement>, TextInputBaseProps>;
 
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(({
   className,
@@ -52,6 +52,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(({
     'fr-input--error': isInputStateControlled ? messageType === 'error' : inputState === 'error',
     'fr-input--valid': isInputStateControlled ? messageType === 'valid' : inputState === 'valid',
   }, css['fr-input']);
+
   const inputGroupClass = cn('fr-input-group', {
     'fr-input-group--error': isInputStateControlled ? messageType === 'error' : inputState === 'error',
     'fr-input-group--valid': isInputStateControlled ? messageType === 'valid' : inputState === 'valid',
@@ -128,6 +129,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({
     'fr-input--error': isInputStateControlled ? messageType === 'error' : inputState === 'error',
     'fr-input--valid': isInputStateControlled ? messageType === 'valid' : inputState === 'valid',
   }, css['fr-input']);
+
   const inputGroupClass = cn('fr-input-group', {
     'fr-input-group--error': isInputStateControlled ? messageType === 'error' : inputState === 'error',
     'fr-input-group--valid': isInputStateControlled ? messageType === 'valid' : inputState === 'valid',
@@ -153,7 +155,6 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({
   const stateMessage = (isInputStateControlled || disableAutoValidation)
     ? (messageType && (<p className={`fr-${messageType || 'error'}-text`} id={`${inputId}-message`}>{message}</p>))
     : ((inputState === 'error' && !disableAutoValidation) && (<p className={`fr-${inputState || 'error'}-text`} id={`${inputId}-message`}>{inputRef.current?.validationMessage}</p>))
-
 
   return (
     <div className={inputGroupClass}>

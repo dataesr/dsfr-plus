@@ -2,7 +2,7 @@ import React, { ReactNode, useLayoutEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import Routes from './router.js'
 import { HashRouter, Link, useLocation } from 'react-router-dom';
-import { DSFRConfig } from '@dataesr/react-dsfr';
+import { DSFRConfig } from '@dataesr/dsfr-plus';
 import '@gouvfr/dsfr/dist/utility/utility.css';
 import '@gouvfr/dsfr/dist/dsfr.css';
 import '@gouvfr/dsfr/dist/dsfr/dsfr.module.min.js';

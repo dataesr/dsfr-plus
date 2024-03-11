@@ -1,7 +1,7 @@
-import { SideMenu, SideMenuItem, Link, Container, Row, Col } from '@dataesr/react-dsfr';
+import { SideMenu, SideMenuItem, Link, Container, Row, Col } from '@dataesr/dsfr-plus';
 import { Outlet, useLocation } from 'react-router-dom';
-import './styles.scss';
 
+import './styles.scss';
 
 export function Side() {
   const { pathname } = useLocation();

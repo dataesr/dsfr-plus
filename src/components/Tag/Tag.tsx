@@ -1,13 +1,13 @@
-import { forwardRef } from "react";
-import { OnlyAs, PolyRefFunction } from "react-polymorphed";
-import cn, { Argument } from "classnames";
-import { ColorFamily } from "../../types/colors";
-import { Link } from "../Link";
+import cn, { Argument } from 'classnames';
+import { forwardRef } from 'react';
+import { OnlyAs, PolyRefFunction } from 'react-polymorphed';
+
+import { Link } from '../Link';
+import { ColorFamily } from '../../types/colors';
+
 import './styles.scss';
 
 const polyRef = forwardRef as PolyRefFunction;
-
-
 
 const getTagClasses = ({ className, color, icon, iconPosition, size }: TagProps) => cn('fr-tag', className, {
   'fr-tag--sm': size === "sm",
@@ -20,16 +20,17 @@ export type TagProps = {
   className?: Argument;
   color?: ColorFamily;
   icon?: string;
-  iconPosition?: 'left' | 'right';
+  iconPosition?: "left" | "right";
   size?: "md" | "sm";
 }
+
 export type SelectableTagProps = {
   className?: Argument;
   color?: ColorFamily;
   icon?: string;
-  iconPosition?: 'left' | 'right';
-  size?: "md" | "sm";
+  iconPosition?: "left" | "right";
   selected: boolean;
+  size?: "md" | "sm";
 }
 
 export const Tag = polyRef<"p", TagProps, OnlyAs<"button" | "p" | "a">>(({
@@ -53,14 +54,15 @@ export const Tag = polyRef<"p", TagProps, OnlyAs<"button" | "p" | "a">>(({
 
   );
 });
+
 export const SelectableTag = polyRef<"button", SelectableTagProps, OnlyAs<"button" | "a">>(({
   as,
   className,
   color,
   icon,
   iconPosition = 'left',
-  size,
   selected,
+  size,
   ...props
 }, ref) => {
   const _classes = getTagClasses({ className, color, icon, iconPosition, size });
@@ -89,7 +91,6 @@ export const DissmissibleTag = polyRef<"button", TagProps, OnlyAs<"button" | "a"
 }, ref) => {
   const _classes = cn('fr-tag--dismiss', getTagClasses({ className, color, icon, iconPosition, size }));
   const Component = (as === "a") ? Link : as ? as : 'button';
-
 
   return (
     <Component

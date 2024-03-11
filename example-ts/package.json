@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
+    "dev": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@dataesr/react-dsfr": "file:..",
+    "@dataesr/dsfr-plus": "^0.0.21",
     "@gouvfr/dsfr": "^1.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
