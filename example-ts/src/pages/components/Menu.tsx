@@ -1,4 +1,5 @@
-import { Text, Breadcrumb, Col, Container, Link, MenuButton, MenuItem, MenuSection, Row, Title } from '@dataesr/react-dsfr';
+import { Text, Breadcrumb, Col, Container, Link, MenuButton, MenuItem, MenuSection, Row, Title } from '@dataesr/dsfr-plus';
+
 import Playground from '../../components/Playground';
 
 const sections = `

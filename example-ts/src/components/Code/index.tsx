@@ -1,4 +1,4 @@
-import { Container, Button } from '@dataesr/react-dsfr';
+import { Container, Button } from '@dataesr/dsfr-plus';
 import { Highlight, themes } from 'prism-react-renderer'
 import './styles.scss';
 import useCopyToClipboard from '../../hooks/useCopyToClipboard';

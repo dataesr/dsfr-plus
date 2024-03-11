@@ -39,7 +39,7 @@ export const Notice = ({
   }
   const _cn = cn('fr-notice', {
     "fr-notice--info": type === 'info',
-    [`react-dsfr-notice--${type}`]: type !== 'info',
+    [`dsfr-plus-notice--${type}`]: type !== 'info',
   }, className)
   return (
     <div ref={ref} className={_cn} {...props}>
