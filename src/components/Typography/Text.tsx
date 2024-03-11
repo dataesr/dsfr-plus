@@ -5,18 +5,18 @@ type TextTags = 'p' | 'span';
 type TextSizes = 'xs' | 'sm' | 'md' | 'lg' | 'lead';
 
 type TextProps = React.PropsWithChildren<{
-  className?: Argument;
-  size?: TextSizes;
   alt?: boolean;
   bold?: boolean;
+  className?: Argument;
+  size?: TextSizes;
 }>
 
 export const Text: PolymorphicComponent<"p", TextProps, OnlyAs<TextTags>> = ({
-  as: As = 'p',
-  size,
   alt,
+  as: As = 'p',
   bold,
   className,
+  size,
   ...props
 }) => {
   const _cn = cn(className, {
