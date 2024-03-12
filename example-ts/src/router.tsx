@@ -1,30 +1,30 @@
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
-// import { Autocompletes } from './pages/components/Autocomplete';
-import { SideMenus } from './pages/components/SideMenus';
+import { Layout } from './layout/Layout';
+import { Side } from './layout/SideMenu';
+import { Accordions } from './pages/components/Accordions';
+import { Alerts } from './pages/components/Alerts';
+import { Autocompletes } from './pages/components/Autocomplete';
+import { Badges } from './pages/components/Badges';
+import { Breadcrumbs } from './pages/components/Breadcrumb';
+import { Buttons } from './pages/components/Buttons';
+import { Checkboxes } from './pages/components/Checkboxes';
 import { FileUploads } from './pages/components/FileUploads';
 import { Headers } from './pages/components/Headers';
-import { Steppers } from './pages/components/Stepper';
-import { Tags } from './pages/components/Tags';
-import { Toggles } from './pages/components/Toggles';
-import { QuickStart } from './pages/guides/QuickStart';
-import { Breadcrumbs } from './pages/components/Breadcrumb';
-import { Radios } from './pages/components/Radios';
-import { Checkboxes } from './pages/components/Checkboxes';
 import { Inputs } from './pages/components/Inputs';
-import { TabsAndTab } from './pages/components/TabsAndTab';
-import { Notices } from './pages/components/Notices';
-import { Modals } from './pages/components/Modal';
-import { Alerts } from './pages/components/Alerts';
-import { Accordions } from './pages/components/Accordions';
-import { Buttons } from './pages/components/Buttons';
-import { Badges } from './pages/components/Badges';
-import { Side } from './layout/SideMenu';
-import { Layout } from './layout/Layout';
 import { Listboxes } from './pages/components/Listboxes';
-import { Selects } from './pages/components/Select';
 import { Menus } from './pages/components/Menu';
-import { Autocompletes } from './pages/components/Autocomplete';
+import { Modals } from './pages/components/Modal';
+import { Notices } from './pages/components/Notices';
+import { QuickStart } from './pages/guides/QuickStart';
+import { Radios } from './pages/components/Radios';
+import { Selects } from './pages/components/Select';
+import { SideMenus } from './pages/components/SideMenus';
+import { Steppers } from './pages/components/Stepper';
+import { TabsAndTab } from './pages/components/TabsAndTab';
+import { Tags } from './pages/components/Tags';
+import { Toasts } from './pages/components/Toasts';
+import { Toggles } from './pages/components/Toggles';
 
 export default function Router() {
   return (
@@ -35,27 +35,28 @@ export default function Router() {
           <Route path="demarrage-rapide" element={<QuickStart />} />
         </Route>
         <Route path="/composants" element={<Side />}>
-          <Route path="autocomplete" element={<Autocompletes />} />
-          <Route path="listbox" element={<Listboxes />} />
-          <Route path="select" element={<Selects />} />
-          <Route path="menu-button" element={<Menus />} />
+          <Route path="accordion" element={<Accordions />} />
           <Route path="ajout-de-fichier" element={<FileUploads />} />
+          <Route path="alert" element={<Alerts />} />
+          <Route path="autocomplete" element={<Autocompletes />} />
           <Route path="badge" element={<Badges />} />
           <Route path="button" element={<Buttons />} />
+          <Route path="checkbox" element={<Checkboxes />} />
           <Route path="en-tete" element={<Headers />} />
           <Route path="fil-d-ariane" element={<Breadcrumbs />} />
           <Route path="indicateur-d-etape" element={<Steppers />} />
-          <Route path="accordion" element={<Accordions />} />
-          <Route path="alert" element={<Alerts />} />
+          <Route path="input" element={<Inputs />} />
+          <Route path="interrupteur" element={<Toggles />} />
+          <Route path="listbox" element={<Listboxes />} />
+          <Route path="menu-button" element={<Menus />} />
           <Route path="menu-lateral" element={<SideMenus />} />
           <Route path="modal" element={<Modals />} />
           <Route path="notice" element={<Notices />} />
-          <Route path="tab" element={<TabsAndTab />} />
-          <Route path="input" element={<Inputs />} />
-          <Route path="checkbox" element={<Checkboxes />} />
           <Route path="radio" element={<Radios />} />
+          <Route path="select" element={<Selects />} />
+          <Route path="tab" element={<TabsAndTab />} />
           <Route path="tag" element={<Tags />} />
-          <Route path="interrupteur" element={<Toggles />} />
+          <Route path="toast" element={<Toasts />} />
         </Route>
       </Route>
     </Routes>

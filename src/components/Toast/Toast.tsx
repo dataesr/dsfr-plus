@@ -10,21 +10,21 @@ export type ToasterProps = {
   autoDismissAfter?: number;
   description?: string;
   id: number;
-  remove?(): any;
+  remove?(id: number): any;
   title?: string;
   type?: 'error' | 'info' | 'success' | 'warning';
 }
 
 export const Toast = (({ autoDismissAfter = 10000, description = '', id, remove = () => { }, title = '', type = 'success' }: ToasterProps) => {
   const icon = {
-    info: 'ri-information-fill',
-    warning: 'ri-error-warning-fill',
-    success: 'ri-checkbox-circle-fill',
-    error: 'ri-close-circle-fill',
+    info: 'fr-icon-information-fill',
+    warning: 'fr-icon-error-warning-fill',
+    success: 'fr-icon-checkbox-circle-fill',
+    error: 'fr-icon-close-circle-fill',
   };
 
   const removeSelf = useCallback(() => {
-    document.getElementById(id).style.setProperty('animation', 'toast-unmount 1000ms');
+    document.getElementById(`${id}`)?.style.setProperty('animation', 'toast-unmount 1000ms');
     setTimeout(() => {
       remove(id);
     }, 1000);
@@ -48,7 +48,7 @@ export const Toast = (({ autoDismissAfter = 10000, description = '', id, remove 
       onMouseLeave={resume}
     >
       <div className="toast-colored-box">
-        <Icon color="#ffffff" name={icon[type]} />
+        <span className={icon[type]} />
         {
           (autoDismissAfter !== 0)
             ? (<div id={`progress-${id}`} className="toast-progress-bar" />)
@@ -60,7 +60,7 @@ export const Toast = (({ autoDismissAfter = 10000, description = '', id, remove 
         onClick={() => remove(id)}
         className="toast-btn-close"
       >
-        <Icon size="lg" name="ri-close-line" />
+        <span className='fr-icon-close-line'/>
       </button>
       <Container fluid className="toast-content">
         <Row>

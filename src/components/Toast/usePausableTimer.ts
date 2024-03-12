@@ -1,21 +1,21 @@
-import { useState, useEffect, useRef } from 'react';
+import { MutableRefObject, useEffect, useState, useRef } from 'react';
 
-export default function usePausableTimer(callback, delay) {
+export default function usePausableTimer(callback: () => void, delay: number) {
   const [paused, setPaused] = useState(false);
-  const start = useRef(new Date());
-  const remaining = useRef(delay);
-  const timeoutId = useRef(null);
+  const start:MutableRefObject<number> = useRef((new Date()).getTime());
+  const remaining:MutableRefObject<number> = useRef(delay);
+  const timeoutId:MutableRefObject<number|undefined> = useRef(undefined);
 
   const clear = () => clearTimeout(timeoutId.current);
 
   const pause = () => {
     setPaused(true);
-    remaining.current -= (new Date() - start.current);
+    remaining.current -= ((new Date()).getTime() - start.current);
     clear();
   };
 
   const resume = () => {
-    start.current = new Date();
+    start.current = (new Date()).getTime();
     setPaused(false);
   };
 
