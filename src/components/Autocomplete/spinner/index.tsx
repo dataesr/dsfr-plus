@@ -1,7 +1,6 @@
 import { useEffect, useId } from 'react';
+
 import styles from './spinner.module.scss';
-
-
 
 export function Spinner({ size = 24 }: { size?: number }) {
   const id = useId();

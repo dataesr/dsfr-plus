@@ -86,6 +86,9 @@ export function Side() {
               <Link current={is('/composants/tag')} href="/composants/tag">
                 Tag - Tag
               </Link>
+              <Link current={is('/composants/toast')} href="/composants/toast">
+                Toast - Toast
+              </Link>
             </SideMenuItem>
           </SideMenu>
         </Col>
