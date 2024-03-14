@@ -1,19 +1,24 @@
 import {
   createContext,
   PropsWithChildren,
-  useState,
   useCallback,
   useContext,
+  useId,
   useMemo,
+  useState,
 } from 'react';
 import { createPortal } from 'react-dom';
 
-import { Toast, ToastType } from './Toast';
+import { BaseToastType, Toast } from './Toast';
+
+type ToastType = BaseToastType & { id?: string; };
+
+type ToastTypeWithId = BaseToastType & { id: string; };
 
 type ToastContextObject = {
   remove?: (id: string) => void,
   toast?: (toastObject: ToastType) => string,
-  toasts?: ToastType[],
+  toasts?: ToastTypeWithId[],
 };
 
 type ToastProps = PropsWithChildren<ToastContextObject>;
@@ -26,20 +31,17 @@ const ToastContext = createContext<ToastContextObject>({});
 
 // Provider
 // ==============================
-let toastCount = 0;
-
 export const ToastContextProvider = ({
   children
 }: ToastProps) => {
-  const [toasts, setToasts] = useState<ToastType[]>([]);
+  const [toasts, setToasts] = useState<ToastTypeWithId[]>([]);
 
   const remove = useCallback((id: string) => {
     setToasts((toastList) => toastList.filter((t) => t.id !== id));
   }, []);
 
   const toast = useCallback((toastObject: ToastType) => {
-    toastCount += 1;
-    const id = toastObject?.id ?? toastCount.toString();
+    const id = toastObject?.id ?? `toast-${useId()}`;
     setToasts((toastList) => [...toastList, { ...toastObject, id }]);
     return id;
   }, []);
