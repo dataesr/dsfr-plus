@@ -9,11 +9,8 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 
-import { BaseToastType, Toast } from './Toast';
-
-type ToastType = BaseToastType & { id?: string; };
-
-type ToastTypeWithId = BaseToastType & { id: string; };
+import { Toast } from './Toast';
+import { ToastType, ToastTypeWithId } from './types';
 
 type ToastContextObject = {
   remove?: (id: string) => void,

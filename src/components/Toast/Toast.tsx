@@ -4,19 +4,11 @@ import { Container, Row } from '../Grid';
 import { Text } from '../Typography';
 import usePausableTimer from './usePausableTimer';
 
+import { ToastTypeWithId } from './types';
+
 import './styles.scss';
 
-export type BaseToastType = {
-  autoDismissAfter?: number;
-  description?: string;
-  remove?(id: string): any;
-  title?: string;
-  type?: 'error' | 'info' | 'success' | 'warning';
-};
-
-type ToastType = BaseToastType & { id: string; };
-
-export const Toast = (({ autoDismissAfter = 3000, description = '', id, remove = () => { }, title = '', type = 'success' }: ToastType) => {
+export const Toast = (({ autoDismissAfter = 3000, description = '', id, remove = () => { }, title = '', type = 'success' }: ToastTypeWithId) => {
   const icon = {
     info: 'fr-icon-information-fill',
     warning: 'fr-icon-error-warning-fill',
