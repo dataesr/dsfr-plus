@@ -60,7 +60,7 @@ export const Toast = (({ autoDismissAfter = 10000, description = '', id, remove 
         onClick={() => remove(id)}
         className="toast-btn-close"
       >
-        <span className='fr-icon-close-line'/>
+        <span className='fr-icon-close-line' />
       </button>
       <Container fluid className="toast-content">
         <Row>
@@ -72,5 +72,4 @@ export const Toast = (({ autoDismissAfter = 10000, description = '', id, remove 
       </Container>
     </div>
   );
-}
-);
+});

@@ -1,43 +1,51 @@
 import {
   createContext,
+  ReactNode,
   useState,
   useCallback,
   useContext,
   useMemo,
 } from 'react';
 import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
-import Toast from '../components/toast';
 
-function ToastContainer({ children }) {
+import { Toast } from './Toast';
+
+interface Props {
+  children?: ReactNode
+  // any props that come into the component
+}
+
+function ToastContainer({ children }: Props) {
   return <div id="toast-container">{children}</div>;
 }
 
-ToastContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-const ToastContext = createContext();
+const ToastContext = createContext({});
 
 // Provider
 // ==============================
 let toastCount = 0;
 
-export function ToastContextProvider({ children }) {
-  const [toasts, setToasts] = useState([]);
+interface DataType {
+  id: number;
+}
 
-  const remove = useCallback((id) => {
+export function ToastContextProvider({ children }: Props) {
+  const [toasts, setToasts] = useState<Array<DataType>>([]);
+
+  const remove = useCallback((id: number) => {
     setToasts((toastList) => toastList.filter((t) => t.id !== id));
   }, []);
 
-  const toast = useCallback((toastObject) => {
+  const toast = useCallback((toastObject: Object) => {
     toastCount += 1;
     setToasts((toastList) => [...toastList, { ...toastObject, id: toastCount }]);
     return toastCount;
   }, []);
+
   const value = useMemo(() => ({
     toast, remove, toasts,
   }), [toast, remove, toasts]);
+
   const content = (
     <ToastContainer>
       {
@@ -51,6 +59,7 @@ export function ToastContextProvider({ children }) {
       }
     </ToastContainer>
   );
+
   return (
     <ToastContext.Provider value={value}>
       {children}
@@ -59,13 +68,6 @@ export function ToastContextProvider({ children }) {
   );
 }
 
-ToastContextProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
 // Hook
 // ==============================
-const useToast = () => useContext(ToastContext);
-
-/* @component */
-export default useToast;
+export const useToast = () => useContext(ToastContext);
