@@ -1,8 +1,10 @@
-import React, { ReactNode, useLayoutEffect } from 'react'
-import ReactDOM from 'react-dom/client'
-import Routes from './router.js'
+import { DSFRConfig, ToastContextProvider } from '@dataesr/dsfr-plus';
+import React, { ReactNode, useLayoutEffect } from 'react';
+import ReactDOM from 'react-dom/client';
 import { HashRouter, Link, useLocation } from 'react-router-dom';
-import { DSFRConfig } from '@dataesr/dsfr-plus';
+
+import Routes from './router.js';
+
 import '@gouvfr/dsfr/dist/utility/utility.css';
 import '@gouvfr/dsfr/dist/dsfr.css';
 import '@gouvfr/dsfr/dist/dsfr/dsfr.module.min.js';
@@ -32,7 +34,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <HashRouter basename='/'>
       <ScrollToTop />
       <DSFRConfig routerComponent={RouterLink}>
-        <Routes />
+        <ToastContextProvider>
+          <Routes />
+        </ToastContextProvider>
       </DSFRConfig>
     </HashRouter>
   </React.StrictMode>,

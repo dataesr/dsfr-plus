@@ -6,16 +6,16 @@ import usePausableTimer from './usePausableTimer';
 
 import './styles.scss';
 
-export type ToasterProps = {
+export type ToastProps = {
   autoDismissAfter?: number;
   description?: string;
-  id: number;
-  remove?(id: number): any;
+  id: string;
+  remove?(id: string): any;
   title?: string;
   type?: 'error' | 'info' | 'success' | 'warning';
 }
 
-export const Toast = (({ autoDismissAfter = 10000, description = '', id, remove = () => { }, title = '', type = 'success' }: ToasterProps) => {
+export const Toast = (({ autoDismissAfter = 10000, description = '', id, remove = () => { }, title = '', type = 'success' }: ToastProps) => {
   const icon = {
     info: 'fr-icon-information-fill',
     warning: 'fr-icon-error-warning-fill',

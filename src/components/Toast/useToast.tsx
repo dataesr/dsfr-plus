@@ -1,6 +1,6 @@
 import {
   createContext,
-  ReactNode,
+  PropsWithChildren,
   useState,
   useCallback,
   useContext,
@@ -10,50 +10,62 @@ import { createPortal } from 'react-dom';
 
 import { Toast } from './Toast';
 
-interface Props {
-  children?: ReactNode
-  // any props that come into the component
-}
+type ToastType = {
+  autoDismissAfter?: number;
+  description?: string;
+  id: string;
+  remove?(id: string): any;
+  title?: string;
+  type?: 'error' | 'info' | 'success' | 'warning';
+};
 
-function ToastContainer({ children }: Props) {
+type ToastContextObject = {
+  remove?: (id: string) => void,
+  toast?: (toastObject: ToastType) => number,
+  toasts?: Array<ToastType>,
+};
+
+type ToastProps = PropsWithChildren<ToastContextObject>;
+
+function ToastContainer({ children }: ToastProps) {
   return <div id="toast-container">{children}</div>;
-}
+};
 
-const ToastContext = createContext({});
+const ToastContext = createContext<ToastContextObject>({});
 
 // Provider
 // ==============================
 let toastCount = 0;
 
-interface DataType {
-  id: number;
-}
+export const ToastContextProvider = ({
+  children
+}: ToastProps) => {
+  const [toasts, setToasts] = useState<Array<ToastType>>([]);
 
-export function ToastContextProvider({ children }: Props) {
-  const [toasts, setToasts] = useState<Array<DataType>>([]);
-
-  const remove = useCallback((id: number) => {
+  const remove = useCallback((id: string) => {
     setToasts((toastList) => toastList.filter((t) => t.id !== id));
   }, []);
 
-  const toast = useCallback((toastObject: Object) => {
+  const toast = useCallback((toastObject: ToastType) => {
     toastCount += 1;
-    setToasts((toastList) => [...toastList, { ...toastObject, id: toastCount }]);
+    setToasts((toastList) => [...toastList, toastObject]);
     return toastCount;
   }, []);
 
-  const value = useMemo(() => ({
-    toast, remove, toasts,
-  }), [toast, remove, toasts]);
+  const value: ToastContextObject = useMemo(() => ({
+    remove,
+    toast,
+    toasts,
+  }), [remove, toast, toasts]);
 
   const content = (
     <ToastContainer>
       {
-        toasts.map((toastOptions) => (
+        toasts.map((toast) => (
           <Toast
-            key={toastOptions.id}
+            key={toast.id}
             remove={remove}
-            {...toastOptions}
+            {...toast}
           />
         ))
       }
