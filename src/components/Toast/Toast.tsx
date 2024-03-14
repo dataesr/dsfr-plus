@@ -6,7 +6,7 @@ import usePausableTimer from './usePausableTimer';
 
 import './styles.scss';
 
-export type ToastProps = {
+export type ToastType = {
   autoDismissAfter?: number;
   description?: string;
   id: string;
@@ -15,7 +15,7 @@ export type ToastProps = {
   type?: 'error' | 'info' | 'success' | 'warning';
 }
 
-export const Toast = (({ autoDismissAfter = 10000, description = '', id, remove = () => { }, title = '', type = 'success' }: ToastProps) => {
+export const Toast = (({ autoDismissAfter = 3000, description = '', id, remove = () => { }, title = '', type = 'success' }: ToastType) => {
   const icon = {
     info: 'fr-icon-information-fill',
     warning: 'fr-icon-error-warning-fill',
@@ -24,7 +24,7 @@ export const Toast = (({ autoDismissAfter = 10000, description = '', id, remove 
   };
 
   const removeSelf = useCallback(() => {
-    document.getElementById(`${id}`)?.style.setProperty('animation', 'toast-unmount 1000ms');
+    document.getElementById(id)?.style.setProperty('animation', 'toast-unmount 1000ms');
     setTimeout(() => {
       remove(id);
     }, 1000);

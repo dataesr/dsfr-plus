@@ -8966,7 +8966,7 @@ function ed(t, e) {
   };
   return W(() => (!n && e && (l.current = setTimeout(t, i.current)), s), [i, n, e, t]), { paused: n, pause: u, resume: a };
 }
-const td = ({ autoDismissAfter: t = 1e4, description: e = "", id: n, remove: r = () => {
+const td = ({ autoDismissAfter: t = 3e3, description: e = "", id: n, remove: r = () => {
 }, title: o = "", type: i = "success" }) => {
   const l = {
     info: "fr-icon-information-fill",
@@ -8975,7 +8975,7 @@ const td = ({ autoDismissAfter: t = 1e4, description: e = "", id: n, remove: r =
     error: "fr-icon-close-circle-fill"
   }, s = te(() => {
     var c;
-    (c = document.getElementById(`${n}`)) == null || c.style.setProperty("animation", "toast-unmount 1000ms"), setTimeout(() => {
+    (c = document.getElementById(n)) == null || c.style.setProperty("animation", "toast-unmount 1000ms"), setTimeout(() => {
       r(n);
     }, 1e3);
   }, [n, r]), { pause: u, resume: a } = ed(s, t);
@@ -9022,7 +9022,11 @@ const Rd = ({
 }) => {
   const [e, n] = Z([]), r = te((s) => {
     n((u) => u.filter((a) => a.id !== s));
-  }, []), o = te((s) => (no += 1, n((u) => [...u, s]), no), []), i = ne(() => ({
+  }, []), o = te((s) => {
+    no += 1;
+    const u = (s == null ? void 0 : s.id) ?? no.toString();
+    return n((a) => [...a, { ...s, id: u }]), u;
+  }, []), i = ne(() => ({
     remove: r,
     toast: o,
     toasts: e
