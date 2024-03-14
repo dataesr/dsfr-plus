@@ -8933,19 +8933,19 @@ const nr = me, rr = ({ className: t, color: e, icon: n, iconPosition: r, size: o
   const r = ie(), o = x("fr-tags-group", t);
   return /* @__PURE__ */ m("ul", { className: o, ...je(n), children: et(e, [Xc, Zc, Jc]).map((i, l) => /* @__PURE__ */ m("li", { children: i }, `${r}-${l}`)) });
 }, to = ({
-  as: t = "p",
-  size: e,
-  alt: n,
-  bold: r,
-  className: o,
+  alt: t,
+  as: e = "p",
+  bold: n,
+  className: r,
+  size: o,
   ...i
 }) => {
-  const l = x(o, {
-    "fr-text--alt": e !== "lead" && n,
-    "fr-text--heavy": r,
-    [`fr-text--${e}`]: e && e !== "md"
+  const l = x(r, {
+    "fr-text--alt": o !== "lead" && t,
+    "fr-text--heavy": n,
+    [`fr-text--${o}`]: o && o !== "md"
   });
-  return /* @__PURE__ */ m(t, { className: l, ...i });
+  return /* @__PURE__ */ m(e, { className: l, ...i });
 }, Bd = ({
   as: t = "h1",
   className: e,
