@@ -36,34 +36,40 @@ const toaster = `
 export function Toasts() {
   const { toast } = useToast();
 
-  const displayToastError = () => {
-    toast({
-      description: 'Toast - Error - AutoDismissAfter 3 seconds',
-      id: 'toast-error',
-      title: 'Error',
-      type: 'error',
-    });
-  };
+  let displayToastError =  () => {};
+  let displayToastSuccess =  () => {};
+  let displayToastWarning =  () => {};
 
-  const displayToastSuccess = () => {
-    toast({
-      autoDismissAfter: 0,
-      description: 'Toast - Success - No AutoDismiss',
-      id: 'toast-success',
-      title: 'Success',
-      type: 'success',
-    });
-  };
+  if (toast) {
+    displayToastError = () => {
+      toast({
+        description: 'Toast - Error - AutoDismissAfter 3 seconds',
+        id: 'toast-error',
+        title: 'Error',
+        type: 'error',
+      });
+    };
 
-  const displayToastWarning = () => {
-    toast({
-      autoDismissAfter: 10000,
-      description: 'Toast - Warning - AutoDismissAfter 10 seconds',
-      id: 'toast-warning',
-      title: 'Warning',
-      type: 'warning',
-    });
-  };
+    displayToastSuccess = () => {
+      toast({
+        autoDismissAfter: 0,
+        description: 'Toast - Success - No AutoDismiss',
+        id: 'toast-success',
+        title: 'Success',
+        type: 'success',
+      });
+    };
+  
+    displayToastWarning = () => {
+      toast({
+        autoDismissAfter: 10000,
+        description: 'Toast - Warning - AutoDismissAfter 10 seconds',
+        id: 'toast-warning',
+        title: 'Warning',
+        type: 'warning',
+      });
+    };
+  }
 
   return (
     <Container fluid className="fr-mb-5w">
@@ -78,7 +84,7 @@ export function Toasts() {
         <Col xs={12}>
           <Title as="h1">Toaster - Toaster</Title>
           <Text>
-            Message éphémère pouvant afficher une error, un warning, un succès ou encore une information.
+            Message éphémère pouvant afficher une erreur, un warning, un succès ou encore une information.
           </Text>
           <Playground code={toaster} scope={{ Button, displayToastError, displayToastSuccess, displayToastWarning }} defaultShowCode />
         </Col>
