@@ -1,5 +1,6 @@
-import { useEffect, useId } from "react";
 import PropTypes from "prop-types";
+import { useEffect, useId } from "react";
+
 import styles from "./spinner.module.scss";
 
 export function Spinner({ size }: { size: number }) {
