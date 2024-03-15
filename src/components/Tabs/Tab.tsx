@@ -1,4 +1,5 @@
 import cn, { Argument } from 'classnames';
+
 import { Merge } from '../../types/polymophic';
 
 export type TabProps = Merge<React.HTMLAttributes<HTMLDivElement>, {
