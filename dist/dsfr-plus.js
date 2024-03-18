@@ -7936,33 +7936,35 @@ const Ad = ({
     )
   ] }) }) });
 }, Kd = me(({
-  className: t,
-  css: e = {},
-  hint: n,
-  id: r,
-  label: o,
+  checked: t,
+  className: e,
+  css: n = {},
+  hint: r,
+  id: o,
   imageComponent: i,
-  ...l
-}, s) => {
-  const u = r || ie();
-  return /* @__PURE__ */ O("div", { className: x("fr-radio-group", { "fr-radio-rich": i }, t), children: [
+  label: l,
+  ...s
+}, u) => {
+  const a = o || ie();
+  return /* @__PURE__ */ O("div", { className: x("fr-radio-group", { "fr-radio-rich": i }, e), children: [
     /* @__PURE__ */ m(
       "input",
       {
-        ref: s,
-        ...l,
+        checked: t,
+        id: a,
+        ref: u,
         type: "radio",
-        id: u
+        ...s
       }
     ),
     /* @__PURE__ */ O(
       "label",
       {
         className: x("fr-label"),
-        htmlFor: u,
+        htmlFor: a,
         children: [
-          o,
-          n && /* @__PURE__ */ m("p", { className: x("fr-hint-text"), children: n })
+          l,
+          r && /* @__PURE__ */ m("p", { className: x("fr-hint-text"), children: r })
         ]
       }
     ),
@@ -8969,10 +8971,10 @@ function Qc(t, e) {
 const ed = ({ autoDismissAfter: t = 3e3, description: e = "", id: n, remove: r = () => {
 }, title: o = "", type: i = "success" }) => {
   const l = {
+    error: "fr-icon-close-circle-fill",
     info: "fr-icon-information-fill",
-    warning: "fr-icon-error-warning-fill",
     success: "fr-icon-checkbox-circle-fill",
-    error: "fr-icon-close-circle-fill"
+    warning: "fr-icon-error-warning-fill"
   }, s = te(() => {
     var c;
     (c = document.getElementById(n)) == null || c.style.setProperty("animation", "toast-unmount 1000ms"), setTimeout(() => {
