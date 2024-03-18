@@ -1,19 +1,18 @@
 import { useCallback, useEffect } from 'react';
 
 import { Container, Row } from '../Grid';
+import { ToastTypeWithId } from './types';
 import { Text } from '../Typography';
 import usePausableTimer from './usePausableTimer';
-
-import { ToastTypeWithId } from './types';
 
 import './styles.scss';
 
 export const Toast = (({ autoDismissAfter = 3000, description = '', id, remove = () => { }, title = '', type = 'success' }: ToastTypeWithId) => {
   const icon = {
-    info: 'fr-icon-information-fill',
-    warning: 'fr-icon-error-warning-fill',
-    success: 'fr-icon-checkbox-circle-fill',
     error: 'fr-icon-close-circle-fill',
+    info: 'fr-icon-information-fill',
+    success: 'fr-icon-checkbox-circle-fill',
+    warning: 'fr-icon-error-warning-fill',
   };
 
   const removeSelf = useCallback(() => {
@@ -53,7 +52,7 @@ export const Toast = (({ autoDismissAfter = 3000, description = '', id, remove =
         onClick={() => remove(id)}
         className="toast-btn-close"
       >
-        <span className='fr-icon-close-line' />
+        <span className="fr-icon-close-line" />
       </button>
       <Container fluid className="toast-content">
         <Row>
