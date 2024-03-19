@@ -1,5 +1,6 @@
+import { Toggle, Fieldset, Breadcrumb, Container, Title, Text, Row, Col, Link } from '@dataesr/dsfr-plus';
 import { useState } from 'react';
-import { Toggle, Fieldset, Breadcrumb, Container, Title, Text, Row, Col, Link } from '@dataesr/react-dsfr';
+
 import Playground from '../../components/Playground';
 
 const toggle = `

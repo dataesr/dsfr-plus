@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live';
-import { ButtonGroup, Button } from '@dataesr/react-dsfr';
+import { ButtonGroup, Button } from '@dataesr/dsfr-plus';
 import { themes } from 'prism-react-renderer';
 import useCopyToClipboard from '../../hooks/useCopyToClipboard';
 import './styles.scss';

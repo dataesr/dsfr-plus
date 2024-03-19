@@ -2,7 +2,8 @@ import {
   Header, Service, Logo, FastAccess, Link, Nav, NavItem, Button,
   Breadcrumb, SearchBar, Container, Title, Text, Row, Col,
   Autocomplete, AutocompleteItem, useAutocompleteList,
-} from '@dataesr/react-dsfr';
+} from '@dataesr/dsfr-plus';
+
 import Playground from '../../components/Playground';
 
 const autocomplete = `
@@ -62,7 +63,7 @@ const headerWithFastAccess = `
   <Service name="React DSFR" tagline="Une bibliothèque de composants React" />
   <FastAccess>
     <Button
-      href="https://github.com/dataesr/react-dsfr"
+      href="https://github.com/dataesr/dsfr-plus"
       target="_blank"
       rel="noreferer noopener"
       icon="github-fill"
@@ -97,7 +98,7 @@ const headerWithFastAccessAndSearchBar = `
   <Service name="React DSFR" tagline="Une bibliothèque de composants React" />
   <FastAccess>
     <Button
-      href="https://github.com/dataesr/react-dsfr"
+      href="https://github.com/dataesr/dsfr-plus"
       target="_blank"
       rel="noreferer noopener"
       icon="github-fill"
@@ -126,7 +127,7 @@ const headerWithNav = `
   <Service name="React DSFR" tagline="Une bibliothèque de composants React" />
   <FastAccess>
     <Button
-      href="https://github.com/dataesr/react-dsfr"
+      href="https://github.com/dataesr/dsfr-plus"
       target="_blank"
       rel="noreferer noopener"
       icon="github-fill"
@@ -182,7 +183,7 @@ export function Headers() {
           </Text>
           <Text>
             Vous pouvez composer l'en-tête selon vos besoin. L'ordre des composant enfant n'est pas important.
-            Le React-dsfr se charge de les placer au bon endroit.
+            Le dsfr-plus se charge de les placer au bon endroit.
           </Text>
           <Playground code={simplestHeader} scope={{ Header, Logo, Service }} defaultShowCode />
         </Col>

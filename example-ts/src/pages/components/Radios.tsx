@@ -1,8 +1,12 @@
-import { Radio, Fieldset, Container, Title, Text, Row, Col, Breadcrumb, Link } from '@dataesr/react-dsfr';
+import { Radio, Fieldset, Container, Title, Text, Row, Col, Breadcrumb, Link } from '@dataesr/dsfr-plus';
+
 import Playground from '../../components/Playground';
 
 const radio = `
 <Radio value="1" name="checker" label="Radio 1" />
+`;
+const radioChecked = `
+<Radio value="1" name="checker" label="Radio 1" checked />
 `;
 const radioRich = `
 <Radio
@@ -255,6 +259,10 @@ export function Radios() {
         <Col xs={12}>
           <Title as="h2" look="h4">Bouton radio simple</Title>
           <Playground code={radio} scope={{ Radio }} defaultShowCode />
+        </Col>
+        <Col xs={12}>
+          <Title as="h2" look="h4">Bouton radio simple checked</Title>
+          <Playground code={radioChecked} scope={{ Radio }} defaultShowCode />
         </Col>
         <Col xs={12}>
           <Title as="h2" look="h4">Bouton radio 'riche'</Title>

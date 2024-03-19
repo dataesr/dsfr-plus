@@ -1,7 +1,8 @@
-import { Container, Title, Text, Row, Col, Breadcrumb, Link } from '@dataesr/react-dsfr';
-import { Code } from '../../components/Code';
-export function QuickStart() {
+import { Container, Title, Text, Row, Col, Breadcrumb, Link } from '@dataesr/dsfr-plus';
 
+import { Code } from '../../components/Code';
+
+export function QuickStart() {
   return (
     <Container fluid className="fr-mb-5w">
       <Row>

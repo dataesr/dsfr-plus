@@ -1,5 +1,6 @@
-import { Alert, Container, Row, Col, Breadcrumb, Link, Text, Title } from '@dataesr/react-dsfr';
+import { Alert, Container, Row, Col, Breadcrumb, Link, Text, Title } from '@dataesr/dsfr-plus';
 import { useState } from 'react';
+
 import Playground from '../../components/Playground';
 
 const alert = `

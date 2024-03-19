@@ -1,7 +1,7 @@
-import { SideMenu, SideMenuItem, Link, Container, Row, Col } from '@dataesr/react-dsfr';
+import { SideMenu, SideMenuItem, Link, Container, Row, Col } from '@dataesr/dsfr-plus';
 import { Outlet, useLocation } from 'react-router-dom';
-import './styles.scss';
 
+import './styles.scss';
 
 export function Side() {
   const { pathname } = useLocation();
@@ -85,6 +85,9 @@ export function Side() {
               </Link>
               <Link current={is('/composants/tag')} href="/composants/tag">
                 Tag - Tag
+              </Link>
+              <Link current={is('/composants/toast')} href="/composants/toast">
+                Toast - Toast
               </Link>
             </SideMenuItem>
           </SideMenu>
