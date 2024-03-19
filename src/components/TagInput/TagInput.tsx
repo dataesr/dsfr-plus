@@ -57,7 +57,7 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(({
             onClick={() => handleDeleteClick(tag)}
           >
             {tag}
-            {/* <Icon iconPosition="right" name="ri-close-line" /> */}
+            <span className='fr-icon-close-line' />
           </Tag>
         ))}
       </TagGroup>

@@ -1,11 +1,12 @@
-import { Breadcrumb, Container, Title, Text, Row, Col, Link } from '@dataesr/react-dsfr';
+import { Breadcrumb, Col, Container, Link, Row, TagInput, Text, Title } from '@dataesr/dsfr-plus';
+
 import Playground from '../../components/Playground';
 
 const code = `
 <TagInput tags={["tag_01"]} />
 `;
 
-export function Tags() {
+export function TagInputs() {
   return (
     <Container fluid className="fr-mb-5w">
       <Row>
