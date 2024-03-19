@@ -2,217 +2,6 @@ import './style.css';
 import { jsxs as O, jsx as m, Fragment as In } from "react/jsx-runtime";
 import x from "classnames";
 import * as vt from "react";
-<<<<<<< HEAD
-import Q, { createContext as In, useState as J, useEffect as G, useCallback as oe, useMemo as re, useContext as Ae, forwardRef as me, Children as Ot, isValidElement as $e, useId as ie, useRef as B, cloneElement as Te, Fragment as yn, useReducer as os, createElement as ir } from "react";
-import x from "classnames";
-import Bn, { flushSync as is } from "react-dom";
-const eo = In({}), Qc = ({
-  children: t,
-  routerComponent: e,
-  extendRequiredFieldsLabelsWith: n = /* @__PURE__ */ m("span", { style: { color: "var(--text-default-error)" }, children: " *" }),
-  extendOptionalFieldsLabelsWith: r = " (optionel)",
-  defaultLang: o = "fr",
-  verbose: i = !1
-}) => {
-  const [l, s] = J(window.localStorage.getItem("locale") || o), [u, a] = J(!1);
-  G(() => {
-    const b = async () => {
-      var h;
-      (h = window == null ? void 0 : window.dsfr) != null && h.isStarted || (window.dsfr = {
-        verbose: i,
-        mode: "manual"
-      }, await import("./dsfr.module.min-23ae5258.js"), await import("./utility-251e9615.js"), await import("./dsfr-4e49221c.js"), window.dsfr.start(), a(!0));
-    }, d = window.matchMedia("(prefers-color-scheme: dark)"), v = d != null && d.matches ? "dark" : "light", $ = window.localStorage.getItem("theme");
-    document.documentElement.setAttribute("data-fr-scheme", $ || v), b();
-  }, []);
-  const c = oe((b) => {
-    window.localStorage.setItem("locale", b), document.documentElement.setAttribute("lang", b), s(b);
-  }, []), f = re(() => ({
-    setLocale: c,
-    routerComponent: e,
-    locale: l,
-    extendRequiredFieldsLabelsWith: n,
-    extendOptionalFieldsLabelsWith: r
-  }), [e, c, l, n, r]);
-  return /* @__PURE__ */ m(eo.Provider, { value: f, children: u ? t : null });
-}, pt = () => Ae(eo), he = me(({
-  children: t,
-  className: e,
-  icon: n,
-  current: r,
-  iconPosition: o = "left",
-  isSimple: i = !1,
-  size: l = "md",
-  ...s
-}, u) => {
-  const { routerComponent: a } = pt();
-  return /* @__PURE__ */ m(
-    a || "a",
-    {
-      ref: u,
-      "aria-current": r || void 0,
-      className: x({
-        "fr-link": i,
-        [`fr-link-${l}`]: l !== "md",
-        [`fr-icon-${n}`]: !!n,
-        [`fr-link--icon-${o}`]: n && o
-      }, e),
-      ...s,
-      children: t
-    }
-  );
-}), ls = me, ss = ls(
-  ({ as: t, className: e, noIcon: n, color: r = "blue-france", size: o, icon: i, variant: l = "primary", ...s }, u) => {
-    const a = t === "a" ? he : t || "p", c = x(
-      "fr-badge",
-      {
-        [`fr-badge--${l}`]: l,
-        [`fr-badge--${r}`]: r,
-        [`fr-icon-${i}`]: i,
-        // Next line is a hack to oblige dsfr to display the icon because otherwise 
-        // "content: none" is applied on .fr-badge[class^="fr-icon-"]
-        "fr-badge--icon-": i,
-        "fr-badge--no-icon": n,
-        "fr-badge--sm": o === "sm"
-      },
-      e
-    );
-    return /* @__PURE__ */ m(a, { className: c, ref: u, ...s });
-  }
-);
-function fe(t, e) {
-  return Ot.toArray(t).filter((r) => $e(r) && r.type === e);
-}
-function et(t, e) {
-  return Ot.toArray(t).filter((n) => $e(n) && e.includes(n.type));
-}
-function us(t, e) {
-  return Ot.toArray(t).filter((n) => $e(n) && !e.includes(n.type));
-}
-const ed = ({
-  children: t,
-  className: e,
-  ...n
-}) => {
-  const r = ie(), o = x("fr-badges-group", e);
-  return /* @__PURE__ */ m("ul", { className: o, ...n, children: fe(t, ss).map((i, l) => /* @__PURE__ */ m("li", { children: i }, `${r}-${l}`)) });
-};
-const as = me, ut = as(
-  ({ as: t, className: e, color: n = "blue-france", icon: r, iconPosition: o = "left", size: i = "md", variant: l = "primary", children: s, ...u }, a) => {
-    const c = t === "a" ? he : t || "button", f = x(
-      "fr-btn",
-      {
-        [`fr-btn--${i}`]: i !== "md",
-        [`dfr-btn--${n}`]: !!n && n !== "blue-france",
-        "fr-btn--secondary": l === "secondary",
-        "fr-btn--tertiary": l === "tertiary",
-        "fr-btn--tertiary-no-outline": l === "text",
-        [`fr-icon-${r}`]: !!r,
-        [`fr-btn--icon-${o}`]: r && s,
-        "fr-btn--icon": r && !s
-      },
-      e
-    );
-    return /* @__PURE__ */ m(c, { className: f, ref: a, ...u, children: s });
-  }
-), td = ({
-  align: t = "left",
-  children: e,
-  className: n,
-  isEquisized: r = !1,
-  isInlineFrom: o,
-  isReversed: i = !1,
-  size: l = "md",
-  ...s
-}) => {
-  var d;
-  const u = ie(), a = (v, $) => v || $e($) && $.props.icon && $.props.children, c = fe(e, ut).reduce(a, !1), f = (d = fe(e, ut).map((v) => $e(v) && v.props.iconPosition)) == null ? void 0 : d[0], b = x("fr-btns-group", {
-    [`fr-btns-group--${l}`]: l !== "md",
-    [`fr-btns-group--${t}`]: t !== "left",
-    [`fr-btns-group--icon-${f}`]: c,
-    "fr-btns-group--inline": o === "xs",
-    [`fr-btns-group--inline-${o}`]: o && o !== "xs",
-    "fr-btns-group--inline-reverse": i,
-    "fr-btns-group--equisized": r
-  }, n);
-  return /* @__PURE__ */ m("ul", { className: b, ...s, children: fe(e, ut).map((v, $) => /* @__PURE__ */ m("li", { children: v }, `${u}-${$}`)) });
-}, cs = me, nd = cs(({
-  as: t = "div",
-  className: e,
-  fluid: n = !1,
-  fluidFrom: r = "xs",
-  ...o
-}, i) => {
-  const l = x({
-    "fr-container": !n,
-    "fr-container-fluid": n || r === "xs",
-    [`fr-container-${r}--fluid`]: !n && r !== "xs"
-  }, e);
-  return /* @__PURE__ */ m(
-    t,
-    {
-      className: l,
-      ref: i,
-      ...o
-    }
-  );
-}), rd = ({
-  gutters: t = !1,
-  horizontalAlign: e,
-  verticalAlign: n,
-  className: r,
-  ...o
-}) => {
-  const i = x("fr-grid-row", {
-    "fr-grid-row--gutters": t,
-    [`fr-grid-row--${e}`]: e,
-    [`fr-grid-row--${n}`]: n
-  }, r);
-  return /* @__PURE__ */ m("div", { className: i, ...o });
-}, od = ({
-  xs: t,
-  sm: e,
-  md: n,
-  lg: r,
-  xl: o,
-  offsetXs: i,
-  offsetSm: l,
-  offsetMd: s,
-  offsetLg: u,
-  offsetXl: a,
-  className: c,
-  ...f
-}) => {
-  const b = x("fr-col", {
-    [`fr-col-${t}`]: t,
-    [`fr-col-sm-${e}`]: e,
-    [`fr-col-md-${n}`]: n,
-    [`fr-col-lg-${r}`]: r,
-    [`fr-col-xl-${o}`]: o,
-    [`fr-col-offset-${i}`]: i,
-    [`fr-col-offset-sm-${l}`]: l,
-    [`fr-col-offset-md-${s}`]: s,
-    [`fr-col-offset-lg-${u}`]: u,
-    [`fr-col-offset-xl-${a}`]: a
-  }, c);
-  return /* @__PURE__ */ m("div", { className: b, ...f });
-}, ds = ({ href: t = "/", name: e, tagline: n, className: r, css: o = {}, ...i }) => /* @__PURE__ */ R("div", { className: x("fr-header__service", r), children: [
-  /* @__PURE__ */ m("p", { className: x("fr-header__service-title", o["fr-header__service-title"]), children: /* @__PURE__ */ m(he, { href: t, ...i, children: e }) }),
-  n && /* @__PURE__ */ m("p", { className: x("fr-header__service-tagline", o["fr-header__service-tagline"]), children: n })
-] }), fs = ({ children: t, className: e, css: n = {}, ...r }) => {
-  const o = ie(), i = r.id || o;
-  return /* @__PURE__ */ R("div", { className: x("fr-header__tools-links", e), ...r, children: [
-    /* @__PURE__ */ m("ul", { className: x("fr-btns-group", n["fr-btns-group"]), children: fe(t, ut).map((l, s) => /* @__PURE__ */ m("li", { children: l }, `${i}-${s}`)) }),
-    us(t, [ut])
-  ] });
-}, ps = ({ className: t, css: e = {}, ...n }) => /* @__PURE__ */ m("div", { className: x("fr-header__operator", t), children: /* @__PURE__ */ m("img", { className: x("fr-responsive-img", e["fr-responsive-img"]), ...n }) }), lr = ["__TYPE"];
-function ze(t, e = {}) {
-  const { include: n, exclude: r } = e;
-  if (n)
-    return Object.entries(t).reduce((i, [l, s]) => n.includes(l) ? { ...i, [l]: s } : i, {});
-  const o = r ? [...lr, ...r] : lr;
-  return Object.entries(t).reduce((i, [l, s]) => o.includes(l) ? i : { ...i, [l]: s }, {});
-=======
 import Q, { useState as Z, useEffect as W, forwardRef as me, useId as ie, useRef as I, useCallback as te, isValidElement as $e, Children as Ot, Fragment as xn, createContext as Rt, useMemo as ne, useContext as Se, useReducer as ss, createElement as ir, cloneElement as _e } from "react";
 import Bn, { flushSync as us, createPortal as as } from "react-dom";
 const cs = {
@@ -231,59 +20,12 @@ function ds(t, e, n = cs) {
       r && r.disconnect();
     };
   }, [r, t, n]);
->>>>>>> staging
 }
 function pt(t, e) {
   t && e.forEach((n) => {
     typeof n == "function" ? n(t) : n && (n.current = t);
   });
 }
-<<<<<<< HEAD
-const bs = me(({
-  className: t,
-  css: e = {},
-  buttonLabel: n,
-  isLarge: r,
-  label: o,
-  onSearch: i,
-  placeholder: l,
-  ...s
-}, u) => {
-  const a = B(null), c = ie(), f = s.id || c, b = (d) => {
-    var v;
-    return d.key === "Enter" && i((v = a.current) == null ? void 0 : v.value);
-  };
-  return /* @__PURE__ */ R(
-    "div",
-    {
-      role: "search",
-      className: x("fr-search-bar", { "fr-search-bar--lg": r }, t),
-      children: [
-        o && /* @__PURE__ */ m("label", { className: x("fr-label", e["fr-label"]), htmlFor: f, children: o }),
-        /* @__PURE__ */ m(
-          "input",
-          {
-            ref: (d) => bt(d, [u, a]),
-            className: x("fr-input", e["fr-input"]),
-            type: "search",
-            id: f,
-            onKeyDown: b,
-            placeholder: l,
-            ...ze(s)
-          }
-        ),
-        /* @__PURE__ */ m(
-          "button",
-          {
-            type: "button",
-            onClick: () => {
-              var d;
-              return i((d = a.current) == null ? void 0 : d.value);
-            },
-            className: x("fr-btn", { "fr-btn--lg": r }, e["fr-btn"]),
-            title: n,
-            children: n
-=======
 const fs = me(({
   title: t,
   titleAs: e = "h3",
@@ -317,7 +59,6 @@ const fs = me(({
             "aria-expanded": i,
             "aria-controls": u,
             children: $e(t) || typeof t == "string" ? t : typeof t == "function" ? t(c) : null
->>>>>>> staging
           }
         )
       }
@@ -367,47 +108,8 @@ const sd = ({ children: t, className: e, ...n }) => {
       ]
     }
   );
-<<<<<<< HEAD
-}), to = ({
-  children: t,
-  className: e,
-  current: n = !1,
-  css: r = {},
-  title: o,
-  ...i
-}) => {
-  const l = ie(), s = et(t, [to, he]);
-  return /* @__PURE__ */ R(Nn, { children: [
-    /* @__PURE__ */ m(
-      "button",
-      {
-        className: x("fr-nav__btn", e),
-        "aria-expanded": "false",
-        "aria-controls": l,
-        "aria-current": n || void 0,
-        ...i,
-        children: o
-      }
-    ),
-    /* @__PURE__ */ m("div", { className: x("fr-collapse", "fr-menu", r["fr-menu"]), id: l, children: /* @__PURE__ */ m("ul", { className: x("fr-menu__list", r["fr-menu__list"]), children: s.map((u, a) => /* @__PURE__ */ m("li", { className: "fr-nav__item", children: $e(u) && u.type === he ? Te(u, { className: x("fr-nav__link", u.props.className) }) : u }, `navitem-${l}-${a}`)) }) })
-  ] });
-}, ms = ({
-  children: t,
-  className: e,
-  css: n = {},
-  ...r
-}) => {
-  const o = ie(), i = r.id || o;
-  return /* @__PURE__ */ m("nav", { className: x("fr-nav", e), id: i, role: "navigation", ...r, children: /* @__PURE__ */ m("ul", { className: x("fr-nav__list", n["fr-nav__list"]), children: et(t, [to, he]).map((l, s) => $e(l) && /* @__PURE__ */ m("li", { className: x("fr-nav__item", n["fr-nav__item"]), children: l.type === he ? Te(l, { className: x("fr-nav__link", l.props.className) }) : l }, `navitem-${i}-${s}`)) }) });
-}, vs = ({ text: t, splitCharacter: e = "|" }) => {
-  const r = t.split(e).reduce((o, i, l) => l > 0 ? [...o, /* @__PURE__ */ m("br", {}, `br-${l}`), /* @__PURE__ */ m(yn, { children: i }, l)] : [/* @__PURE__ */ m(yn, { children: i }, l)], []);
-  return /* @__PURE__ */ m("div", { className: "fr-header__logo", children: /* @__PURE__ */ m("p", { className: "fr-logo", children: r }) });
-};
-function hs(t, e) {
-=======
 });
 function bs(t, e) {
->>>>>>> staging
   if (e.has(t))
     throw new TypeError("Cannot initialize the same private elements twice on an object");
 }
@@ -492,15 +194,9 @@ function hs(t) {
   let c = Se(vs), f = ne(() => r ? Array.isArray(r) ? r.flatMap((E) => Pn(c[E])) : Pn(c[r]) : [], [
     c,
     r
-<<<<<<< HEAD
-  ]), [b, d] = J(c), [v, $] = J(!1);
-  c !== b && (d(c), $(!1));
-  let h = re(() => sr(v ? [] : f), [
-=======
   ]), [b, d] = Z(c), [v, $] = Z(!1);
   c !== b && (d(c), $(!1));
   let h = ne(() => lr(v ? [] : f), [
->>>>>>> staging
     v,
     f
   ]), _ = I(nt), [w, S] = Z(nt), K = I(nt), g = () => {
@@ -508,15 +204,9 @@ function hs(t) {
       return;
     R(!1);
     let E = a || i || _.current;
-<<<<<<< HEAD
-    Jt(E, K.current) || (K.current = E, S(E));
-  }, [k, O] = J(!1);
-  return G(g), {
-=======
     Qt(E, K.current) || (K.current = E, S(E));
   }, [k, R] = Z(!1);
   return W(g), {
->>>>>>> staging
     realtimeValidation: u || h || a || i || nt,
     displayValidation: s === "native" ? u || h || w : u || h || a || i || w,
     updateValidation(E) {
@@ -524,17 +214,10 @@ function hs(t) {
     },
     resetValidation() {
       let E = nt;
-<<<<<<< HEAD
-      Jt(E, K.current) || (K.current = E, S(E)), s === "native" && O(!1), $(!0);
-    },
-    commitValidation() {
-      s === "native" && O(!0), $(!0);
-=======
       Qt(E, K.current) || (K.current = E, S(E)), s === "native" && R(!1), $(!0);
     },
     commitValidation() {
       s === "native" && R(!0), $(!0);
->>>>>>> staging
     }
   };
 }
@@ -713,11 +396,7 @@ class ys {
         ];
         for (let h of $) {
           if (h.value = b.value || e.value, h.value && this.cache.set(h.value, h), e.type && h.type !== e.type)
-<<<<<<< HEAD
-            throw new Error(`Unsupported type <${Qt(h.type)}> in <${Qt(o.type)}>. Only <${Qt(e.type)}> is supported.`);
-=======
             throw new Error(`Unsupported type <${en(h.type)}> in <${en(o.type)}>. Only <${en(e.type)}> is supported.`);
->>>>>>> staging
           c++, yield h;
         }
         f = a.next($);
@@ -864,21 +543,12 @@ function uo(t) {
     t.selectedKeys
   ]), b = ne(() => cr(t.defaultSelectedKeys, new we()), [
     t.defaultSelectedKeys
-<<<<<<< HEAD
-  ]), [d, v] = tt(f, b, t.onSelectionChange), $ = re(() => t.disabledKeys ? new Set(t.disabledKeys) : /* @__PURE__ */ new Set(), [
-    t.disabledKeys
-  ]), [h, _] = J(o);
-  o === "replace" && h === "toggle" && typeof d == "object" && d.size === 0 && _("replace");
-  let w = B(o);
-  return G(() => {
-=======
   ]), [d, v] = tt(f, b, t.onSelectionChange), $ = ne(() => t.disabledKeys ? new Set(t.disabledKeys) : /* @__PURE__ */ new Set(), [
     t.disabledKeys
   ]), [h, _] = Z(o);
   o === "replace" && h === "toggle" && typeof d == "object" && d.size === 0 && _("replace");
   let w = I(o);
   return W(() => {
->>>>>>> staging
     o !== w.current && (_(o), w.current = o);
   }, [
     o
@@ -1344,17 +1014,10 @@ function ws(t) {
     onSelectionChange: v,
     items: ($ = t.items) !== null && $ !== void 0 ? $ : t.defaultItems
   });
-<<<<<<< HEAD
-  var k, O;
-  let [p, A] = tt(t.inputValue, (O = (k = t.defaultInputValue) !== null && k !== void 0 ? k : (e = h.getItem(w)) === null || e === void 0 ? void 0 : e.textValue) !== null && O !== void 0 ? O : "", t.onInputChange), E = h, P = re(() => (
-    // No default filter if items are controlled.
-    t.items != null || !r ? h : As(h, p, r)
-=======
   var k, R;
   let [p, A] = tt(t.inputValue, (R = (k = t.defaultInputValue) !== null && k !== void 0 ? k : (e = h.getItem(w)) === null || e === void 0 ? void 0 : e.textValue) !== null && R !== void 0 ? R : "", t.onInputChange), E = h, P = ne(() => (
     // No default filter if items are controlled.
     t.items != null || !r ? h : Ss(h, p, r)
->>>>>>> staging
   ), [
     h,
     p,
@@ -1373,21 +1036,13 @@ function ws(t) {
   }, ue = (ee = null, ce) => {
     let ve = ce === "manual" || ce === "focus" && o === "focus";
     !(i || P.size > 0 || ve && E.size > 0 || t.items) && !V.isOpen || (ve && !V.isOpen && t.items === void 0 && a(!0), V.isOpen || (T.current = ce), y(ee));
-<<<<<<< HEAD
-  }, ae = oe(() => {
-=======
   }, ae = te(() => {
->>>>>>> staging
     C(u ? E : P);
   }, [
     u,
     E,
     P
-<<<<<<< HEAD
-  ]), y = oe((ee = null) => {
-=======
   ]), y = te((ee = null) => {
->>>>>>> staging
     V.isOpen && ae(), d(ee), V.toggle();
   }, [
     V,
@@ -1405,13 +1060,8 @@ function ws(t) {
   var Y, U;
   let L = I((U = (Y = t.selectedKey) !== null && Y !== void 0 ? Y : t.defaultSelectedKey) !== null && U !== void 0 ? U : null);
   var N;
-<<<<<<< HEAD
-  let X = B((N = (n = h.getItem(w)) === null || n === void 0 ? void 0 : n.textValue) !== null && N !== void 0 ? N : "");
-  G(() => {
-=======
   let X = I((N = (n = h.getItem(w)) === null || n === void 0 ? void 0 : n.textValue) !== null && N !== void 0 ? N : "");
   W(() => {
->>>>>>> staging
     var ee;
     c && (P.size > 0 || i) && !V.isOpen && p !== z && o !== "manual" && F(null, "input"), !u && !i && V.isOpen && P.size === 0 && D(), w != null && w !== L.current && D(), p !== z && (_.setFocusedKey(null), a(!1), p === "" && (t.inputValue === void 0 || t.selectedKey === void 0) && S(null)), w !== L.current && (t.inputValue === void 0 || t.selectedKey === void 0) ? H() : z !== p && j(p);
     var ce;
@@ -2727,11 +2377,7 @@ function qt(t) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     ref: f,
     ...b
-<<<<<<< HEAD
-  } = Eu(t), [d, v] = J(!1), $ = B({
-=======
   } = yu(t), [d, v] = Z(!1), $ = I({
->>>>>>> staging
     isPressed: !1,
     ignoreEmulatedMouseEvents: !1,
     ignoreClickAfterPress: !1,
@@ -2781,22 +2427,14 @@ function qt(t) {
     A.isPressed && A.target && (A.isOverTarget && A.pointerType != null && S(Ke(A.target, p), A.pointerType, !1), A.isPressed = !1, A.isOverTarget = !1, A.activePointerId = null, A.pointerType = null, _(), c || gt(A.target));
   }), k = xe((p) => {
     a && g(p);
-<<<<<<< HEAD
-  }), O = re(() => {
-=======
   }), R = ne(() => {
->>>>>>> staging
     let p = $.current, A = {
       onKeyDown(P) {
         if (on(P.nativeEvent, P.currentTarget) && P.currentTarget.contains(P.target)) {
           var B;
           xr(P.target, P.key) && P.preventDefault();
           let C = !0;
-<<<<<<< HEAD
-          !p.isPressed && !P.repeat && (p.target = P.currentTarget, p.isPressed = !0, C = w(P, "keyboard"), h(pe(P.currentTarget), "keyup", E, !1)), C && P.stopPropagation(), P.metaKey && Ie() && ((I = p.metaKeyEvents) === null || I === void 0 || I.set(P.key, P.nativeEvent));
-=======
           !p.isPressed && !P.repeat && (p.target = P.currentTarget, p.isPressed = !0, C = w(P, "keyboard"), h(pe(P.currentTarget), "keyup", E, !1)), C && P.stopPropagation(), P.metaKey && Ie() && ((B = p.metaKeyEvents) === null || B === void 0 || B.set(P.key, P.nativeEvent));
->>>>>>> staging
         } else
           P.key === "Meta" && (p.metaKeyEvents = /* @__PURE__ */ new Map());
       },
@@ -2839,11 +2477,7 @@ function qt(t) {
         }
         ln(T.currentTarget) && T.preventDefault(), p.pointerType = T.pointerType;
         let q = !0;
-<<<<<<< HEAD
-        p.isPressed || (p.isPressed = !0, p.isOverTarget = !0, p.activePointerId = T.pointerId, p.target = T.currentTarget, !l && !u && Fe(T.currentTarget), c || $r(p.target), q = w(T, p.pointerType), h(pe(T.currentTarget), "pointermove", P, !1), h(pe(T.currentTarget), "pointerup", I, !1), h(pe(T.currentTarget), "pointercancel", C, !1)), q && T.stopPropagation();
-=======
         p.isPressed || (p.isPressed = !0, p.isOverTarget = !0, p.activePointerId = T.pointerId, p.target = T.currentTarget, !l && !u && Fe(T.currentTarget), c || gr(p.target), q = w(T, p.pointerType), h(pe(T.currentTarget), "pointermove", P, !1), h(pe(T.currentTarget), "pointerup", B, !1), h(pe(T.currentTarget), "pointercancel", C, !1)), q && T.stopPropagation();
->>>>>>> staging
       }, A.onMouseDown = (T) => {
         T.currentTarget.contains(T.target) && T.button === 0 && (ln(T.currentTarget) && T.preventDefault(), T.stopPropagation());
       }, A.onPointerUp = (T) => {
@@ -2867,11 +2501,7 @@ function qt(t) {
           C.stopPropagation();
           return;
         }
-<<<<<<< HEAD
-        p.isPressed = !0, p.isOverTarget = !0, p.target = C.currentTarget, p.pointerType = Sn(C.nativeEvent) ? "virtual" : "mouse", !l && !u && Fe(C.currentTarget), w(C, p.pointerType) && C.stopPropagation(), h(pe(C.currentTarget), "mouseup", P, !1);
-=======
         p.isPressed = !0, p.isOverTarget = !0, p.target = C.currentTarget, p.pointerType = Tn(C.nativeEvent) ? "virtual" : "mouse", !l && !u && Fe(C.currentTarget), w(C, p.pointerType) && C.stopPropagation(), h(pe(C.currentTarget), "mouseup", P, !1);
->>>>>>> staging
       }, A.onMouseEnter = (C) => {
         if (!C.currentTarget.contains(C.target))
           return;
@@ -2900,11 +2530,7 @@ function qt(t) {
         let T = xu(C.nativeEvent);
         if (!T)
           return;
-<<<<<<< HEAD
-        p.activePointerId = T.identifier, p.ignoreEmulatedMouseEvents = !0, p.isOverTarget = !0, p.isPressed = !0, p.target = C.currentTarget, p.pointerType = "touch", !l && !u && Fe(C.currentTarget), c || $r(p.target), w(C, p.pointerType) && C.stopPropagation(), h(at(C.currentTarget), "scroll", I, !0);
-=======
         p.activePointerId = T.identifier, p.ignoreEmulatedMouseEvents = !0, p.isOverTarget = !0, p.isPressed = !0, p.target = C.currentTarget, p.pointerType = "touch", !l && !u && Fe(C.currentTarget), c || gr(p.target), w(C, p.pointerType) && C.stopPropagation(), h(at(C.currentTarget), "scroll", B, !0);
->>>>>>> staging
       }, A.onTouchMove = (C) => {
         if (!C.currentTarget.contains(C.target))
           return;
@@ -3796,11 +3422,7 @@ function Xu(t, e, n) {
           return;
         let u = s.nodeToRestore;
         if (e && u && // eslint-disable-next-line react-hooks/exhaustive-deps
-<<<<<<< HEAD
-        (ge(o.activeElement, t.current) || o.activeElement === o.body && Ju(t))) {
-=======
         (ge(o.activeElement, t.current) || o.activeElement === o.body && Yu(t))) {
->>>>>>> staging
           let a = be.clone();
           requestAnimationFrame(() => {
             if (o.activeElement === o.body) {
@@ -5227,21 +4849,12 @@ function Lr(t) {
     crossSize: l
   }, Ct[t];
 }
-<<<<<<< HEAD
-function cn(t, e, n, r, o, i, l, s, u, a) {
-  let { placement: c, crossPlacement: f, axis: b, crossAxis: d, size: v, crossSize: $ } = r, h = {};
-  h[d] = t[d], f === "center" ? h[d] += (t[$] - n[$]) / 2 : f !== d && (h[d] += t[$] - n[$]), h[d] += i;
-  const _ = t[d] - n[$] + u + a, w = t[d] + t[$] - u - a;
-  if (h[d] = xn(h[d], _, w), c === b) {
-    const S = s ? l[v] : e[ga[v]];
-=======
 function dn(t, e, n, r, o, i, l, s, u, a) {
   let { placement: c, crossPlacement: f, axis: b, crossAxis: d, size: v, crossSize: $ } = r, h = {};
   h[d] = t[d], f === "center" ? h[d] += (t[$] - n[$]) / 2 : f !== d && (h[d] += t[$] - n[$]), h[d] += i;
   const _ = t[d] - n[$] + u + a, w = t[d] + t[$] - u - a;
   if (h[d] = Cn(h[d], _, w), c === b) {
     const S = s ? l[v] : e[ma[v]];
->>>>>>> staging
     h[It[b]] = Math.floor(S - t[b] + o);
   } else
     h[b] = Math.floor(t[b] + t[v] + o);
@@ -5254,35 +4867,19 @@ function Mr(t, e, n, r, o, i) {
   let { placement: l, axis: s, size: u } = i;
   return l === s ? Math.max(0, n[s] - t[s] - t.scroll[s] + e[s] - r[s] - r[It[s]] - o) : Math.max(0, t[u] + t[s] + t.scroll[s] - e[s] - n[s] - n[u] - r[s] - r[It[s]] - o);
 }
-<<<<<<< HEAD
-function Ca(t, e, n, r, o, i, l, s, u, a, c, f, b, d, v, $) {
-  let h = Mr(t), { size: _, crossAxis: w, crossSize: S, placement: K, crossPlacement: g } = h, k = cn(e, s, n, h, c, f, a, b, v, $), O = c, p = kr(s, a, e, o, i + c, h);
-  if (l && r[_] > p) {
-    let ue = Mr(`${It[K]} ${g}`), ae = cn(e, s, n, ue, c, f, a, b, v, $);
-    kr(s, a, e, o, i + c, ue) > p && (h = ue, k = ae, O = c);
-=======
 function $a(t, e, n, r, o, i, l, s, u, a, c, f, b, d, v, $) {
   let h = Lr(t), { size: _, crossAxis: w, crossSize: S, placement: K, crossPlacement: g } = h, k = dn(e, s, n, h, c, f, a, b, v, $), R = c, p = Mr(s, a, e, o, i + c, h);
   if (l && r[_] > p) {
     let ue = Lr(`${It[K]} ${g}`), ae = dn(e, s, n, ue, c, f, a, b, v, $);
     Mr(s, a, e, o, i + c, ue) > p && (h = ue, k = ae, R = c);
->>>>>>> staging
   }
   let A = Fr(w, k[w], n[S], s, u, i);
   k[w] += A;
-<<<<<<< HEAD
-  let E = xa(k, s, a, e, o, i);
-  d && d < E && (E = d), n.height = Math.min(n.height, E), k = cn(e, s, n, h, O, f, a, b, v, $), A = Lr(w, k[w], n[S], s, u, i), k[w] += A;
-  let P = {}, I = e[w] + 0.5 * e[S] - n[w];
-  const C = v / 2 + $, T = n[S] - v / 2 - $, q = e[w] - n[w] + v / 2, V = e[w] + e[S] - n[w] - v / 2, F = xn(I, q, V);
-  return P[w] = xn(F, C, T), {
-=======
   let E = ga(k, s, a, e, o, i);
   d && d < E && (E = d), n.height = Math.min(n.height, E), k = dn(e, s, n, h, R, f, a, b, v, $), A = Fr(w, k[w], n[S], s, u, i), k[w] += A;
   let P = {}, B = e[w] + 0.5 * e[S] - n[w];
   const C = v / 2 + $, T = n[S] - v / 2 - $, q = e[w] - n[w] + v / 2, V = e[w] + e[S] - n[w] - v / 2, F = Cn(B, q, V);
   return P[w] = Cn(F, C, T), {
->>>>>>> staging
     position: k,
     maxHeight: E,
     arrowOffsetLeft: P.left,
@@ -5290,30 +4887,18 @@ function $a(t, e, n, r, o, i, l, s, u, a, c, f, b, d, v, $) {
     placement: h.placement
   };
 }
-<<<<<<< HEAD
-function Ea(t) {
-  let { placement: e, targetNode: n, overlayNode: r, scrollNode: o, padding: i, shouldFlip: l, boundaryElement: s, offset: u, crossOffset: a, maxHeight: c, arrowSize: f = 0, arrowBoundaryOffset: b = 0 } = t, d = r instanceof HTMLElement ? Pa(r) : document.documentElement, v = d === document.documentElement;
-  const $ = window.getComputedStyle(d).position;
-  let h = !!$ && $ !== "static", _ = v ? Je(n) : Nr(n, d);
-=======
 function ya(t) {
   let { placement: e, targetNode: n, overlayNode: r, scrollNode: o, padding: i, shouldFlip: l, boundaryElement: s, offset: u, crossOffset: a, maxHeight: c, arrowSize: f = 0, arrowBoundaryOffset: b = 0 } = t, d = r instanceof HTMLElement ? xa(r) : document.documentElement, v = d === document.documentElement;
   const $ = window.getComputedStyle(d).position;
   let h = !!$ && $ !== "static", _ = v ? Je(n) : kr(n, d);
->>>>>>> staging
   if (!v) {
     let { marginTop: p, marginLeft: A } = window.getComputedStyle(n);
     _.top += parseInt(p, 10) || 0, _.left += parseInt(A, 10) || 0;
   }
   let w = Je(r), S = ha(r);
   w.width += S.left + S.right, w.height += S.top + S.bottom;
-<<<<<<< HEAD
-  let K = $a(o), g = Fr(s), k = Fr(d), O = s.tagName === "BODY" ? Je(d) : Nr(d, s);
-  return Ca(e, _, w, K, S, i, l, g, k, O, u, a, h, c, f, b);
-=======
   let K = va(o), g = Dr(s), k = Dr(d), R = s.tagName === "BODY" ? Je(d) : kr(d, s);
   return $a(e, _, w, K, S, i, l, g, k, R, u, a, h, c, f, b);
->>>>>>> staging
 }
 function Je(t) {
   let { top: e, left: n, width: r, height: o } = t.getBoundingClientRect(), { scrollTop: i, scrollLeft: l, clientTop: s, clientLeft: u } = document.documentElement;
@@ -5377,13 +4962,8 @@ function Ca(t) {
   ]);
 }
 let Ee = typeof document < "u" && window.visualViewport;
-<<<<<<< HEAD
-function Sa(t) {
-  let { direction: e } = Xt(), { arrowSize: n = 0, targetRef: r, overlayRef: o, scrollRef: i = o, placement: l = "bottom", containerPadding: s = 12, shouldFlip: u = !0, boundaryElement: a = typeof document < "u" ? document.body : null, offset: c = 0, crossOffset: f = 0, shouldUpdatePosition: b = !0, isOpen: d = !0, onClose: v, maxHeight: $, arrowBoundaryOffset: h = 0 } = t, [_, w] = J({
-=======
 function Ea(t) {
   let { direction: e } = Zt(), { arrowSize: n = 0, targetRef: r, overlayRef: o, scrollRef: i = o, placement: l = "bottom", containerPadding: s = 12, shouldFlip: u = !0, boundaryElement: a = typeof document < "u" ? document.body : null, offset: c = 0, crossOffset: f = 0, shouldUpdatePosition: b = !0, isOpen: d = !0, onClose: v, maxHeight: $, arrowBoundaryOffset: h = 0 } = t, [_, w] = Z({
->>>>>>> staging
     position: {},
     arrowOffsetLeft: void 0,
     arrowOffsetTop: void 0,
@@ -5839,22 +5419,13 @@ function Na(t) {
   return t.length === 1 || !/^[A-Z]/i.test(t) ? t : "";
 }
 function il(t) {
-<<<<<<< HEAD
-  let { selectionManager: e, keyboardDelegate: n, ref: r, autoFocus: o = !1, shouldFocusWrap: i = !1, disallowEmptySelection: l = !1, disallowSelectAll: s = !1, selectOnFocus: u = e.selectionBehavior === "replace", disallowTypeAhead: a = !1, shouldUseVirtualFocus: c, allowsTabNavigation: f = !1, isVirtualized: b, scrollRef: d = r, linkBehavior: v = "action" } = t, { direction: $ } = Xt(), h = Wt(), _ = (E) => {
-=======
   let { selectionManager: e, keyboardDelegate: n, ref: r, autoFocus: o = !1, shouldFocusWrap: i = !1, disallowEmptySelection: l = !1, disallowSelectAll: s = !1, selectOnFocus: u = e.selectionBehavior === "replace", disallowTypeAhead: a = !1, shouldUseVirtualFocus: c, allowsTabNavigation: f = !1, isVirtualized: b, scrollRef: d = r, linkBehavior: v = "action" } = t, { direction: $ } = Zt(), h = Gt(), _ = (E) => {
->>>>>>> staging
     if (E.altKey && E.key === "Tab" && E.preventDefault(), !r.current.contains(E.target))
       return;
     const P = (y, D) => {
       if (y != null) {
-<<<<<<< HEAD
-        if (e.isLink(y) && v === "selection" && u && !Mn(E)) {
-          is(() => {
-=======
         if (e.isLink(y) && v === "selection" && u && !kn(E)) {
           us(() => {
->>>>>>> staging
             e.setFocusedKey(y, D);
           });
           let z = d.current.querySelector(`[data-key="${CSS.escape(y.toString())}"]`);
@@ -5863,11 +5434,7 @@ function il(t) {
         }
         if (e.setFocusedKey(y, D), e.isLink(y) && v === "override")
           return;
-<<<<<<< HEAD
-        E.shiftKey && e.selectionMode === "multiple" ? e.extendSelection(y) : u && !Mn(E) && e.replaceSelection(y);
-=======
         E.shiftKey && e.selectionMode === "multiple" ? e.extendSelection(y) : u && !kn(E) && e.replaceSelection(y);
->>>>>>> staging
       }
     };
     switch (E.key) {
@@ -5875,11 +5442,7 @@ function il(t) {
         if (n.getKeyBelow) {
           var B, C;
           E.preventDefault();
-<<<<<<< HEAD
-          let y = e.focusedKey != null ? n.getKeyBelow(e.focusedKey) : (I = n.getFirstKey) === null || I === void 0 ? void 0 : I.call(n);
-=======
           let y = e.focusedKey != null ? n.getKeyBelow(e.focusedKey) : (B = n.getFirstKey) === null || B === void 0 ? void 0 : B.call(n);
->>>>>>> staging
           y == null && i && (y = (C = n.getFirstKey) === null || C === void 0 ? void 0 : C.call(n, e.focusedKey)), P(y);
         }
         break;
@@ -6080,11 +5643,7 @@ function ll(t) {
   } : s && (d.onMouseDown = (F) => {
     F.preventDefault();
   });
-<<<<<<< HEAD
-  let v = e.isLink(n) && c === "override", $ = e.isLink(n) && c !== "selection" && c !== "none", h = !s && e.canSelectItem(n) && !v, _ = (u || $) && !s, w = _ && (e.selectionBehavior === "replace" ? !h : !h || e.isEmpty), S = _ && h && e.selectionBehavior === "replace", K = w || S, g = B(null), k = K && h, O = B(!1), p = B(!1), A = (F) => {
-=======
   let v = e.isLink(n) && c === "override", $ = e.isLink(n) && c !== "selection" && c !== "none", h = !s && e.canSelectItem(n) && !v, _ = (u || $) && !s, w = _ && (e.selectionBehavior === "replace" ? !h : !h || e.isEmpty), S = _ && h && e.selectionBehavior === "replace", K = w || S, g = I(null), k = K && h, R = I(!1), p = I(!1), A = (F) => {
->>>>>>> staging
     u && u(), $ && f.open(r.current, F);
   }, E = {};
   o ? (E.onPressStart = (F) => {
@@ -6099,15 +5658,9 @@ function ll(t) {
     } else
       F.pointerType !== "keyboard" && h && b(F);
   }) : (E.onPressStart = (F) => {
-<<<<<<< HEAD
-    g.current = F.pointerType, O.current = k, p.current = w, h && (F.pointerType === "mouse" && !w || F.pointerType === "keyboard" && (!_ || zr())) && b(F);
-  }, E.onPress = (F) => {
-    (F.pointerType === "touch" || F.pointerType === "pen" || F.pointerType === "virtual" || F.pointerType === "keyboard" && K && Vr() || F.pointerType === "mouse" && p.current) && (K ? A(F) : h && b(F));
-=======
     g.current = F.pointerType, R.current = k, p.current = w, h && (F.pointerType === "mouse" && !w || F.pointerType === "keyboard" && (!_ || Vr())) && b(F);
   }, E.onPress = (F) => {
     (F.pointerType === "touch" || F.pointerType === "pen" || F.pointerType === "virtual" || F.pointerType === "keyboard" && K && Rr() || F.pointerType === "mouse" && p.current) && (K ? A(F) : h && b(F));
->>>>>>> staging
   }), d["data-key"] = n, E.preventFocusOnPress = i;
   let { pressProps: P, isPressed: B } = qt(E), C = S ? (F) => {
     g.current === "mouse" && (F.stopPropagation(), F.preventDefault(), A(F));
@@ -6716,17 +6269,10 @@ function ja(t, e, n) {
   e.selectionManager.selectionMode !== "none" && !g && (ae["aria-checked"] = A);
   let y = e.collection.getItem(o);
   l && (ae["aria-posinset"] = y == null ? void 0 : y.index, ae["aria-setsize"] = Rn(e.collection));
-<<<<<<< HEAD
-  let D = (Z) => {
-    Z.pointerType === "keyboard" && T(Z), u == null || u(Z);
-  }, z = (Z) => {
-    Z.pointerType !== "keyboard" && (T(Z), !g && P && (i ?? (e.selectionManager.selectionMode !== "multiple" || e.selectionManager.isLink(o))) && P()), a == null || a(Z);
-=======
   let D = (J) => {
     J.pointerType === "keyboard" && T(J), u == null || u(J);
   }, z = (J) => {
     J.pointerType !== "keyboard" && (T(J), !g && P && (i ?? (e.selectionManager.selectionMode !== "multiple" || e.selectionManager.isLink(o))) && P()), a == null || a(J);
->>>>>>> staging
   }, { itemProps: j, isFocused: H } = ll({
     selectionManager: e.selectionManager,
     key: o,
@@ -6766,11 +6312,7 @@ function ja(t, e, n) {
           !R && i !== !1 && !g && P && P();
           break;
         default:
-<<<<<<< HEAD
-          g || Z.continuePropagation(), h == null || h(Z);
-=======
           g || J.continuePropagation(), h == null || h(J);
->>>>>>> staging
           break;
       }
     },
@@ -6779,11 +6321,7 @@ function ja(t, e, n) {
     onBlur: K,
     onFocus: w,
     onFocusChange: S
-<<<<<<< HEAD
-  }), W = je(y.props, {
-=======
   }), G = ze(y.props, {
->>>>>>> staging
     isLink: !!(!(y == null || (r = y.props) === null || r === void 0) && r.href)
   });
   return delete G.id, {
@@ -6962,11 +6500,7 @@ function Ga(t, e) {
     ref: o,
     // Prevent item scroll behavior from being applied here, should be handled in the user's Popover + ListBox component
     isVirtualized: !0
-<<<<<<< HEAD
-  }), $ = Wt(), h = (L) => {
-=======
   }), $ = Gt(), h = (L) => {
->>>>>>> staging
     switch (L.key) {
       case "Enter":
       case "Tab":
@@ -7033,17 +6567,10 @@ function Ga(t, e) {
   var F;
   let ue = (F = V == null ? void 0 : V.parentKey) !== null && F !== void 0 ? F : null;
   var ae;
-<<<<<<< HEAD
-  let y = (ae = e.selectionManager.focusedKey) !== null && ae !== void 0 ? ae : null, D = B(ue), z = B(y);
-  G(() => {
-    if (wt() && V != null && y !== z.current) {
-      let L = e.selectionManager.isSelected(y), N = ue != null ? e.collection.getItem(ue) : null, X = (N == null ? void 0 : N["aria-label"]) || (typeof (N == null ? void 0 : N.rendered) == "string" ? N.rendered : "") || "", W = c.format("focusAnnouncement", {
-=======
   let y = (ae = e.selectionManager.focusedKey) !== null && ae !== void 0 ? ae : null, D = I(ue), z = I(y);
   W(() => {
     if (wt() && V != null && y !== z.current) {
       let L = e.selectionManager.isSelected(y), N = ue != null ? e.collection.getItem(ue) : null, X = (N == null ? void 0 : N["aria-label"]) || (typeof (N == null ? void 0 : N.rendered) == "string" ? N.rendered : "") || "", G = c.format("focusAnnouncement", {
->>>>>>> staging
         isGroupChange: N && ue !== D.current,
         groupTitle: X,
         groupCount: N ? [
@@ -7338,12 +6865,6 @@ const Za = "_focused_1af8e_1", Ja = "_listbox_1af8e_10", Qa = "_content_1af8e_89
   "listbox--info": "_listbox--info_1af8e_453",
   "listbox-item--error": "_listbox-item--error_1af8e_461",
   "listbox--error": "_listbox--error_1af8e_469"
-<<<<<<< HEAD
-};
-function Gl({ item: t, state: e }) {
-  const n = B(null), { optionProps: r, descriptionProps: o, labelProps: i, isFocused: l, isFocusVisible: s } = za({ key: t.key }, e, n), { description: u, startContent: a, endContent: c, color: f, showDivider: b, href: d, className: v } = t.props || {};
-  return /* @__PURE__ */ R(
-=======
 }, Gl = Rt({}), cd = ({
   children: t,
   routerComponent: e,
@@ -7403,7 +6924,6 @@ function Gl({ item: t, state: e }) {
 function ql({ item: t, state: e }) {
   const n = I(null), { optionProps: r, descriptionProps: o, labelProps: i, isFocused: l, isFocusVisible: s } = Oa({ key: t.key }, e, n), { description: u, startContent: a, endContent: c, color: f, showDivider: b, href: d, className: v } = t.props || {};
   return /* @__PURE__ */ O(
->>>>>>> staging
     d ? he : "li",
     {
       ...r,
@@ -7458,11 +6978,7 @@ function rc({ section: t, state: e }) {
           }
         ),
         /* @__PURE__ */ m(u, { ...o, className: x(Ce["listbox-section-list"], s.list), children: [...t.childNodes].map((a) => /* @__PURE__ */ m(
-<<<<<<< HEAD
-          Gl,
-=======
           ql,
->>>>>>> staging
           {
             item: a,
             state: e
@@ -7475,13 +6991,8 @@ function rc({ section: t, state: e }) {
 }
 function Qn(t) {
   var v, $;
-<<<<<<< HEAD
-  const e = B(null), { listBoxRef: n = e, state: r, className: o, css: i = {}, color: l, topContent: s, bottomContent: u, ...a } = t, { listBoxProps: c } = Va(a, r, n), { isFocusVisible: f } = qn(), b = [...r.collection].find((h) => h.props.href) ? "div" : "ul", d = (($ = (v = t == null ? void 0 : t.triggerRef) == null ? void 0 : v.current) == null ? void 0 : $.offsetWidth) || 0;
-  return /* @__PURE__ */ R("div", { className: x(Ce.listbox, o, i.base), style: { minWidth: d || "auto", maxWidth: d > 150 ? d : "auto" }, children: [
-=======
   const e = I(null), { listBoxRef: n = e, state: r, className: o, css: i = {}, color: l, topContent: s, bottomContent: u, ...a } = t, { listBoxProps: c } = Ba(a, r, n), { isFocusVisible: f } = qn(), b = [...r.collection].find((h) => h.props.href) ? "div" : "ul", d = (($ = (v = t == null ? void 0 : t.triggerRef) == null ? void 0 : v.current) == null ? void 0 : $.offsetWidth) || 0;
   return /* @__PURE__ */ O("div", { className: x(Ce.listbox, o, i.base), style: { minWidth: d || "auto", maxWidth: d > 150 ? d : "auto" }, children: [
->>>>>>> staging
     /* @__PURE__ */ m("span", { className: x(Ce["listbox-top"], i.top), children: s && s }),
     /* @__PURE__ */ m(
       b,
@@ -7551,11 +7062,7 @@ function ac(t) {
     },
     n
   );
-<<<<<<< HEAD
-  return /* @__PURE__ */ R("form", { onSubmit: () => a == null ? void 0 : a((t == null ? void 0 : t.inputValue) || ""), ref: l, className: x("fr-search-bar", { "fr-search-bar--lg": s === "lg" }), role: "search", children: [
-=======
   return /* @__PURE__ */ O("form", { onSubmit: () => a == null ? void 0 : a((t == null ? void 0 : t.inputValue) || ""), ref: l, className: x("fr-search-bar", { "fr-search-bar--lg": s === "lg" }), role: "search", children: [
->>>>>>> staging
     /* @__PURE__ */ m(
       "input",
       {
@@ -7565,13 +7072,8 @@ function ac(t) {
         className: "fr-input"
       }
     ),
-<<<<<<< HEAD
-    /* @__PURE__ */ R("button", { type: "submit", style: { position: "relative" }, className: x("fr-btn", { "fr-btn--lg": s === "lg" }), children: [
-      /* @__PURE__ */ m("div", { style: { position: "absolute", left: "-40px" }, children: t.loadingState === "loading" && /* @__PURE__ */ m(dc, {}) }),
-=======
     /* @__PURE__ */ O("button", { type: "submit", style: { position: "relative" }, className: x("fr-btn", { "fr-btn--lg": s === "lg" }), children: [
       /* @__PURE__ */ m("div", { style: { position: "absolute", left: "-40px" }, children: t.loadingState === "loading" && /* @__PURE__ */ m(uc, {}) }),
->>>>>>> staging
       "Rechercher"
     ] }),
     n.isOpen && /* @__PURE__ */ m(
@@ -7598,288 +7100,6 @@ function ac(t) {
     )
   ] });
 }
-<<<<<<< HEAD
-const ld = Rt, sd = ({ children: t, className: e, css: n = {}, ...r }) => {
-  var $, h, _, w;
-  const o = ie(), i = ie(), l = ie(), s = ie(), u = ($ = fe(t, ds)) == null ? void 0 : $[0], a = (h = fe(t, fs)) == null ? void 0 : h[0], c = (_ = et(t, [bs, fc])) == null ? void 0 : _[0], f = (w = fe(t, ms)) == null ? void 0 : w[0], b = fe(t, vs), d = fe(t, ps), v = $e(c) ? c.props.title : "Rechercher";
-  return /* @__PURE__ */ R("header", { role: "banner", className: x("fr-header", e), ...r, children: [
-    /* @__PURE__ */ m("div", { className: x("fr-header__body", n["fr-header__body"]), children: /* @__PURE__ */ m("div", { className: "fr-container", children: /* @__PURE__ */ R("div", { className: x("fr-header__body-row", n["fr-header__body-row"]), children: [
-      /* @__PURE__ */ R("div", { className: x("fr-header__brand fr-enlarge-link", n["fr-header__brand"]), children: [
-        /* @__PURE__ */ R("div", { className: x("fr-header__brand-top", n["fr-header__brand-top"]), children: [
-          b && b,
-          d && d,
-          (a || c) && /* @__PURE__ */ R("div", { className: x("fr-header__navbar", n["fr-header__navbar"]), children: [
-            c && /* @__PURE__ */ m("button", { className: x("fr-btn--search fr-btn", n["fr-btn--search"]), "data-fr-opened": "false", "aria-controls": i, id: o, title: v, children: v }),
-            a && /* @__PURE__ */ m("button", { className: x("fr-btn--menu fr-btn", n["fr-btn--menu"]), "data-fr-opened": "false", "aria-controls": l, "aria-haspopup": "menu", id: s, title: "Menu", children: "Menu" })
-          ] })
-        ] }),
-        u && u
-      ] }),
-      /* @__PURE__ */ R("div", { className: x("fr-header__tools", n["fr-header__tools"]), children: [
-        a,
-        c && /* @__PURE__ */ m("div", { className: x("fr-header__search fr-modal", n["fr-header__search"]), id: i, children: /* @__PURE__ */ R("div", { className: "fr-container fr-container-lg--fluid", children: [
-          /* @__PURE__ */ m("button", { className: "fr-btn--close fr-btn", "aria-controls": i, title: "Fermer", children: "Fermer" }),
-          c
-        ] }) })
-      ] })
-    ] }) }) }),
-    /* @__PURE__ */ m("div", { className: x("fr-header__menu fr-modal", n["fr-header__menu"]), id: l, "aria-labelledby": s, children: /* @__PURE__ */ R("div", { className: "fr-container", children: [
-      /* @__PURE__ */ m("button", { className: "fr-btn--close fr-btn", "aria-controls": l, title: "Fermer", children: "Fermer" }),
-      /* @__PURE__ */ m("div", { className: x("fr-header__menu-links", n["fr-header__menu-links"]) }),
-      f && f
-    ] }) })
-  ] });
-};
-const tr = me, nr = ({ className: t, color: e, icon: n, iconPosition: r, size: o }) => x("fr-tag", t, {
-  "fr-tag--sm": o === "sm",
-  [`fr-icon-${n}`]: n,
-  [`fr-tag--icon-${r}`]: n && r,
-  [`fr-tag--${e}`]: e
-}), pc = tr(({
-  as: t,
-  className: e,
-  color: n,
-  icon: r,
-  iconPosition: o = "right",
-  size: i,
-  ...l
-}, s) => {
-  const u = nr({ className: e, color: n, icon: r, iconPosition: o, size: i });
-  return /* @__PURE__ */ m(
-    t === "a" ? he : t || "p",
-    {
-      ref: s,
-      className: u,
-      ...l
-    }
-  );
-}), bc = tr(({
-  as: t,
-  className: e,
-  color: n,
-  icon: r,
-  iconPosition: o = "left",
-  selected: i,
-  size: l,
-  ...s
-}, u) => {
-  const a = nr({ className: e, color: n, icon: r, iconPosition: o, size: l });
-  return /* @__PURE__ */ m(
-    t === "a" ? he : t || "button",
-    {
-      "data-fr-js-disable": "true",
-      ref: u,
-      className: a,
-      "aria-pressed": i,
-      ...s
-    }
-  );
-}), mc = tr(({
-  as: t,
-  className: e,
-  color: n,
-  icon: r,
-  iconPosition: o = "left",
-  size: i,
-  ...l
-}, s) => {
-  const u = x("fr-tag--dismiss", nr({ className: e, color: n, icon: r, iconPosition: o, size: i }));
-  return /* @__PURE__ */ m(
-    t === "a" ? he : t || "button",
-    {
-      ref: s,
-      className: u,
-      ...l
-    }
-  );
-}), ud = ({
-  className: t,
-  children: e,
-  ...n
-}) => {
-  const r = ie(), o = x("fr-tags-group", t);
-  return /* @__PURE__ */ m("ul", { className: o, ...ze(n), children: et(e, [pc, bc, mc]).map((i, l) => /* @__PURE__ */ m("li", { children: i }, `${r}-${l}`)) });
-}, vc = {
-  config: { attributes: !0, childList: !1, subtree: !1 }
-};
-function hc(t, e, n = vc) {
-  const [r, o] = J(null);
-  G(() => {
-    const i = new MutationObserver(e);
-    o(i);
-  }, [e, n, o]), G(() => {
-    if (!r || !t)
-      return;
-    const { config: i } = n;
-    return r.observe(t, i), () => {
-      r && r.disconnect();
-    };
-  }, [r, t, n]);
-}
-const gc = me(({
-  title: t,
-  titleAs: e = "h3",
-  children: n,
-  className: r,
-  css: o = {},
-  defaultExpanded: i = !1,
-  ...l
-}, s) => {
-  const u = ie(), a = B(null), [c, f] = J(!!i), b = oe(
-    (d) => {
-      var $;
-      if (d.find((h) => h.attributeName === "aria-expanded") && (($ = a == null ? void 0 : a.current) != null && $.attributes)) {
-        const h = a.current.attributes.getNamedItem("aria-expanded");
-        f(h ? h.value === "true" : !1);
-      }
-    },
-    [a]
-  );
-  return hc(a == null ? void 0 : a.current, b), /* @__PURE__ */ R("section", { className: x("fr-accordion", r), children: [
-    /* @__PURE__ */ m(
-      e,
-      {
-        className: x("fr-accordion__title", o.title),
-        children: /* @__PURE__ */ m(
-          "button",
-          {
-            ...l,
-            ref: (d) => bt(d, [s, a]),
-            className: x("fr-accordion__btn", o.button),
-            "aria-expanded": i,
-            "aria-controls": u,
-            children: $e(t) || typeof t == "string" ? t : typeof t == "function" ? t(c) : null
-          }
-        )
-      }
-    ),
-    /* @__PURE__ */ m("div", { className: "fr-collapse", id: u, children: n })
-  ] });
-}), ad = ({ children: t, className: e, ...n }) => {
-  const r = ie();
-  return /* @__PURE__ */ m("div", { className: x("fr-accordions-group", e), ...n, children: fe(t, gc).map((o, i) => /* @__PURE__ */ m(yn, { children: o }, `${r}-d${i}`)) });
-}, cd = me(({
-  className: t,
-  closeMode: e = "disallow",
-  description: n,
-  size: r,
-  onClose: o,
-  title: i,
-  css: l = {},
-  titleAs: s = "h3",
-  variant: u = "info",
-  ...a
-}, c) => {
-  const f = B(null), b = (d) => {
-    var v;
-    d.preventDefault(), (v = f.current) == null || v.remove(), o && o(d);
-  };
-  return /* @__PURE__ */ R(
-    "div",
-    {
-      ref: (d) => bt(d, [c, f]),
-      className: x(`fr-alert fr-alert--${u}`, { "fr-alert--sm": r === "sm" }, t),
-      ...a,
-      children: [
-        i && /* @__PURE__ */ m(s, { className: x("fr-alert__title", l.title), children: i }),
-        n && /* @__PURE__ */ m("p", { className: x(l.description), children: n }),
-        e === "uncontrolled" && /* @__PURE__ */ m("button", { onClick: b, className: x("fr-btn--close fr-btn", l.button), children: "Masquer le message" }),
-        e === "controlled" && /* @__PURE__ */ m("button", { onClick: o, className: x("fr-link--close fr-link", l.button), children: "Masquer le message" })
-      ]
-    }
-  );
-});
-const dd = ({
-  children: t,
-  closeMode: e = "disallow",
-  type: n = "info",
-  className: r,
-  css: o = {},
-  onClose: i,
-  ...l
-}) => {
-  const s = B(null), u = (c) => {
-    var f;
-    c.preventDefault(), (f = s.current) == null || f.remove(), i && i(c);
-  }, a = x("fr-notice", {
-    "fr-notice--info": n === "info",
-    [`react-dsfr-notice--${n}`]: n !== "info"
-  }, r);
-  return /* @__PURE__ */ m("div", { ref: s, className: a, ...l, children: /* @__PURE__ */ m("div", { className: x("fr-container", o["fr-container"]), children: /* @__PURE__ */ R("div", { className: x("fr-notice__body", o["fr-notice__body"]), children: [
-    /* @__PURE__ */ m("p", { className: x("fr-notice__title", o["fr-notice__title"]), children: t }),
-    e !== "disallow" && /* @__PURE__ */ m(
-      "button",
-      {
-        onClick: e === "uncontrolled" ? u : i,
-        className: x("fr-btn--close", "fr-btn", o["fr-btn--close"]),
-        children: "Masquer le message"
-      }
-    )
-  ] }) }) });
-}, $c = ({
-  className: t,
-  index: e,
-  ...n
-}) => /* @__PURE__ */ m(
-  "div",
-  {
-    id: `${e}-panel`,
-    className: x("fr-tabs__panel", t),
-    role: "tabpanel",
-    "aria-labelledby": `${e}-button`,
-    tabIndex: n["aria-selected"] ? -1 : 0,
-    ...n
-  }
-), fd = ({
-  className: t,
-  children: e,
-  defaultActiveIndex: n = 0,
-  css: r = {},
-  onTabChange: o,
-  ...i
-}) => {
-  const l = ie(), s = i.id || l, u = fe(e, $c).filter((a) => $e(a)).map(
-    (a, c) => Te(
-      a,
-      { index: `${s}-${c}` }
-    )
-  );
-  return /* @__PURE__ */ R(
-    "div",
-    {
-      id: s,
-      className: x("fr-tabs", t),
-      ...i,
-      children: [
-        /* @__PURE__ */ m("ul", { className: x("fr-tabs__list", r.ul), role: "tablist", children: u.map((a, c) => /* @__PURE__ */ m("li", { className: x(r.li), role: "presentation", children: /* @__PURE__ */ m(
-          "button",
-          {
-            onClick: (f) => {
-              o && (o(c), f.preventDefault());
-            },
-            id: `${s}-${c}-button`,
-            className: x(
-              "fr-tabs__tab",
-              {
-                [`fr-icon-${a.props.icon}`]: $e(a) && a.props.icon,
-                "fr-tabs__tab--icon-left": $e(a) && a.props.icon
-              },
-              r.button
-            ),
-            tabIndex: n === c ? 0 : -1,
-            role: "tab",
-            "aria-selected": n === c ? "true" : "false",
-            "aria-controls": `${s}-${c}-panel`,
-            children: $e(a) && a.props.label
-          }
-        ) }, `${s}-${c}`)) }),
-        u
-      ]
-    }
-  );
-};
-const pd = ({
-=======
 const dd = Vt;
 const cc = me, dc = cc(
   ({ as: t, className: e, noIcon: n, color: r = "blue-france", size: o, icon: i, variant: l = "primary", ...s }, u) => {
@@ -7900,7 +7120,6 @@ const cc = me, dc = cc(
     return /* @__PURE__ */ m(a, { className: c, ref: u, ...s });
   }
 ), fd = ({
->>>>>>> staging
   children: t,
   className: e,
   ...n
@@ -7951,108 +7170,6 @@ const fc = me, ut = fc(
   size: l = "md",
   ...s
 }) => {
-<<<<<<< HEAD
-  const u = ie(), a = x("fr-sidemenu", e, {
-    "fr-sidemenu--sticky": i && !r,
-    "fr-sidemenu--sticky-full-height": r,
-    "fr-sidemenu--right": o === "right"
-  });
-  return /* @__PURE__ */ m("nav", { className: a, "aria-label": "Menu latéral", ...ze(s), children: /* @__PURE__ */ R("div", { className: x("fr-sidemenu__inner", n["fr-sidemenu__inner"]), children: [
-    /* @__PURE__ */ m(
-      "button",
-      {
-        type: "button",
-        className: x("fr-sidemenu__btn", n["fr-sidemenu__btn"]),
-        "aria-controls": u,
-        "aria-expanded": !1,
-        children: l || "Dans cette rubrique"
-      }
-    ),
-    /* @__PURE__ */ R("div", { className: "fr-collapse", id: u, children: [
-      l && /* @__PURE__ */ m("div", { className: x("fr-sidemenu__title", n["fr-sidemenu__title"]), children: l }),
-      /* @__PURE__ */ m("ul", { className: x("fr-sidemenu__list", n["fr-sidemenu__list"]), children: et(t, [ql, he]).map((c, f) => $e(c) && /* @__PURE__ */ m("li", { className: x("fr-sidemenu__item", n["fr-sidemenu__item"]), children: c.type === he ? Te(c, { className: x("fr-sidemenu__link", c.props.className) }) : c }, `navitem-${u}-${f}`)) })
-    ] })
-  ] }) });
-}, ql = ({
-  children: t,
-  className: e,
-  css: n = {},
-  current: r,
-  defaultExpanded: o = !1,
-  href: i,
-  icon: l,
-  title: s,
-  ...u
-}) => {
-  const a = ie(), c = et(t, [ql, he]);
-  return /* @__PURE__ */ R(Nn, { children: [
-    /* @__PURE__ */ m(
-      "button",
-      {
-        className: x("fr-sidemenu__btn", e),
-        "aria-expanded": o,
-        "aria-controls": a,
-        "aria-current": r || void 0,
-        ...u,
-        children: /* @__PURE__ */ m("span", { className: l && `react-dsfr-sidemenu-title--icon fr-icon-${l} fr-icon--sm`, children: s })
-      }
-    ),
-    /* @__PURE__ */ m("div", { className: "fr-collapse", id: a, children: /* @__PURE__ */ m("ul", { className: x("fr-sidemenu__list", n["fr-sidemenu__list"]), children: c.map((f, b) => /* @__PURE__ */ m("li", { className: x("fr-sidemenu__item", n["fr-sidemenu__item"]), children: $e(f) && f.type === he ? Te(f, { className: x("fr-sidemenu__link", f.props.className) }) : f }, `navitem-${a}-${b}`)) }) })
-  ] });
-}, bd = ({
-  children: t,
-  className: e,
-  css: n = {},
-  current: r,
-  icon: o,
-  ...i
-}) => /* @__PURE__ */ m("li", { className: x("fr-sidemenu__item", e), children: /* @__PURE__ */ m(
-  he,
-  {
-    className: x("fr-sidemenu__link", n["fr-sidemenu__link"]),
-    "aria-current": r || void 0,
-    ...i,
-    children: /* @__PURE__ */ m("span", { className: o && `react-dsfr-sidemenu-title--icon fr-icon-${o} fr-icon--sm`, children: t })
-  }
-) }), md = me(({
-  className: t,
-  css: e = {},
-  disableAutoValidation: n = !1,
-  hint: r,
-  icon: o,
-  id: i,
-  label: l,
-  message: s,
-  messageType: u,
-  onBlur: a,
-  onChange: c,
-  disabled: f,
-  required: b,
-  ...d
-}, v) => {
-  var P;
-  const { extendRequiredFieldsLabelsWith: $, extendOptionalFieldsLabelsWith: h } = pt(), [_, w] = J(""), S = i || ie(), K = B(null), g = s !== void 0 || u !== void 0, k = x("fr-input", {
-    "fr-input--error": g ? u === "error" : _ === "error",
-    "fr-input--valid": g ? u === "valid" : _ === "valid"
-  }, e["fr-input"]), O = x("fr-input-group", {
-    "fr-input-group--error": g ? u === "error" : _ === "error",
-    "fr-input-group--valid": g ? u === "valid" : _ === "valid",
-    "fr-input-group--disabled": f
-  }, t), p = (I) => {
-    const C = K.current;
-    !n && !g && C && w(C.checkValidity() ? "valid" : "error"), a && a(I);
-  }, A = (I) => {
-    const C = K.current;
-    !n && !g && C && _ && w(C.checkValidity() ? "valid" : "error"), c && c(I);
-  }, E = g || n ? u && /* @__PURE__ */ m("p", { className: `fr-${u || "error"}-text`, id: `${S}-message`, children: s }) : _ === "error" && !n && /* @__PURE__ */ m("p", { className: `fr-${_ || "error"}-text`, id: `${S}-message`, children: (P = K.current) == null ? void 0 : P.validationMessage });
-  return /* @__PURE__ */ R("div", { className: O, children: [
-    /* @__PURE__ */ R("label", { className: x("fr-label", e["fr-label"]), htmlFor: S, children: [
-      l,
-      b ? $ : h,
-      r && /* @__PURE__ */ m("span", { className: x("fr-hint-text", e["fr-hint-text"]), children: r })
-    ] }),
-    /* @__PURE__ */ m("div", { className: x("fr-input-wrap", { [`fr-icon-${o}`]: o }, e["fr-input-wrap"]), children: /* @__PURE__ */ m(
-=======
   var d;
   const u = ie(), a = (v, $) => v || $e($) && $.props.icon && $.props.children, c = fe(e, ut).reduce(a, !1), f = (d = fe(e, ut).map((v) => $e(v) && v.props.iconPosition)) == null ? void 0 : d[0], b = x("fr-btns-group", {
     [`fr-btns-group--${l}`]: l !== "md",
@@ -8076,7 +7193,6 @@ const fc = me, ut = fc(
   const u = ie(), a = r || u;
   return /* @__PURE__ */ O("div", { className: x("fr-checkbox-group", { "fr-checkbox-group--sm": i === "sm" }, t), children: [
     /* @__PURE__ */ m(
->>>>>>> staging
       "input",
       {
         ref: s,
@@ -8091,760 +7207,6 @@ const fc = me, ut = fc(
       n && /* @__PURE__ */ m("span", { className: x("fr-hint-text", e.labelHint), children: n })
     ] })
   ] });
-<<<<<<< HEAD
-}), vd = me(({
-  className: t,
-  css: e = {},
-  disableAutoValidation: n = !1,
-  hint: r,
-  icon: o,
-  id: i,
-  label: l,
-  message: s,
-  messageType: u,
-  onBlur: a,
-  onChange: c,
-  disabled: f,
-  required: b,
-  ...d
-}, v) => {
-  var P;
-  const { extendRequiredFieldsLabelsWith: $, extendOptionalFieldsLabelsWith: h } = pt(), [_, w] = J(""), S = i || ie(), K = B(null), g = s !== void 0 || u !== void 0, k = x("fr-input", {
-    "fr-input--error": g ? u === "error" : _ === "error",
-    "fr-input--valid": g ? u === "valid" : _ === "valid"
-  }, e["fr-input"]), O = x("fr-input-group", {
-    "fr-input-group--error": g ? u === "error" : _ === "error",
-    "fr-input-group--valid": g ? u === "valid" : _ === "valid",
-    "fr-input-group--disabled": f
-  }, t), p = (I) => {
-    const C = K.current;
-    !n && !g && C && w(C.checkValidity() ? "valid" : "error"), a && a(I);
-  }, A = (I) => {
-    const C = K.current;
-    !n && !g && C && _ && w(C.checkValidity() ? "valid" : "error"), c && c(I);
-  }, E = g || n ? u && /* @__PURE__ */ m("p", { className: `fr-${u || "error"}-text`, id: `${S}-message`, children: s }) : _ === "error" && !n && /* @__PURE__ */ m("p", { className: `fr-${_ || "error"}-text`, id: `${S}-message`, children: (P = K.current) == null ? void 0 : P.validationMessage });
-  return /* @__PURE__ */ R("div", { className: O, children: [
-    /* @__PURE__ */ R("label", { className: x("fr-label", e["fr-label"]), htmlFor: S, children: [
-      l,
-      b ? $ : h,
-      r && /* @__PURE__ */ m("span", { className: x("fr-hint-text", e["fr-hint-text"]), children: r })
-    ] }),
-    /* @__PURE__ */ m("div", { className: x("fr-input-wrap", { [`fr-icon-${o}`]: o }, e["fr-input-wrap"]), children: /* @__PURE__ */ m(
-      "textarea",
-      {
-        id: S,
-        className: k,
-        onBlur: p,
-        onChange: A,
-        ref: (I) => bt(I, [v, K]),
-        "aria-describedby": E ? `${S}-message` : void 0,
-        ...d
-      }
-    ) }),
-    E && E
-  ] });
-});
-function yc(t) {
-  return t && t.__esModule && Object.prototype.hasOwnProperty.call(t, "default") ? t.default : t;
-}
-var kn = { exports: {} }, Pt = { exports: {} }, te = {};
-/** @license React v16.13.1
- * react-is.production.min.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-var Hr;
-function xc() {
-  if (Hr)
-    return te;
-  Hr = 1;
-  var t = typeof Symbol == "function" && Symbol.for, e = t ? Symbol.for("react.element") : 60103, n = t ? Symbol.for("react.portal") : 60106, r = t ? Symbol.for("react.fragment") : 60107, o = t ? Symbol.for("react.strict_mode") : 60108, i = t ? Symbol.for("react.profiler") : 60114, l = t ? Symbol.for("react.provider") : 60109, s = t ? Symbol.for("react.context") : 60110, u = t ? Symbol.for("react.async_mode") : 60111, a = t ? Symbol.for("react.concurrent_mode") : 60111, c = t ? Symbol.for("react.forward_ref") : 60112, f = t ? Symbol.for("react.suspense") : 60113, b = t ? Symbol.for("react.suspense_list") : 60120, d = t ? Symbol.for("react.memo") : 60115, v = t ? Symbol.for("react.lazy") : 60116, $ = t ? Symbol.for("react.block") : 60121, h = t ? Symbol.for("react.fundamental") : 60117, _ = t ? Symbol.for("react.responder") : 60118, w = t ? Symbol.for("react.scope") : 60119;
-  function S(g) {
-    if (typeof g == "object" && g !== null) {
-      var k = g.$$typeof;
-      switch (k) {
-        case e:
-          switch (g = g.type, g) {
-            case u:
-            case a:
-            case r:
-            case i:
-            case o:
-            case f:
-              return g;
-            default:
-              switch (g = g && g.$$typeof, g) {
-                case s:
-                case c:
-                case v:
-                case d:
-                case l:
-                  return g;
-                default:
-                  return k;
-              }
-          }
-        case n:
-          return k;
-      }
-    }
-  }
-  function K(g) {
-    return S(g) === a;
-  }
-  return te.AsyncMode = u, te.ConcurrentMode = a, te.ContextConsumer = s, te.ContextProvider = l, te.Element = e, te.ForwardRef = c, te.Fragment = r, te.Lazy = v, te.Memo = d, te.Portal = n, te.Profiler = i, te.StrictMode = o, te.Suspense = f, te.isAsyncMode = function(g) {
-    return K(g) || S(g) === u;
-  }, te.isConcurrentMode = K, te.isContextConsumer = function(g) {
-    return S(g) === s;
-  }, te.isContextProvider = function(g) {
-    return S(g) === l;
-  }, te.isElement = function(g) {
-    return typeof g == "object" && g !== null && g.$$typeof === e;
-  }, te.isForwardRef = function(g) {
-    return S(g) === c;
-  }, te.isFragment = function(g) {
-    return S(g) === r;
-  }, te.isLazy = function(g) {
-    return S(g) === v;
-  }, te.isMemo = function(g) {
-    return S(g) === d;
-  }, te.isPortal = function(g) {
-    return S(g) === n;
-  }, te.isProfiler = function(g) {
-    return S(g) === i;
-  }, te.isStrictMode = function(g) {
-    return S(g) === o;
-  }, te.isSuspense = function(g) {
-    return S(g) === f;
-  }, te.isValidElementType = function(g) {
-    return typeof g == "string" || typeof g == "function" || g === r || g === a || g === i || g === o || g === f || g === b || typeof g == "object" && g !== null && (g.$$typeof === v || g.$$typeof === d || g.$$typeof === l || g.$$typeof === s || g.$$typeof === c || g.$$typeof === h || g.$$typeof === _ || g.$$typeof === w || g.$$typeof === $);
-  }, te.typeOf = S, te;
-}
-var ne = {};
-/** @license React v16.13.1
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-var Ur;
-function Cc() {
-  return Ur || (Ur = 1, process.env.NODE_ENV !== "production" && function() {
-    var t = typeof Symbol == "function" && Symbol.for, e = t ? Symbol.for("react.element") : 60103, n = t ? Symbol.for("react.portal") : 60106, r = t ? Symbol.for("react.fragment") : 60107, o = t ? Symbol.for("react.strict_mode") : 60108, i = t ? Symbol.for("react.profiler") : 60114, l = t ? Symbol.for("react.provider") : 60109, s = t ? Symbol.for("react.context") : 60110, u = t ? Symbol.for("react.async_mode") : 60111, a = t ? Symbol.for("react.concurrent_mode") : 60111, c = t ? Symbol.for("react.forward_ref") : 60112, f = t ? Symbol.for("react.suspense") : 60113, b = t ? Symbol.for("react.suspense_list") : 60120, d = t ? Symbol.for("react.memo") : 60115, v = t ? Symbol.for("react.lazy") : 60116, $ = t ? Symbol.for("react.block") : 60121, h = t ? Symbol.for("react.fundamental") : 60117, _ = t ? Symbol.for("react.responder") : 60118, w = t ? Symbol.for("react.scope") : 60119;
-    function S(M) {
-      return typeof M == "string" || typeof M == "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-      M === r || M === a || M === i || M === o || M === f || M === b || typeof M == "object" && M !== null && (M.$$typeof === v || M.$$typeof === d || M.$$typeof === l || M.$$typeof === s || M.$$typeof === c || M.$$typeof === h || M.$$typeof === _ || M.$$typeof === w || M.$$typeof === $);
-    }
-    function K(M) {
-      if (typeof M == "object" && M !== null) {
-        var ye = M.$$typeof;
-        switch (ye) {
-          case e:
-            var Ne = M.type;
-            switch (Ne) {
-              case u:
-              case a:
-              case r:
-              case i:
-              case o:
-              case f:
-                return Ne;
-              default:
-                var mt = Ne && Ne.$$typeof;
-                switch (mt) {
-                  case s:
-                  case c:
-                  case v:
-                  case d:
-                  case l:
-                    return mt;
-                  default:
-                    return ye;
-                }
-            }
-          case n:
-            return ye;
-        }
-      }
-    }
-    var g = u, k = a, O = s, p = l, A = e, E = c, P = r, I = v, C = d, T = n, q = i, V = o, F = f, ue = !1;
-    function ae(M) {
-      return ue || (ue = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), y(M) || K(M) === u;
-    }
-    function y(M) {
-      return K(M) === a;
-    }
-    function D(M) {
-      return K(M) === s;
-    }
-    function z(M) {
-      return K(M) === l;
-    }
-    function j(M) {
-      return typeof M == "object" && M !== null && M.$$typeof === e;
-    }
-    function H(M) {
-      return K(M) === c;
-    }
-    function Y(M) {
-      return K(M) === r;
-    }
-    function U(M) {
-      return K(M) === v;
-    }
-    function L(M) {
-      return K(M) === d;
-    }
-    function N(M) {
-      return K(M) === n;
-    }
-    function X(M) {
-      return K(M) === i;
-    }
-    function W(M) {
-      return K(M) === o;
-    }
-    function Z(M) {
-      return K(M) === f;
-    }
-    ne.AsyncMode = g, ne.ConcurrentMode = k, ne.ContextConsumer = O, ne.ContextProvider = p, ne.Element = A, ne.ForwardRef = E, ne.Fragment = P, ne.Lazy = I, ne.Memo = C, ne.Portal = T, ne.Profiler = q, ne.StrictMode = V, ne.Suspense = F, ne.isAsyncMode = ae, ne.isConcurrentMode = y, ne.isContextConsumer = D, ne.isContextProvider = z, ne.isElement = j, ne.isForwardRef = H, ne.isFragment = Y, ne.isLazy = U, ne.isMemo = L, ne.isPortal = N, ne.isProfiler = X, ne.isStrictMode = W, ne.isSuspense = Z, ne.isValidElementType = S, ne.typeOf = K;
-  }()), ne;
-}
-var Wr;
-function Yl() {
-  return Wr || (Wr = 1, process.env.NODE_ENV === "production" ? Pt.exports = xc() : Pt.exports = Cc()), Pt.exports;
-}
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
-var pn, Gr;
-function Ec() {
-  if (Gr)
-    return pn;
-  Gr = 1;
-  var t = Object.getOwnPropertySymbols, e = Object.prototype.hasOwnProperty, n = Object.prototype.propertyIsEnumerable;
-  function r(i) {
-    if (i == null)
-      throw new TypeError("Object.assign cannot be called with null or undefined");
-    return Object(i);
-  }
-  function o() {
-    try {
-      if (!Object.assign)
-        return !1;
-      var i = new String("abc");
-      if (i[5] = "de", Object.getOwnPropertyNames(i)[0] === "5")
-        return !1;
-      for (var l = {}, s = 0; s < 10; s++)
-        l["_" + String.fromCharCode(s)] = s;
-      var u = Object.getOwnPropertyNames(l).map(function(c) {
-        return l[c];
-      });
-      if (u.join("") !== "0123456789")
-        return !1;
-      var a = {};
-      return "abcdefghijklmnopqrst".split("").forEach(function(c) {
-        a[c] = c;
-      }), Object.keys(Object.assign({}, a)).join("") === "abcdefghijklmnopqrst";
-    } catch {
-      return !1;
-    }
-  }
-  return pn = o() ? Object.assign : function(i, l) {
-    for (var s, u = r(i), a, c = 1; c < arguments.length; c++) {
-      s = Object(arguments[c]);
-      for (var f in s)
-        e.call(s, f) && (u[f] = s[f]);
-      if (t) {
-        a = t(s);
-        for (var b = 0; b < a.length; b++)
-          n.call(s, a[b]) && (u[a[b]] = s[a[b]]);
-      }
-    }
-    return u;
-  }, pn;
-}
-var bn, qr;
-function rr() {
-  if (qr)
-    return bn;
-  qr = 1;
-  var t = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
-  return bn = t, bn;
-}
-var mn, Yr;
-function Xl() {
-  return Yr || (Yr = 1, mn = Function.call.bind(Object.prototype.hasOwnProperty)), mn;
-}
-var vn, Xr;
-function Pc() {
-  if (Xr)
-    return vn;
-  Xr = 1;
-  var t = function() {
-  };
-  if (process.env.NODE_ENV !== "production") {
-    var e = rr(), n = {}, r = Xl();
-    t = function(i) {
-      var l = "Warning: " + i;
-      typeof console < "u" && console.error(l);
-      try {
-        throw new Error(l);
-      } catch {
-      }
-    };
-  }
-  function o(i, l, s, u, a) {
-    if (process.env.NODE_ENV !== "production") {
-      for (var c in i)
-        if (r(i, c)) {
-          var f;
-          try {
-            if (typeof i[c] != "function") {
-              var b = Error(
-                (u || "React class") + ": " + s + " type `" + c + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof i[c] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`."
-              );
-              throw b.name = "Invariant Violation", b;
-            }
-            f = i[c](l, c, u, s, null, e);
-          } catch (v) {
-            f = v;
-          }
-          if (f && !(f instanceof Error) && t(
-            (u || "React class") + ": type specification of " + s + " `" + c + "` is invalid; the type checker function must return `null` or an `Error` but returned a " + typeof f + ". You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument)."
-          ), f instanceof Error && !(f.message in n)) {
-            n[f.message] = !0;
-            var d = a ? a() : "";
-            t(
-              "Failed " + s + " type: " + f.message + (d ?? "")
-            );
-          }
-        }
-    }
-  }
-  return o.resetWarningCache = function() {
-    process.env.NODE_ENV !== "production" && (n = {});
-  }, vn = o, vn;
-}
-var hn, Zr;
-function wc() {
-  if (Zr)
-    return hn;
-  Zr = 1;
-  var t = Yl(), e = Ec(), n = rr(), r = Xl(), o = Pc(), i = function() {
-  };
-  process.env.NODE_ENV !== "production" && (i = function(s) {
-    var u = "Warning: " + s;
-    typeof console < "u" && console.error(u);
-    try {
-      throw new Error(u);
-    } catch {
-    }
-  });
-  function l() {
-    return null;
-  }
-  return hn = function(s, u) {
-    var a = typeof Symbol == "function" && Symbol.iterator, c = "@@iterator";
-    function f(y) {
-      var D = y && (a && y[a] || y[c]);
-      if (typeof D == "function")
-        return D;
-    }
-    var b = "<<anonymous>>", d = {
-      array: _("array"),
-      bigint: _("bigint"),
-      bool: _("boolean"),
-      func: _("function"),
-      number: _("number"),
-      object: _("object"),
-      string: _("string"),
-      symbol: _("symbol"),
-      any: w(),
-      arrayOf: S,
-      element: K(),
-      elementType: g(),
-      instanceOf: k,
-      node: E(),
-      objectOf: p,
-      oneOf: O,
-      oneOfType: A,
-      shape: I,
-      exact: C
-    };
-    function v(y, D) {
-      return y === D ? y !== 0 || 1 / y === 1 / D : y !== y && D !== D;
-    }
-    function $(y, D) {
-      this.message = y, this.data = D && typeof D == "object" ? D : {}, this.stack = "";
-    }
-    $.prototype = Error.prototype;
-    function h(y) {
-      if (process.env.NODE_ENV !== "production")
-        var D = {}, z = 0;
-      function j(Y, U, L, N, X, W, Z) {
-        if (N = N || b, W = W || L, Z !== n) {
-          if (u) {
-            var M = new Error(
-              "Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types"
-            );
-            throw M.name = "Invariant Violation", M;
-          } else if (process.env.NODE_ENV !== "production" && typeof console < "u") {
-            var ye = N + ":" + L;
-            !D[ye] && // Avoid spamming the console because they are often not actionable except for lib authors
-            z < 3 && (i(
-              "You are manually calling a React.PropTypes validation function for the `" + W + "` prop on `" + N + "`. This is deprecated and will throw in the standalone `prop-types` package. You may be seeing this warning due to a third-party PropTypes library. See https://fb.me/react-warning-dont-call-proptypes for details."
-            ), D[ye] = !0, z++);
-          }
-        }
-        return U[L] == null ? Y ? U[L] === null ? new $("The " + X + " `" + W + "` is marked as required " + ("in `" + N + "`, but its value is `null`.")) : new $("The " + X + " `" + W + "` is marked as required in " + ("`" + N + "`, but its value is `undefined`.")) : null : y(U, L, N, X, W);
-      }
-      var H = j.bind(null, !1);
-      return H.isRequired = j.bind(null, !0), H;
-    }
-    function _(y) {
-      function D(z, j, H, Y, U, L) {
-        var N = z[j], X = V(N);
-        if (X !== y) {
-          var W = F(N);
-          return new $(
-            "Invalid " + Y + " `" + U + "` of type " + ("`" + W + "` supplied to `" + H + "`, expected ") + ("`" + y + "`."),
-            { expectedType: y }
-          );
-        }
-        return null;
-      }
-      return h(D);
-    }
-    function w() {
-      return h(l);
-    }
-    function S(y) {
-      function D(z, j, H, Y, U) {
-        if (typeof y != "function")
-          return new $("Property `" + U + "` of component `" + H + "` has invalid PropType notation inside arrayOf.");
-        var L = z[j];
-        if (!Array.isArray(L)) {
-          var N = V(L);
-          return new $("Invalid " + Y + " `" + U + "` of type " + ("`" + N + "` supplied to `" + H + "`, expected an array."));
-        }
-        for (var X = 0; X < L.length; X++) {
-          var W = y(L, X, H, Y, U + "[" + X + "]", n);
-          if (W instanceof Error)
-            return W;
-        }
-        return null;
-      }
-      return h(D);
-    }
-    function K() {
-      function y(D, z, j, H, Y) {
-        var U = D[z];
-        if (!s(U)) {
-          var L = V(U);
-          return new $("Invalid " + H + " `" + Y + "` of type " + ("`" + L + "` supplied to `" + j + "`, expected a single ReactElement."));
-        }
-        return null;
-      }
-      return h(y);
-    }
-    function g() {
-      function y(D, z, j, H, Y) {
-        var U = D[z];
-        if (!t.isValidElementType(U)) {
-          var L = V(U);
-          return new $("Invalid " + H + " `" + Y + "` of type " + ("`" + L + "` supplied to `" + j + "`, expected a single ReactElement type."));
-        }
-        return null;
-      }
-      return h(y);
-    }
-    function k(y) {
-      function D(z, j, H, Y, U) {
-        if (!(z[j] instanceof y)) {
-          var L = y.name || b, N = ae(z[j]);
-          return new $("Invalid " + Y + " `" + U + "` of type " + ("`" + N + "` supplied to `" + H + "`, expected ") + ("instance of `" + L + "`."));
-        }
-        return null;
-      }
-      return h(D);
-    }
-    function O(y) {
-      if (!Array.isArray(y))
-        return process.env.NODE_ENV !== "production" && (arguments.length > 1 ? i(
-          "Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z])."
-        ) : i("Invalid argument supplied to oneOf, expected an array.")), l;
-      function D(z, j, H, Y, U) {
-        for (var L = z[j], N = 0; N < y.length; N++)
-          if (v(L, y[N]))
-            return null;
-        var X = JSON.stringify(y, function(Z, M) {
-          var ye = F(M);
-          return ye === "symbol" ? String(M) : M;
-        });
-        return new $("Invalid " + Y + " `" + U + "` of value `" + String(L) + "` " + ("supplied to `" + H + "`, expected one of " + X + "."));
-      }
-      return h(D);
-    }
-    function p(y) {
-      function D(z, j, H, Y, U) {
-        if (typeof y != "function")
-          return new $("Property `" + U + "` of component `" + H + "` has invalid PropType notation inside objectOf.");
-        var L = z[j], N = V(L);
-        if (N !== "object")
-          return new $("Invalid " + Y + " `" + U + "` of type " + ("`" + N + "` supplied to `" + H + "`, expected an object."));
-        for (var X in L)
-          if (r(L, X)) {
-            var W = y(L, X, H, Y, U + "." + X, n);
-            if (W instanceof Error)
-              return W;
-          }
-        return null;
-      }
-      return h(D);
-    }
-    function A(y) {
-      if (!Array.isArray(y))
-        return process.env.NODE_ENV !== "production" && i("Invalid argument supplied to oneOfType, expected an instance of array."), l;
-      for (var D = 0; D < y.length; D++) {
-        var z = y[D];
-        if (typeof z != "function")
-          return i(
-            "Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + ue(z) + " at index " + D + "."
-          ), l;
-      }
-      function j(H, Y, U, L, N) {
-        for (var X = [], W = 0; W < y.length; W++) {
-          var Z = y[W], M = Z(H, Y, U, L, N, n);
-          if (M == null)
-            return null;
-          M.data && r(M.data, "expectedType") && X.push(M.data.expectedType);
-        }
-        var ye = X.length > 0 ? ", expected one of type [" + X.join(", ") + "]" : "";
-        return new $("Invalid " + L + " `" + N + "` supplied to " + ("`" + U + "`" + ye + "."));
-      }
-      return h(j);
-    }
-    function E() {
-      function y(D, z, j, H, Y) {
-        return T(D[z]) ? null : new $("Invalid " + H + " `" + Y + "` supplied to " + ("`" + j + "`, expected a ReactNode."));
-      }
-      return h(y);
-    }
-    function P(y, D, z, j, H) {
-      return new $(
-        (y || "React class") + ": " + D + " type `" + z + "." + j + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + H + "`."
-      );
-    }
-    function I(y) {
-      function D(z, j, H, Y, U) {
-        var L = z[j], N = V(L);
-        if (N !== "object")
-          return new $("Invalid " + Y + " `" + U + "` of type `" + N + "` " + ("supplied to `" + H + "`, expected `object`."));
-        for (var X in y) {
-          var W = y[X];
-          if (typeof W != "function")
-            return P(H, Y, U, X, F(W));
-          var Z = W(L, X, H, Y, U + "." + X, n);
-          if (Z)
-            return Z;
-        }
-        return null;
-      }
-      return h(D);
-    }
-    function C(y) {
-      function D(z, j, H, Y, U) {
-        var L = z[j], N = V(L);
-        if (N !== "object")
-          return new $("Invalid " + Y + " `" + U + "` of type `" + N + "` " + ("supplied to `" + H + "`, expected `object`."));
-        var X = e({}, z[j], y);
-        for (var W in X) {
-          var Z = y[W];
-          if (r(y, W) && typeof Z != "function")
-            return P(H, Y, U, W, F(Z));
-          if (!Z)
-            return new $(
-              "Invalid " + Y + " `" + U + "` key `" + W + "` supplied to `" + H + "`.\nBad object: " + JSON.stringify(z[j], null, "  ") + `
-Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
-            );
-          var M = Z(L, W, H, Y, U + "." + W, n);
-          if (M)
-            return M;
-        }
-        return null;
-      }
-      return h(D);
-    }
-    function T(y) {
-      switch (typeof y) {
-        case "number":
-        case "string":
-        case "undefined":
-          return !0;
-        case "boolean":
-          return !y;
-        case "object":
-          if (Array.isArray(y))
-            return y.every(T);
-          if (y === null || s(y))
-            return !0;
-          var D = f(y);
-          if (D) {
-            var z = D.call(y), j;
-            if (D !== y.entries) {
-              for (; !(j = z.next()).done; )
-                if (!T(j.value))
-                  return !1;
-            } else
-              for (; !(j = z.next()).done; ) {
-                var H = j.value;
-                if (H && !T(H[1]))
-                  return !1;
-              }
-          } else
-            return !1;
-          return !0;
-        default:
-          return !1;
-      }
-    }
-    function q(y, D) {
-      return y === "symbol" ? !0 : D ? D["@@toStringTag"] === "Symbol" || typeof Symbol == "function" && D instanceof Symbol : !1;
-    }
-    function V(y) {
-      var D = typeof y;
-      return Array.isArray(y) ? "array" : y instanceof RegExp ? "object" : q(D, y) ? "symbol" : D;
-    }
-    function F(y) {
-      if (typeof y > "u" || y === null)
-        return "" + y;
-      var D = V(y);
-      if (D === "object") {
-        if (y instanceof Date)
-          return "date";
-        if (y instanceof RegExp)
-          return "regexp";
-      }
-      return D;
-    }
-    function ue(y) {
-      var D = F(y);
-      switch (D) {
-        case "array":
-        case "object":
-          return "an " + D;
-        case "boolean":
-        case "date":
-        case "regexp":
-          return "a " + D;
-        default:
-          return D;
-      }
-    }
-    function ae(y) {
-      return !y.constructor || !y.constructor.name ? b : y.constructor.name;
-    }
-    return d.checkPropTypes = o, d.resetWarningCache = o.resetWarningCache, d.PropTypes = d, d;
-  }, hn;
-}
-var gn, Jr;
-function Sc() {
-  if (Jr)
-    return gn;
-  Jr = 1;
-  var t = rr();
-  function e() {
-  }
-  function n() {
-  }
-  return n.resetWarningCache = e, gn = function() {
-    function r(l, s, u, a, c, f) {
-      if (f !== t) {
-        var b = new Error(
-          "Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types"
-        );
-        throw b.name = "Invariant Violation", b;
-      }
-    }
-    r.isRequired = r;
-    function o() {
-      return r;
-    }
-    var i = {
-      array: r,
-      bigint: r,
-      bool: r,
-      func: r,
-      number: r,
-      object: r,
-      string: r,
-      symbol: r,
-      any: r,
-      arrayOf: o,
-      element: r,
-      elementType: r,
-      instanceOf: o,
-      node: r,
-      objectOf: o,
-      oneOf: o,
-      oneOfType: o,
-      shape: o,
-      exact: o,
-      checkPropTypes: n,
-      resetWarningCache: e
-    };
-    return i.PropTypes = i, i;
-  }, gn;
-}
-if (process.env.NODE_ENV !== "production") {
-  var Tc = Yl(), _c = !0;
-  kn.exports = wc()(Tc.isElement, _c);
-} else
-  kn.exports = Sc()();
-var Ac = kn.exports;
-const Kc = /* @__PURE__ */ yc(Ac), Dc = "_spinner_143d9_5", Fc = "_internal_143d9_40", Lc = "_external_143d9_41", $n = {
-  spinner: Dc,
-  "internal-circle": "_internal-circle_143d9_40",
-  "external-circle": "_external-circle_143d9_41",
-  internal: Fc,
-  external: Lc,
-  "spinner-overlay": "_spinner-overlay_143d9_57"
-};
-function Zl({ size: t }) {
-  const e = ie();
-  return G(() => {
-    var n, r;
-    (n = document == null ? void 0 : document.getElementById(e)) == null || n.style.setProperty("width", `${t}px`), (r = document == null ? void 0 : document.getElementById(e)) == null || r.style.setProperty("height", `${t}px`);
-  }, [t, e]), /* @__PURE__ */ R(
-    "svg",
-    {
-      id: e,
-      className: $n.spinner,
-      viewBox: "0 0 120 120",
-      xmlns: "http://www.w3.org/2000/svg",
-      children: [
-        /* @__PURE__ */ m("circle", { className: $n["internal-circle"], cx: "60", cy: "60", r: "30" }),
-        /* @__PURE__ */ m("circle", { className: $n["external-circle"], cx: "60", cy: "60", r: "50" })
-      ]
-    }
-  );
-}
-Zl.propTypes = {
-  size: Kc.number
-};
-Zl.defaultProps = {
-  size: 48
-};
-const hd = me(({
-=======
 }), jr = ["__TYPE"];
 function je(t, e = {}) {
   const { include: n, exclude: r } = e;
@@ -8854,7 +7216,6 @@ function je(t, e = {}) {
   return Object.entries(t).reduce((i, [l, s]) => o.includes(l) ? i : { ...i, [l]: s }, {});
 }
 const vd = me(({
->>>>>>> staging
   children: t,
   className: e,
   css: n = {},
@@ -8872,17 +7233,10 @@ const vd = me(({
     {
       ref: c,
       className: x("fr-fieldset", { [`fr-fieldset--${s}`]: s }, e),
-<<<<<<< HEAD
-      ...ze(a),
-      "aria-labelledby": l && s ? `${f}-message` : void 0,
-      children: [
-        i && /* @__PURE__ */ R("legend", { className: x("fr-fieldset__legend fr-text--regular", n.legend), children: [
-=======
       ...je(a),
       "aria-labelledby": l && s ? `${f}-message` : void 0,
       children: [
         i && /* @__PURE__ */ O("legend", { className: x("fr-fieldset__legend fr-text--regular", n.legend), children: [
->>>>>>> staging
           i,
           u ? b : d,
           r && /* @__PURE__ */ m("span", { className: x("fr-hint-text", n.legendHint), children: r })
@@ -8892,128 +7246,7 @@ const vd = me(({
       ]
     }
   );
-<<<<<<< HEAD
-}), gd = me(({
-  className: t,
-  css: e = {},
-  hint: n,
-  id: r,
-  label: o,
-  imageComponent: i,
-  ...l
-}, s) => {
-  const u = r || ie();
-  return /* @__PURE__ */ R("div", { className: x("fr-radio-group", { "fr-radio-rich": i }, t), children: [
-    /* @__PURE__ */ m(
-      "input",
-      {
-        ref: s,
-        ...l,
-        type: "radio",
-        id: u
-      }
-    ),
-    /* @__PURE__ */ R(
-      "label",
-      {
-        className: x("fr-label"),
-        htmlFor: u,
-        children: [
-          o,
-          n && /* @__PURE__ */ m("p", { className: x("fr-hint-text"), children: n })
-        ]
-      }
-    ),
-    i && /* @__PURE__ */ m("div", { className: x("fr-radio-rich__img"), children: i })
-  ] });
-}), $d = me(({
-  className: t,
-  css: e = {},
-  hint: n,
-  id: r,
-  label: o,
-  size: i,
-  ...l
-}, s) => {
-  const u = ie(), a = r || u;
-  return /* @__PURE__ */ R("div", { className: x("fr-checkbox-group", { "fr-checkbox-group--sm": i === "sm" }, t), children: [
-    /* @__PURE__ */ m(
-      "input",
-      {
-        ref: s,
-        type: "checkbox",
-        id: a,
-        className: x(e.input),
-        ...l
-      }
-    ),
-    /* @__PURE__ */ R("label", { className: x("fr-label", e.label), htmlFor: a, children: [
-      o,
-      n && /* @__PURE__ */ m("span", { className: x("fr-hint-text", e.labelHint), children: n })
-    ] })
-  ] });
-}), yd = ({
-  className: t,
-  currentStep: e,
-  currentTitle: n,
-  nextStepTitle: r,
-  steps: o,
-  titleAs: i = "h4",
-  ...l
-}) => /* @__PURE__ */ R("div", { className: x("fr-stepper", t), ...l, children: [
-  /* @__PURE__ */ R(i, { className: "fr-stepper__title", children: [
-    /* @__PURE__ */ m("span", { className: "fr-stepper__state", children: `Étape ${e} sur ${o}` }),
-    n
-  ] }),
-  /* @__PURE__ */ m("div", { className: "fr-stepper__steps", "data-fr-current-step": e, "data-fr-steps": o }),
-  /* @__PURE__ */ R("p", { className: "fr-stepper__details", children: [
-    /* @__PURE__ */ m("span", { className: "fr-text--bold", children: "Étape suivante : " }),
-    r
-  ] })
-] }), xd = ({
-  as: t = "p",
-  size: e,
-  alt: n,
-  bold: r,
-  className: o,
-  ...i
-}) => {
-  const l = x(o, {
-    "fr-text--alt": e !== "lead" && n,
-    "fr-text--heavy": r,
-    [`fr-text--${e}`]: e && e !== "md"
-  });
-  return /* @__PURE__ */ m(t, { className: l, ...i });
-}, Cd = ({
-  as: t = "h1",
-  className: e,
-  look: n,
-  ...r
-}) => {
-  const o = n && ["xs", "sm", "md", "lg", "xl"].includes(n), i = x(e, {
-    [`fr-${n}`]: !o && n && n !== t,
-    [`fr-display-${n}`]: o
-  });
-  return /* @__PURE__ */ m(t, { className: i, ...r });
-}, Ed = ({
-  buttonLabel: t = "Voir le fil d’Ariane",
-  children: e,
-  className: n,
-  css: r = {},
-  ...o
-}) => {
-  const i = ie();
-  return /* @__PURE__ */ R("nav", { role: "navigation", "aria-label": o["aria-label"] || "vous êtes ici:", className: x("fr-breadcrumb", n), ...o, children: [
-    /* @__PURE__ */ m("button", { className: x("fr-breadcrumb__button", r.button), "aria-expanded": "false", "aria-controls": "breadcrumb-1", children: t || "Voir le fil d’Ariane" }),
-    /* @__PURE__ */ m("div", { className: "fr-collapse", id: "breadcrumb-1", children: /* @__PURE__ */ m("ol", { className: x("fr-breadcrumb__list", r.list), children: fe(e, he).filter((l) => $e(l)).map((l, s, { length: u }) => /* @__PURE__ */ m("li", { className: x(r.item), children: Te(l, {
-      className: x("fr-breadcrumb__link"),
-      "aria-current": s + 1 === u ? "page" : void 0
-    }) }, `${i}-${s}`)) }) })
-  ] });
-}, Pd = me(({
-=======
 }), hd = me(({
->>>>>>> staging
   id: t,
   className: e,
   css: n = {},
@@ -9022,15 +7255,9 @@ const vd = me(({
   label: i = "Ajouter des fichiers",
   ...l
 }, s) => {
-<<<<<<< HEAD
-  const u = ie(), a = t || u, { extendOptionalFieldsLabelsWith: c, extendRequiredFieldsLabelsWith: f } = pt();
-  return /* @__PURE__ */ R("div", { className: x("fr-upload-group", { "fr-input-group--error": r, "fr-input-group--disabled": l.disabled }, e), children: [
-    /* @__PURE__ */ R("label", { className: x("fr-label", n.label), htmlFor: a, children: [
-=======
   const u = ie(), a = t || u, { extendOptionalFieldsLabelsWith: c, extendRequiredFieldsLabelsWith: f } = bt();
   return /* @__PURE__ */ O("div", { className: x("fr-upload-group", { "fr-input-group--error": r, "fr-input-group--disabled": l.disabled }, e), children: [
     /* @__PURE__ */ O("label", { className: x("fr-label", n.label), htmlFor: a, children: [
->>>>>>> staging
       i,
       l.required ? f : c,
       o && /* @__PURE__ */ m("span", { className: "fr-hint-text", children: o })
@@ -9055,11 +7282,6 @@ const vd = me(({
   fluidFrom: r = "xs",
   ...o
 }, i) => {
-<<<<<<< HEAD
-  const l = x("fr-modal__title", e);
-  return /* @__PURE__ */ R(
-    "h1",
-=======
   const l = x({
     "fr-container": !n,
     "fr-container-fluid": n || r === "xs",
@@ -9067,177 +7289,12 @@ const vd = me(({
   }, e);
   return /* @__PURE__ */ m(
     t,
->>>>>>> staging
     {
       className: l,
       ref: i,
       ...o
     }
   );
-<<<<<<< HEAD
-}), Bt = me(({
-  className: t,
-  controls: e,
-  children: n = "Fermer",
-  ...r
-}, o) => /* @__PURE__ */ m(
-  "button",
-  {
-    ref: o,
-    id: `${e}-close`,
-    "aria-controls": e || void 0,
-    className: x("fr-btn--close fr-btn", t),
-    type: "button",
-    ...r,
-    children: n
-  }
-)), Qr = 'a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])', Mc = 9;
-function kc(t, e, n) {
-  function r(o) {
-    var a;
-    const i = [
-      ...(a = t.current) == null ? void 0 : a.querySelectorAll(Qr)
-    ].filter((c) => !c.hasAttribute("disabled")), l = i[0], s = i[i.length - 1];
-    (o.key === "Tab" || o.keyCode === Mc) && (o.shiftKey ? document.activeElement === l && (s.focus(), o.preventDefault()) : (document.activeElement === s || document.activeElement === n) && (l.focus(), o.preventDefault()));
-  }
-  return G(() => {
-    var o;
-    return e ? ([
-      ...(o = t.current) == null ? void 0 : o.querySelectorAll(Qr)
-    ].filter((i) => !i.hasAttribute("disabled")), document.addEventListener("keydown", r)) : n == null || n.focus(), () => document.removeEventListener("keydown", r);
-  }, [e, t, n]), t;
-}
-const Nc = ({
-  children: t,
-  hide: e,
-  size: n = "md",
-  id: r,
-  className: o,
-  isOpen: i,
-  canClose: l,
-  ...s
-}) => {
-  var k, O, p;
-  const [u, a] = J(null), f = { sm: 4, lg: 8, md: 6, xl: 10 }[n], b = x("fr-modal", o), d = B(null), v = (k = fe(t, Jl)) == null ? void 0 : k[0], $ = fe(t, Ql), h = (O = fe(t, es)) == null ? void 0 : O[0], _ = (p = fe(t, Bt)) == null ? void 0 : p[0], w = r || ie();
-  G(() => {
-    var E, P;
-    d.current && (i && (a(document.activeElement), (E = document == null ? void 0 : document.getElementById(w)) == null || E.classList.add("fr-modal--opened")), i || (P = document == null ? void 0 : document.getElementById(w)) == null || P.classList.remove("fr-modal--opened"));
-  }, [i]), G(() => {
-    const A = d.current;
-    if (A)
-      return A.addEventListener("dsfr.conceal", (E) => E.stopPropagation()), A.addEventListener("dsfr.disclose", (E) => E.stopPropagation()), () => {
-        A.removeEventListener("dsfr.conceal", (E) => E.stopPropagation()), A.removeEventListener("dsfr.disclose", (E) => E.stopPropagation());
-      };
-  }, []);
-  const S = (A) => {
-    l && (!d.current || d.current === A.target || A.target.className.indexOf("closing-overlay") > -1) && e();
-  };
-  kc(d, i, u);
-  const K = _ ? Te(_, { onClick: () => e(), controls: w }) : l ? /* @__PURE__ */ m(Bt, { onClick: () => e(), controls: w }) : null, g = /* @__PURE__ */ m(
-    "dialog",
-    {
-      "aria-labelledby": `${w}-title`,
-      "aria-modal": "true",
-      className: b,
-      ref: d,
-      id: w,
-      role: "dialog",
-      onClick: (A) => S(A),
-      ...s,
-      children: /* @__PURE__ */ m("div", { className: "fr-container fr-container--fluid fr-container-md", children: /* @__PURE__ */ m("div", { className: "fr-grid-row fr-grid-row--center closing-overlay", children: /* @__PURE__ */ m("div", { className: `fr-col-12 fr-col-md-${f}`, children: /* @__PURE__ */ R("div", { className: "fr-modal__body", children: [
-        /* @__PURE__ */ m("div", { className: "fr-modal__header", children: K }),
-        /* @__PURE__ */ R("div", { className: "fr-modal__content", children: [
-          v && Te(v, { id: w }),
-          $ ?? null
-        ] }),
-        h
-      ] }) }) }) })
-    }
-  );
-  return Bn.createPortal(
-    g,
-    document.body
-  );
-}, Ic = ({
-  children: t,
-  size: e = "md",
-  id: n,
-  className: r,
-  ...o
-}) => {
-  var v, $, h;
-  const l = { sm: 4, lg: 8, md: 6, xl: 10 }[e], s = x("fr-modal", r), u = (v = fe(t, Jl)) == null ? void 0 : v[0], a = fe(t, Ql), c = ($ = fe(t, es)) == null ? void 0 : $[0], f = (h = fe(t, Bt)) == null ? void 0 : h[0], b = f ? Te(f, { controls: n }) : /* @__PURE__ */ m(Bt, { controls: n }), d = /* @__PURE__ */ m(
-    "dialog",
-    {
-      "aria-labelledby": `${n}-title`,
-      className: s,
-      id: n,
-      role: "dialog",
-      ...o,
-      children: /* @__PURE__ */ m("div", { className: "fr-container fr-container--fluid fr-container-md", children: /* @__PURE__ */ m("div", { className: "fr-grid-row fr-grid-row--center closing-overlay", children: /* @__PURE__ */ m("div", { className: `fr-col-12 fr-col-md-${l}`, children: /* @__PURE__ */ R("div", { className: "fr-modal__body", children: [
-        /* @__PURE__ */ m("div", { className: "fr-modal__header", children: b }),
-        /* @__PURE__ */ R("div", { className: "fr-modal__content", children: [
-          u && Te(u, { id: n }),
-          a ?? null
-        ] }),
-        c
-      ] }) }) }) })
-    }
-  );
-  return Bn.createPortal(
-    d,
-    document.body
-  );
-}, wd = ({
-  id: t,
-  size: e = "md",
-  hide: n,
-  isOpen: r = !1,
-  className: o,
-  canClose: i = !0,
-  ...l
-}) => t ? /* @__PURE__ */ m(Ic, { id: t, size: e, className: o, ...l }) : /* @__PURE__ */ m(
-  Nc,
-  {
-    id: t,
-    isOpen: r,
-    className: o,
-    size: e,
-    hide: n,
-    canClose: i,
-    ...l
-  }
-), Ql = me(({ ...t }, e) => /* @__PURE__ */ m(
-  "div",
-  {
-    ref: e,
-    ...t
-  }
-)), es = me(({
-  className: t,
-  ...e
-}, n) => /* @__PURE__ */ m(
-  "div",
-  {
-    ref: n,
-    className: x("fr-modal__footer", t),
-    ...e
-  }
-)), Bc = me(({
-  className: t,
-  css: e = {},
-  hasLabelLeft: n,
-  hasSeparator: r,
-  hint: o,
-  label: i,
-  ...l
-}, s) => {
-  const u = ie(), a = l.id || u, c = x("fr-toggle", {
-    "fr-toggle--border-bottom": r,
-    "fr-toggle--label-left": n
-  }, t);
-  return /* @__PURE__ */ R(
-=======
 }), Hr = ({
   gutters: t = !1,
   horizontalAlign: e,
@@ -9302,7 +7359,6 @@ const Nc = ({
     return d.key === "Enter" && i((v = a.current) == null ? void 0 : v.value);
   };
   return /* @__PURE__ */ O(
->>>>>>> staging
     "div",
     {
       role: "search",
@@ -9312,13 +7368,6 @@ const Nc = ({
         /* @__PURE__ */ m(
           "input",
           {
-<<<<<<< HEAD
-            ref: s,
-            type: "checkbox",
-            className: x("fr-toggle__input", e["fr-toggle__input"]),
-            id: a,
-            ...ze(l, { exclude: ["type"] })
-=======
             ref: (d) => pt(d, [u, a]),
             className: x("fr-input", e["fr-input"]),
             type: "search",
@@ -9326,48 +7375,11 @@ const Nc = ({
             onKeyDown: b,
             placeholder: l,
             ...je(s)
->>>>>>> staging
           }
         ),
         /* @__PURE__ */ m(
           "button",
           {
-<<<<<<< HEAD
-            className: x("fr-toggle__label", e["fr-toggle__label"]),
-            htmlFor: a,
-            "data-fr-checked-label": "Activé",
-            "data-fr-unchecked-label": "Désactivé",
-            children: i
-          }
-        ),
-        o && /* @__PURE__ */ m("p", { className: x("fr-hint-text", e["fr-hint-text"]), children: o })
-      ]
-    }
-  );
-}), Sd = ({ children: t, className: e, ...n }) => {
-  const r = ie();
-  return /* @__PURE__ */ m("ul", { className: x("fr-toggle__list", e), ...ze(n), children: fe(t, Bc).map((o, i) => /* @__PURE__ */ m("li", { children: o }, `${r}-${i}`)) });
-}, Oc = {
-  "fr-select-btn": "_fr-select-btn_m2sgv_1"
-};
-function Td(t) {
-  const { buttonLabel: e, ...n } = t, r = Bs(n), o = B(null), {
-    labelProps: i,
-    triggerProps: l,
-    valueProps: s,
-    menuProps: u
-  } = Za(n, r, o), { isFocusVisible: a, focusProps: c } = qn(), { buttonProps: f } = ko({ ...se(l, c) }, o);
-  return /* @__PURE__ */ R("div", { className: "fr-select-group", children: [
-    t.label && /* @__PURE__ */ m("label", { ...i, className: "fr-label", children: t.label }),
-    /* @__PURE__ */ m(
-      "button",
-      {
-        ...f,
-        ref: o,
-        className: x("fr-select", Oc["fr-select-btn"]),
-        "data-focus-visible": a,
-        children: /* @__PURE__ */ m("span", { ...s, children: r.selectedItem ? r.selectedItem.rendered : e })
-=======
             type: "button",
             onClick: () => {
               var d;
@@ -9400,7 +7412,6 @@ function Td(t) {
         "aria-current": n || void 0,
         ...i,
         children: o
->>>>>>> staging
       }
     ),
     /* @__PURE__ */ m("div", { className: x("fr-collapse", "fr-menu", r["fr-menu"]), id: l, children: /* @__PURE__ */ m("ul", { className: x("fr-menu__list", r["fr-menu__list"]), children: s.map((u, a) => /* @__PURE__ */ m("li", { className: "fr-nav__item", children: $e(u) && u.type === he ? _e(u, { className: x("fr-nav__link", u.props.className) }) : u }, `navitem-${l}-${a}`)) }) })
@@ -9618,11 +7629,7 @@ function Xl({ item: t, state: e }) {
       ref: n,
       href: b,
       className: x(
-<<<<<<< HEAD
-        Se["listbox-item"],
-=======
         Te["listbox-item"],
->>>>>>> staging
         d,
         {
           [Te[`listbox-item--${c}`]]: c,
@@ -9652,11 +7659,7 @@ function Tc({ section: t, state: e }) {
     {
       ...n,
       className: x(
-<<<<<<< HEAD
-        Se["listbox-section"],
-=======
         Te["listbox-section"],
->>>>>>> staging
         l,
         s.base,
         { [Te.divider]: i }
@@ -9673,13 +7676,8 @@ function Tc({ section: t, state: e }) {
             children: t.rendered
           }
         ),
-<<<<<<< HEAD
-        /* @__PURE__ */ m(u, { ...o, className: x(Se["listbox-section-list"], s.list), children: [...t.childNodes].map((a) => /* @__PURE__ */ m(
-          ts,
-=======
         /* @__PURE__ */ m(u, { ...o, className: x(Te["listbox-section-list"], s.list), children: [...t.childNodes].map((a) => /* @__PURE__ */ m(
           Xl,
->>>>>>> staging
           {
             item: a,
             state: e
@@ -9690,15 +7688,9 @@ function Tc({ section: t, state: e }) {
     }
   );
 }
-<<<<<<< HEAD
-function Gc(t) {
-  const e = Rs(t), n = B(null), { menuProps: r } = Ua(t, e, n);
-  return /* @__PURE__ */ m("ul", { ...r, ref: n, className: x(Se.listbox), style: { minWidth: "200px" }, children: [...e.collection].map((o) => o.type === "section" ? /* @__PURE__ */ m(Wc, { section: o, state: e }, o.key) : /* @__PURE__ */ m(ts, { item: o, state: e }, o.key)) });
-=======
 function _c(t) {
   const e = Is(t), n = I(null), { menuProps: r } = za(t, e, n);
   return /* @__PURE__ */ m("ul", { ...r, ref: n, className: x(Te.listbox), style: { minWidth: "200px" }, children: [...e.collection].map((o) => o.type === "section" ? /* @__PURE__ */ m(Tc, { section: o, state: e }, o.key) : /* @__PURE__ */ m(Xl, { item: o, state: e }, o.key)) });
->>>>>>> staging
 }
 const Ac = me(
   ({ className: t, color: e = "blue-france", icon: n, iconPosition: r = "left", size: o = "md", variant: i = "primary", children: l, ...s }, u) => {
@@ -9719,15 +7711,9 @@ const Ac = me(
     return /* @__PURE__ */ m("button", { className: a, ref: u, ...s, children: l });
   }
 );
-<<<<<<< HEAD
-function Fd(t) {
-  const { className: e, color: n, icon: r, iconPosition: o, size: i, variant: l, placement: s = "start", ...u } = t, a = Is(u), c = B(null), { menuTriggerProps: f, menuProps: b } = Jn({}, a, c), { isFocusVisible: d, focusProps: v } = qn(), { buttonProps: $ } = ko({ ...se(f, v) }, c);
-  return /* @__PURE__ */ R(Nn, { children: [
-=======
 function wd(t) {
   const { className: e, color: n, icon: r, iconPosition: o, size: i, variant: l, placement: s = "start", ...u } = t, a = Ms(u), c = I(null), { menuTriggerProps: f, menuProps: b } = Jn({}, a, c), { isFocusVisible: d, focusProps: v } = qn(), { buttonProps: $ } = ko({ ...se(f, v) }, c);
   return /* @__PURE__ */ O(In, { children: [
->>>>>>> staging
     /* @__PURE__ */ m(
       Ac,
       {
@@ -9752,72 +7738,6 @@ function wd(t) {
     ) })
   ] });
 }
-<<<<<<< HEAD
-const Ld = Rt, Md = lo;
-export {
-  gc as Accordion,
-  ad as AccordionGroup,
-  cd as Alert,
-  fc as Autocomplete,
-  ld as AutocompleteItem,
-  ss as Badge,
-  ed as BadgeGroup,
-  Ed as Breadcrumb,
-  ut as Button,
-  td as ButtonGroup,
-  $d as Checkbox,
-  od as Col,
-  nd as Container,
-  Qc as DSFRConfig,
-  mc as DissmissibleTag,
-  fs as FastAccess,
-  hd as Fieldset,
-  Pd as FileUpload,
-  sd as Header,
-  Rt as Item,
-  he as Link,
-  Ad as Listbox,
-  Kd as ListboxItem,
-  Dd as ListboxSection,
-  vs as Logo,
-  Fd as MenuButton,
-  Ld as MenuItem,
-  Md as MenuSection,
-  wd as Modal,
-  Bt as ModalClose,
-  Ql as ModalContent,
-  es as ModalFooter,
-  Jl as ModalTitle,
-  ms as Nav,
-  to as NavItem,
-  dd as Notice,
-  ps as Operator,
-  gd as Radio,
-  rd as Row,
-  bs as SearchBar,
-  lo as Section,
-  Td as Select,
-  _d as SelectOption,
-  bc as SelectableTag,
-  ds as Service,
-  pd as SideMenu,
-  ql as SideMenuItem,
-  bd as SideMenuLink,
-  Zl as Spinner,
-  yd as Stepper,
-  $c as Tab,
-  fd as Tabs,
-  pc as Tag,
-  ud as TagGroup,
-  xd as Text,
-  vd as TextArea,
-  md as TextInput,
-  Cd as Title,
-  Bc as Toggle,
-  Sd as ToggleGroup,
-  id as useAutocompleteList,
-  pt as useDSFRConfig
-=======
 const Sd = Vt, Td = lo, Zl = me(({
   children: t,
   className: e,
@@ -10016,33 +7936,35 @@ const Ad = ({
     )
   ] }) }) });
 }, Kd = me(({
-  className: t,
-  css: e = {},
-  hint: n,
-  id: r,
-  label: o,
+  checked: t,
+  className: e,
+  css: n = {},
+  hint: r,
+  id: o,
   imageComponent: i,
-  ...l
-}, s) => {
-  const u = r || ie();
-  return /* @__PURE__ */ O("div", { className: x("fr-radio-group", { "fr-radio-rich": i }, t), children: [
+  label: l,
+  ...s
+}, u) => {
+  const a = o || ie();
+  return /* @__PURE__ */ O("div", { className: x("fr-radio-group", { "fr-radio-rich": i }, e), children: [
     /* @__PURE__ */ m(
       "input",
       {
-        ref: s,
-        ...l,
+        checked: t,
+        id: a,
+        ref: u,
         type: "radio",
-        id: u
+        ...s
       }
     ),
     /* @__PURE__ */ O(
       "label",
       {
         className: x("fr-label"),
-        htmlFor: u,
+        htmlFor: a,
         children: [
-          o,
-          n && /* @__PURE__ */ m("p", { className: x("fr-hint-text"), children: n })
+          l,
+          r && /* @__PURE__ */ m("p", { className: x("fr-hint-text"), children: r })
         ]
       }
     ),
@@ -11231,5 +9153,4 @@ export {
   ad as useAutocompleteList,
   bt as useDSFRConfig,
   Rd as useToast
->>>>>>> staging
 };
