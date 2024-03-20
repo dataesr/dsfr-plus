@@ -8,6 +8,7 @@ export type TagInputBaseProps = {
   hint?: string;
   label: string;
   onTagsChange(tags: Array<string>): any;
+  placeholder?: string,
   tags?: Array<string>;
 };
 
@@ -17,6 +18,7 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(({
   hint,
   label,
   onTagsChange,
+  placeholder = 'Press ENTER to search for serveral terms',
   tags,
 }) => {
   const [input, setInput] = useState('');
@@ -42,19 +44,21 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(({
   return (
     <div>
       <TextInput
-        type="text"
-        value={input}
-        label={label}
         hint={hint}
+        label={label}
         onChange={(event: FormEvent<HTMLInputElement>) => setInput((event?.target as HTMLTextAreaElement)?.value)}
         onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyDown(event)}
+        placeholder={placeholder}
+        type="text"
+        value={input}
       />
       <TagGroup>
         {(values ?? []).map((tag) => (
           <Tag
-            key={tag}
             className="fr-mr-1w"
+            key={tag}
             onClick={() => handleDeleteClick(tag)}
+            title={`Tag ${tag}`}
           >
             {tag}
             <span className='fr-icon-close-line' />
