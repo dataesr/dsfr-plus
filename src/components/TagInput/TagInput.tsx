@@ -1,4 +1,4 @@
-import { FormEvent, forwardRef, KeyboardEvent, useState } from 'react';
+import { FormEvent, KeyboardEvent, useState } from 'react';
 
 import { TextInput } from '../Input';
 import { Tag, TagGroup } from '../Tag';
@@ -8,24 +8,23 @@ export type TagInputBaseProps = {
   hint?: string;
   label: string;
   onTagsChange(tags: Array<string>): any;
-  placeholder?: string,
   tags?: Array<string>;
 };
 
 export type TagInputProps = Merge<React.InputHTMLAttributes<HTMLInputElement>, TagInputBaseProps>;
 
-export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(({
+export const TagInput = ({
   hint,
   label,
   onTagsChange,
-  placeholder = 'Press ENTER to search for serveral terms',
   tags,
-}) => {
+  ...props
+}: TagInputProps) => {
   const [input, setInput] = useState('');
   const [values, setValues] = useState(tags);
 
   const handleKeyDown = (e: KeyboardEvent) => {
-    if ([9, 13].includes(e.keyCode) && input) {
+    if (e.key === "Enter" && input.trim()) {
       e.preventDefault();
       if (values?.includes(input.trim())) return;
       const newValues = [...(values ?? []), input.trim()];
@@ -48,9 +47,9 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(({
         label={label}
         onChange={(event: FormEvent<HTMLInputElement>) => setInput((event?.target as HTMLTextAreaElement)?.value)}
         onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyDown(event)}
-        placeholder={placeholder}
         type="text"
         value={input}
+        {...props}
       />
       <TagGroup>
         {(values ?? []).map((tag) => (
@@ -58,7 +57,7 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(({
             className="fr-mr-1w"
             key={tag}
             onClick={() => handleDeleteClick(tag)}
-            title={`Tag ${tag}`}
+            title={`Mot (${tag}) sélectionné, cliquer sur la touche "Entrée" ou la touche "Espace" pour le supprimer.`}
           >
             {tag}
             <span className='fr-icon-close-line' />
@@ -67,4 +66,4 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(({
       </TagGroup>
     </div>
   );
-});
+};
