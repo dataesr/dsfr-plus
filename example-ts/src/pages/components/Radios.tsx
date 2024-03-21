@@ -1,17 +1,16 @@
-import { Radio, Fieldset, Container, Title, Text, Row, Col, Breadcrumb, Link } from '@dataesr/dsfr-plus';
-
+import { RadioGroup, Radio, Fieldset, Container, Title, Text, Row, Col, Breadcrumb, Link } from '@dataesr/dsfr-plus';
 import Playground from '../../components/Playground';
 
 const radio = `
-<Radio value="1" name="checker" label="Radio 1" />
+<Radio value="1" name="checker1" label="Radio 1" />
 `;
 const radioChecked = `
-<Radio value="1" name="checker" label="Radio 1" checked />
+<Radio value="1" name="checker2" label="Radio 1" checked />
 `;
 const radioRich = `
 <Radio
   value="2"
-  name="checker"
+  name="checker3"
   label="Radio 2"
   imageComponent={<img src="/placeholder.1x1.png" alt="placeholder"/>}
 />
@@ -20,19 +19,20 @@ const radioRichGroup = `
 <Fieldset legend="Un groupe de bouton radio">
   <Radio
     value="1"
-    name="checker"
+    name="checker4"
     label="Radio 1"
     imageComponent={<img src="/placeholder.1x1.png" alt="placeholder"/>}
   />
   <Radio
+  checked
     value="2"
-    name="checker"
+    name="checker4"
     label="Radio 2"
     imageComponent={<img src="/placeholder.1x1.png" alt="placeholder"/>}
   />
   <Radio
     value="3"
-    name="checker"
+    name="checker4"
     label="Radio 3"
     imageComponent={<img src="/placeholder.1x1.png" alt="placeholder"/>}
   />
@@ -46,9 +46,9 @@ const state = `
   message="Bien joué !"
   legend="Un groupe de bouton radio"
 >
-  <Radio value="1" name="checker" label="Radio 1" />
-  <Radio value="2" name="checker" label="Radio 2" />
-  <Radio value="3" name="checker" label="Radio 3" />
+  <Radio value="1" name="checker5" label="Radio 1" />
+  <Radio value="2" name="checker5" label="Radio 2" />
+  <Radio value="3" name="checker5" label="Radio 3" />
 </Fieldset>
 `;
 const stateRich = `
@@ -60,19 +60,19 @@ const stateRich = `
 >
   <Radio
     value="1"
-    name="checker"
+    name="checker6"
     label="Radio 1"
     imageComponent={{<img src="/placeholder.1x1.png" alt="placeholder"/>}}
   />
   <Radio
     value="2"
-    name="checker"
+    name="checker6"
     label="Radio 2"
     imageComponent={<img src="/placeholder.1x1.png" alt="placeholder"/>}
   />
   <Radio
     value="3"
-    name="checker"
+    name="checker6"
     label="Radio 3"
     imageComponent={<img src="/placeholder.1x1.png" alt="placeholder"/>}
   />
@@ -84,9 +84,9 @@ const disabled = `
   hint="Je suis pas cliquable"
   legend="Un groupe de bouton radio"
 >
-  <Radio value="1" name="checker" label="Radio 1" />
-  <Radio value="2" name="checker" label="Radio 2" />
-  <Radio value="3" name="checker" label="Radio 3" />
+  <Radio value="1" name="checker7" label="Radio 1" />
+  <Radio value="2" name="checker7" label="Radio 2" />
+  <Radio value="3" name="checker7" label="Radio 3" />
 </Fieldset>
 `;
 const disabledRich = `
@@ -97,19 +97,19 @@ const disabledRich = `
 >
   <Radio
     value="1"
-    name="checker"
+    name="checker8"
     label="Radio 1"
     imageComponent={{<img src="/placeholder.1x1.png" alt="placeholder"/>}}
   />
   <Radio
     value="2"
-    name="checker"
+    name="checker8"
     label="Radio 2"
     imageComponent={<img src="/placeholder.1x1.png" alt="placeholder"/>}
   />
   <Radio
     value="3"
-    name="checker"
+    name="checker8"
     label="Radio 3"
     imageComponent={<img src="/placeholder.1x1.png" alt="placeholder"/>}
   />
@@ -124,17 +124,17 @@ const hint = `
   <Radio
     hint="Je suis la valeur numéro 1"
     value="1"
-    name="checker"
+    name="checker9"
     label="Radio 1" />
   <Radio
     hint="Je suis la valeur numéro 2"
     value="2"
-    name="checker"
+    name="checker9"
     label="Radio 2" />
   <Radio
     hint="Je suis la valeur numéro 3"
     value="3"
-    name="checker"
+    name="checker9"
     label="Radio 3" />
 </Fieldset>
 `;
@@ -146,21 +146,21 @@ const hintRich = `
   <Radio
     hint="Je suis la valeur numéro 1"
     value="1"
-    name="checker"
+    name="checker10"
     label="Radio 1"
     imageComponent={{<img src="/placeholder.1x1.png" alt="placeholder"/>}}
   />
   <Radio
     hint="Je suis la valeur numéro 2"
     value="2"
-    name="checker"
+    name="checker10"
     label="Radio 2"
     imageComponent={<img src="/placeholder.1x1.png" alt="placeholder"/>}
   />
   <Radio
     hint="Je suis la valeur numéro 3"
     value="3"
-    name="checker"
+    name="checker10"
     label="Radio 3"
     imageComponent={<img src="/placeholder.1x1.png" alt="placeholder"/>}
   />
@@ -172,21 +172,21 @@ const inlineRich = `
   <Radio 
     hint="Je suis la valeur numéro 1"
     value="1"
-    name="checker"
+    name="checker11"
     label="Radio 1"
     imageComponent={{<img src="/placeholder.1x1.png" alt="placeholder"/>}}
   />
   <Radio 
     hint="Je suis la valeur numéro 2"
     value="2"
-    name="checker"
+    name="checker11"
     label="Radio 2"
     imageComponent={<img src="/placeholder.1x1.png" alt="placeholder"/>}
   />
   <Radio 
     hint="Je suis la valeur numéro 3"
     value="3"
-    name="checker"
+    name="checker11"
     label="Radio 3"
     imageComponent={<img src="/placeholder.1x1.png" alt="placeholder"/>}
   />
@@ -197,19 +197,19 @@ const inline = `
   <Radio 
     hint="Je suis la valeur numéro 1"
     value="1"
-    name="checker"
+    name="checker12"
     label="Radio 1"
   />
   <Radio 
     hint="Je suis la valeur numéro 2"
     value="2"
-    name="checker"
+    name="checker12"
     label="Radio 2"
   />
   <Radio 
     hint="Je suis la valeur numéro 3"
     value="3"
-    name="checker"
+    name="checker12"
     label="Radio 3"
   />
 </Fieldset>
@@ -218,20 +218,55 @@ const radios = `
 <Fieldset legend="Un groupe de bouton radio">
   <Radio
     value="1"
-    name="checker"
+    name="checker13"
     label="Radio 1"
   />
   <Radio
     value="2"
-    name="checker"
+    name="checker13"
     label="Radio 2"
   />
   <Radio
     value="3"
-    name="checker"
+    name="checker13"
     label="Radio 3"
   />
 </Fieldset>
+`;
+const radioGroup = `
+<RadioGroup
+  name="radioGroup"
+  label="Un groupe de bouton radio"
+  hint="Texte d'explication pour tout le champs"
+>
+  <Radio
+    value="1"
+    label="Radio 1"
+  />
+  <Radio
+    checked
+    value="2"
+    label="Radio 2"
+  />
+</RadioGroup>
+`;
+const radioGroupInline = `
+<RadioGroup
+  name="radioGroupInline"
+  label="Un groupe de bouton radio affiché sur une ligne"
+  hint="Texte d'explication pour tout le champs"
+  isInline
+>
+  <Radio
+    value="1"
+    label="Radio 1"
+  />
+  <Radio
+    checked
+    value="2"
+    label="Radio 2"
+  />
+</RadioGroup>
 `;
 
 export function Radios() {
@@ -313,6 +348,20 @@ export function Radios() {
           </Text>
           <Playground code={inline} scope={{ Radio, Fieldset }} />
           <Playground code={inlineRich} scope={{ Radio, Fieldset }} />
+        </Col>
+        <Col xs={12}>
+          <Title as="h2" look="h4">RadioGroup</Title>
+          <Text>
+            Ensemble de Radio
+          </Text>
+          <Playground code={radioGroup} scope={{ Radio, RadioGroup }} />
+        </Col>
+        <Col xs={12}>
+          <Title as="h2" look="h4">RadioGroup en ligne</Title>
+          <Text>
+            Vous pouvez ajouter la propriété `isInline`, pour afficher les boutons radios sur une ligne
+          </Text>
+          <Playground code={radioGroupInline} scope={{ Radio, RadioGroup }} />
         </Col>
       </Row>
     </Container>
