@@ -15,7 +15,7 @@ type RadioBaseProps = {
   hint?: string,
   id?: string,
   imageComponent?: React.ReactNode,
-  label?: string,
+  label: string,
   name?: string,
   value: string,
 }
