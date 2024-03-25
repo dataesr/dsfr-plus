@@ -4,6 +4,8 @@ import { OnlyAs, PolyRefFunction } from 'react-polymorphed';
 
 import { Link } from '../Link';
 import { ColorFamily } from '../../types/colors';
+import { Merge } from '../../types/polymophic';
+
 
 import './styles.scss';
 
@@ -17,6 +19,7 @@ const getTagClasses = ({ className, color, icon, iconPosition, size }: TagProps)
 });
 
 export type TagProps = {
+  'aria-label'?: string;
   className?: Argument;
   color?: ColorFamily;
   icon?: string;
@@ -24,14 +27,7 @@ export type TagProps = {
   size?: "md" | "sm";
 }
 
-export type SelectableTagProps = {
-  className?: Argument;
-  color?: ColorFamily;
-  icon?: string;
-  iconPosition?: "left" | "right";
-  selected: boolean;
-  size?: "md" | "sm";
-}
+export type SelectableTagProps = Merge<TagProps, { selected: boolean; }>;
 
 export const Tag = polyRef<"p", TagProps, OnlyAs<"button" | "p" | "a">>(({
   as,
@@ -47,8 +43,8 @@ export const Tag = polyRef<"p", TagProps, OnlyAs<"button" | "p" | "a">>(({
 
   return (
     <Component
-      ref={ref}
       className={_classes}
+      ref={ref}
       {...props}
     />
 
@@ -70,17 +66,17 @@ export const SelectableTag = polyRef<"button", SelectableTagProps, OnlyAs<"butto
 
   return (
     <Component
+      aria-pressed={selected}
+      className={_classes}
       data-fr-js-disable="true"
       ref={ref}
-      className={_classes}
-      aria-pressed={selected}
       {...props}
     />
 
   );
 });
 
-export const DissmissibleTag = polyRef<"button", TagProps, OnlyAs<"button" | "a">>(({
+export const DismissibleTag = polyRef<"button", TagProps, OnlyAs<"button" | "a">>(({
   as,
   className,
   color,
@@ -89,13 +85,13 @@ export const DissmissibleTag = polyRef<"button", TagProps, OnlyAs<"button" | "a"
   size,
   ...props
 }, ref) => {
-  const _classes = cn('fr-tag--dismiss', getTagClasses({ className, color, icon, iconPosition, size }));
+  const _classes = cn('fr-tag--dismiss', 'custom-dismissible-tag', getTagClasses({ className, color, icon, iconPosition, size }));
   const Component = (as === "a") ? Link : as ? as : 'button';
 
   return (
     <Component
-      ref={ref}
       className={_classes}
+      ref={ref}
       {...props}
     />
   );

@@ -1,27 +1,33 @@
-import { FormEvent, KeyboardEvent, useState } from 'react';
+import cn from 'classnames';
+import { FormEvent, KeyboardEvent, useId, useRef, useState } from 'react';
 
-import { TextInput } from '../Input';
-import { Tag, TagGroup } from '../Tag';
+import { DismissibleTag, TagGroup } from '../Tag';
 import { Merge } from '../../types/polymophic';
+
+import styles from './styles.module.scss';
 
 export type TagInputBaseProps = {
   hint?: string;
   label: string;
-  onTagsChange(tags: Array<string>): any;
+  onTagsChange?: (tags: Array<string>) => any;
+  tagTitle?: string | ((tag: string) => string);
   tags?: Array<string>;
 };
 
 export type TagInputProps = Merge<React.InputHTMLAttributes<HTMLInputElement>, TagInputBaseProps>;
 
-export const TagInput = ({
+export function TagInput({
   hint,
   label,
-  onTagsChange,
+  onTagsChange = () => { },
+  tagTitle = (tag: string): string => `Mot (${tag}) sélectionné, cliquer sur la touche "Entrée" ou la touche "Espace" pour le supprimer.`,
   tags,
   ...props
-}: TagInputProps) => {
+}: TagInputProps) {
   const [input, setInput] = useState('');
   const [values, setValues] = useState(tags);
+  const id = useId();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Enter" && input.trim()) {
@@ -41,30 +47,38 @@ export const TagInput = ({
   };
 
   return (
-    <div>
-      <TextInput
-        hint={hint}
-        label={label}
-        onChange={(event: FormEvent) => setInput((event?.target as HTMLInputElement)?.value)}
-        onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyDown(event)}
-        type="text"
-        value={input}
-        {...props}
-      />
-      <TagGroup>
-        {(values ?? []).map((tag) => (
-          <Tag
-            as="button"
-            className="fr-mr-1w"
-            key={tag}
-            onClick={() => handleDeleteClick(tag)}
-            title={`Mot (${tag}) sélectionné, cliquer sur la touche "Entrée" ou la touche "Espace" pour le supprimer.`}
-          >
-            {tag}
-            <span className='fr-icon-close-line' />
-          </Tag>
-        ))}
-      </TagGroup>
+    <div className="fr-input-group">
+      <label className={cn('fr-label')} htmlFor={id}>
+        {label}
+        {hint && <span className={cn('fr-hint-text')}>{hint}</span>}
+      </label>
+      <div
+        className={cn('fr-input', styles['taginput-wrapper'])}
+        onClick={() => document.activeElement !== inputRef.current && inputRef?.current?.focus()}>
+        <input
+          autoComplete="off"
+          className={styles['taginput-input']}
+          id={id}
+          onChange={(event: FormEvent<HTMLInputElement>) => setInput((event?.target as HTMLTextAreaElement)?.value)}
+          onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyDown(event)}
+          ref={inputRef}
+          type="text"
+          value={input}
+          {...props}
+        />
+        <TagGroup>
+          {(values ?? []).map((tag) => (
+            <DismissibleTag
+              aria-label={typeof tagTitle === 'function' ? tagTitle(tag) : tagTitle}
+              className="fr-mr-1w"
+              key={tag}
+              onClick={() => handleDeleteClick(tag)}
+            >
+              {tag}
+            </DismissibleTag>
+          ))}
+        </TagGroup>
+      </div>
     </div>
   );
-};
+}
