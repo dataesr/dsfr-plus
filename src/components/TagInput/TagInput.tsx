@@ -45,7 +45,7 @@ export const TagInput = ({
       <TextInput
         hint={hint}
         label={label}
-        onChange={(event: FormEvent<HTMLInputElement>) => setInput((event?.target as HTMLTextAreaElement)?.value)}
+        onChange={(event: FormEvent) => setInput((event?.target as HTMLInputElement)?.value)}
         onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyDown(event)}
         type="text"
         value={input}
@@ -54,6 +54,7 @@ export const TagInput = ({
       <TagGroup>
         {(values ?? []).map((tag) => (
           <Tag
+            as="button"
             className="fr-mr-1w"
             key={tag}
             onClick={() => handleDeleteClick(tag)}
