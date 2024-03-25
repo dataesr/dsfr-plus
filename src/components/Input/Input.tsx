@@ -115,8 +115,8 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       <div className={inputGroupClass}>
         <label className={cn("fr-label", css["fr-label"])} htmlFor={inputId}>
           {label}
-          {required && extendRequiredFieldsLabelsWith}
-          {isOptional && extendOptionalFieldsLabelsWith}
+          {required && !isOptional && extendRequiredFieldsLabelsWith}
+          {isOptional && !required && extendOptionalFieldsLabelsWith}
           {hint && (
             <span className={cn("fr-hint-text", css["fr-hint-text"])}>
               {hint}
@@ -166,7 +166,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       onChange,
       disabled,
       required,
-      isOptional, // Nouvelle propriété
+      isOptional,
       ...props
     },
     ref
@@ -231,8 +231,8 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       <div className={inputGroupClass}>
         <label className={cn("fr-label", css["fr-label"])} htmlFor={inputId}>
           {label}
-          {required && extendRequiredFieldsLabelsWith}
-          {isOptional && extendOptionalFieldsLabelsWith}
+          {required && !isOptional && extendRequiredFieldsLabelsWith}
+          {isOptional && !required && extendOptionalFieldsLabelsWith}
           {hint && (
             <span className={cn("fr-hint-text", css["fr-hint-text"])}>
               {hint}

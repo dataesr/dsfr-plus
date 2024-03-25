@@ -6869,11 +6869,13 @@ const Za = "_focused_1af8e_1", Ja = "_listbox_1af8e_10", Qa = "_content_1af8e_89
   children: t,
   routerComponent: e,
   extendRequiredFieldsLabelsWith: n = /* @__PURE__ */ m("span", { style: { color: "var(--text-default-error)" }, children: " *" }),
-  extendOptionalFieldsLabelsWith: r = " (optionel)",
+  extendOptionalFieldsLabelsWith: r = " (optionnel)",
   defaultLang: o = "fr",
   verbose: i = !1
 }) => {
-  const [l, s] = Z(window.localStorage.getItem("locale") || o), [u, a] = Z(!1);
+  const [l, s] = Z(
+    window.localStorage.getItem("locale") || o
+  ), [u, a] = Z(!1);
   W(() => {
     const b = async () => {
       var h;
@@ -6881,18 +6883,32 @@ const Za = "_focused_1af8e_1", Ja = "_listbox_1af8e_10", Qa = "_content_1af8e_89
         verbose: i,
         mode: "manual"
       }, await import("./dsfr.module.min-23ae5258.js"), await import("./utility-251e9615.js"), await import("./dsfr-4e49221c.js"), window.dsfr.start(), a(!0));
-    }, d = window.matchMedia("(prefers-color-scheme: dark)"), v = d != null && d.matches ? "dark" : "light", g = window.localStorage.getItem("theme");
-    document.documentElement.setAttribute("data-fr-scheme", g || v), b();
+    }, d = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ), v = d != null && d.matches ? "dark" : "light", g = window.localStorage.getItem("theme");
+    document.documentElement.setAttribute(
+      "data-fr-scheme",
+      g || v
+    ), b();
   }, []);
   const c = te((b) => {
     window.localStorage.setItem("locale", b), document.documentElement.setAttribute("lang", b), s(b);
-  }, []), f = ne(() => ({
-    setLocale: c,
-    routerComponent: e,
-    locale: l,
-    extendRequiredFieldsLabelsWith: n,
-    extendOptionalFieldsLabelsWith: r
-  }), [e, c, l, n, r]);
+  }, []), f = ne(
+    () => ({
+      setLocale: c,
+      routerComponent: e,
+      locale: l,
+      extendRequiredFieldsLabelsWith: n,
+      extendOptionalFieldsLabelsWith: r
+    }),
+    [
+      e,
+      c,
+      l,
+      n,
+      r
+    ]
+  );
   return /* @__PURE__ */ m(Gl.Provider, { value: f, children: u ? t : null });
 }, bt = () => Se(Gl), he = me(({
   children: t,
@@ -7102,23 +7118,14 @@ function ac(t) {
 }
 const dd = Vt;
 const cc = me, dc = cc(
-  ({
-    as: t,
-    className: e,
-    noIcon: n,
-    color: r = "blue-france",
-    size: o,
-    icon: i,
-    variant: l = "primary",
-    ...s
-  }, u) => {
+  ({ as: t, className: e, noIcon: n, color: r = "blue-france", size: o, icon: i, variant: l = "primary", ...s }, u) => {
     const a = t === "a" ? he : t || "p", c = y(
       "fr-badge",
       {
         [`fr-badge--${l}`]: l,
         [`fr-badge--${r}`]: r,
         [`fr-icon-${i}`]: i,
-        // Next line is a hack to oblige dsfr to display the icon because otherwise
+        // Next line is a hack to oblige dsfr to display the icon because otherwise 
         // "content: none" is applied on .fr-badge[class^="fr-icon-"]
         "fr-badge--icon-": i,
         "fr-badge--no-icon": n,
@@ -7509,8 +7516,8 @@ const vd = me(({
     return /* @__PURE__ */ O("div", { className: p, children: [
       /* @__PURE__ */ O("label", { className: y("fr-label", e["fr-label"]), htmlFor: K, children: [
         l,
-        b && h,
-        d && A,
+        b && !d && h,
+        d && !b && A,
         r && /* @__PURE__ */ m("span", { className: y("fr-hint-text", e["fr-hint-text"]), children: r })
       ] }),
       /* @__PURE__ */ m(
@@ -7554,7 +7561,6 @@ const vd = me(({
     disabled: f,
     required: b,
     isOptional: d,
-    // Nouvelle propriété
     ...v
   }, g) => {
     const { extendRequiredFieldsLabelsWith: h, extendOptionalFieldsLabelsWith: A } = bt(), [w, S] = Z(""), K = i || ie(), x = I(null), M = s !== void 0 || u !== void 0, R = y(
@@ -7582,8 +7588,8 @@ const vd = me(({
     return /* @__PURE__ */ O("div", { className: p, children: [
       /* @__PURE__ */ O("label", { className: y("fr-label", e["fr-label"]), htmlFor: K, children: [
         l,
-        b && h,
-        d && A,
+        b && !d && h,
+        d && !b && A,
         r && /* @__PURE__ */ m("span", { className: y("fr-hint-text", e["fr-hint-text"]), children: r })
       ] }),
       /* @__PURE__ */ m(

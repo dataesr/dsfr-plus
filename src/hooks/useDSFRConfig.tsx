@@ -1,4 +1,3 @@
-
 import {
   createContext,
   useCallback,
@@ -6,7 +5,7 @@ import {
   useEffect,
   useMemo,
   useState,
-} from 'react';
+} from "react";
 
 type ConfigContextObject = {
   routerComponent?: React.ElementType;
@@ -16,7 +15,7 @@ type ConfigContextObject = {
   verbose?: boolean;
   locale?: string;
   setLocale?: (lang: string) => void;
-}
+};
 export type DSFRConfigProps = React.PropsWithChildren<ConfigContextObject>;
 
 const ConfigContext = createContext<ConfigContextObject>({});
@@ -24,13 +23,16 @@ const ConfigContext = createContext<ConfigContextObject>({});
 export const DSFRConfig = ({
   children,
   routerComponent,
-  extendRequiredFieldsLabelsWith = <span style={{ color: 'var(--text-default-error)' }}> *</span>,
-  extendOptionalFieldsLabelsWith = " (optionel)",
-  defaultLang = 'fr',
+  extendRequiredFieldsLabelsWith = (
+    <span style={{ color: "var(--text-default-error)" }}> *</span>
+  ),
+  extendOptionalFieldsLabelsWith = " (optionnel)",
+  defaultLang = "fr",
   verbose = false,
 }: DSFRConfigProps) => {
-
-  const [locale, switchLang] = useState<string>(window.localStorage.getItem('locale') || defaultLang);
+  const [locale, switchLang] = useState<string>(
+    window.localStorage.getItem("locale") || defaultLang
+  );
   const [isDSFRStarted, setDSFRStarted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -46,32 +48,45 @@ export const DSFRConfig = ({
       // @ts-expect-error
       await import("@gouvfr/dsfr/dist/dsfr/dsfr.module.min");
       await import("@gouvfr/dsfr/dist/utility/utility.css");
-      await import('@gouvfr/dsfr/dist/dsfr.css');
+      await import("@gouvfr/dsfr/dist/dsfr.css");
       // @ts-expect-error
       window.dsfr.start();
       setDSFRStarted(true);
-    }
-    const defaultPreferedTheme = window.matchMedia('(prefers-color-scheme: dark)');
-    const systemPreferences = (defaultPreferedTheme?.matches) ? "dark" : "light";
-    const localPreferences = window.localStorage.getItem('theme');
-    document.documentElement.setAttribute('data-fr-scheme', localPreferences || systemPreferences);
+    };
+    const defaultPreferedTheme = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    const systemPreferences = defaultPreferedTheme?.matches ? "dark" : "light";
+    const localPreferences = window.localStorage.getItem("theme");
+    document.documentElement.setAttribute(
+      "data-fr-scheme",
+      localPreferences || systemPreferences
+    );
     startDSFR();
-  }, [])
-
+  }, []);
 
   const setLocale = useCallback((lang: string) => {
-    window.localStorage.setItem('locale', lang);
-    document.documentElement.setAttribute('lang', lang);
+    window.localStorage.setItem("locale", lang);
+    document.documentElement.setAttribute("lang", lang);
     switchLang(lang);
   }, []);
 
-  const value: ConfigContextObject = useMemo(() => ({
-    setLocale,
-    routerComponent,
-    locale,
-    extendRequiredFieldsLabelsWith,
-    extendOptionalFieldsLabelsWith,
-  }), [routerComponent, setLocale, locale, extendRequiredFieldsLabelsWith, extendOptionalFieldsLabelsWith]);
+  const value: ConfigContextObject = useMemo(
+    () => ({
+      setLocale,
+      routerComponent,
+      locale,
+      extendRequiredFieldsLabelsWith,
+      extendOptionalFieldsLabelsWith,
+    }),
+    [
+      routerComponent,
+      setLocale,
+      locale,
+      extendRequiredFieldsLabelsWith,
+      extendOptionalFieldsLabelsWith,
+    ]
+  );
 
   return (
     <ConfigContext.Provider value={value}>
