@@ -16,14 +16,13 @@ import Playground from "../../components/Playground";
 const uncontrolled = `
 <TextInput label="Nom" />
 `;
-
 const states = `
 <>
   <TextInput
     label="Nom"
     messageType="error"
     message="Votre message d'erreur"
-    required
+    isOptional
   />
   <TextInput
     label="Nom"
@@ -104,6 +103,13 @@ export function Inputs() {
             données. Le champ simple est un champ de saisie libre, qui accepte
             une courte ligne de contenu (texte ou/ et nombre). Le libellé se
             trouve au-dessus du champs de saisie, pour faciliter la lecture.
+          </Text>
+        </Col>
+        <Col xs={12}>
+          <Text>
+            Si vous ajoutez la props "required", le champ de saisie sera affiché
+            avec un astérisque. Si vous ajoutez la props "isOptional", le champ
+            de saisie sera affiché avec un "(optionnel)".
           </Text>
         </Col>
         <Col xs={12}>
