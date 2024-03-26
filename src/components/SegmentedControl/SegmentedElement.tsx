@@ -7,7 +7,6 @@ type SegmentedElementBaseProps = {
   className?: Argument,
   icon?: string,
   id?: string,
-  imageComponent?: React.ReactNode,
   label: string,
   name?: string,
   value: string,
@@ -19,7 +18,6 @@ export const SegmentedElement = forwardRef<HTMLInputElement, SegmentedElementPro
   className,
   icon,
   id,
-  imageComponent: ImageComponent,
   label,
   name,
   ...props
