@@ -1,10 +1,4 @@
 .taginput-wrapper {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  min-height: 2.75rem;
-  max-height: fit-content !important;
-
   &:focus-within {
     outline-offset: 2px;
     outline-width: 2px;
@@ -12,19 +6,11 @@
     outline-style: solid;
   }
 
-  .fr-tags-group {
-    display: centents;
+  .taginput-input {
+    width: 100%;
 
-    .fr-badge {
-      text-transform: none !important;
+    &:focus {
+      outline-style: none !important;
     }
-  }
-}
-
-.taginput-input {
-  flex-grow: 1;
-
-  &:focus {
-    outline-style: none !important;
   }
 }

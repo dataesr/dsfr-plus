@@ -8935,10 +8935,8 @@ const nr = me, rr = ({ className: t, color: e, icon: n, iconPosition: r, size: o
   const r = ie(), o = x("fr-tags-group", e);
   return /* @__PURE__ */ m("ul", { className: o, ...je(n), children: et(t, [is, Qc, Jc]).map((i, l) => /* @__PURE__ */ m("li", { children: i }, `${r}-${l}`)) });
 }, to = {
-  "taginput-wrapper": "_taginput-wrapper_1aybr_1",
-  "fr-tags-group": "_fr-tags-group_1aybr_14",
-  "fr-badge": "_fr-badge_1aybr_17",
-  "taginput-input": "_taginput-input_1aybr_21"
+  "taginput-wrapper": "_taginput-wrapper_qgcaf_1",
+  "taginput-input": "_taginput-input_qgcaf_7"
 };
 function Od({
   hint: t,
