@@ -25,6 +25,7 @@ import { TabsAndTab } from './pages/components/TabsAndTab';
 import { Tags } from './pages/components/Tags';
 import { Toasts } from './pages/components/Toasts';
 import { Toggles } from './pages/components/Toggles';
+import { SegmentedControls } from './pages/components/SegmentedControls';
 
 export default function Router() {
   return (
@@ -57,6 +58,7 @@ export default function Router() {
           <Route path="tab" element={<TabsAndTab />} />
           <Route path="tag" element={<Tags />} />
           <Route path="toast" element={<Toasts />} />
+          <Route path="segmentedControl" element={<SegmentedControls />} />
         </Route>
       </Route>
     </Routes>

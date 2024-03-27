@@ -31,3 +31,4 @@ export * from './Tag';
 export * from './Toast';
 export * from './Toggle';
 export * from './Typography';
+export * from './SegmentedControl';
