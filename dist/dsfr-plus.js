@@ -8918,7 +8918,7 @@ const nr = me, rr = ({ className: t, color: e, icon: n, iconPosition: r, size: o
   size: i,
   ...l
 }, s) => {
-  const u = x("fr-tag--dismiss", "custom-dismissible-tag", rr({ className: e, color: n, icon: r, iconPosition: o, size: i }));
+  const u = x("custom-dismissible-tag", rr({ className: e, color: n, icon: r, iconPosition: o, size: i }));
   return /* @__PURE__ */ m(
     t === "a" ? he : t || "button",
     {
@@ -8935,12 +8935,10 @@ const nr = me, rr = ({ className: t, color: e, icon: n, iconPosition: r, size: o
   const r = ie(), o = x("fr-tags-group", e);
   return /* @__PURE__ */ m("ul", { className: o, ...je(n), children: et(t, [is, Qc, Jc]).map((i, l) => /* @__PURE__ */ m("li", { children: i }, `${r}-${l}`)) });
 }, to = {
-  "taginput-wrapper": "_taginput-wrapper_vueqc_1",
-  "fr-tags-group": "_fr-tags-group_vueqc_14",
-  "fr-badge": "_fr-badge_vueqc_17",
-  "taginput-input": "_taginput-input_vueqc_21",
-  "taginput-close": "_taginput-close_vueqc_28",
-  "taginput-badge-close": "_taginput-badge-close_vueqc_37"
+  "taginput-wrapper": "_taginput-wrapper_1aybr_1",
+  "fr-tags-group": "_fr-tags-group_1aybr_14",
+  "fr-badge": "_fr-badge_1aybr_17",
+  "taginput-input": "_taginput-input_1aybr_21"
 };
 function Od({
   hint: t,
@@ -8967,7 +8965,7 @@ function Od({
       e,
       t && /* @__PURE__ */ m("span", { className: x("fr-hint-text"), children: t })
     ] }),
-    /* @__PURE__ */ O(
+    /* @__PURE__ */ m(
       "div",
       {
         className: x("fr-input", to["taginput-wrapper"]),
@@ -8975,37 +8973,35 @@ function Od({
           var v;
           return document.activeElement !== f.current && ((v = f == null ? void 0 : f.current) == null ? void 0 : v.focus());
         },
-        children: [
-          /* @__PURE__ */ m(
-            "input",
-            {
-              autoComplete: "off",
-              className: to["taginput-input"],
-              id: c,
-              onChange: (v) => {
-                var h;
-                return s((h = v == null ? void 0 : v.target) == null ? void 0 : h.value);
-              },
-              onKeyDown: (v) => b(v),
-              ref: f,
-              type: "text",
-              value: l,
-              ...i
-            }
-          ),
-          /* @__PURE__ */ m(ed, { children: (u ?? []).map((v) => /* @__PURE__ */ m(
-            is,
-            {
-              "aria-label": typeof r == "function" ? r(v) : r,
-              className: "fr-mr-1w",
-              onClick: () => d(v),
-              children: v
+        children: /* @__PURE__ */ m(
+          "input",
+          {
+            autoComplete: "off",
+            className: to["taginput-input"],
+            id: c,
+            onChange: (v) => {
+              var h;
+              return s((h = v == null ? void 0 : v.target) == null ? void 0 : h.value);
             },
-            v
-          )) })
-        ]
+            onKeyDown: (v) => b(v),
+            ref: f,
+            type: "text",
+            value: l,
+            ...i
+          }
+        )
       }
-    )
+    ),
+    /* @__PURE__ */ m(ed, { className: "fr-pt-1w", children: (u ?? []).map((v) => /* @__PURE__ */ m(
+      is,
+      {
+        "aria-label": typeof r == "function" ? r(v) : r,
+        className: "fr-mr-1w",
+        onClick: () => d(v),
+        children: v
+      },
+      v
+    )) })
   ] });
 }
 const no = ({

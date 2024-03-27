@@ -4,8 +4,6 @@ import { OnlyAs, PolyRefFunction } from 'react-polymorphed';
 
 import { Link } from '../Link';
 import { ColorFamily } from '../../types/colors';
-import { Merge } from '../../types/polymophic';
-
 
 import './styles.scss';
 
@@ -27,7 +25,7 @@ export type TagProps = {
   size?: "md" | "sm";
 }
 
-export type SelectableTagProps = Merge<TagProps, { selected: boolean; }>;
+export type SelectableTagProps = TagProps & { selected: boolean; };
 
 export const Tag = polyRef<"p", TagProps, OnlyAs<"button" | "p" | "a">>(({
   as,
@@ -85,7 +83,7 @@ export const DismissibleTag = polyRef<"button", TagProps, OnlyAs<"button" | "a">
   size,
   ...props
 }, ref) => {
-  const _classes = cn('fr-tag--dismiss', 'custom-dismissible-tag', getTagClasses({ className, color, icon, iconPosition, size }));
+  const _classes = cn('custom-dismissible-tag', getTagClasses({ className, color, icon, iconPosition, size }));
   const Component = (as === "a") ? Link : as ? as : 'button';
 
   return (

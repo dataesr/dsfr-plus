@@ -31,7 +31,7 @@ $color-families: green-tilleul-verveine,
 
 // Dismissable tags
 @each $color in $color-families {
-  .fr-tag.fr-tag--#{$color}.fr-tag--dismiss {
+  .fr-tag.fr-tag--#{$color}.custom-dismissable-tag {
     color: var(--text-action-high-#{$color});
     background-color: var(--background-action-low-#{$color});
     --idle: transparent;

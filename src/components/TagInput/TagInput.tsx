@@ -66,7 +66,8 @@ export function TagInput({
           value={input}
           {...props}
         />
-        <TagGroup>
+      </div>
+      <TagGroup className="fr-pt-1w">
           {(values ?? []).map((tag) => (
             <DismissibleTag
               aria-label={typeof tagTitle === 'function' ? tagTitle(tag) : tagTitle}
@@ -78,7 +79,6 @@ export function TagInput({
             </DismissibleTag>
           ))}
         </TagGroup>
-      </div>
     </div>
   );
 }
