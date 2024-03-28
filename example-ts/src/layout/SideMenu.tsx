@@ -24,64 +24,64 @@ export function Side() {
               title="Composants"
             >
               <Link current={is('/composants/accordion')} href="/composants/accordion">
-                Accordéon - Accordion
-              </Link>
-              <Link current={is('/composants/alert')} href="/composants/alert">
-                Alerte - Alert
-              </Link>
-              <Link current={is('/composants/ajout-de-fichier')} href="/composants/ajout-de-fichier">
-                Ajout de fichier - FileUpload
-              </Link>
-              <Link current={is('/composants/badge')} href="/composants/badge">
-                Badge - Badge
-              </Link>
-              <Link current={is('/composants/button')} href="/composants/button">
-                Bouton - Button
-              </Link>
-              <Link current={is('/composants/en-tete')} href="/composants/en-tete">
-                En-tête - Header
-              </Link>
-              <Link current={is('/composants/fil-d-ariane')} href="/composants/fil-d-ariane">
-                Fil d'Ariane - Breadcrumb
-              </Link>
-              <Link current={is('/composants/indicateur-d-etape')} href="/composants/indicateur-d-etape">
-                Indicateur d'étapes - Stepper
-              </Link>
-              <Link current={is('/composants/interrupteur')} href="/composants/interrupteur">
-                Interrupteur - Toggle
-              </Link>
-              <Link current={is('/composants/listbox')} href="/composants/listbox">
-                Listbox
-              </Link>
-              <Link current={is('/composants/select')} href="/composants/select">
-                Select
-              </Link>
-              <Link current={is('/composants/menu-button')} href="/composants/menu-button">
-                MenuButton
+                Accordion - Accordéon
               </Link>
               <Link current={is('/composants/autocomplete')} href="/composants/autocomplete">
                 Autocomplete
               </Link>
-              <Link current={is('/composants/menu-lateral')} href="/composants/menu-lateral">
-                Menu latéral - Sidemenu
+              <Link current={is('/composants/alert')} href="/composants/alert">
+                Alert - Alerte
               </Link>
-              <Link current={is('/composants/modal')} href="/composants/modal">
-                Modale - Modal
+              <Link current={is('/composants/badge')} href="/composants/badge">
+                Badge - Badge
               </Link>
-              <Link current={is('/composants/notice')} href="/composants/notice">
-                Bandeau d'information importante - Notice
+              <Link current={is('/composants/fil-d-ariane')} href="/composants/fil-d-ariane">
+                Breadcrumb - Fil d'Ariane
               </Link>
-              <Link current={is('/composants/radio')} href="/composants/radio">
-                Bouton Radio - Radio
-              </Link>
-              <Link current={is('/composants/input')} href="/composants/input">
-                Champ de saisie - Input
+              <Link current={is('/composants/button')} href="/composants/button">
+                Button - Bouton
               </Link>
               <Link current={is('/composants/checkbox')} href="/composants/checkbox">
-                Case à cocher - Checkbox
+                Checkbox - Case à cocher
+              </Link>
+              <Link current={is('/composants/ajout-de-fichier')} href="/composants/ajout-de-fichier">
+                FileUpload - Ajout de fichier
+              </Link>
+              <Link current={is('/composants/en-tete')} href="/composants/en-tete">
+                Header - En-tête
+              </Link>
+              <Link current={is('/composants/input')} href="/composants/input">
+                Input - Champ de saisie
+              </Link>
+              <Link current={is('/composants/listbox')} href="/composants/listbox">
+                Listbox
+              </Link>
+              <Link current={is('/composants/menu-button')} href="/composants/menu-button">
+                MenuButton
+              </Link>
+              <Link current={is('/composants/modal')} href="/composants/modal">
+                Modal - Modale
+              </Link>
+              <Link current={is('/composants/notice')} href="/composants/notice">
+                Notice - Bandeau d'information importante
+              </Link>
+              <Link current={is('/composants/radio')} href="/composants/radio">
+                Radio - Bouton Radio
+              </Link>
+              <Link current={is('/composants/select')} href="/composants/select">
+                Select - Liste déroulante
+              </Link>
+              <Link current={is('/composants/segmentedControl')} href="/composants/segmentedControl">
+                Segmented control - Contrôle segmenté
+              </Link>
+              <Link current={is('/composants/menu-lateral')} href="/composants/menu-lateral">
+                Sidemenu - Menu latéral
+              </Link>
+              <Link current={is('/composants/indicateur-d-etape')} href="/composants/indicateur-d-etape">
+                Stepper - Indicateur d'étapes
               </Link>
               <Link current={is('/composants/tab')} href="/composants/tab">
-                Onglet - Tab
+                Tab - Onglet
               </Link>
               <Link current={is('/composants/tag')} href="/composants/tag">
                 Tag - Tag
@@ -91,6 +91,9 @@ export function Side() {
               </Link>
               <Link current={is('/composants/toast')} href="/composants/toast">
                 Toast - Toast
+              </Link>
+              <Link current={is('/composants/interrupteur')} href="/composants/interrupteur">
+                Toggle - Interrupteur
               </Link>
             </SideMenuItem>
           </SideMenu>
