@@ -2,8 +2,12 @@ import { Breadcrumb, Col, Container, Link, Row, TagInput, Text, Title } from '@d
 
 import Playground from '../../components/Playground';
 
-const code = `
+const tagInput = `
 <TagInput tags={["tag_01"]} />
+`;
+
+const tagInputWithHint = `
+<TagInput hint="Ceci est un hint" tags={["tag_02"]} />
 `;
 
 export function TagInputs() {
@@ -22,7 +26,8 @@ export function TagInputs() {
           <Text>
             Le tag catégorise/classe/organise les contenus à l'aide de mots-clés. Il aide les utilisateurs à rechercher et à trouver facilement une information.
           </Text>
-          <Playground code={code} scope={{ TagInput }} defaultShowCode />
+          <Playground code={tagInput} scope={{ TagInput }} defaultShowCode />
+          <Playground code={tagInputWithHint} scope={{ TagInput }} defaultShowCode />
         </Col>
       </Row>
     </Container>

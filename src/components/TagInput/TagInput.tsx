@@ -4,8 +4,6 @@ import { FormEvent, KeyboardEvent, useId, useRef, useState } from 'react';
 import { DismissibleTag, TagGroup } from '../Tag';
 import { Merge } from '../../types/polymophic';
 
-import styles from './styles.module.scss';
-
 export type TagInputBaseProps = {
   hint?: string;
   label: string;
@@ -52,33 +50,29 @@ export function TagInput({
         {label}
         {hint && <span className={cn('fr-hint-text')}>{hint}</span>}
       </label>
-      <div
-        className={cn('fr-input', styles['taginput-wrapper'])}
-        onClick={() => document.activeElement !== inputRef.current && inputRef?.current?.focus()}>
-        <input
-          autoComplete="off"
-          className={styles['taginput-input']}
-          id={id}
-          onChange={(event: FormEvent<HTMLInputElement>) => setInput((event?.target as HTMLTextAreaElement)?.value)}
-          onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyDown(event)}
-          ref={inputRef}
-          type="text"
-          value={input}
-          {...props}
-        />
-      </div>
+      <input
+        autoComplete="off"
+        className="fr-input"
+        id={id}
+        onChange={(event: FormEvent<HTMLInputElement>) => setInput((event?.target as HTMLTextAreaElement)?.value)}
+        onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyDown(event)}
+        ref={inputRef}
+        type="text"
+        value={input}
+        {...props}
+      />
       <TagGroup className="fr-pt-1w">
-          {(values ?? []).map((tag) => (
-            <DismissibleTag
-              aria-label={typeof tagTitle === 'function' ? tagTitle(tag) : tagTitle}
-              className="fr-mr-1w"
-              key={tag}
-              onClick={() => handleDeleteClick(tag)}
-            >
-              {tag}
-            </DismissibleTag>
-          ))}
-        </TagGroup>
+        {(values ?? []).map((tag) => (
+          <DismissibleTag
+            aria-label={typeof tagTitle === 'function' ? tagTitle(tag) : tagTitle}
+            className="fr-mr-1w"
+            key={tag}
+            onClick={() => handleDeleteClick(tag)}
+          >
+            {tag}
+          </DismissibleTag>
+        ))}
+      </TagGroup>
     </div>
   );
 }
