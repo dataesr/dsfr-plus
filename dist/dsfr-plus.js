@@ -1,16 +1,5 @@
 import './style.css';
 import { jsxs as O, jsx as m, Fragment as In } from "react/jsx-runtime";
-<<<<<<< HEAD
-import g from "classnames";
-import * as vt from "react";
-import Q, { useState as Z, useEffect as W, forwardRef as be, useId as ie, useRef as I, useCallback as te, isValidElement as $e, Children as Ot, Fragment as xn, createContext as Rt, useMemo as ne, useContext as Se, useReducer as ss, createElement as ir, cloneElement as _e } from "react";
-import Bn, { flushSync as us, createPortal as as } from "react-dom";
-const cs = {
-  config: { attributes: !0, childList: !1, subtree: !1 }
-};
-function ds(t, e, n = cs) {
-  const [r, o] = Z(null);
-=======
 import $ from "classnames";
 import * as vt from "react";
 import Q, { useState as X, useEffect as W, forwardRef as be, useId as ne, useRef as k, useCallback as te, isValidElement as $e, Children as Ot, Fragment as xn, createContext as Rt, useMemo as re, useContext as Se, useReducer as us, createElement as ir, cloneElement as _e } from "react";
@@ -20,7 +9,6 @@ const ds = {
 };
 function fs(t, e, n = ds) {
   const [r, o] = X(null);
->>>>>>> staging
   W(() => {
     const i = new MutationObserver(e);
     o(i);
@@ -47,48 +35,27 @@ const ps = be(({
   defaultExpanded: i = !1,
   ...l
 }, s) => {
-<<<<<<< HEAD
-  const u = ie(), a = I(null), [c, f] = Z(!!i), p = te(
-    (d) => {
-      var $;
-      if (d.find((h) => h.attributeName === "aria-expanded") && (($ = a == null ? void 0 : a.current) != null && $.attributes)) {
-        const h = a.current.attributes.getNamedItem("aria-expanded");
-        f(h ? h.value === "true" : !1);
-=======
   const u = ne(), a = k(null), [c, f] = X(!!i), p = te(
     (d) => {
       var h;
       if (d.find((g) => g.attributeName === "aria-expanded") && ((h = a == null ? void 0 : a.current) != null && h.attributes)) {
         const g = a.current.attributes.getNamedItem("aria-expanded");
         f(g ? g.value === "true" : !1);
->>>>>>> staging
       }
     },
     [a]
   );
-<<<<<<< HEAD
-  return ds(a == null ? void 0 : a.current, p), /* @__PURE__ */ O("section", { className: g("fr-accordion", r), children: [
-    /* @__PURE__ */ m(
-      e,
-      {
-        className: g("fr-accordion__title", o.title),
-=======
   return fs(a == null ? void 0 : a.current, p), /* @__PURE__ */ O("section", { className: $("fr-accordion", r), children: [
     /* @__PURE__ */ m(
       e,
       {
         className: $("fr-accordion__title", o.title),
->>>>>>> staging
         children: /* @__PURE__ */ m(
           "button",
           {
             ...l,
             ref: (d) => pt(d, [s, a]),
-<<<<<<< HEAD
-            className: g("fr-accordion__btn", o.button),
-=======
             className: $("fr-accordion__btn", o.button),
->>>>>>> staging
             "aria-expanded": i,
             "aria-controls": u,
             children: $e(t) || typeof t == "string" ? t : typeof t == "function" ? t(c) : null
@@ -108,17 +75,10 @@ function et(t, e) {
 function bs(t, e) {
   return Ot.toArray(t).filter((n) => $e(n) && !e.includes(n.type));
 }
-<<<<<<< HEAD
-const ud = ({ children: t, className: e, ...n }) => {
-  const r = ie();
-  return /* @__PURE__ */ m("div", { className: g("fr-accordions-group", e), ...n, children: de(t, fs).map((o, i) => /* @__PURE__ */ m(xn, { children: o }, `${r}-d${i}`)) });
-}, ad = be(({
-=======
 const ad = ({ children: t, className: e, ...n }) => {
   const r = ne();
   return /* @__PURE__ */ m("div", { className: $("fr-accordions-group", e), ...n, children: de(t, ps).map((o, i) => /* @__PURE__ */ m(xn, { children: o }, `${r}-d${i}`)) });
 }, cd = be(({
->>>>>>> staging
   className: t,
   closeMode: e = "disallow",
   description: n,
@@ -130,11 +90,7 @@ const ad = ({ children: t, className: e, ...n }) => {
   variant: u = "info",
   ...a
 }, c) => {
-<<<<<<< HEAD
-  const f = I(null), p = (d) => {
-=======
   const f = k(null), p = (d) => {
->>>>>>> staging
     var v;
     d.preventDefault(), (v = f.current) == null || v.remove(), o && o(d);
   };
@@ -142,15 +98,6 @@ const ad = ({ children: t, className: e, ...n }) => {
     "div",
     {
       ref: (d) => pt(d, [c, f]),
-<<<<<<< HEAD
-      className: g(`fr-alert fr-alert--${u}`, { "fr-alert--sm": r === "sm" }, t),
-      ...a,
-      children: [
-        i && /* @__PURE__ */ m(s, { className: g("fr-alert__title", l.title), children: i }),
-        n && /* @__PURE__ */ m("p", { className: g(l.description), children: n }),
-        e === "uncontrolled" && /* @__PURE__ */ m("button", { onClick: p, className: g("fr-btn--close fr-btn", l.button), children: "Masquer le message" }),
-        e === "controlled" && /* @__PURE__ */ m("button", { onClick: o, className: g("fr-link--close fr-link", l.button), children: "Masquer le message" })
-=======
       className: $(`fr-alert fr-alert--${u}`, { "fr-alert--sm": r === "sm" }, t),
       ...a,
       children: [
@@ -158,7 +105,6 @@ const ad = ({ children: t, className: e, ...n }) => {
         n && /* @__PURE__ */ m("p", { className: $(l.description), children: n }),
         e === "uncontrolled" && /* @__PURE__ */ m("button", { onClick: p, className: $("fr-btn--close fr-btn", l.button), children: "Masquer le message" }),
         e === "controlled" && /* @__PURE__ */ m("button", { onClick: o, className: $("fr-link--close fr-link", l.button), children: "Masquer le message" })
->>>>>>> staging
       ]
     }
   );
@@ -171,11 +117,7 @@ function vs(t, e, n) {
   ms(t, e), e.set(t, n);
 }
 function tt(t, e, n) {
-<<<<<<< HEAD
-  let [r, o] = Z(t || e), i = I(t !== void 0), l = t !== void 0;
-=======
   let [r, o] = X(t || e), i = k(t !== void 0), l = t !== void 0;
->>>>>>> staging
   W(() => {
     let a = i.current;
     a !== l && console.warn(`WARN: A component changed from ${a ? "controlled" : "uncontrolled"} to ${l ? "controlled" : "uncontrolled"}.`), i.current = l;
@@ -187,13 +129,8 @@ function tt(t, e, n) {
       n && (Object.is(s, p) || n(p, ...d)), l || (s = p);
     };
     typeof a == "function" ? (console.warn("We can not support a function callback. See Github Issues for details https://github.com/adobe/react-spectrum/issues/2320"), o((d, ...v) => {
-<<<<<<< HEAD
-      let $ = a(l ? s : d, ...v);
-      return f($, ...c), l ? d : $;
-=======
       let h = a(l ? s : d, ...v);
       return f(h, ...c), l ? d : h;
->>>>>>> staging
     })) : (l || o(a), f(a, ...c));
   }, [
     l,
@@ -249,30 +186,17 @@ function gs(t) {
     isInvalid: !0,
     validationErrors: [],
     validationDetails: ro
-<<<<<<< HEAD
-  } : null, a = ne(() => lr(gs(l, o)), [
-=======
   } : null, a = re(() => lr($s(l, o)), [
->>>>>>> staging
     l,
     o
   ]);
   i != null && i.validationDetails.valid && (i = null);
-<<<<<<< HEAD
-  let c = Se(vs), f = ne(() => r ? Array.isArray(r) ? r.flatMap((P) => Pn(c[P])) : Pn(c[r]) : [], [
-    c,
-    r
-  ]), [p, d] = Z(c), [v, $] = Z(!1);
-  c !== p && (d(c), $(!1));
-  let h = ne(() => lr(v ? [] : f), [
-=======
   let c = Se(hs), f = re(() => r ? Array.isArray(r) ? r.flatMap((P) => Pn(c[P])) : Pn(c[r]) : [], [
     c,
     r
   ]), [p, d] = X(c), [v, h] = X(!1);
   c !== p && (d(c), h(!1));
   let g = re(() => lr(v ? [] : f), [
->>>>>>> staging
     v,
     f
   ]), A = k(nt), [w, S] = X(nt), K = k(nt), x = () => {
@@ -283,29 +207,17 @@ function gs(t) {
     Qt(P, K.current) || (K.current = P, S(P));
   }, [M, R] = X(!1);
   return W(x), {
-<<<<<<< HEAD
-    realtimeValidation: u || h || a || i || nt,
-    displayValidation: s === "native" ? u || h || w : u || h || a || i || w,
-=======
     realtimeValidation: u || g || a || i || nt,
     displayValidation: s === "native" ? u || g || w : u || g || a || i || w,
->>>>>>> staging
     updateValidation(P) {
       s === "aria" && !Qt(w, P) ? S(P) : A.current = P;
     },
     resetValidation() {
       let P = nt;
-<<<<<<< HEAD
-      Qt(P, K.current) || (K.current = P, S(P)), s === "native" && R(!1), $(!0);
-    },
-    commitValidation() {
-      s === "native" && R(!0), $(!0);
-=======
       Qt(P, K.current) || (K.current = P, S(P)), s === "native" && R(!1), h(!0);
     },
     commitValidation() {
       s === "native" && R(!0), h(!0);
->>>>>>> staging
     }
   };
 }
@@ -363,11 +275,7 @@ oo.getCollectionNode = function* (e, n) {
     }
   };
 };
-<<<<<<< HEAD
-function $s(t) {
-=======
 function ys(t) {
->>>>>>> staging
   return t.hasChildItems != null ? t.hasChildItems : !!(t.childItems || t.title && Q.Children.count(t.children) > 0);
 }
 let Vt = oo;
@@ -478,26 +386,11 @@ class xs {
         e.index = c;
         let d = p.key;
         d || (d = p.element ? null : this.getKey(i, e, n, r));
-<<<<<<< HEAD
-        let $ = [
-=======
         let h = [
->>>>>>> staging
           ...this.getFullNode({
             ...p,
             key: d,
             index: c,
-<<<<<<< HEAD
-            wrapper: xs(e.wrapper, p.wrapper)
-          }, this.getChildState(n, p), r ? `${r}${i.key}` : i.key, o)
-        ];
-        for (let h of $) {
-          if (h.value = p.value || e.value, h.value && this.cache.set(h.value, h), e.type && h.type !== e.type)
-            throw new Error(`Unsupported type <${en(h.type)}> in <${en(o.type)}>. Only <${en(e.type)}> is supported.`);
-          c++, yield h;
-        }
-        f = a.next($);
-=======
             wrapper: Cs(e.wrapper, p.wrapper)
           }, this.getChildState(n, p), r ? `${r}${i.key}` : i.key, o)
         ];
@@ -507,7 +400,6 @@ class xs {
           c++, yield g;
         }
         f = a.next(h);
->>>>>>> staging
       }
       return;
     }
@@ -569,13 +461,8 @@ function en(t) {
   return t[0].toUpperCase() + t.slice(1);
 }
 function so(t, e, n) {
-<<<<<<< HEAD
-  let r = ne(() => new ys(), []), { children: o, items: i, collection: l } = t;
-  return ne(() => {
-=======
   let r = re(() => new xs(), []), { children: o, items: i, collection: l } = t;
   return re(() => {
->>>>>>> staging
     if (l)
       return l;
     let u = r.build({
@@ -652,17 +539,6 @@ function ws(t, e) {
   return !0;
 }
 function uo(t) {
-<<<<<<< HEAD
-  let { selectionMode: e = "none", disallowEmptySelection: n, allowDuplicateSelectionEvents: r, selectionBehavior: o = "toggle", disabledBehavior: i = "all" } = t, l = I(!1), [, s] = Z(!1), u = I(null), a = I(null), [, c] = Z(null), f = ne(() => cr(t.selectedKeys), [
-    t.selectedKeys
-  ]), p = ne(() => cr(t.defaultSelectedKeys, new we()), [
-    t.defaultSelectedKeys
-  ]), [d, v] = tt(f, p, t.onSelectionChange), $ = ne(() => t.disabledKeys ? new Set(t.disabledKeys) : /* @__PURE__ */ new Set(), [
-    t.disabledKeys
-  ]), [h, A] = Z(o);
-  o === "replace" && h === "toggle" && typeof d == "object" && d.size === 0 && A("replace");
-  let w = I(o);
-=======
   let { selectionMode: e = "none", disallowEmptySelection: n, allowDuplicateSelectionEvents: r, selectionBehavior: o = "toggle", disabledBehavior: i = "all" } = t, l = k(!1), [, s] = X(!1), u = k(null), a = k(null), [, c] = X(null), f = re(() => cr(t.selectedKeys), [
     t.selectedKeys
   ]), p = re(() => cr(t.defaultSelectedKeys, new we()), [
@@ -672,7 +548,6 @@ function uo(t) {
   ]), [g, A] = X(o);
   o === "replace" && g === "toggle" && typeof d == "object" && d.size === 0 && A("replace");
   let w = k(o);
->>>>>>> staging
   return W(() => {
     o !== w.current && (A(o), w.current = o);
   }, [
@@ -701,11 +576,7 @@ function uo(t) {
     setSelectedKeys(S) {
       (r || !ws(S, d)) && v(S);
     },
-<<<<<<< HEAD
-    disabledKeys: $,
-=======
     disabledKeys: h,
->>>>>>> staging
     disabledBehavior: i
   };
 }
@@ -1033,15 +904,15 @@ class wn {
   }
 }
 function co(t) {
-  let { filter: e } = t, n = uo(t), r = ne(() => t.disabledKeys ? new Set(t.disabledKeys) : /* @__PURE__ */ new Set(), [
+  let { filter: e } = t, n = uo(t), r = re(() => t.disabledKeys ? new Set(t.disabledKeys) : /* @__PURE__ */ new Set(), [
     t.disabledKeys
   ]), o = te((a) => e ? new wn(e(a)) : new wn(a), [
     e
-  ]), i = ne(() => ({
+  ]), i = re(() => ({
     suppressTextValueWarning: t.suppressTextValueWarning
   }), [
     t.suppressTextValueWarning
-  ]), l = so(t, o, i), s = ne(() => new ao(l, n), [
+  ]), l = so(t, o, i), s = re(() => new ao(l, n), [
     l,
     n
   ]);
@@ -1050,17 +921,6 @@ function co(t) {
     if (n.focusedKey != null && !l.getItem(n.focusedKey)) {
       const a = u.current.getItem(n.focusedKey), c = [
         ...u.current.getKeys()
-<<<<<<< HEAD
-      ].map(($) => {
-        const h = u.current.getItem($);
-        return h.type === "item" ? h : null;
-      }).filter(($) => $ !== null), f = [
-        ...l.getKeys()
-      ].map(($) => {
-        const h = l.getItem($);
-        return h.type === "item" ? h : null;
-      }).filter(($) => $ !== null), p = c.length - f.length;
-=======
       ].map((h) => {
         const g = u.current.getItem(h);
         return g.type === "item" ? g : null;
@@ -1070,7 +930,6 @@ function co(t) {
         const g = l.getItem(h);
         return g.type === "item" ? g : null;
       }).filter((h) => h !== null), p = c.length - f.length;
->>>>>>> staging
       let d = Math.min(p > 1 ? Math.max(a.index - p + 1, 0) : a.index, f.length - 1), v;
       for (; d >= 0; ) {
         if (!s.isDisabled(f[d].key)) {
@@ -1095,7 +954,7 @@ function co(t) {
 }
 function fo(t) {
   var e;
-  let [n, r] = tt(t.selectedKey, (e = t.defaultSelectedKey) !== null && e !== void 0 ? e : null, t.onSelectionChange), o = ne(() => n != null ? [
+  let [n, r] = tt(t.selectedKey, (e = t.defaultSelectedKey) !== null && e !== void 0 ? e : null, t.onSelectionChange), o = re(() => n != null ? [
     n
   ] : [], [
     n
@@ -1146,27 +1005,6 @@ function Vn(t) {
 }
 function Ss(t) {
   var e, n;
-<<<<<<< HEAD
-  let { defaultFilter: r, menuTrigger: o = "input", allowsEmptyCollection: i = !1, allowsCustomValue: l, shouldCloseOnBlur: s = !0 } = t, [u, a] = Z(!1), [c, f] = Z(!1), [p, d] = Z(null), v = (ee) => {
-    t.onSelectionChange && t.onSelectionChange(ee), ee === w && (H(), D());
-  };
-  var $;
-  let { collection: h, selectionManager: A, selectedKey: w, setSelectedKey: S, selectedItem: K, disabledKeys: x } = fo({
-    ...t,
-    onSelectionChange: v,
-    items: ($ = t.items) !== null && $ !== void 0 ? $ : t.defaultItems
-  });
-  var M, R;
-  let [b, _] = tt(t.inputValue, (R = (M = t.defaultInputValue) !== null && M !== void 0 ? M : (e = h.getItem(w)) === null || e === void 0 ? void 0 : e.textValue) !== null && R !== void 0 ? R : "", t.onInputChange), P = h, C = ne(() => (
-    // No default filter if items are controlled.
-    t.items != null || !r ? h : Ss(h, b, r)
-  ), [
-    h,
-    b,
-    r,
-    t.items
-  ]), [B, E] = Z(C), T = I("focus"), V = Vn({
-=======
   let { defaultFilter: r, menuTrigger: o = "input", allowsEmptyCollection: i = !1, allowsCustomValue: l, shouldCloseOnBlur: s = !0 } = t, [u, a] = X(!1), [c, f] = X(!1), [p, d] = X(null), v = (ee) => {
     t.onSelectionChange && t.onSelectionChange(ee), ee === w && (H(), D());
   };
@@ -1186,7 +1024,6 @@ function Ss(t) {
     r,
     t.items
   ]), [B, E] = X(C), T = k("focus"), V = Vn({
->>>>>>> staging
     ...t,
     onOpenChange: (ee) => {
       t.onOpenChange && t.onOpenChange(ee, ee ? T.current : void 0), A.setFocused(ee), ee || A.setFocusedKey(null);
@@ -1215,11 +1052,7 @@ function Ss(t) {
   }, [
     V,
     ae
-<<<<<<< HEAD
-  ]), [z, j] = Z(b), H = () => {
-=======
   ]), [z, j] = X(b), H = () => {
->>>>>>> staging
     var ee, ce;
     let ve = (ce = (ee = g.getItem(w)) === null || ee === void 0 ? void 0 : ee.textValue) !== null && ce !== void 0 ? ce : "";
     j(ve), _(ve);
@@ -1232,21 +1065,12 @@ function Ss(t) {
     var ee;
     c && (C.size > 0 || i) && !V.isOpen && b !== z && o !== "manual" && F(null, "input"), !u && !i && V.isOpen && C.size === 0 && D(), w != null && w !== L.current && D(), b !== z && (A.setFocusedKey(null), a(!1), b === "" && (t.inputValue === void 0 || t.selectedKey === void 0) && S(null)), w !== L.current && (t.inputValue === void 0 || t.selectedKey === void 0) ? H() : z !== b && j(b);
     var ce;
-<<<<<<< HEAD
-    let ve = (ce = (ee = h.getItem(w)) === null || ee === void 0 ? void 0 : ee.textValue) !== null && ce !== void 0 ? ce : "";
-    !c && w != null && t.inputValue === void 0 && w === L.current && X.current !== ve && (j(ve), _(ve)), L.current = w, X.current = ve;
-  });
-  let G = On({
-    ...t,
-    value: ne(() => ({
-=======
     let ve = (ce = (ee = g.getItem(w)) === null || ee === void 0 ? void 0 : ee.textValue) !== null && ce !== void 0 ? ce : "";
     !c && w != null && t.inputValue === void 0 && w === L.current && Z.current !== ve && (j(ve), _(ve)), L.current = w, Z.current = ve;
   });
   let G = On({
     ...t,
     value: re(() => ({
->>>>>>> staging
       inputValue: b,
       selectedKey: w
     }), [
@@ -1254,24 +1078,15 @@ function Ss(t) {
       w
     ])
   }), J = () => {
-<<<<<<< HEAD
-    l && w == null ? k() : ye();
-  }, k = () => {
-=======
     l && w == null ? N() : ye();
   }, N = () => {
->>>>>>> staging
     L.current = null, S(null), D();
   }, ye = () => {
     if (t.selectedKey !== void 0 && t.inputValue !== void 0) {
       var ee;
       t.onSelectionChange(w);
       var ce;
-<<<<<<< HEAD
-      let ve = (ce = (ee = h.getItem(w)) === null || ee === void 0 ? void 0 : ee.textValue) !== null && ce !== void 0 ? ce : "";
-=======
       let ve = (ce = (ee = g.getItem(w)) === null || ee === void 0 ? void 0 : ee.textValue) !== null && ce !== void 0 ? ce : "";
->>>>>>> staging
       j(ve), D();
     } else
       H(), D();
@@ -1279,28 +1094,16 @@ function Ss(t) {
   const ke = () => {
     if (l) {
       var ee, ce;
-<<<<<<< HEAD
-      const ve = (ce = (ee = h.getItem(w)) === null || ee === void 0 ? void 0 : ee.textValue) !== null && ce !== void 0 ? ce : "";
-      b === ve ? ye() : k();
-=======
       const ve = (ce = (ee = g.getItem(w)) === null || ee === void 0 ? void 0 : ee.textValue) !== null && ce !== void 0 ? ce : "";
       b === ve ? ye() : N();
->>>>>>> staging
     } else
       ye();
   };
   let mt = () => {
-<<<<<<< HEAD
-    V.isOpen && A.focusedKey != null ? w === A.focusedKey ? ye() : S(A.focusedKey) : Ne();
-  }, or = I(b), is = (ee) => {
-    ee ? (or.current = b, o === "focus" && F(null, "focus")) : (s && Ne(), b !== or.current && G.commitValidation()), f(ee);
-  }, ls = ne(() => V.isOpen ? u ? P : C : B, [
-=======
     V.isOpen && A.focusedKey != null ? w === A.focusedKey ? ye() : S(A.focusedKey) : ke();
   }, or = k(b), ls = (ee) => {
     ee ? (or.current = b, o === "focus" && F(null, "focus")) : (s && ke(), b !== or.current && G.commitValidation()), f(ee);
   }, ss = re(() => V.isOpen ? u ? P : C : B, [
->>>>>>> staging
     V.isOpen,
     P,
     C,
@@ -1321,11 +1124,7 @@ function Ss(t) {
     isFocused: c,
     setFocused: ls,
     selectedItem: K,
-<<<<<<< HEAD
-    collection: ls,
-=======
     collection: ss,
->>>>>>> staging
     inputValue: b,
     setInputValue: _,
     commit: mt,
@@ -1738,11 +1537,7 @@ function Ms(t, e) {
       throw new Error(`Invalid state "${t.state}"`);
   }
 }
-<<<<<<< HEAD
-function cd(t) {
-=======
 function dd(t) {
->>>>>>> staging
   const { load: e, sort: n, initialSelectedKeys: r, initialSortDescriptor: o, getKey: i = (f) => f.id || f.key, initialFilterText: l = "" } = t;
   let [s, u] = us(Ms, {
     state: "idle",
@@ -1761,19 +1556,11 @@ function dd(t) {
       });
       var v;
       let A = (v = f.filterText) !== null && v !== void 0 ? v : s.filterText;
-<<<<<<< HEAD
-      var $;
-      let w = await p({
-        items: s.items.slice(),
-        selectedKeys: s.selectedKeys,
-        sortDescriptor: ($ = f.sortDescriptor) !== null && $ !== void 0 ? $ : s.sortDescriptor,
-=======
       var h;
       let w = await p({
         items: s.items.slice(),
         selectedKeys: s.selectedKeys,
         sortDescriptor: (h = f.sortDescriptor) !== null && h !== void 0 ? h : s.sortDescriptor,
->>>>>>> staging
         signal: d.signal,
         cursor: f.type === "loadingMore" ? s.cursor : null,
         filterText: A
@@ -1846,13 +1633,8 @@ function dd(t) {
     }
   };
 }
-<<<<<<< HEAD
-function Ms(t) {
-  let e = Vn(t), [n, r] = Z(null), [o, i] = Z([]), l = () => {
-=======
 function Ns(t) {
   let e = Vn(t), [n, r] = X(null), [o, i] = X([]), l = () => {
->>>>>>> staging
     i([]), e.close();
   };
   return {
@@ -1880,11 +1662,7 @@ function Ns(t) {
   };
 }
 function ks(t) {
-<<<<<<< HEAD
-  let e = Vn(t), [n, r] = Z(null), o = fo({
-=======
   let e = Vn(t), [n, r] = X(null), o = fo({
->>>>>>> staging
     ...t,
     onSelectionChange: (u) => {
       t.onSelectionChange != null && t.onSelectionChange(u), e.close(), i.commitValidation();
@@ -1892,11 +1670,7 @@ function ks(t) {
   }), i = On({
     ...t,
     value: o.selectedKey
-<<<<<<< HEAD
-  }), [l, s] = Z(!1);
-=======
   }), [l, s] = X(!1);
->>>>>>> staging
   return {
     ...i,
     ...o,
@@ -1960,13 +1734,8 @@ class Is {
     this.lastKey = o == null ? void 0 : o.key;
   }
 }
-<<<<<<< HEAD
-function Is(t) {
-  let [e, n] = tt(t.expandedKeys ? new Set(t.expandedKeys) : void 0, t.defaultExpandedKeys ? new Set(t.defaultExpandedKeys) : /* @__PURE__ */ new Set(), t.onExpandedChange), r = uo(t), o = ne(() => t.disabledKeys ? new Set(t.disabledKeys) : /* @__PURE__ */ new Set(), [
-=======
 function Bs(t) {
   let [e, n] = tt(t.expandedKeys ? new Set(t.expandedKeys) : void 0, t.defaultExpandedKeys ? new Set(t.defaultExpandedKeys) : /* @__PURE__ */ new Set(), t.onExpandedChange), r = uo(t), o = re(() => t.disabledKeys ? new Set(t.disabledKeys) : /* @__PURE__ */ new Set(), [
->>>>>>> staging
     t.disabledKeys
   ]), i = so(t, te((s) => new Is(s, {
     expandedKeys: e
@@ -1996,17 +1765,10 @@ function Os(t, e) {
 const Tt = {
   prefix: String(Math.round(Math.random() * 1e10)),
   current: 0
-<<<<<<< HEAD
-}, bo = /* @__PURE__ */ Q.createContext(Tt), Os = /* @__PURE__ */ Q.createContext(!1);
-let Rs = !!(typeof window < "u" && window.document && window.document.createElement), nn = /* @__PURE__ */ new WeakMap();
-function Vs(t = !1) {
-  let e = Se(bo), n = I(null);
-=======
 }, bo = /* @__PURE__ */ Q.createContext(Tt), Rs = /* @__PURE__ */ Q.createContext(!1);
 let Vs = !!(typeof window < "u" && window.document && window.document.createElement), nn = /* @__PURE__ */ new WeakMap();
 function zs(t = !1) {
   let e = Se(bo), n = k(null);
->>>>>>> staging
   if (n.current === null && !t) {
     var r, o;
     let i = (o = Q.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED) === null || o === void 0 || (r = o.ReactCurrentOwner) === null || r === void 0 ? void 0 : r.current;
@@ -2027,21 +1789,12 @@ function js(t) {
   let n = zs(!!t), r = e === Tt && process.env.NODE_ENV === "test" ? "react-aria" : `react-aria${e.prefix}`;
   return t || `${r}-${n}`;
 }
-<<<<<<< HEAD
-function js(t) {
-  let e = Q.useId(), [n] = Z(Ht()), r = n || process.env.NODE_ENV === "test" ? "react-aria" : `react-aria${Tt.prefix}`;
-  return t || `${r}-${e}`;
-}
-const Hs = typeof Q.useId == "function" ? js : zs;
-function Us() {
-=======
 function Hs(t) {
   let e = Q.useId(), [n] = X(Ht()), r = n || process.env.NODE_ENV === "test" ? "react-aria" : `react-aria${Tt.prefix}`;
   return t || `${r}-${e}`;
 }
 const Us = typeof Q.useId == "function" ? Hs : js;
 function Ws() {
->>>>>>> staging
   return !1;
 }
 function Gs() {
@@ -2052,11 +1805,7 @@ function qs(t) {
   };
 }
 function Ht() {
-<<<<<<< HEAD
-  return typeof Q.useSyncExternalStore == "function" ? Q.useSyncExternalStore(Gs, Us, Ws) : Se(Os);
-=======
   return typeof Q.useSyncExternalStore == "function" ? Q.useSyncExternalStore(qs, Ws, Gs) : Se(Rs);
->>>>>>> staging
 }
 function mo(t) {
   var e, n, r = "";
@@ -2080,11 +1829,7 @@ function Ys() {
 const fe = typeof document < "u" ? Q.useLayoutEffect : () => {
 };
 function xe(t) {
-<<<<<<< HEAD
-  const e = I(null);
-=======
   const e = k(null);
->>>>>>> staging
   return fe(() => {
     e.current = t;
   }, [
@@ -2094,13 +1839,8 @@ function xe(t) {
     return r(...n);
   }, []);
 }
-<<<<<<< HEAD
-function Ys(t) {
-  let [e, n] = Z(t), r = I(null), o = xe(() => {
-=======
 function Xs(t) {
   let [e, n] = X(t), r = k(null), o = xe(() => {
->>>>>>> staging
     let l = r.current.next();
     if (l.done) {
       r.current = null;
@@ -2121,17 +1861,10 @@ function Xs(t) {
 }
 let Zs = !!(typeof window < "u" && window.document && window.document.createElement), _t = /* @__PURE__ */ new Map();
 function Ae(t) {
-<<<<<<< HEAD
-  let [e, n] = Z(t), r = I(null), o = Hs(e), i = te((l) => {
-    r.current = l;
-  }, []);
-  return Xs && _t.set(o, i), fe(() => {
-=======
   let [e, n] = X(t), r = k(null), o = Us(e), i = te((l) => {
     r.current = l;
   }, []);
   return Zs && _t.set(o, i), fe(() => {
->>>>>>> staging
     let l = o;
     return () => {
       _t.delete(l);
@@ -2441,13 +2174,8 @@ function Dt(t, e) {
 }
 let bu = 0;
 const rn = /* @__PURE__ */ new Map();
-<<<<<<< HEAD
-function bu(t) {
-  let [e, n] = Z(void 0);
-=======
 function mu(t) {
   let [e, n] = X(void 0);
->>>>>>> staging
   return fe(() => {
     if (!t)
       return;
@@ -2649,11 +2377,7 @@ function qt(t) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     ref: f,
     ...p
-<<<<<<< HEAD
-  } = yu(t), [d, v] = Z(!1), $ = I({
-=======
   } = xu(t), [d, v] = X(!1), h = k({
->>>>>>> staging
     isPressed: !1,
     ignoreEmulatedMouseEvents: !1,
     ignoreClickAfterPress: !1,
@@ -2663,13 +2387,8 @@ function qt(t) {
     target: null,
     isOverTarget: !1,
     pointerType: null
-<<<<<<< HEAD
-  }), { addGlobalListener: h, removeAllGlobalListeners: A } = yo(), w = xe((b, _) => {
-    let P = $.current;
-=======
   }), { addGlobalListener: g, removeAllGlobalListeners: A } = yo(), w = xe((b, _) => {
     let P = h.current;
->>>>>>> staging
     if (l || P.didFirePressStart)
       return !1;
     let C = !0;
@@ -2679,11 +2398,7 @@ function qt(t) {
     }
     return n && n(!0), P.isTriggeringEvent = !1, P.didFirePressStart = !0, v(!0), C;
   }), S = xe((b, _, P = !0) => {
-<<<<<<< HEAD
-    let C = $.current;
-=======
     let C = h.current;
->>>>>>> staging
     if (!C.didFirePressStart)
       return !1;
     C.ignoreClickAfterPress = !0, C.didFirePressStart = !1, C.isTriggeringEvent = !0;
@@ -2698,11 +2413,7 @@ function qt(t) {
     }
     return C.isTriggeringEvent = !1, B;
   }), K = xe((b, _) => {
-<<<<<<< HEAD
-    let P = $.current;
-=======
     let P = h.current;
->>>>>>> staging
     if (l)
       return !1;
     if (i) {
@@ -2712,31 +2423,18 @@ function qt(t) {
     }
     return !0;
   }), x = xe((b) => {
-<<<<<<< HEAD
-    let _ = $.current;
-    _.isPressed && _.target && (_.isOverTarget && _.pointerType != null && S(Ke(_.target, b), _.pointerType, !1), _.isPressed = !1, _.isOverTarget = !1, _.activePointerId = null, _.pointerType = null, A(), c || gt(_.target));
-  }), M = xe((b) => {
-    a && x(b);
-  }), R = ne(() => {
-    let b = $.current, _ = {
-=======
     let _ = h.current;
     _.isPressed && _.target && (_.isOverTarget && _.pointerType != null && S(Ke(_.target, b), _.pointerType, !1), _.isPressed = !1, _.isOverTarget = !1, _.activePointerId = null, _.pointerType = null, A(), c || gt(_.target));
   }), M = xe((b) => {
     a && x(b);
   }), R = re(() => {
     let b = h.current, _ = {
->>>>>>> staging
       onKeyDown(C) {
         if (on(C.nativeEvent, C.currentTarget) && C.currentTarget.contains(C.target)) {
           var B;
           xr(C.target, C.key) && C.preventDefault();
           let E = !0;
-<<<<<<< HEAD
-          !b.isPressed && !C.repeat && (b.target = C.currentTarget, b.isPressed = !0, E = w(C, "keyboard"), h(pe(C.currentTarget), "keyup", P, !1)), E && C.stopPropagation(), C.metaKey && Ie() && ((B = b.metaKeyEvents) === null || B === void 0 || B.set(C.key, C.nativeEvent));
-=======
           !b.isPressed && !C.repeat && (b.target = C.currentTarget, b.isPressed = !0, E = w(C, "keyboard"), g(pe(C.currentTarget), "keyup", P, !1)), E && C.stopPropagation(), C.metaKey && Ie() && ((B = b.metaKeyEvents) === null || B === void 0 || B.set(C.key, C.nativeEvent));
->>>>>>> staging
         } else
           C.key === "Meta" && (b.metaKeyEvents = /* @__PURE__ */ new Map());
       },
@@ -2773,21 +2471,13 @@ function qt(t) {
       _.onPointerDown = (T) => {
         if (T.button !== 0 || !T.currentTarget.contains(T.target))
           return;
-<<<<<<< HEAD
-        if (vu(T.nativeEvent)) {
-=======
         if (hu(T.nativeEvent)) {
->>>>>>> staging
           b.pointerType = "virtual";
           return;
         }
         ln(T.currentTarget) && T.preventDefault(), b.pointerType = T.pointerType;
         let q = !0;
-<<<<<<< HEAD
-        b.isPressed || (b.isPressed = !0, b.isOverTarget = !0, b.activePointerId = T.pointerId, b.target = T.currentTarget, !l && !u && Fe(T.currentTarget), c || gr(b.target), q = w(T, b.pointerType), h(pe(T.currentTarget), "pointermove", C, !1), h(pe(T.currentTarget), "pointerup", B, !1), h(pe(T.currentTarget), "pointercancel", E, !1)), q && T.stopPropagation();
-=======
         b.isPressed || (b.isPressed = !0, b.isOverTarget = !0, b.activePointerId = T.pointerId, b.target = T.currentTarget, !l && !u && Fe(T.currentTarget), c || gr(b.target), q = w(T, b.pointerType), g(pe(T.currentTarget), "pointermove", C, !1), g(pe(T.currentTarget), "pointerup", B, !1), g(pe(T.currentTarget), "pointercancel", E, !1)), q && T.stopPropagation();
->>>>>>> staging
       }, _.onMouseDown = (T) => {
         T.currentTarget.contains(T.target) && T.button === 0 && (ln(T.currentTarget) && T.preventDefault(), T.stopPropagation());
       }, _.onPointerUp = (T) => {
@@ -2811,11 +2501,7 @@ function qt(t) {
           E.stopPropagation();
           return;
         }
-<<<<<<< HEAD
-        b.isPressed = !0, b.isOverTarget = !0, b.target = E.currentTarget, b.pointerType = Tn(E.nativeEvent) ? "virtual" : "mouse", !l && !u && Fe(E.currentTarget), w(E, b.pointerType) && E.stopPropagation(), h(pe(E.currentTarget), "mouseup", C, !1);
-=======
         b.isPressed = !0, b.isOverTarget = !0, b.target = E.currentTarget, b.pointerType = Tn(E.nativeEvent) ? "virtual" : "mouse", !l && !u && Fe(E.currentTarget), w(E, b.pointerType) && E.stopPropagation(), g(pe(E.currentTarget), "mouseup", C, !1);
->>>>>>> staging
       }, _.onMouseEnter = (E) => {
         if (!E.currentTarget.contains(E.target))
           return;
@@ -2844,11 +2530,7 @@ function qt(t) {
         let T = Cu(E.nativeEvent);
         if (!T)
           return;
-<<<<<<< HEAD
-        b.activePointerId = T.identifier, b.ignoreEmulatedMouseEvents = !0, b.isOverTarget = !0, b.isPressed = !0, b.target = E.currentTarget, b.pointerType = "touch", !l && !u && Fe(E.currentTarget), c || gr(b.target), w(E, b.pointerType) && E.stopPropagation(), h(at(E.currentTarget), "scroll", B, !0);
-=======
         b.activePointerId = T.identifier, b.ignoreEmulatedMouseEvents = !0, b.isOverTarget = !0, b.isPressed = !0, b.target = E.currentTarget, b.pointerType = "touch", !l && !u && Fe(E.currentTarget), c || gr(b.target), w(E, b.pointerType) && E.stopPropagation(), g(at(E.currentTarget), "scroll", B, !0);
->>>>>>> staging
       }, _.onTouchMove = (E) => {
         if (!E.currentTarget.contains(E.target))
           return;
@@ -2898,11 +2580,7 @@ function qt(t) {
   ]);
   return W(() => () => {
     var b;
-<<<<<<< HEAD
-    c || gt((b = $.current.target) !== null && b !== void 0 ? b : void 0);
-=======
     c || gt((b = h.current.target) !== null && b !== void 0 ? b : void 0);
->>>>>>> staging
   }, [
     c
   ]), {
@@ -2976,13 +2654,8 @@ const wu = /* @__PURE__ */ new Set([
 function wo(t, e) {
   return t.type === "checkbox" || t.type === "radio" ? e === " " : wu.has(t.type);
 }
-<<<<<<< HEAD
-function wu({ children: t }) {
-  let e = ne(() => ({
-=======
 function Su({ children: t }) {
   let e = re(() => ({
->>>>>>> staging
     register: () => {
     }
   }), []);
@@ -3123,11 +2796,7 @@ function To(t) {
 }
 function Lu() {
   Ft();
-<<<<<<< HEAD
-  let [t, e] = Z(ke);
-=======
   let [t, e] = X(Ne);
->>>>>>> staging
   return W(() => {
     let n = () => {
       e(Ne);
@@ -3207,55 +2876,32 @@ function Iu() {
     };
 }
 function _o(t) {
-<<<<<<< HEAD
-  let { onHoverStart: e, onHoverChange: n, onHoverEnd: r, isDisabled: o } = t, [i, l] = Z(!1), s = I({
-=======
   let { onHoverStart: e, onHoverChange: n, onHoverEnd: r, isDisabled: o } = t, [i, l] = X(!1), s = k({
->>>>>>> staging
     isHovered: !1,
     ignoreEmulatedMouseEvents: !1,
     pointerType: "",
     target: null
   }).current;
-<<<<<<< HEAD
-  W(Nu, []);
-  let { hoverProps: u, triggerHoverEnd: a } = ne(() => {
-=======
   W(Iu, []);
   let { hoverProps: u, triggerHoverEnd: a } = re(() => {
->>>>>>> staging
     let c = (d, v) => {
       if (s.pointerType = v, o || v === "touch" || s.isHovered || !d.currentTarget.contains(d.target))
         return;
       s.isHovered = !0;
-<<<<<<< HEAD
-      let $ = d.currentTarget;
-      s.target = $, e && e({
-        type: "hoverstart",
-        target: $,
-=======
       let h = d.currentTarget;
       s.target = h, e && e({
         type: "hoverstart",
         target: h,
->>>>>>> staging
         pointerType: v
       }), n && n(!0), l(!0);
     }, f = (d, v) => {
       if (s.pointerType = "", s.target = null, v === "touch" || !s.isHovered)
         return;
       s.isHovered = !1;
-<<<<<<< HEAD
-      let $ = d.currentTarget;
-      r && r({
-        type: "hoverend",
-        target: $,
-=======
       let h = d.currentTarget;
       r && r({
         type: "hoverend",
         target: h,
->>>>>>> staging
         pointerType: v
       }), n && n(!1), l(!1);
     }, p = {};
@@ -3443,20 +3089,15 @@ function Do(t, e) {
 }
 const Sr = /* @__PURE__ */ Q.createContext(null);
 let le = null;
-<<<<<<< HEAD
-function Vu(t) {
-  let { children: e, contain: n, restoreFocus: r, autoFocus: o } = t, i = I(null), l = I(null), s = I([]), { parentNode: u } = Se(Sr) || {}, a = ne(() => new Fn({
-=======
 function zu(t) {
   let { children: e, contain: n, restoreFocus: r, autoFocus: o } = t, i = k(null), l = k(null), s = k([]), { parentNode: u } = Se(Sr) || {}, a = re(() => new Fn({
->>>>>>> staging
     scopeRef: s
   }), [
     s
   ]);
   fe(() => {
     let p = u || me.root;
-    if (me.getTreeNode(p.scopeRef) && le && !kt(le, p.scopeRef)) {
+    if (me.getTreeNode(p.scopeRef) && le && !Nt(le, p.scopeRef)) {
       let d = me.getTreeNode(le);
       d && (p = d);
     }
@@ -3477,11 +3118,7 @@ function zu(t) {
     s.current = v;
   }, [
     e
-<<<<<<< HEAD
-  ]), qu(s, r, n), Uu(s, n), Xu(s, r, n), Gu(s, o), W(() => {
-=======
   ]), Yu(s, r, n), Wu(s, n), Zu(s, r, n), qu(s, o), W(() => {
->>>>>>> staging
     const p = pe(s.current ? s.current[0] : void 0).activeElement;
     let d = null;
     if (ge(p, s.current)) {
@@ -3493,21 +3130,12 @@ function zu(t) {
     s
   ]), fe(() => () => {
     var p, d, v;
-<<<<<<< HEAD
-    let $ = (v = (d = me.getTreeNode(s)) === null || d === void 0 || (p = d.parent) === null || p === void 0 ? void 0 : p.scopeRef) !== null && v !== void 0 ? v : null;
-    (s === le || kt(s, le)) && (!$ || me.getTreeNode($)) && (le = $), me.removeTreeNode(s);
-  }, [
-    s
-  ]);
-  let c = ne(() => zu(s), []), f = ne(() => ({
-=======
     let h = (v = (d = me.getTreeNode(s)) === null || d === void 0 || (p = d.parent) === null || p === void 0 ? void 0 : p.scopeRef) !== null && v !== void 0 ? v : null;
     (s === le || Nt(s, le)) && (!h || me.getTreeNode(h)) && (le = h), me.removeTreeNode(s);
   }, [
     s
   ]);
   let c = re(() => ju(s), []), f = re(() => ({
->>>>>>> staging
     focusManager: c,
     parentNode: a
   }), [
@@ -3595,13 +3223,8 @@ function lt(t) {
   }
   return !0;
 }
-<<<<<<< HEAD
-function Uu(t, e) {
-  let n = I(), r = I();
-=======
 function Wu(t, e) {
   let n = k(), r = k();
->>>>>>> staging
   fe(() => {
     let o = t.current;
     if (!e) {
@@ -3696,11 +3319,7 @@ function kt(t, e = !0) {
     tabbable: !1
   }, t), o.currentNode = n, i = o.nextNode()), Le(i);
 }
-<<<<<<< HEAD
-function Gu(t, e) {
-=======
 function qu(t, e) {
->>>>>>> staging
   const n = Q.useRef(e);
   W(() => {
     if (n.current) {
@@ -3713,11 +3332,7 @@ function qu(t, e) {
     t
   ]);
 }
-<<<<<<< HEAD
-function qu(t, e, n) {
-=======
 function Yu(t, e, n) {
->>>>>>> staging
   fe(() => {
     if (e || n)
       return;
@@ -3745,13 +3360,8 @@ function Xu(t) {
   }
   return (e == null ? void 0 : e.scopeRef) === t;
 }
-<<<<<<< HEAD
-function Xu(t, e, n) {
-  const r = I(typeof document < "u" ? pe(t.current ? t.current[0] : void 0).activeElement : null);
-=======
 function Zu(t, e, n) {
   const r = k(typeof document < "u" ? pe(t.current ? t.current[0] : void 0).activeElement : null);
->>>>>>> staging
   fe(() => {
     let o = t.current;
     const i = pe(o ? o[0] : void 0);
@@ -3826,11 +3436,7 @@ function Zu(t, e, n) {
               }
               for (c = a.getTreeNode(t); c; ) {
                 if (c.scopeRef && c.scopeRef.current && me.getTreeNode(c.scopeRef)) {
-<<<<<<< HEAD
-                  Nt(c.scopeRef.current, !0);
-=======
                   kt(c.scopeRef.current, !0);
->>>>>>> staging
                   return;
                 }
                 c = c.parent;
@@ -3921,11 +3527,7 @@ function qn(t = {}) {
   let { autoFocus: e = !1, isTextInput: n, within: r } = t, o = k({
     isFocused: !1,
     isFocusVisible: e || dt()
-<<<<<<< HEAD
-  }), [i, l] = Z(!1), [s, u] = Z(() => o.current.isFocused && o.current.isFocusVisible), a = te(() => u(o.current.isFocused && o.current.isFocusVisible), []), c = te((d) => {
-=======
   }), [i, l] = X(!1), [s, u] = X(() => o.current.isFocused && o.current.isFocusVisible), a = te(() => u(o.current.isFocused && o.current.isFocusVisible), []), c = te((d) => {
->>>>>>> staging
     o.current.isFocused = d, l(d), a();
   }, [
     a
@@ -3948,25 +3550,15 @@ function qn(t = {}) {
     focusProps: r ? p : f
   };
 }
-<<<<<<< HEAD
-let Zu = /* @__PURE__ */ Q.createContext(null);
-function Ju(t) {
-  let e = Se(Zu) || {};
-=======
 let Ju = /* @__PURE__ */ Q.createContext(null);
 function Qu(t) {
   let e = Se(Ju) || {};
->>>>>>> staging
   xo(e, t);
   let { ref: n, ...r } = e;
   return r;
 }
 function Lo(t, e) {
-<<<<<<< HEAD
-  let { focusProps: n } = Un(t), { keyboardProps: r } = Ao(t), o = se(n, r), i = Ju(e), l = t.isDisabled ? {} : i, s = I(t.autoFocus);
-=======
   let { focusProps: n } = Un(t), { keyboardProps: r } = Ao(t), o = se(n, r), i = Qu(e), l = t.isDisabled ? {} : i, s = k(t.autoFocus);
->>>>>>> staging
   return W(() => {
     s.current && e.current && ft(e.current), s.current = !1;
   }, [
@@ -4042,13 +3634,8 @@ function Tr() {
   for (let t of st)
     t(Ln);
 }
-<<<<<<< HEAD
-function ra() {
-  let t = Ht(), [e, n] = Z(Ln);
-=======
 function oa() {
   let t = Ht(), [e, n] = X(Ln);
->>>>>>> staging
   return W(() => (st.size === 0 && window.addEventListener("languagechange", Tr), st.add(n), () => {
     st.delete(n), st.size === 0 && window.removeEventListener("languagechange", Tr);
   }), []), t ? {
@@ -4056,11 +3643,7 @@ function oa() {
     direction: "ltr"
   } : e;
 }
-<<<<<<< HEAD
-const oa = /* @__PURE__ */ Q.createContext(null);
-=======
 const ia = /* @__PURE__ */ Q.createContext(null);
->>>>>>> staging
 function Zt() {
   let t = oa();
   return Se(ia) || t;
@@ -4074,13 +3657,8 @@ function sa(t, e) {
   return e && jt.getGlobalDictionaryForPackage(e) || la(t);
 }
 function Yn(t, e) {
-<<<<<<< HEAD
-  let { locale: n } = Zt(), r = la(t, e);
-  return ne(() => new Ds(n, r), [
-=======
   let { locale: n } = Zt(), r = sa(t, e);
   return re(() => new Fs(n, r), [
->>>>>>> staging
     n,
     r
   ]);
@@ -4115,7 +3693,7 @@ function ua(t) {
   }, [
     e
   ]);
-  return ne(() => ({
+  return re(() => ({
     startsWith: n,
     endsWith: r,
     contains: o
@@ -4141,28 +3719,17 @@ function No(t, e) {
     href: p,
     target: d,
     rel: v,
-<<<<<<< HEAD
-    type: $ = "button"
-  } = t, h;
-  n === "button" ? h = {
-    type: $,
-=======
     type: h = "button"
   } = t, g;
   n === "button" ? g = {
     type: h,
->>>>>>> staging
     disabled: r
   } : g = {
     role: "button",
     tabIndex: r ? void 0 : 0,
     href: n === "a" && r ? void 0 : p,
     target: n === "a" ? d : void 0,
-<<<<<<< HEAD
-    type: n === "input" ? $ : void 0,
-=======
     type: n === "input" ? h : void 0,
->>>>>>> staging
     disabled: n === "input" ? r : void 0,
     "aria-disabled": !r || n === "input" ? void 0 : r,
     rel: n === "a" ? v : void 0
@@ -4183,11 +3750,7 @@ function No(t, e) {
   }));
   return {
     isPressed: w,
-<<<<<<< HEAD
-    buttonProps: se(h, K, {
-=======
     buttonProps: se(g, K, {
->>>>>>> staging
       "aria-haspopup": t["aria-haspopup"],
       "aria-expanded": t["aria-expanded"],
       "aria-controls": t["aria-controls"],
@@ -5185,14 +4748,10 @@ const Ar = {
   whiteSpace: "nowrap"
 };
 function el(t = {}) {
-<<<<<<< HEAD
-  let { style: e, isFocusable: n } = t, [r, o] = Z(!1), { focusWithinProps: i } = Xt({
-=======
   let { style: e, isFocusable: n } = t, [r, o] = X(!1), { focusWithinProps: i } = Xt({
->>>>>>> staging
     isDisabled: !n,
     onFocusWithinChange: (s) => o(s)
-  }), l = ne(() => r ? e : e ? {
+  }), l = re(() => r ? e : e ? {
     ...Ar,
     ...e
   } : Ar, [
@@ -5205,13 +4764,6 @@ function el(t = {}) {
     }
   };
 }
-<<<<<<< HEAD
-function fa(t) {
-  let { children: e, elementType: n = "div", isFocusable: r, style: o, ...i } = t, { visuallyHiddenProps: l } = el(t);
-  return /* @__PURE__ */ Q.createElement(n, se(i, l), e);
-}
-=======
->>>>>>> staging
 function pa(t) {
   let { children: e, elementType: n = "div", isFocusable: r, style: o, ...i } = t, { visuallyHiddenProps: l } = el(t);
   return /* @__PURE__ */ Q.createElement(n, se(i, l), e);
@@ -5298,17 +4850,6 @@ function Lr(t) {
   }, Ct[t];
 }
 function dn(t, e, n, r, o, i, l, s, u, a) {
-<<<<<<< HEAD
-  let { placement: c, crossPlacement: f, axis: p, crossAxis: d, size: v, crossSize: $ } = r, h = {};
-  h[d] = t[d], f === "center" ? h[d] += (t[$] - n[$]) / 2 : f !== d && (h[d] += t[$] - n[$]), h[d] += i;
-  const A = t[d] - n[$] + u + a, w = t[d] + t[$] - u - a;
-  if (h[d] = Cn(h[d], A, w), c === p) {
-    const S = s ? l[v] : e[ma[v]];
-    h[It[p]] = Math.floor(S - t[p] + o);
-  } else
-    h[p] = Math.floor(t[p] + t[v] + o);
-  return h;
-=======
   let { placement: c, crossPlacement: f, axis: p, crossAxis: d, size: v, crossSize: h } = r, g = {};
   g[d] = t[d], f === "center" ? g[d] += (t[h] - n[h]) / 2 : f !== d && (g[d] += t[h] - n[h]), g[d] += i;
   const A = t[d] - n[h] + u + a, w = t[d] + t[h] - u - a;
@@ -5318,7 +4859,6 @@ function dn(t, e, n, r, o, i, l, s, u, a) {
   } else
     g[p] = Math.floor(t[p] + t[v] + o);
   return g;
->>>>>>> staging
 }
 function $a(t, e, n, r, o, i) {
   return t.top != null ? Math.max(0, e.height + e.top + e.scroll.top - (n.top + t.top) - (o.top + o.bottom + i)) : Math.max(0, r.top + n.top - (e.top + e.scroll.top) - (o.top + o.bottom + i));
@@ -5327,20 +4867,6 @@ function Mr(t, e, n, r, o, i) {
   let { placement: l, axis: s, size: u } = i;
   return l === s ? Math.max(0, n[s] - t[s] - t.scroll[s] + e[s] - r[s] - r[It[s]] - o) : Math.max(0, t[u] + t[s] + t.scroll[s] - e[s] - n[s] - n[u] - r[s] - r[It[s]] - o);
 }
-<<<<<<< HEAD
-function $a(t, e, n, r, o, i, l, s, u, a, c, f, p, d, v, $) {
-  let h = Lr(t), { size: A, crossAxis: w, crossSize: S, placement: K, crossPlacement: x } = h, M = dn(e, s, n, h, c, f, a, p, v, $), R = c, b = Mr(s, a, e, o, i + c, h);
-  if (l && r[A] > b) {
-    let ue = Lr(`${It[K]} ${x}`), ae = dn(e, s, n, ue, c, f, a, p, v, $);
-    Mr(s, a, e, o, i + c, ue) > b && (h = ue, M = ae, R = c);
-  }
-  let _ = Fr(w, M[w], n[S], s, u, i);
-  M[w] += _;
-  let P = ga(M, s, a, e, o, i);
-  d && d < P && (P = d), n.height = Math.min(n.height, P), M = dn(e, s, n, h, R, f, a, p, v, $), _ = Fr(w, M[w], n[S], s, u, i), M[w] += _;
-  let C = {}, B = e[w] + 0.5 * e[S] - n[w];
-  const E = v / 2 + $, T = n[S] - v / 2 - $, q = e[w] - n[w] + v / 2, V = e[w] + e[S] - n[w] - v / 2, F = Cn(B, q, V);
-=======
 function ya(t, e, n, r, o, i, l, s, u, a, c, f, p, d, v, h) {
   let g = Lr(t), { size: A, crossAxis: w, crossSize: S, placement: K, crossPlacement: x } = g, M = dn(e, s, n, g, c, f, a, p, v, h), R = c, b = Mr(s, a, e, o, i + c, g);
   if (l && r[A] > b) {
@@ -5353,21 +4879,11 @@ function ya(t, e, n, r, o, i, l, s, u, a, c, f, p, d, v, h) {
   d && d < P && (P = d), n.height = Math.min(n.height, P), M = dn(e, s, n, g, R, f, a, p, v, h), _ = Fr(w, M[w], n[S], s, u, i), M[w] += _;
   let C = {}, B = e[w] + 0.5 * e[S] - n[w];
   const E = v / 2 + h, T = n[S] - v / 2 - h, q = e[w] - n[w] + v / 2, V = e[w] + e[S] - n[w] - v / 2, F = Cn(B, q, V);
->>>>>>> staging
   return C[w] = Cn(F, E, T), {
     position: M,
     maxHeight: P,
     arrowOffsetLeft: C.left,
     arrowOffsetTop: C.top,
-<<<<<<< HEAD
-    placement: h.placement
-  };
-}
-function ya(t) {
-  let { placement: e, targetNode: n, overlayNode: r, scrollNode: o, padding: i, shouldFlip: l, boundaryElement: s, offset: u, crossOffset: a, maxHeight: c, arrowSize: f = 0, arrowBoundaryOffset: p = 0 } = t, d = r instanceof HTMLElement ? xa(r) : document.documentElement, v = d === document.documentElement;
-  const $ = window.getComputedStyle(d).position;
-  let h = !!$ && $ !== "static", A = v ? Je(n) : kr(n, d);
-=======
     placement: g.placement
   };
 }
@@ -5375,20 +4891,14 @@ function xa(t) {
   let { placement: e, targetNode: n, overlayNode: r, scrollNode: o, padding: i, shouldFlip: l, boundaryElement: s, offset: u, crossOffset: a, maxHeight: c, arrowSize: f = 0, arrowBoundaryOffset: p = 0 } = t, d = r instanceof HTMLElement ? Ca(r) : document.documentElement, v = d === document.documentElement;
   const h = window.getComputedStyle(d).position;
   let g = !!h && h !== "static", A = v ? Je(n) : Nr(n, d);
->>>>>>> staging
   if (!v) {
     let { marginTop: b, marginLeft: _ } = window.getComputedStyle(n);
     A.top += parseInt(b, 10) || 0, A.left += parseInt(_, 10) || 0;
   }
   let w = Je(r), S = ga(r);
   w.width += S.left + S.right, w.height += S.top + S.bottom;
-<<<<<<< HEAD
-  let K = va(o), x = Dr(s), M = Dr(d), R = s.tagName === "BODY" ? Je(d) : kr(d, s);
-  return $a(e, A, w, K, S, i, l, x, M, R, u, a, h, c, f, p);
-=======
   let K = ha(o), x = Dr(s), M = Dr(d), R = s.tagName === "BODY" ? Je(d) : Nr(d, s);
   return ya(e, A, w, K, S, i, l, x, M, R, u, a, g, c, f, p);
->>>>>>> staging
 }
 function Je(t) {
   let { top: e, left: n, width: r, height: o } = t.getBoundingClientRect(), { scrollTop: i, scrollLeft: l, clientTop: s, clientLeft: u } = document.documentElement;
@@ -5452,13 +4962,8 @@ function Ea(t) {
   ]);
 }
 let Ee = typeof document < "u" && window.visualViewport;
-<<<<<<< HEAD
-function Ea(t) {
-  let { direction: e } = Zt(), { arrowSize: n = 0, targetRef: r, overlayRef: o, scrollRef: i = o, placement: l = "bottom", containerPadding: s = 12, shouldFlip: u = !0, boundaryElement: a = typeof document < "u" ? document.body : null, offset: c = 0, crossOffset: f = 0, shouldUpdatePosition: p = !0, isOpen: d = !0, onClose: v, maxHeight: $, arrowBoundaryOffset: h = 0 } = t, [A, w] = Z({
-=======
 function Pa(t) {
   let { direction: e } = Zt(), { arrowSize: n = 0, targetRef: r, overlayRef: o, scrollRef: i = o, placement: l = "bottom", containerPadding: s = 12, shouldFlip: u = !0, boundaryElement: a = typeof document < "u" ? document.body : null, offset: c = 0, crossOffset: f = 0, shouldUpdatePosition: p = !0, isOpen: d = !0, onClose: v, maxHeight: h, arrowBoundaryOffset: g = 0 } = t, [A, w] = X({
->>>>>>> staging
     position: {},
     arrowOffsetLeft: void 0,
     arrowOffsetTop: void 0,
@@ -5477,10 +4982,6 @@ function Pa(t) {
     f,
     d,
     e,
-<<<<<<< HEAD
-    $,
-=======
->>>>>>> staging
     h,
     g,
     n
@@ -5497,29 +4998,17 @@ function Pa(t) {
       boundaryElement: a,
       offset: c,
       crossOffset: f,
-<<<<<<< HEAD
-      maxHeight: $,
-=======
       maxHeight: h,
->>>>>>> staging
       arrowSize: n,
       arrowBoundaryOffset: g
     });
     Object.keys(R.position).forEach((b) => o.current.style[b] = R.position[b] + "px"), o.current.style.maxHeight = R.maxHeight != null ? R.maxHeight + "px" : void 0, w(R);
   }, S);
-<<<<<<< HEAD
-  fe(K, S), Pa(K), fu({
-    ref: o,
-    onResize: K
-  });
-  let x = I(!1);
-=======
   fe(K, S), wa(K), pu({
     ref: o,
     onResize: K
   });
   let x = k(!1);
->>>>>>> staging
   fe(() => {
     let R, b = () => {
       x.current = !0, clearTimeout(R), R = setTimeout(() => {
@@ -5563,11 +5052,7 @@ function Pa(t) {
     updatePosition: K
   };
 }
-<<<<<<< HEAD
-function Pa(t) {
-=======
 function wa(t) {
->>>>>>> staging
   fe(() => (window.addEventListener("resize", t, !1), () => {
     window.removeEventListener("resize", t, !1);
   }), [
@@ -5777,11 +5262,7 @@ function Or(t) {
   let { onDismiss: e, ...n } = t, r = Yn(/* @__PURE__ */ ba(nl), "@react-aria/overlays"), o = At(n, r.format("dismiss")), i = () => {
     e && e();
   };
-<<<<<<< HEAD
-  return /* @__PURE__ */ Q.createElement(fa, null, /* @__PURE__ */ Q.createElement("button", {
-=======
   return /* @__PURE__ */ Q.createElement(pa, null, /* @__PURE__ */ Q.createElement("button", {
->>>>>>> staging
     ...o,
     tabIndex: -1,
     onClick: i,
@@ -5861,11 +5342,7 @@ function La(t, e) {
     isDismissable: !o,
     isKeyboardDismissDisabled: i,
     shouldCloseOnInteractOutside: l
-<<<<<<< HEAD
-  }, r), { overlayProps: c, arrowProps: f, placement: p } = Ea({
-=======
   }, r), { overlayProps: c, arrowProps: f, placement: p } = Pa({
->>>>>>> staging
     ...s,
     targetRef: n,
     overlayRef: r,
@@ -5890,15 +5367,9 @@ function La(t, e) {
     placement: p
   };
 }
-<<<<<<< HEAD
-const La = /* @__PURE__ */ Q.createContext(null);
-function Ma(t) {
-  let e = Ht(), { portalContainer: n = e ? null : document.body, isExiting: r } = t, [o, i] = Z(!1), l = ne(() => ({
-=======
 const Ma = /* @__PURE__ */ Q.createContext(null);
 function Na(t) {
   let e = Ht(), { portalContainer: n = e ? null : document.body, isExiting: r } = t, [o, i] = X(!1), l = re(() => ({
->>>>>>> staging
     contain: o,
     setContain: i
   }), [
@@ -5908,21 +5379,12 @@ function Na(t) {
   if (!n)
     return null;
   let s = t.children;
-<<<<<<< HEAD
-  return t.disableFocusManagement || (s = /* @__PURE__ */ Q.createElement(Vu, {
-    restoreFocus: !0,
-    contain: o && !r
-  }, s)), s = /* @__PURE__ */ Q.createElement(La.Provider, {
-    value: l
-  }, /* @__PURE__ */ Q.createElement(wu, null, s)), /* @__PURE__ */ Bn.createPortal(s, n);
-=======
   return t.disableFocusManagement || (s = /* @__PURE__ */ Q.createElement(zu, {
     restoreFocus: !0,
     contain: o && !r
   }, s)), s = /* @__PURE__ */ Q.createElement(Ma.Provider, {
     value: l
   }, /* @__PURE__ */ Q.createElement(Su, null, s)), /* @__PURE__ */ Bn.createPortal(s, n);
->>>>>>> staging
 }
 function Nn(t) {
   return wt() ? t.altKey : t.ctrlKey;
@@ -5957,39 +5419,22 @@ function Ia(t) {
   return t.length === 1 || !/^[A-Z]/i.test(t) ? t : "";
 }
 function il(t) {
-<<<<<<< HEAD
-  let { selectionManager: e, keyboardDelegate: n, ref: r, autoFocus: o = !1, shouldFocusWrap: i = !1, disallowEmptySelection: l = !1, disallowSelectAll: s = !1, selectOnFocus: u = e.selectionBehavior === "replace", disallowTypeAhead: a = !1, shouldUseVirtualFocus: c, allowsTabNavigation: f = !1, isVirtualized: p, scrollRef: d = r, linkBehavior: v = "action" } = t, { direction: $ } = Zt(), h = Gt(), A = (P) => {
-=======
   let { selectionManager: e, keyboardDelegate: n, ref: r, autoFocus: o = !1, shouldFocusWrap: i = !1, disallowEmptySelection: l = !1, disallowSelectAll: s = !1, selectOnFocus: u = e.selectionBehavior === "replace", disallowTypeAhead: a = !1, shouldUseVirtualFocus: c, allowsTabNavigation: f = !1, isVirtualized: p, scrollRef: d = r, linkBehavior: v = "action" } = t, { direction: h } = Zt(), g = Gt(), A = (P) => {
->>>>>>> staging
     if (P.altKey && P.key === "Tab" && P.preventDefault(), !r.current.contains(P.target))
       return;
     const C = (y, D) => {
       if (y != null) {
-<<<<<<< HEAD
-        if (e.isLink(y) && v === "selection" && u && !kn(P)) {
-          us(() => {
-            e.setFocusedKey(y, D);
-          });
-          let z = d.current.querySelector(`[data-key="${CSS.escape(y.toString())}"]`);
-          h.open(z, P);
-=======
         if (e.isLink(y) && v === "selection" && u && !Nn(P)) {
           as(() => {
             e.setFocusedKey(y, D);
           });
           let z = d.current.querySelector(`[data-key="${CSS.escape(y.toString())}"]`);
           g.open(z, P);
->>>>>>> staging
           return;
         }
         if (e.setFocusedKey(y, D), e.isLink(y) && v === "override")
           return;
-<<<<<<< HEAD
-        P.shiftKey && e.selectionMode === "multiple" ? e.extendSelection(y) : u && !kn(P) && e.replaceSelection(y);
-=======
         P.shiftKey && e.selectionMode === "multiple" ? e.extendSelection(y) : u && !Nn(P) && e.replaceSelection(y);
->>>>>>> staging
       }
     };
     switch (P.key) {
@@ -6014,11 +5459,7 @@ function il(t) {
           var V, F;
           P.preventDefault();
           let y = n.getKeyLeftOf(e.focusedKey);
-<<<<<<< HEAD
-          y == null && i && (y = $ === "rtl" ? (V = n.getFirstKey) === null || V === void 0 ? void 0 : V.call(n, e.focusedKey) : (F = n.getLastKey) === null || F === void 0 ? void 0 : F.call(n, e.focusedKey)), C(y, $ === "rtl" ? "first" : "last");
-=======
           y == null && i && (y = h === "rtl" ? (V = n.getFirstKey) === null || V === void 0 ? void 0 : V.call(n, e.focusedKey) : (F = n.getLastKey) === null || F === void 0 ? void 0 : F.call(n, e.focusedKey)), C(y, h === "rtl" ? "first" : "last");
->>>>>>> staging
         }
         break;
       case "ArrowRight":
@@ -6026,11 +5467,7 @@ function il(t) {
           var ue, ae;
           P.preventDefault();
           let y = n.getKeyRightOf(e.focusedKey);
-<<<<<<< HEAD
-          y == null && i && (y = $ === "rtl" ? (ue = n.getLastKey) === null || ue === void 0 ? void 0 : ue.call(n, e.focusedKey) : (ae = n.getFirstKey) === null || ae === void 0 ? void 0 : ae.call(n, e.focusedKey)), C(y, $ === "rtl" ? "last" : "first");
-=======
           y == null && i && (y = h === "rtl" ? (ue = n.getLastKey) === null || ue === void 0 ? void 0 : ue.call(n, e.focusedKey) : (ae = n.getFirstKey) === null || ae === void 0 ? void 0 : ae.call(n, e.focusedKey)), C(y, h === "rtl" ? "last" : "first");
->>>>>>> staging
         }
         break;
       case "Home":
@@ -6087,11 +5524,7 @@ function il(t) {
     top: 0,
     left: 0
   });
-<<<<<<< HEAD
-  mu(d, "scroll", p ? null : () => {
-=======
   vu(d, "scroll", p ? null : () => {
->>>>>>> staging
     w.current = {
       top: d.current.scrollTop,
       left: d.current.scrollLeft
@@ -6121,11 +5554,7 @@ function il(t) {
   }, K = (P) => {
     P.currentTarget.contains(P.relatedTarget) || e.setFocused(!1);
   };
-<<<<<<< HEAD
-  const x = I(o);
-=======
   const x = k(o);
->>>>>>> staging
   W(() => {
     if (x.current) {
       let P = null;
@@ -6180,11 +5609,7 @@ function il(t) {
 }
 function ll(t) {
   let { selectionManager: e, key: n, ref: r, shouldSelectOnPressUp: o, shouldUseVirtualFocus: i, focus: l, isDisabled: s, onAction: u, allowsDifferentPressOrigin: a, linkBehavior: c = "action" } = t, f = Gt(), p = (F) => {
-<<<<<<< HEAD
-    if (F.pointerType === "keyboard" && kn(F))
-=======
     if (F.pointerType === "keyboard" && Nn(F))
->>>>>>> staging
       e.toggleSelection(n);
     else {
       if (e.selectionMode === "none")
@@ -6218,41 +5643,24 @@ function ll(t) {
   } : s && (d.onMouseDown = (F) => {
     F.preventDefault();
   });
-<<<<<<< HEAD
-  let v = e.isLink(n) && c === "override", $ = e.isLink(n) && c !== "selection" && c !== "none", h = !s && e.canSelectItem(n) && !v, A = (u || $) && !s, w = A && (e.selectionBehavior === "replace" ? !h : !h || e.isEmpty), S = A && h && e.selectionBehavior === "replace", K = w || S, x = I(null), M = K && h, R = I(!1), b = I(!1), _ = (F) => {
-    u && u(), $ && f.open(r.current, F);
-=======
   let v = e.isLink(n) && c === "override", h = e.isLink(n) && c !== "selection" && c !== "none", g = !s && e.canSelectItem(n) && !v, A = (u || h) && !s, w = A && (e.selectionBehavior === "replace" ? !g : !g || e.isEmpty), S = A && g && e.selectionBehavior === "replace", K = w || S, x = k(null), M = K && g, R = k(!1), b = k(!1), _ = (F) => {
     u && u(), h && f.open(r.current, F);
->>>>>>> staging
   }, P = {};
   o ? (P.onPressStart = (F) => {
     x.current = F.pointerType, R.current = M, F.pointerType === "keyboard" && (!K || Vr()) && p(F);
   }, a ? (P.onPressUp = w ? null : (F) => {
-<<<<<<< HEAD
-    F.pointerType !== "keyboard" && h && p(F);
-=======
     F.pointerType !== "keyboard" && g && p(F);
->>>>>>> staging
   }, P.onPress = w ? _ : null) : P.onPress = (F) => {
     if (w || S && F.pointerType !== "mouse") {
       if (F.pointerType === "keyboard" && !Rr())
         return;
       _(F);
     } else
-<<<<<<< HEAD
-      F.pointerType !== "keyboard" && h && p(F);
-  }) : (P.onPressStart = (F) => {
-    x.current = F.pointerType, R.current = M, b.current = w, h && (F.pointerType === "mouse" && !w || F.pointerType === "keyboard" && (!A || Vr())) && p(F);
-  }, P.onPress = (F) => {
-    (F.pointerType === "touch" || F.pointerType === "pen" || F.pointerType === "virtual" || F.pointerType === "keyboard" && K && Rr() || F.pointerType === "mouse" && b.current) && (K ? _(F) : h && p(F));
-=======
       F.pointerType !== "keyboard" && g && p(F);
   }) : (P.onPressStart = (F) => {
     x.current = F.pointerType, R.current = M, b.current = w, g && (F.pointerType === "mouse" && !w || F.pointerType === "keyboard" && (!A || Vr())) && p(F);
   }, P.onPress = (F) => {
     (F.pointerType === "touch" || F.pointerType === "pen" || F.pointerType === "virtual" || F.pointerType === "keyboard" && K && Rr() || F.pointerType === "mouse" && b.current) && (K ? _(F) : g && p(F));
->>>>>>> staging
   }), d["data-key"] = n, P.preventFocusOnPress = i;
   let { pressProps: C, isPressed: B } = qt(P), E = S ? (F) => {
     x.current === "mouse" && (F.stopPropagation(), F.preventDefault(), _(F));
@@ -6267,11 +5675,7 @@ function ll(t) {
     Re.isOpening || F.preventDefault();
   } : void 0;
   return {
-<<<<<<< HEAD
-    itemProps: se(d, h || w ? C : {}, M ? T : {}, {
-=======
     itemProps: se(d, g || w ? C : {}, M ? T : {}, {
->>>>>>> staging
       onDoubleClick: E,
       onDragStartCapture: q,
       onClick: V
@@ -6422,7 +5826,7 @@ function sl(t) {
   let { selectionManager: e, collection: n, disabledKeys: r, ref: o, keyboardDelegate: i } = t, l = Xn({
     usage: "search",
     sensitivity: "base"
-  }), s = e.disabledBehavior, u = ne(() => i || new Zn(n, s === "selection" ? /* @__PURE__ */ new Set() : r, o, l), [
+  }), s = e.disabledBehavior, u = re(() => i || new Zn(n, s === "selection" ? /* @__PURE__ */ new Set() : r, o, l), [
     i,
     n,
     r,
@@ -6504,15 +5908,9 @@ function Ra(t, e, n) {
   var p;
   let d = (p = t.shouldFocusOnHover) !== null && p !== void 0 ? p : i == null ? void 0 : i.shouldFocusOnHover;
   var v;
-<<<<<<< HEAD
-  let $ = (v = t.shouldUseVirtualFocus) !== null && v !== void 0 ? v : i == null ? void 0 : i.shouldUseVirtualFocus;
-  var h;
-  let A = (h = t.isVirtualized) !== null && h !== void 0 ? h : i == null ? void 0 : i.isVirtualized, w = Oe(), S = Oe(), K = {
-=======
   let h = (v = t.shouldUseVirtualFocus) !== null && v !== void 0 ? v : i == null ? void 0 : i.shouldUseVirtualFocus;
   var g;
   let A = (g = t.isVirtualized) !== null && g !== void 0 ? g : i == null ? void 0 : i.isVirtualized, w = Oe(), S = Oe(), K = {
->>>>>>> staging
     role: "option",
     "aria-disabled": s || void 0,
     "aria-selected": e.selectionManager.selectionMode !== "none" ? a : void 0
@@ -6530,11 +5928,7 @@ function Ra(t, e, n) {
     shouldSelectOnPressUp: f,
     allowsDifferentPressOrigin: f && d,
     isVirtualized: A,
-<<<<<<< HEAD
-    shouldUseVirtualFocus: $,
-=======
     shouldUseVirtualFocus: h,
->>>>>>> staging
     isDisabled: s,
     onAction: i != null && i.onAction ? () => {
       var E;
@@ -6850,11 +6244,7 @@ function ja(t, e, n) {
 }
 function Ha(t, e, n) {
   var r;
-<<<<<<< HEAD
-  let { key: o, closeOnSelect: i, isVirtualized: l, "aria-haspopup": s, onPressStart: u, onPressUp: a, onPress: c, onPressChange: f, onPressEnd: p, onHoverStart: d, onHoverChange: v, onHoverEnd: $, onKeyDown: h, onKeyUp: A, onFocus: w, onFocusChange: S, onBlur: K } = t, x = !!s;
-=======
   let { key: o, closeOnSelect: i, isVirtualized: l, "aria-haspopup": s, onPressStart: u, onPressUp: a, onPress: c, onPressChange: f, onPressEnd: p, onHoverStart: d, onHoverChange: v, onHoverEnd: h, onKeyDown: g, onKeyUp: A, onFocus: w, onFocusChange: S, onBlur: K } = t, x = !!s;
->>>>>>> staging
   var M;
   let R = (M = t.isDisabled) !== null && M !== void 0 ? M : e.disabledKeys.has(o);
   var b;
@@ -6907,13 +6297,8 @@ function Ha(t, e, n) {
       dt() || (e.selectionManager.setFocused(!0), e.selectionManager.setFocusedKey(o)), d == null || d(J);
     },
     onHoverChange: v,
-<<<<<<< HEAD
-    onHoverEnd: $
-  }), { keyboardProps: N } = Ao({
-=======
     onHoverEnd: h
   }), { keyboardProps: I } = Ao({
->>>>>>> staging
     onKeyDown: (J) => {
       if (J.repeat) {
         J.continuePropagation();
@@ -6944,11 +6329,7 @@ function Ha(t, e, n) {
       ...ae,
       ...se(G, x ? {
         onFocus: j.onFocus
-<<<<<<< HEAD
-      } : j, Y, L, N, X),
-=======
       } : j, Y, L, I, Z),
->>>>>>> staging
       tabIndex: j.tabIndex != null ? -1 : void 0
     },
     labelProps: {
@@ -6990,11 +6371,7 @@ function Wa(t, e) {
   let { inputElementType: n = "input", isDisabled: r = !1, isRequired: o = !1, isReadOnly: i = !1, type: l = "text", validationBehavior: s = "aria" } = t, [u, a] = tt(t.value, t.defaultValue || "", t.onChange), { focusableProps: c } = Lo(t, e), f = On({
     ...t,
     value: u
-<<<<<<< HEAD
-  }), { isInvalid: p, validationErrors: d, validationDetails: v } = f.displayValidation, { labelProps: $, fieldProps: h, descriptionProps: A, errorMessageProps: w } = Oo({
-=======
   }), { isInvalid: p, validationErrors: d, validationDetails: v } = f.displayValidation, { labelProps: h, fieldProps: g, descriptionProps: A, errorMessageProps: w } = Oo({
->>>>>>> staging
     ...t,
     isInvalid: p,
     errorMessage: t.errorMessage || d
@@ -7018,11 +6395,7 @@ function Wa(t, e) {
   }, [
     e
   ]), {
-<<<<<<< HEAD
-    labelProps: $,
-=======
     labelProps: h,
->>>>>>> staging
     inputProps: se(S, n === "input" && K, {
       disabled: r,
       readOnly: i,
@@ -7105,20 +6478,15 @@ Ul = {
   "zh-CN": gi,
   "zh-TW": $i
 };
-<<<<<<< HEAD
-function Ga(t, e) {
-  let { buttonRef: n, popoverRef: r, inputRef: o, listBoxRef: i, keyboardDelegate: l, shouldFocusWrap: s, isReadOnly: u, isDisabled: a } = t, c = Yn(/* @__PURE__ */ Wa(Ul), "@react-aria/combobox"), { menuTriggerProps: f, menuProps: p } = Jn({
-=======
 function qa(t, e) {
   let { buttonRef: n, popoverRef: r, inputRef: o, listBoxRef: i, keyboardDelegate: l, shouldFocusWrap: s, isReadOnly: u, isDisabled: a } = t, c = Yn(/* @__PURE__ */ Ga(Ul), "@react-aria/combobox"), { menuTriggerProps: f, menuProps: p } = Jn({
->>>>>>> staging
     type: "listbox",
     isDisabled: a || u
   }, e, n);
   Jt.set(e, {
     id: p.id
   });
-  let d = ne(() => l || new Zn(e.collection, e.disabledKeys, i), [
+  let d = re(() => l || new Zn(e.collection, e.disabledKeys, i), [
     l,
     e.collection,
     e.disabledKeys,
@@ -7132,23 +6500,14 @@ function qa(t, e) {
     ref: o,
     // Prevent item scroll behavior from being applied here, should be handled in the user's Popover + ListBox component
     isVirtualized: !0
-<<<<<<< HEAD
-  }), $ = Gt(), h = (L) => {
-=======
   }), h = Gt(), g = (L) => {
->>>>>>> staging
     switch (L.key) {
       case "Enter":
       case "Tab":
         if (e.isOpen && L.key === "Enter" && L.preventDefault(), e.isOpen && e.selectionManager.focusedKey != null && e.selectionManager.isLink(e.selectionManager.focusedKey)) {
           if (L.key === "Enter") {
-<<<<<<< HEAD
-            let N = i.current.querySelector(`[data-key="${CSS.escape(e.selectionManager.focusedKey.toString())}"]`);
-            N instanceof HTMLAnchorElement && $.open(N, L);
-=======
             let I = i.current.querySelector(`[data-key="${CSS.escape(e.selectionManager.focusedKey.toString())}"]`);
             I instanceof HTMLAnchorElement && h.open(I, L);
->>>>>>> staging
           }
           e.close();
         } else
@@ -7173,11 +6532,7 @@ function qa(t, e) {
     L.relatedTarget === (n == null ? void 0 : n.current) || !((I = r.current) === null || I === void 0) && I.contains(L.relatedTarget) || (t.onBlur && t.onBlur(L), e.setFocused(!1));
   }, w = (L) => {
     e.isFocused || (t.onFocus && t.onFocus(L), e.setFocused(!0));
-<<<<<<< HEAD
-  }, { isInvalid: S, validationErrors: K, validationDetails: x } = e.displayValidation, { labelProps: M, inputProps: R, descriptionProps: b, errorMessageProps: _ } = Ua({
-=======
   }, { isInvalid: S, validationErrors: K, validationDetails: x } = e.displayValidation, { labelProps: M, inputProps: R, descriptionProps: b, errorMessageProps: _ } = Wa({
->>>>>>> staging
     ...t,
     onChange: e.setInputValue,
     onKeyDown: u ? t.onKeyDown : Qe(e.isOpen && v.onKeyDown, g, t.onKeyDown),
@@ -7206,27 +6561,12 @@ function qa(t, e) {
       L.preventDefault(), o.current.focus();
       return;
     }
-<<<<<<< HEAD
-    let N = L.target.getBoundingClientRect(), X = L.changedTouches[0], G = Math.ceil(N.left + 0.5 * N.width), J = Math.ceil(N.top + 0.5 * N.height);
-    X.clientX === G && X.clientY === J && (L.preventDefault(), o.current.focus(), e.toggle(null, "manual"), T.current = L.timeStamp);
-=======
     let I = L.target.getBoundingClientRect(), Z = L.changedTouches[0], G = Math.ceil(I.left + 0.5 * I.width), J = Math.ceil(I.top + 0.5 * I.height);
     Z.clientX === G && Z.clientY === J && (L.preventDefault(), o.current.focus(), e.toggle(null, "manual"), T.current = L.timeStamp);
->>>>>>> staging
   }, V = e.selectionManager.focusedKey != null && e.isOpen ? e.collection.getItem(e.selectionManager.focusedKey) : void 0;
   var F;
   let ue = (F = V == null ? void 0 : V.parentKey) !== null && F !== void 0 ? F : null;
   var ae;
-<<<<<<< HEAD
-  let y = (ae = e.selectionManager.focusedKey) !== null && ae !== void 0 ? ae : null, D = I(ue), z = I(y);
-  W(() => {
-    if (wt() && V != null && y !== z.current) {
-      let L = e.selectionManager.isSelected(y), N = ue != null ? e.collection.getItem(ue) : null, X = (N == null ? void 0 : N["aria-label"]) || (typeof (N == null ? void 0 : N.rendered) == "string" ? N.rendered : "") || "", G = c.format("focusAnnouncement", {
-        isGroupChange: N && ue !== D.current,
-        groupTitle: X,
-        groupCount: N ? [
-          ...zt(N, e.collection)
-=======
   let y = (ae = e.selectionManager.focusedKey) !== null && ae !== void 0 ? ae : null, D = k(ue), z = k(y);
   W(() => {
     if (wt() && V != null && y !== z.current) {
@@ -7235,7 +6575,6 @@ function qa(t, e) {
         groupTitle: Z,
         groupCount: I ? [
           ...zt(I, e.collection)
->>>>>>> staging
         ].length : 0,
         optionText: V["aria-label"] || V.textValue || "",
         isSelected: L
@@ -7316,7 +6655,7 @@ function Ya(t, e, n) {
   let { keyboardDelegate: r, isDisabled: o, isRequired: i, name: l, validationBehavior: s = "aria" } = t, u = Xn({
     usage: "search",
     sensitivity: "base"
-  }), a = ne(() => r || new Zn(e.collection, e.disabledKeys, null, u), [
+  }), a = re(() => r || new Zn(e.collection, e.disabledKeys, null, u), [
     r,
     e.collection,
     e.disabledKeys,
@@ -7345,19 +6684,11 @@ function Ya(t, e, n) {
     onTypeSelect(b) {
       e.setSelectedKey(b);
     }
-<<<<<<< HEAD
-  }), { isInvalid: v, validationErrors: $, validationDetails: h } = e.displayValidation, { labelProps: A, fieldProps: w, descriptionProps: S, errorMessageProps: K } = Oo({
-    ...t,
-    labelElementType: "span",
-    isInvalid: v,
-    errorMessage: t.errorMessage || $
-=======
   }), { isInvalid: v, validationErrors: h, validationDetails: g } = e.displayValidation, { labelProps: A, fieldProps: w, descriptionProps: S, errorMessageProps: K } = Oo({
     ...t,
     labelElementType: "span",
     isInvalid: v,
     errorMessage: t.errorMessage || h
->>>>>>> staging
   });
   d.onKeyDown = d.onKeyDownCapture, delete d.onKeyDownCapture;
   let x = ze(t, {
@@ -7413,13 +6744,8 @@ function Ya(t, e, n) {
     descriptionProps: S,
     errorMessageProps: K,
     isInvalid: v,
-<<<<<<< HEAD
-    validationErrors: $,
-    validationDetails: h
-=======
     validationErrors: h,
     validationDetails: g
->>>>>>> staging
   };
 }
 function Xa(t, e, n) {
@@ -7539,11 +6865,7 @@ const Ja = "_focused_1af8e_1", Qa = "_listbox_1af8e_10", ec = "_content_1af8e_89
   "listbox--info": "_listbox--info_1af8e_453",
   "listbox-item--error": "_listbox-item--error_1af8e_461",
   "listbox--error": "_listbox--error_1af8e_469"
-<<<<<<< HEAD
-}, Gl = Rt({}), dd = ({
-=======
 }, Gl = Rt({}), fd = ({
->>>>>>> staging
   children: t,
   routerComponent: e,
   extendRequiredFieldsLabelsWith: n = /* @__PURE__ */ m("span", { style: { color: "var(--text-default-error)" }, children: " *" }),
@@ -7551,15 +6873,6 @@ const Ja = "_focused_1af8e_1", Qa = "_listbox_1af8e_10", ec = "_content_1af8e_89
   defaultLang: o = "fr",
   verbose: i = !1
 }) => {
-<<<<<<< HEAD
-  const [l, s] = Z(
-    window.localStorage.getItem("locale") || o
-  ), [u, a] = Z(!1);
-  W(() => {
-    const p = async () => {
-      var h;
-      (h = window == null ? void 0 : window.dsfr) != null && h.isStarted || (window.dsfr = {
-=======
   const [l, s] = X(
     window.localStorage.getItem("locale") || o
   ), [u, a] = X(!1);
@@ -7567,32 +6880,20 @@ const Ja = "_focused_1af8e_1", Qa = "_listbox_1af8e_10", ec = "_content_1af8e_89
     const p = async () => {
       var g;
       (g = window == null ? void 0 : window.dsfr) != null && g.isStarted || (window.dsfr = {
->>>>>>> staging
         verbose: i,
         mode: "manual"
       }, await import("./dsfr.module.min-23ae5258.js"), await import("./utility-251e9615.js"), await import("./dsfr-4e49221c.js"), window.dsfr.start(), a(!0));
     }, d = window.matchMedia(
       "(prefers-color-scheme: dark)"
-<<<<<<< HEAD
-    ), v = d != null && d.matches ? "dark" : "light", $ = window.localStorage.getItem("theme");
-    document.documentElement.setAttribute(
-      "data-fr-scheme",
-      $ || v
-=======
     ), v = d != null && d.matches ? "dark" : "light", h = window.localStorage.getItem("theme");
     document.documentElement.setAttribute(
       "data-fr-scheme",
       h || v
->>>>>>> staging
     ), p();
   }, []);
   const c = te((p) => {
     window.localStorage.setItem("locale", p), document.documentElement.setAttribute("lang", p), s(p);
-<<<<<<< HEAD
-  }, []), f = ne(
-=======
   }, []), f = re(
->>>>>>> staging
     () => ({
       setLocale: c,
       routerComponent: e,
@@ -7625,11 +6926,7 @@ const Ja = "_focused_1af8e_1", Qa = "_listbox_1af8e_10", ec = "_content_1af8e_89
     {
       ref: u,
       "aria-current": r || void 0,
-<<<<<<< HEAD
-      className: g({
-=======
       className: $({
->>>>>>> staging
         "fr-link": i,
         [`fr-link-${l}`]: l !== "md",
         [`fr-icon-${n}`]: !!n,
@@ -7641,22 +6938,14 @@ const Ja = "_focused_1af8e_1", Qa = "_listbox_1af8e_10", ec = "_content_1af8e_89
   );
 });
 function ql({ item: t, state: e }) {
-<<<<<<< HEAD
-  const n = I(null), { optionProps: r, descriptionProps: o, labelProps: i, isFocused: l, isFocusVisible: s } = Oa({ key: t.key }, e, n), { description: u, startContent: a, endContent: c, color: f, showDivider: p, href: d, className: v } = t.props || {};
-=======
   const n = k(null), { optionProps: r, descriptionProps: o, labelProps: i, isFocused: l, isFocusVisible: s } = Ra({ key: t.key }, e, n), { description: u, startContent: a, endContent: c, color: f, showDivider: p, href: d, className: v } = t.props || {};
->>>>>>> staging
   return /* @__PURE__ */ O(
     d ? he : "li",
     {
       ...r,
       ref: n,
       href: d,
-<<<<<<< HEAD
-      className: g(
-=======
       className: $(
->>>>>>> staging
         Ce["listbox-item"],
         v,
         {
@@ -7686,11 +6975,7 @@ function oc({ section: t, state: e }) {
     "li",
     {
       ...n,
-<<<<<<< HEAD
-      className: g(
-=======
       className: $(
->>>>>>> staging
         Ce["listbox-section"],
         l,
         s.base,
@@ -7701,22 +6986,14 @@ function oc({ section: t, state: e }) {
           "span",
           {
             ...r,
-<<<<<<< HEAD
-            className: g(
-=======
             className: $(
->>>>>>> staging
               "fr-text-mention--grey fr-text--sm fr-my-1w fr-px-1w",
               s.title
             ),
             children: t.rendered
           }
         ),
-<<<<<<< HEAD
-        /* @__PURE__ */ m(u, { ...o, className: g(Ce["listbox-section-list"], s.list), children: [...t.childNodes].map((a) => /* @__PURE__ */ m(
-=======
         /* @__PURE__ */ m(u, { ...o, className: $(Ce["listbox-section-list"], s.list), children: [...t.childNodes].map((a) => /* @__PURE__ */ m(
->>>>>>> staging
           ql,
           {
             item: a,
@@ -7729,16 +7006,6 @@ function oc({ section: t, state: e }) {
   );
 }
 function Qn(t) {
-<<<<<<< HEAD
-  var v, $;
-  const e = I(null), { listBoxRef: n = e, state: r, className: o, css: i = {}, color: l, topContent: s, bottomContent: u, ...a } = t, { listBoxProps: c } = Ba(a, r, n), { isFocusVisible: f } = qn(), p = [...r.collection].find((h) => h.props.href) ? "div" : "ul", d = (($ = (v = t == null ? void 0 : t.triggerRef) == null ? void 0 : v.current) == null ? void 0 : $.offsetWidth) || 0;
-  return /* @__PURE__ */ O("div", { className: g(Ce.listbox, o, i.base), style: { minWidth: d || "auto", maxWidth: d > 150 ? d : "auto" }, children: [
-    /* @__PURE__ */ m("span", { className: g(Ce["listbox-top"], i.top), children: s && s }),
-    /* @__PURE__ */ m(
-      p,
-      {
-        className: g(Ce["listbox-content"], i.list, { [Ce[`listbox--${l}`]]: l }),
-=======
   var v, h;
   const e = k(null), { listBoxRef: n = e, state: r, className: o, css: i = {}, color: l, topContent: s, bottomContent: u, ...a } = t, { listBoxProps: c } = Oa(a, r, n), { isFocusVisible: f } = qn(), p = [...r.collection].find((g) => g.props.href) ? "div" : "ul", d = ((h = (v = t == null ? void 0 : t.triggerRef) == null ? void 0 : v.current) == null ? void 0 : h.offsetWidth) || 0;
   return /* @__PURE__ */ O("div", { className: $(Ce.listbox, o, i.base), style: { minWidth: d || "auto", maxWidth: d > 150 ? d : "auto" }, children: [
@@ -7747,18 +7014,13 @@ function Qn(t) {
       p,
       {
         className: $(Ce["listbox-content"], i.list, { [Ce[`listbox--${l}`]]: l }),
->>>>>>> staging
         ref: n,
         "data-focus-visible": f,
         ...c,
         children: [...r.collection].map((g) => g.type === "section" ? /* @__PURE__ */ ir(oc, { ...g.props, key: g.key, section: g, state: r }) : /* @__PURE__ */ ir(ql, { ...g.props, key: g.key, item: g, state: r }))
       }
     ),
-<<<<<<< HEAD
-    /* @__PURE__ */ m("span", { className: g(Ce["listbox-bottom"], i.bottom), children: u && u })
-=======
     /* @__PURE__ */ m("span", { className: $(Ce["listbox-bottom"], i.bottom), children: u && u })
->>>>>>> staging
   ] });
 }
 const ic = "_popover_1g6m6_1", lc = {
@@ -7791,13 +7053,8 @@ const sc = "_spinner_1m2vp_5", uc = "_internal_1m2vp_27", zr = {
   "internal-circle": "_internal-circle_1m2vp_27",
   internal: uc
 };
-<<<<<<< HEAD
-function uc({ size: t = 24 }) {
-  const e = ie();
-=======
 function ac({ size: t = 24 }) {
   const e = ne();
->>>>>>> staging
   return W(() => {
     var n, r;
     (n = document == null ? void 0 : document.getElementById(e)) == null || n.style.setProperty("width", `${t}px`), (r = document == null ? void 0 : document.getElementById(e)) == null || r.style.setProperty("height", `${t}px`);
@@ -7808,34 +7065,20 @@ function cc(t) {
     ...t,
     defaultFilter: e,
     allowsCustomValue: !0
-<<<<<<< HEAD
-  }), r = vt.useRef(null), o = vt.useRef(null), i = vt.useRef(null), l = vt.useRef(null), { size: s = "md", color: u, onSubmit: a, topContent: c, bottomContent: f, ...p } = t, { inputProps: d, listBoxProps: v } = Ga(
-=======
   }), r = vt.useRef(null), o = vt.useRef(null), i = vt.useRef(null), l = vt.useRef(null), { size: s = "md", color: u, onSubmit: a, topContent: c, bottomContent: f, ...p } = t, { inputProps: d, listBoxProps: v } = qa(
->>>>>>> staging
     {
       ...p,
       inputRef: r,
       listBoxRef: o,
       popoverRef: i,
-<<<<<<< HEAD
-      onKeyUp: ($) => {
-        var h;
-        $.key === "Enter" && ($.preventDefault(), (h = t.onSubmit) == null || h.call(t, n.inputValue));
-=======
       onKeyUp: (h) => {
         var g;
         h.key === "Enter" && (h.preventDefault(), (g = t.onSubmit) == null || g.call(t, n.inputValue));
->>>>>>> staging
       }
     },
     n
   );
-<<<<<<< HEAD
-  return /* @__PURE__ */ O("form", { onSubmit: () => a == null ? void 0 : a((t == null ? void 0 : t.inputValue) || ""), ref: l, className: g("fr-search-bar", { "fr-search-bar--lg": s === "lg" }), role: "search", children: [
-=======
   return /* @__PURE__ */ O("form", { onSubmit: () => a == null ? void 0 : a((t == null ? void 0 : t.inputValue) || ""), ref: l, className: $("fr-search-bar", { "fr-search-bar--lg": s === "lg" }), role: "search", children: [
->>>>>>> staging
     /* @__PURE__ */ m(
       "input",
       {
@@ -7845,13 +7088,8 @@ function cc(t) {
         className: "fr-input"
       }
     ),
-<<<<<<< HEAD
-    /* @__PURE__ */ O("button", { type: "submit", style: { position: "relative" }, className: g("fr-btn", { "fr-btn--lg": s === "lg" }), children: [
-      /* @__PURE__ */ m("div", { style: { position: "absolute", left: "-40px" }, children: t.loadingState === "loading" && /* @__PURE__ */ m(uc, {}) }),
-=======
     /* @__PURE__ */ O("button", { type: "submit", style: { position: "relative" }, className: $("fr-btn", { "fr-btn--lg": s === "lg" }), children: [
       /* @__PURE__ */ m("div", { style: { position: "absolute", left: "-40px" }, children: t.loadingState === "loading" && /* @__PURE__ */ m(ac, {}) }),
->>>>>>> staging
       "Rechercher"
     ] }),
     n.isOpen && /* @__PURE__ */ m(
@@ -7878,17 +7116,10 @@ function cc(t) {
     )
   ] });
 }
-<<<<<<< HEAD
-const fd = Vt;
-const cc = be, dc = cc(
-  ({ as: t, className: e, noIcon: n, color: r = "blue-france", size: o, icon: i, variant: l = "primary", ...s }, u) => {
-    const a = t === "a" ? he : t || "p", c = g(
-=======
 const pd = Vt;
 const dc = be, fc = dc(
   ({ as: t, className: e, noIcon: n, color: r = "blue-france", size: o, icon: i, variant: l = "primary", ...s }, u) => {
     const a = t === "a" ? he : t || "p", c = $(
->>>>>>> staging
       "fr-badge",
       {
         [`fr-badge--${l}`]: l,
@@ -7904,54 +7135,32 @@ const dc = be, fc = dc(
     );
     return /* @__PURE__ */ m(a, { className: c, ref: u, ...s });
   }
-<<<<<<< HEAD
-), pd = ({
-=======
 ), bd = ({
->>>>>>> staging
   children: t,
   className: e,
   ...n
 }) => {
-<<<<<<< HEAD
-  const r = ie(), o = g("fr-badges-group", e);
-  return /* @__PURE__ */ m("ul", { className: o, ...n, children: de(t, dc).map((i, l) => /* @__PURE__ */ m("li", { children: i }, `${r}-${l}`)) });
-}, bd = ({
-=======
   const r = ne(), o = $("fr-badges-group", e);
   return /* @__PURE__ */ m("ul", { className: o, ...n, children: de(t, fc).map((i, l) => /* @__PURE__ */ m("li", { children: i }, `${r}-${l}`)) });
 }, md = ({
->>>>>>> staging
   buttonLabel: t = "Voir le fil d’Ariane",
   children: e,
   className: n,
   css: r = {},
   ...o
 }) => {
-<<<<<<< HEAD
-  const i = ie();
-  return /* @__PURE__ */ O("nav", { role: "navigation", "aria-label": o["aria-label"] || "vous êtes ici:", className: g("fr-breadcrumb", n), ...o, children: [
-    /* @__PURE__ */ m("button", { className: g("fr-breadcrumb__button", r.button), "aria-expanded": "false", "aria-controls": "breadcrumb-1", children: t || "Voir le fil d’Ariane" }),
-    /* @__PURE__ */ m("div", { className: "fr-collapse", id: "breadcrumb-1", children: /* @__PURE__ */ m("ol", { className: g("fr-breadcrumb__list", r.list), children: de(e, he).filter((l) => $e(l)).map((l, s, { length: u }) => /* @__PURE__ */ m("li", { className: g(r.item), children: _e(l, {
-      className: g("fr-breadcrumb__link"),
-=======
   const i = ne();
   return /* @__PURE__ */ O("nav", { role: "navigation", "aria-label": o["aria-label"] || "vous êtes ici:", className: $("fr-breadcrumb", n), ...o, children: [
     /* @__PURE__ */ m("button", { className: $("fr-breadcrumb__button", r.button), "aria-expanded": "false", "aria-controls": "breadcrumb-1", children: t || "Voir le fil d’Ariane" }),
     /* @__PURE__ */ m("div", { className: "fr-collapse", id: "breadcrumb-1", children: /* @__PURE__ */ m("ol", { className: $("fr-breadcrumb__list", r.list), children: de(e, he).filter((l) => $e(l)).map((l, s, { length: u }) => /* @__PURE__ */ m("li", { className: $(r.item), children: _e(l, {
       className: $("fr-breadcrumb__link"),
->>>>>>> staging
       "aria-current": s + 1 === u ? "page" : void 0
     }) }, `${i}-${s}`)) }) })
   ] });
 };
 const pc = be, ut = pc(
   ({ as: t, className: e, color: n = "blue-france", icon: r, iconPosition: o = "left", size: i = "md", variant: l = "primary", children: s, ...u }, a) => {
-<<<<<<< HEAD
-    const c = t === "a" ? he : t || "button", f = g(
-=======
     const c = t === "a" ? he : t || "button", f = $(
->>>>>>> staging
       "fr-btn",
       {
         [`fr-btn--${i}`]: i !== "md",
@@ -7967,11 +7176,7 @@ const pc = be, ut = pc(
     );
     return /* @__PURE__ */ m(c, { className: f, ref: a, ...u, children: s });
   }
-<<<<<<< HEAD
-), md = ({
-=======
 ), vd = ({
->>>>>>> staging
   align: t = "left",
   children: e,
   className: n,
@@ -7982,11 +7187,7 @@ const pc = be, ut = pc(
   ...s
 }) => {
   var d;
-<<<<<<< HEAD
-  const u = ie(), a = (v, $) => v || $e($) && $.props.icon && $.props.children, c = de(e, ut).reduce(a, !1), f = (d = de(e, ut).map((v) => $e(v) && v.props.iconPosition)) == null ? void 0 : d[0], p = g("fr-btns-group", {
-=======
   const u = ne(), a = (v, h) => v || $e(h) && h.props.icon && h.props.children, c = de(e, ut).reduce(a, !1), f = (d = de(e, ut).map((v) => $e(v) && v.props.iconPosition)) == null ? void 0 : d[0], p = $("fr-btns-group", {
->>>>>>> staging
     [`fr-btns-group--${l}`]: l !== "md",
     [`fr-btns-group--${t}`]: t !== "left",
     [`fr-btns-group--icon-${f}`]: c,
@@ -7995,13 +7196,8 @@ const pc = be, ut = pc(
     "fr-btns-group--inline-reverse": i,
     "fr-btns-group--equisized": r
   }, n);
-<<<<<<< HEAD
-  return /* @__PURE__ */ m("ul", { className: p, ...s, children: de(e, ut).map((v, $) => /* @__PURE__ */ m("li", { children: v }, `${u}-${$}`)) });
-}, vd = be(({
-=======
   return /* @__PURE__ */ m("ul", { className: p, ...s, children: de(e, ut).map((v, h) => /* @__PURE__ */ m("li", { children: v }, `${u}-${h}`)) });
 }, hd = be(({
->>>>>>> staging
   className: t,
   css: e = {},
   hint: n,
@@ -8010,28 +7206,14 @@ const pc = be, ut = pc(
   size: i,
   ...l
 }, s) => {
-<<<<<<< HEAD
-  const u = ie(), a = r || u;
-  return /* @__PURE__ */ O("div", { className: g("fr-checkbox-group", { "fr-checkbox-group--sm": i === "sm" }, t), children: [
-=======
   const u = ne(), a = r || u;
   return /* @__PURE__ */ O("div", { className: $("fr-checkbox-group", { "fr-checkbox-group--sm": i === "sm" }, t), children: [
->>>>>>> staging
     /* @__PURE__ */ m(
       "input",
       {
         ref: s,
         type: "checkbox",
         id: a,
-<<<<<<< HEAD
-        className: g(e.input),
-        ...l
-      }
-    ),
-    /* @__PURE__ */ O("label", { className: g("fr-label", e.label), htmlFor: a, children: [
-      o,
-      n && /* @__PURE__ */ m("span", { className: g("fr-hint-text", e.labelHint), children: n })
-=======
         className: $(e.input),
         ...l
       }
@@ -8039,7 +7221,6 @@ const pc = be, ut = pc(
     /* @__PURE__ */ O("label", { className: $("fr-label", e.label), htmlFor: a, children: [
       o,
       n && /* @__PURE__ */ m("span", { className: $("fr-hint-text", e.labelHint), children: n })
->>>>>>> staging
     ] })
   ] });
 }), jr = ["__TYPE"];
@@ -8050,11 +7231,7 @@ function je(t, e = {}) {
   const o = r ? [...jr, ...r] : jr;
   return Object.entries(t).reduce((i, [l, s]) => o.includes(l) ? i : { ...i, [l]: s }, {});
 }
-<<<<<<< HEAD
-const hd = be(({
-=======
 const gd = be(({
->>>>>>> staging
   children: t,
   className: e,
   css: n = {},
@@ -8066,47 +7243,26 @@ const gd = be(({
   required: u,
   ...a
 }, c) => {
-<<<<<<< HEAD
-  const f = ie(), { extendRequiredFieldsLabelsWith: p, extendOptionalFieldsLabelsWith: d } = bt();
-=======
   const f = ne(), { extendRequiredFieldsLabelsWith: p, extendOptionalFieldsLabelsWith: d } = bt();
->>>>>>> staging
   return /* @__PURE__ */ O(
     "fieldset",
     {
       ref: c,
-<<<<<<< HEAD
-      className: g("fr-fieldset", { [`fr-fieldset--${s}`]: s }, e),
-      ...je(a),
-      "aria-labelledby": l && s ? `${f}-message` : void 0,
-      children: [
-        i && /* @__PURE__ */ O("legend", { className: g("fr-fieldset__legend fr-text--regular", n.legend), children: [
-=======
       className: $("fr-fieldset", { [`fr-fieldset--${s}`]: s }, e),
       ...je(a),
       "aria-labelledby": l && s ? `${f}-message` : void 0,
       children: [
         i && /* @__PURE__ */ O("legend", { className: $("fr-fieldset__legend fr-text--regular", n.legend), children: [
->>>>>>> staging
           i,
           u ? p : d,
           r && /* @__PURE__ */ m("span", { className: $("fr-hint-text", n.legendHint), children: r })
         ] }),
-<<<<<<< HEAD
-        Ot.toArray(t).map((v, $) => /* @__PURE__ */ m("div", { className: g("fr-fieldset__element", { "fr-fieldset__element--inline": o }, n.element), children: v }, `${f}-${$}`)),
-        l && s && /* @__PURE__ */ m("div", { id: `${f}-message`, className: g("fr-messages-group", n.messageDiv), children: /* @__PURE__ */ m("p", { className: g(`fr-message fr-message--${s}`, n.messageP), children: l }) })
-      ]
-    }
-  );
-}), gd = be(({
-=======
         Ot.toArray(t).map((v, h) => /* @__PURE__ */ m("div", { className: $("fr-fieldset__element", { "fr-fieldset__element--inline": o }, n.element), children: v }, `${f}-${h}`)),
         l && s && /* @__PURE__ */ m("div", { id: `${f}-message`, className: $("fr-messages-group", n.messageDiv), children: /* @__PURE__ */ m("p", { className: $(`fr-message fr-message--${s}`, n.messageP), children: l }) })
       ]
     }
   );
 }), $d = be(({
->>>>>>> staging
   id: t,
   className: e,
   css: n = {},
@@ -8115,15 +7271,9 @@ const gd = be(({
   label: i = "Ajouter des fichiers",
   ...l
 }, s) => {
-<<<<<<< HEAD
-  const u = ie(), a = t || u, { extendOptionalFieldsLabelsWith: c, extendRequiredFieldsLabelsWith: f } = bt();
-  return /* @__PURE__ */ O("div", { className: g("fr-upload-group", { "fr-input-group--error": r, "fr-input-group--disabled": l.disabled }, e), children: [
-    /* @__PURE__ */ O("label", { className: g("fr-label", n.label), htmlFor: a, children: [
-=======
   const u = ne(), a = t || u, { extendOptionalFieldsLabelsWith: c, extendRequiredFieldsLabelsWith: f } = bt();
   return /* @__PURE__ */ O("div", { className: $("fr-upload-group", { "fr-input-group--error": r, "fr-input-group--disabled": l.disabled }, e), children: [
     /* @__PURE__ */ O("label", { className: $("fr-label", n.label), htmlFor: a, children: [
->>>>>>> staging
       i,
       l.required ? f : c,
       o && /* @__PURE__ */ m("span", { className: "fr-hint-text", children: o })
@@ -8133,21 +7283,13 @@ const gd = be(({
       {
         ref: s,
         id: a,
-<<<<<<< HEAD
-        className: g("fr-upload", n.input),
-=======
         className: $("fr-upload", n.input),
->>>>>>> staging
         type: "file",
         "aria-describedby": r ? `${a}-message` : void 0,
         ...l
       }
     ),
-<<<<<<< HEAD
-    r && /* @__PURE__ */ m("p", { id: `${a}-message`, className: g("fr-error-text", n.errorParagraph), children: r })
-=======
     r && /* @__PURE__ */ m("p", { id: `${a}-message`, className: $("fr-error-text", n.errorParagraph), children: r })
->>>>>>> staging
   ] });
 }), bc = be, mc = bc(({
   as: t = "div",
@@ -8156,11 +7298,7 @@ const gd = be(({
   fluidFrom: r = "xs",
   ...o
 }, i) => {
-<<<<<<< HEAD
-  const l = g({
-=======
   const l = $({
->>>>>>> staging
     "fr-container": !n,
     "fr-container-fluid": n || r === "xs",
     [`fr-container-${r}--fluid`]: !n && r !== "xs"
@@ -8180,21 +7318,13 @@ const gd = be(({
   className: r,
   ...o
 }) => {
-<<<<<<< HEAD
-  const i = g("fr-grid-row", {
-=======
   const i = $("fr-grid-row", {
->>>>>>> staging
     "fr-grid-row--gutters": t,
     [`fr-grid-row--${e}`]: e,
     [`fr-grid-row--${n}`]: n
   }, r);
   return /* @__PURE__ */ m("div", { className: i, ...o });
-<<<<<<< HEAD
-}, $d = ({
-=======
 }, yd = ({
->>>>>>> staging
   xs: t,
   sm: e,
   md: n,
@@ -8208,11 +7338,7 @@ const gd = be(({
   className: c,
   ...f
 }) => {
-<<<<<<< HEAD
-  const p = g("fr-col", {
-=======
   const p = $("fr-col", {
->>>>>>> staging
     [`fr-col-${t}`]: t,
     [`fr-col-sm-${e}`]: e,
     [`fr-col-md-${n}`]: n,
@@ -8225,18 +7351,6 @@ const gd = be(({
     [`fr-col-offset-xl-${a}`]: a
   }, c);
   return /* @__PURE__ */ m("div", { className: p, ...f });
-<<<<<<< HEAD
-}, mc = ({ href: t = "/", name: e, tagline: n, className: r, css: o = {}, ...i }) => /* @__PURE__ */ O("div", { className: g("fr-header__service", r), children: [
-  /* @__PURE__ */ m("p", { className: g("fr-header__service-title", o["fr-header__service-title"]), children: /* @__PURE__ */ m(he, { href: t, ...i, children: e }) }),
-  n && /* @__PURE__ */ m("p", { className: g("fr-header__service-tagline", o["fr-header__service-tagline"]), children: n })
-] }), vc = ({ children: t, className: e, css: n = {}, ...r }) => {
-  const o = ie(), i = r.id || o;
-  return /* @__PURE__ */ O("div", { className: g("fr-header__tools-links", e), ...r, children: [
-    /* @__PURE__ */ m("ul", { className: g("fr-btns-group", n["fr-btns-group"]), children: de(t, ut).map((l, s) => /* @__PURE__ */ m("li", { children: l }, `${i}-${s}`)) }),
-    ps(t, [ut])
-  ] });
-}, hc = ({ className: t, css: e = {}, ...n }) => /* @__PURE__ */ m("div", { className: g("fr-header__operator", t), children: /* @__PURE__ */ m("img", { className: g("fr-responsive-img", e["fr-responsive-img"]), ...n }) }), gc = be(({
-=======
 }, vc = ({ href: t = "/", name: e, tagline: n, className: r, css: o = {}, ...i }) => /* @__PURE__ */ O("div", { className: $("fr-header__service", r), children: [
   /* @__PURE__ */ m("p", { className: $("fr-header__service-title", o["fr-header__service-title"]), children: /* @__PURE__ */ m(he, { href: t, ...i, children: e }) }),
   n && /* @__PURE__ */ m("p", { className: $("fr-header__service-tagline", o["fr-header__service-tagline"]), children: n })
@@ -8247,7 +7361,6 @@ const gd = be(({
     bs(t, [ut])
   ] });
 }, gc = ({ className: t, css: e = {}, ...n }) => /* @__PURE__ */ m("div", { className: $("fr-header__operator", t), children: /* @__PURE__ */ m("img", { className: $("fr-responsive-img", e["fr-responsive-img"]), ...n }) }), $c = be(({
->>>>>>> staging
   className: t,
   css: e = {},
   buttonLabel: n,
@@ -8257,11 +7370,7 @@ const gd = be(({
   placeholder: l,
   ...s
 }, u) => {
-<<<<<<< HEAD
-  const a = I(null), c = ie(), f = s.id || c, p = (d) => {
-=======
   const a = k(null), c = ne(), f = s.id || c, p = (d) => {
->>>>>>> staging
     var v;
     return d.key === "Enter" && i((v = a.current) == null ? void 0 : v.value);
   };
@@ -8269,24 +7378,14 @@ const gd = be(({
     "div",
     {
       role: "search",
-<<<<<<< HEAD
-      className: g("fr-search-bar", { "fr-search-bar--lg": r }, t),
-      children: [
-        o && /* @__PURE__ */ m("label", { className: g("fr-label", e["fr-label"]), htmlFor: f, children: o }),
-=======
       className: $("fr-search-bar", { "fr-search-bar--lg": r }, t),
       children: [
         o && /* @__PURE__ */ m("label", { className: $("fr-label", e["fr-label"]), htmlFor: f, children: o }),
->>>>>>> staging
         /* @__PURE__ */ m(
           "input",
           {
             ref: (d) => pt(d, [u, a]),
-<<<<<<< HEAD
-            className: g("fr-input", e["fr-input"]),
-=======
             className: $("fr-input", e["fr-input"]),
->>>>>>> staging
             type: "search",
             id: f,
             onKeyDown: p,
@@ -8302,11 +7401,7 @@ const gd = be(({
               var d;
               return i((d = a.current) == null ? void 0 : d.value);
             },
-<<<<<<< HEAD
-            className: g("fr-btn", { "fr-btn--lg": r }, e["fr-btn"]),
-=======
             className: $("fr-btn", { "fr-btn--lg": r }, e["fr-btn"]),
->>>>>>> staging
             title: n,
             children: n
           }
@@ -8322,16 +7417,12 @@ const gd = be(({
   title: o,
   ...i
 }) => {
-  const l = ie(), s = et(t, [Yl, he]);
+  const l = ne(), s = et(t, [Yl, he]);
   return /* @__PURE__ */ O(In, { children: [
     /* @__PURE__ */ m(
       "button",
       {
-<<<<<<< HEAD
-        className: g("fr-nav__btn", e),
-=======
         className: $("fr-nav__btn", e),
->>>>>>> staging
         "aria-expanded": "false",
         "aria-controls": l,
         "aria-current": n || void 0,
@@ -8339,11 +7430,7 @@ const gd = be(({
         children: o
       }
     ),
-<<<<<<< HEAD
-    /* @__PURE__ */ m("div", { className: g("fr-collapse", "fr-menu", r["fr-menu"]), id: l, children: /* @__PURE__ */ m("ul", { className: g("fr-menu__list", r["fr-menu__list"]), children: s.map((u, a) => /* @__PURE__ */ m("li", { className: "fr-nav__item", children: $e(u) && u.type === he ? _e(u, { className: g("fr-nav__link", u.props.className) }) : u }, `navitem-${l}-${a}`)) }) })
-=======
     /* @__PURE__ */ m("div", { className: $("fr-collapse", "fr-menu", r["fr-menu"]), id: l, children: /* @__PURE__ */ m("ul", { className: $("fr-menu__list", r["fr-menu__list"]), children: s.map((u, a) => /* @__PURE__ */ m("li", { className: "fr-nav__item", children: $e(u) && u.type === he ? _e(u, { className: $("fr-nav__link", u.props.className) }) : u }, `navitem-${l}-${a}`)) }) })
->>>>>>> staging
   ] });
 }, yc = ({
   children: t,
@@ -8351,25 +7438,6 @@ const gd = be(({
   css: n = {},
   ...r
 }) => {
-<<<<<<< HEAD
-  const o = ie(), i = r.id || o;
-  return /* @__PURE__ */ m("nav", { className: g("fr-nav", e), id: i, role: "navigation", ...r, children: /* @__PURE__ */ m("ul", { className: g("fr-nav__list", n["fr-nav__list"]), children: et(t, [Yl, he]).map((l, s) => $e(l) && /* @__PURE__ */ m("li", { className: g("fr-nav__item", n["fr-nav__item"]), children: l.type === he ? _e(l, { className: g("fr-nav__link", l.props.className) }) : l }, `navitem-${i}-${s}`)) }) });
-}, yc = ({ text: t, splitCharacter: e = "|" }) => {
-  const r = t.split(e).reduce((o, i, l) => l > 0 ? [...o, /* @__PURE__ */ m("br", {}, `br-${l}`), /* @__PURE__ */ m(xn, { children: i }, l)] : [/* @__PURE__ */ m(xn, { children: i }, l)], []);
-  return /* @__PURE__ */ m("div", { className: "fr-header__logo", children: /* @__PURE__ */ m("p", { className: "fr-logo", children: r }) });
-}, yd = ({ children: t, className: e, css: n = {}, ...r }) => {
-  var $, h, A, w;
-  const o = ie(), i = ie(), l = ie(), s = ie(), u = ($ = de(t, mc)) == null ? void 0 : $[0], a = (h = de(t, vc)) == null ? void 0 : h[0], c = (A = et(t, [gc, ac])) == null ? void 0 : A[0], f = (w = de(t, $c)) == null ? void 0 : w[0], p = de(t, yc), d = de(t, hc), v = $e(c) ? c.props.title : "Rechercher";
-  return /* @__PURE__ */ O("header", { role: "banner", className: g("fr-header", e), ...r, children: [
-    /* @__PURE__ */ m("div", { className: g("fr-header__body", n["fr-header__body"]), children: /* @__PURE__ */ m("div", { className: "fr-container", children: /* @__PURE__ */ O("div", { className: g("fr-header__body-row", n["fr-header__body-row"]), children: [
-      /* @__PURE__ */ O("div", { className: g("fr-header__brand fr-enlarge-link", n["fr-header__brand"]), children: [
-        /* @__PURE__ */ O("div", { className: g("fr-header__brand-top", n["fr-header__brand-top"]), children: [
-          p && p,
-          d && d,
-          (a || c) && /* @__PURE__ */ O("div", { className: g("fr-header__navbar", n["fr-header__navbar"]), children: [
-            c && /* @__PURE__ */ m("button", { className: g("fr-btn--search fr-btn", n["fr-btn--search"]), "data-fr-opened": "false", "aria-controls": i, id: o, title: v, children: v }),
-            a && /* @__PURE__ */ m("button", { className: g("fr-btn--menu fr-btn", n["fr-btn--menu"]), "data-fr-opened": "false", "aria-controls": l, "aria-haspopup": "menu", id: s, title: "Menu", children: "Menu" })
-=======
   const o = ne(), i = r.id || o;
   return /* @__PURE__ */ m("nav", { className: $("fr-nav", e), id: i, role: "navigation", ...r, children: /* @__PURE__ */ m("ul", { className: $("fr-nav__list", n["fr-nav__list"]), children: et(t, [Yl, he]).map((l, s) => $e(l) && /* @__PURE__ */ m("li", { className: $("fr-nav__item", n["fr-nav__item"]), children: l.type === he ? _e(l, { className: $("fr-nav__link", l.props.className) }) : l }, `navitem-${i}-${s}`)) }) });
 }, xc = ({ text: t, splitCharacter: e = "|" }) => {
@@ -8387,34 +7455,18 @@ const gd = be(({
           (a || c) && /* @__PURE__ */ O("div", { className: $("fr-header__navbar", n["fr-header__navbar"]), children: [
             c && /* @__PURE__ */ m("button", { className: $("fr-btn--search fr-btn", n["fr-btn--search"]), "data-fr-opened": "false", "aria-controls": i, id: o, title: v, children: v }),
             a && /* @__PURE__ */ m("button", { className: $("fr-btn--menu fr-btn", n["fr-btn--menu"]), "data-fr-opened": "false", "aria-controls": l, "aria-haspopup": "menu", id: s, title: "Menu", children: "Menu" })
->>>>>>> staging
           ] })
         ] }),
         u && u
       ] }),
-<<<<<<< HEAD
-      /* @__PURE__ */ O("div", { className: g("fr-header__tools", n["fr-header__tools"]), children: [
-        a,
-        c && /* @__PURE__ */ m("div", { className: g("fr-header__search fr-modal", n["fr-header__search"]), id: i, children: /* @__PURE__ */ O("div", { className: "fr-container fr-container-lg--fluid", children: [
-=======
       /* @__PURE__ */ O("div", { className: $("fr-header__tools", n["fr-header__tools"]), children: [
         a,
         c && /* @__PURE__ */ m("div", { className: $("fr-header__search fr-modal", n["fr-header__search"]), id: i, children: /* @__PURE__ */ O("div", { className: "fr-container fr-container-lg--fluid", children: [
->>>>>>> staging
           /* @__PURE__ */ m("button", { className: "fr-btn--close fr-btn", "aria-controls": i, title: "Fermer", children: "Fermer" }),
           c
         ] }) })
       ] })
     ] }) }) }),
-<<<<<<< HEAD
-    /* @__PURE__ */ m("div", { className: g("fr-header__menu fr-modal", n["fr-header__menu"]), id: l, "aria-labelledby": s, children: /* @__PURE__ */ O("div", { className: "fr-container", children: [
-      /* @__PURE__ */ m("button", { className: "fr-btn--close fr-btn", "aria-controls": l, title: "Fermer", children: "Fermer" }),
-      /* @__PURE__ */ m("div", { className: g("fr-header__menu-links", n["fr-header__menu-links"]) }),
-      f && f
-    ] }) })
-  ] });
-}, xd = be(
-=======
     /* @__PURE__ */ m("div", { className: $("fr-header__menu fr-modal", n["fr-header__menu"]), id: l, "aria-labelledby": s, children: /* @__PURE__ */ O("div", { className: "fr-container", children: [
       /* @__PURE__ */ m("button", { className: "fr-btn--close fr-btn", "aria-controls": l, title: "Fermer", children: "Fermer" }),
       /* @__PURE__ */ m("div", { className: $("fr-header__menu-links", n["fr-header__menu-links"]) }),
@@ -8422,7 +7474,6 @@ const gd = be(({
     ] }) })
   ] });
 }, Cd = be(
->>>>>>> staging
   ({
     className: t,
     css: e = {},
@@ -8439,24 +7490,15 @@ const gd = be(({
     required: p,
     isOptional: d,
     ...v
-<<<<<<< HEAD
-  }, $) => {
-    const { extendRequiredFieldsLabelsWith: h, extendOptionalFieldsLabelsWith: A } = bt(), [w, S] = Z(""), K = i || ie(), x = I(null), M = s !== void 0 || u !== void 0, R = g(
-=======
   }, h) => {
     const { extendRequiredFieldsLabelsWith: g, extendOptionalFieldsLabelsWith: A } = bt(), [w, S] = X(""), K = i || ne(), x = k(null), M = s !== void 0 || u !== void 0, R = $(
->>>>>>> staging
       "fr-input",
       {
         "fr-input--error": M ? u === "error" : w === "error",
         "fr-input--valid": M ? u === "valid" : w === "valid"
       },
       e["fr-input"]
-<<<<<<< HEAD
-    ), b = g(
-=======
     ), b = $(
->>>>>>> staging
       "fr-input-group",
       {
         "fr-input-group--error": M ? u === "error" : w === "error",
@@ -8472,28 +7514,16 @@ const gd = be(({
       !n && !M && B && w && S(B.checkValidity() ? "valid" : "error"), c && c(C);
     };
     return /* @__PURE__ */ O("div", { className: b, children: [
-<<<<<<< HEAD
-      /* @__PURE__ */ O("label", { className: g("fr-label", e["fr-label"]), htmlFor: K, children: [
-        l,
-        p && !d && h,
-        d && !p && A,
-        r && /* @__PURE__ */ m("span", { className: g("fr-hint-text", e["fr-hint-text"]), children: r })
-=======
       /* @__PURE__ */ O("label", { className: $("fr-label", e["fr-label"]), htmlFor: K, children: [
         l,
         p && !d && g,
         d && !p && A,
         r && /* @__PURE__ */ m("span", { className: $("fr-hint-text", e["fr-hint-text"]), children: r })
->>>>>>> staging
       ] }),
       /* @__PURE__ */ m(
         "div",
         {
-<<<<<<< HEAD
-          className: g(
-=======
           className: $(
->>>>>>> staging
             "fr-input-wrap",
             { [`fr-icon-${o}`]: o },
             e["fr-input-wrap"]
@@ -8505,11 +7535,7 @@ const gd = be(({
               className: R,
               onBlur: _,
               onChange: P,
-<<<<<<< HEAD
-              ref: (C) => pt(C, [$, x]),
-=======
               ref: (C) => pt(C, [h, x]),
->>>>>>> staging
               "aria-describedby": u ? `${K}-message` : void 0,
               ...v
             }
@@ -8519,11 +7545,7 @@ const gd = be(({
       u && /* @__PURE__ */ m("p", { className: `fr-${u}-text`, id: `${K}-message`, children: s })
     ] });
   }
-<<<<<<< HEAD
-), Cd = be(
-=======
 ), Ed = be(
->>>>>>> staging
   ({
     className: t,
     css: e = {},
@@ -8540,24 +7562,15 @@ const gd = be(({
     required: p,
     isOptional: d,
     ...v
-<<<<<<< HEAD
-  }, $) => {
-    const { extendRequiredFieldsLabelsWith: h, extendOptionalFieldsLabelsWith: A } = bt(), [w, S] = Z(""), K = i || ie(), x = I(null), M = s !== void 0 || u !== void 0, R = g(
-=======
   }, h) => {
     const { extendRequiredFieldsLabelsWith: g, extendOptionalFieldsLabelsWith: A } = bt(), [w, S] = X(""), K = i || ne(), x = k(null), M = s !== void 0 || u !== void 0, R = $(
->>>>>>> staging
       "fr-input",
       {
         "fr-input--error": M ? u === "error" : w === "error",
         "fr-input--valid": M ? u === "valid" : w === "valid"
       },
       e["fr-input"]
-<<<<<<< HEAD
-    ), b = g(
-=======
     ), b = $(
->>>>>>> staging
       "fr-input-group",
       {
         "fr-input-group--error": M ? u === "error" : w === "error",
@@ -8573,28 +7586,16 @@ const gd = be(({
       !n && !M && B && w && S(B.checkValidity() ? "valid" : "error"), c && c(C);
     };
     return /* @__PURE__ */ O("div", { className: b, children: [
-<<<<<<< HEAD
-      /* @__PURE__ */ O("label", { className: g("fr-label", e["fr-label"]), htmlFor: K, children: [
-        l,
-        p && !d && h,
-        d && !p && A,
-        r && /* @__PURE__ */ m("span", { className: g("fr-hint-text", e["fr-hint-text"]), children: r })
-=======
       /* @__PURE__ */ O("label", { className: $("fr-label", e["fr-label"]), htmlFor: K, children: [
         l,
         p && !d && g,
         d && !p && A,
         r && /* @__PURE__ */ m("span", { className: $("fr-hint-text", e["fr-hint-text"]), children: r })
->>>>>>> staging
       ] }),
       /* @__PURE__ */ m(
         "div",
         {
-<<<<<<< HEAD
-          className: g(
-=======
           className: $(
->>>>>>> staging
             "fr-input-wrap",
             { [`fr-icon-${o}`]: o },
             e["fr-input-wrap"]
@@ -8606,11 +7607,7 @@ const gd = be(({
               className: R,
               onBlur: _,
               onChange: P,
-<<<<<<< HEAD
-              ref: (C) => pt(C, [$, x]),
-=======
               ref: (C) => pt(C, [h, x]),
->>>>>>> staging
               "aria-describedby": u ? `${K}-message` : void 0,
               ...v
             }
@@ -8621,15 +7618,6 @@ const gd = be(({
     ] });
   }
 );
-<<<<<<< HEAD
-function Ed(t) {
-  const e = co(t);
-  return /* @__PURE__ */ m(Qn, { ...t, state: e });
-}
-const Pd = Vt, wd = lo, xc = "_focused_og068_1", Cc = "_listbox_og068_10", Ec = "_content_og068_90", Pc = "_description_og068_99", wc = "_uppercase_og068_127", Sc = "_divider_og068_131", Te = {
-  focused: xc,
-  listbox: Cc,
-=======
 function Pd(t) {
   const e = co(t);
   return /* @__PURE__ */ m(Qn, { ...t, state: e });
@@ -8637,7 +7625,6 @@ function Pd(t) {
 const wd = Vt, Sd = lo, Cc = "_focused_og068_1", Ec = "_listbox_og068_10", Pc = "_content_og068_90", wc = "_description_og068_99", Sc = "_uppercase_og068_127", Tc = "_divider_og068_131", Te = {
   focused: Cc,
   listbox: Ec,
->>>>>>> staging
   "listbox-top": "_listbox-top_og068_36",
   "listbox-bottom": "_listbox-bottom_og068_40",
   "listbox-content": "_listbox-content_og068_44",
@@ -8692,22 +7679,14 @@ const wd = Vt, Sd = lo, Cc = "_focused_og068_1", Ec = "_listbox_og068_10", Pc = 
   "listbox--error": "_listbox--error_og068_470"
 };
 function Xl({ item: t, state: e }) {
-<<<<<<< HEAD
-  const n = I(null), { menuItemProps: r, labelProps: o, descriptionProps: i, isFocused: l } = ja({ key: t.key }, e, n), { description: s, startContent: u, endContent: a, color: c, showDivider: f, href: p, className: d } = t.props || {};
-=======
   const n = k(null), { menuItemProps: r, labelProps: o, descriptionProps: i, isFocused: l } = Ha({ key: t.key }, e, n), { description: s, startContent: u, endContent: a, color: c, showDivider: f, href: p, className: d } = t.props || {};
->>>>>>> staging
   return /* @__PURE__ */ O(
     p ? "a" : "li",
     {
       ...r,
       ref: n,
       href: p,
-<<<<<<< HEAD
-      className: g(
-=======
       className: $(
->>>>>>> staging
         Te["listbox-item"],
         d,
         {
@@ -8737,11 +7716,7 @@ function _c({ section: t, state: e }) {
     "li",
     {
       ...n,
-<<<<<<< HEAD
-      className: g(
-=======
       className: $(
->>>>>>> staging
         Te["listbox-section"],
         l,
         s.base,
@@ -8752,22 +7727,14 @@ function _c({ section: t, state: e }) {
           "span",
           {
             ...r,
-<<<<<<< HEAD
-            className: g(
-=======
             className: $(
->>>>>>> staging
               "fr-text-mention--grey fr-text--sm fr-my-3v fr-px-1w",
               s.title
             ),
             children: t.rendered
           }
         ),
-<<<<<<< HEAD
-        /* @__PURE__ */ m(u, { ...o, className: g(Te["listbox-section-list"], s.list), children: [...t.childNodes].map((a) => /* @__PURE__ */ m(
-=======
         /* @__PURE__ */ m(u, { ...o, className: $(Te["listbox-section-list"], s.list), children: [...t.childNodes].map((a) => /* @__PURE__ */ m(
->>>>>>> staging
           Xl,
           {
             item: a,
@@ -8779,23 +7746,13 @@ function _c({ section: t, state: e }) {
     }
   );
 }
-<<<<<<< HEAD
-function _c(t) {
-  const e = Is(t), n = I(null), { menuProps: r } = za(t, e, n);
-  return /* @__PURE__ */ m("ul", { ...r, ref: n, className: g(Te.listbox), style: { minWidth: "200px" }, children: [...e.collection].map((o) => o.type === "section" ? /* @__PURE__ */ m(Tc, { section: o, state: e }, o.key) : /* @__PURE__ */ m(Xl, { item: o, state: e }, o.key)) });
-=======
 function Ac(t) {
   const e = Bs(t), n = k(null), { menuProps: r } = ja(t, e, n);
   return /* @__PURE__ */ m("ul", { ...r, ref: n, className: $(Te.listbox), style: { minWidth: "200px" }, children: [...e.collection].map((o) => o.type === "section" ? /* @__PURE__ */ m(_c, { section: o, state: e }, o.key) : /* @__PURE__ */ m(Xl, { item: o, state: e }, o.key)) });
->>>>>>> staging
 }
 const Kc = be(
   ({ className: t, color: e = "blue-france", icon: n, iconPosition: r = "left", size: o = "md", variant: i = "primary", children: l, ...s }, u) => {
-<<<<<<< HEAD
-    const a = g(
-=======
     const a = $(
->>>>>>> staging
       "fr-btn",
       {
         [`fr-btn--${o}`]: o !== "md",
@@ -8812,22 +7769,13 @@ const Kc = be(
     return /* @__PURE__ */ m("button", { className: a, ref: u, ...s, children: l });
   }
 );
-<<<<<<< HEAD
-function Sd(t) {
-  const { className: e, color: n, icon: r, iconPosition: o, size: i, variant: l, placement: s = "start", ...u } = t, a = Ms(u), c = I(null), { menuTriggerProps: f, menuProps: p } = Jn({}, a, c), { isFocusVisible: d, focusProps: v } = qn(), { buttonProps: $ } = ko({ ...se(f, v) }, c);
-=======
 function Td(t) {
   const { className: e, color: n, icon: r, iconPosition: o, size: i, variant: l, placement: s = "start", ...u } = t, a = Ns(u), c = k(null), { menuTriggerProps: f, menuProps: p } = Jn({}, a, c), { isFocusVisible: d, focusProps: v } = qn(), { buttonProps: h } = No({ ...se(f, v) }, c);
->>>>>>> staging
   return /* @__PURE__ */ O(In, { children: [
     /* @__PURE__ */ m(
       Kc,
       {
-<<<<<<< HEAD
-        ...$,
-=======
         ...h,
->>>>>>> staging
         ref: c,
         className: e,
         color: n,
@@ -8848,22 +7796,14 @@ function Td(t) {
     ) })
   ] });
 }
-<<<<<<< HEAD
-const Td = Vt, _d = lo, Zl = be(({
-=======
 const _d = Vt, Ad = lo, Zl = be(({
->>>>>>> staging
   children: t,
   className: e,
   icon: n,
   id: r,
   ...o
 }, i) => {
-<<<<<<< HEAD
-  const l = g("fr-modal__title", e);
-=======
   const l = $("fr-modal__title", e);
->>>>>>> staging
   return /* @__PURE__ */ O(
     "h1",
     {
@@ -8888,11 +7828,7 @@ const _d = Vt, Ad = lo, Zl = be(({
     ref: o,
     id: `${e}-close`,
     "aria-controls": e || void 0,
-<<<<<<< HEAD
-    className: g("fr-btn--close fr-btn", t),
-=======
     className: $("fr-btn--close fr-btn", t),
->>>>>>> staging
     type: "button",
     ...r,
     children: n
@@ -8924,11 +7860,7 @@ const Lc = ({
   ...s
 }) => {
   var M, R, b;
-<<<<<<< HEAD
-  const [u, a] = Z(null), f = { sm: 4, lg: 8, md: 6, xl: 10 }[n], p = g("fr-modal", o), d = I(null), v = (M = de(t, Zl)) == null ? void 0 : M[0], $ = de(t, Jl), h = (R = de(t, Ql)) == null ? void 0 : R[0], A = (b = de(t, Bt)) == null ? void 0 : b[0], w = r || ie();
-=======
   const [u, a] = X(null), f = { sm: 4, lg: 8, md: 6, xl: 10 }[n], p = $("fr-modal", o), d = k(null), v = (M = de(t, Zl)) == null ? void 0 : M[0], h = de(t, Jl), g = (R = de(t, Ql)) == null ? void 0 : R[0], A = (b = de(t, Bt)) == null ? void 0 : b[0], w = r || ne();
->>>>>>> staging
   W(() => {
     var P, C;
     d.current && (i && (a(document.activeElement), (P = document == null ? void 0 : document.getElementById(w)) == null || P.classList.add("fr-modal--opened")), i || (C = document == null ? void 0 : document.getElementById(w)) == null || C.classList.remove("fr-modal--opened"));
@@ -8942,11 +7874,7 @@ const Lc = ({
   const S = (_) => {
     l && (!d.current || d.current === _.target || _.target.className.indexOf("closing-overlay") > -1) && e();
   };
-<<<<<<< HEAD
-  Dc(d, i, u);
-=======
   Fc(d, i, u);
->>>>>>> staging
   const K = A ? _e(A, { onClick: () => e(), controls: w }) : l ? /* @__PURE__ */ m(Bt, { onClick: () => e(), controls: w }) : null, x = /* @__PURE__ */ m(
     "dialog",
     {
@@ -8962,11 +7890,7 @@ const Lc = ({
         /* @__PURE__ */ m("div", { className: "fr-modal__header", children: K }),
         /* @__PURE__ */ O("div", { className: "fr-modal__content", children: [
           v && _e(v, { id: w }),
-<<<<<<< HEAD
-          $ ?? null
-=======
           h ?? null
->>>>>>> staging
         ] }),
         g
       ] }) }) }) })
@@ -8983,13 +7907,8 @@ const Lc = ({
   className: r,
   ...o
 }) => {
-<<<<<<< HEAD
-  var v, $, h;
-  const l = { sm: 4, lg: 8, md: 6, xl: 10 }[e], s = g("fr-modal", r), u = (v = de(t, Zl)) == null ? void 0 : v[0], a = de(t, Jl), c = ($ = de(t, Ql)) == null ? void 0 : $[0], f = (h = de(t, Bt)) == null ? void 0 : h[0], p = f ? _e(f, { controls: n }) : /* @__PURE__ */ m(Bt, { controls: n }), d = /* @__PURE__ */ m(
-=======
   var v, h, g;
   const l = { sm: 4, lg: 8, md: 6, xl: 10 }[e], s = $("fr-modal", r), u = (v = de(t, Zl)) == null ? void 0 : v[0], a = de(t, Jl), c = (h = de(t, Ql)) == null ? void 0 : h[0], f = (g = de(t, Bt)) == null ? void 0 : g[0], p = f ? _e(f, { controls: n }) : /* @__PURE__ */ m(Bt, { controls: n }), d = /* @__PURE__ */ m(
->>>>>>> staging
     "dialog",
     {
       "aria-labelledby": `${n}-title`,
@@ -9011,11 +7930,7 @@ const Lc = ({
     d,
     document.body
   );
-<<<<<<< HEAD
-}, Ad = ({
-=======
 }, Kd = ({
->>>>>>> staging
   id: t,
   size: e = "md",
   hide: n,
@@ -9047,19 +7962,11 @@ const Lc = ({
   "div",
   {
     ref: n,
-<<<<<<< HEAD
-    className: g("fr-modal__footer", t),
-    ...e
-  }
-));
-const Kd = ({
-=======
     className: $("fr-modal__footer", t),
     ...e
   }
 ));
 const Dd = ({
->>>>>>> staging
   children: t,
   closeMode: e = "disallow",
   type: n = "info",
@@ -9071,39 +7978,22 @@ const Dd = ({
   const s = k(null), u = (c) => {
     var f;
     c.preventDefault(), (f = s.current) == null || f.remove(), i && i(c);
-<<<<<<< HEAD
-  }, a = g("fr-notice", {
-    "fr-notice--info": n === "info",
-    [`dsfr-plus-notice--${n}`]: n !== "info"
-  }, r);
-  return /* @__PURE__ */ m("div", { ref: s, className: a, ...l, children: /* @__PURE__ */ m("div", { className: g("fr-container", o["fr-container"]), children: /* @__PURE__ */ O("div", { className: g("fr-notice__body", o["fr-notice__body"]), children: [
-    /* @__PURE__ */ m("p", { className: g("fr-notice__title", o["fr-notice__title"]), children: t }),
-=======
   }, a = $("fr-notice", {
     "fr-notice--info": n === "info",
     [`dsfr-plus-notice--${n}`]: n !== "info"
   }, r);
   return /* @__PURE__ */ m("div", { ref: s, className: a, ...l, children: /* @__PURE__ */ m("div", { className: $("fr-container", o["fr-container"]), children: /* @__PURE__ */ O("div", { className: $("fr-notice__body", o["fr-notice__body"]), children: [
     /* @__PURE__ */ m("p", { className: $("fr-notice__title", o["fr-notice__title"]), children: t }),
->>>>>>> staging
     e !== "disallow" && /* @__PURE__ */ m(
       "button",
       {
         onClick: e === "uncontrolled" ? u : i,
-<<<<<<< HEAD
-        className: g("fr-btn--close", "fr-btn", o["fr-btn--close"]),
-=======
         className: $("fr-btn--close", "fr-btn", o["fr-btn--close"]),
->>>>>>> staging
         children: "Masquer le message"
       }
     )
   ] }) }) });
-<<<<<<< HEAD
-}, Dd = be(({
-=======
 }, Fd = be(({
->>>>>>> staging
   checked: t,
   className: e,
   css: n = {},
@@ -9113,13 +8003,8 @@ const Dd = ({
   label: l,
   ...s
 }, u) => {
-<<<<<<< HEAD
-  const a = o || ie();
-  return /* @__PURE__ */ O("div", { className: g("fr-radio-group", { "fr-radio-rich": i }, e), children: [
-=======
   const a = o || ne();
   return /* @__PURE__ */ O("div", { className: $("fr-radio-group", { "fr-radio-rich": i }, e), children: [
->>>>>>> staging
     /* @__PURE__ */ m(
       "input",
       {
@@ -9133,23 +8018,6 @@ const Dd = ({
     /* @__PURE__ */ O(
       "label",
       {
-<<<<<<< HEAD
-        className: g("fr-label"),
-        htmlFor: a,
-        children: [
-          l,
-          r && /* @__PURE__ */ m("p", { className: g("fr-hint-text"), children: r })
-        ]
-      }
-    ),
-    i && /* @__PURE__ */ m("div", { className: g("fr-radio-rich__img"), children: i })
-  ] });
-}), Mc = {
-  "fr-select-btn": "_fr-select-btn_m2sgv_1"
-};
-function Fd(t) {
-  const { buttonLabel: e, ...n } = t, r = ks(n), o = I(null), {
-=======
         className: $("fr-label"),
         htmlFor: a,
         children: [
@@ -9165,16 +8033,11 @@ function Fd(t) {
 };
 function Ld(t) {
   const { buttonLabel: e, ...n } = t, r = ks(n), o = k(null), {
->>>>>>> staging
     labelProps: i,
     triggerProps: l,
     valueProps: s,
     menuProps: u
-<<<<<<< HEAD
-  } = qa(n, r, o), { isFocusVisible: a, focusProps: c } = qn(), { buttonProps: f } = ko({ ...se(l, c) }, o);
-=======
   } = Ya(n, r, o), { isFocusVisible: a, focusProps: c } = qn(), { buttonProps: f } = No({ ...se(l, c) }, o);
->>>>>>> staging
   return /* @__PURE__ */ O("div", { className: "fr-select-group", children: [
     t.label && /* @__PURE__ */ m("label", { ...i, className: "fr-label", children: t.label }),
     /* @__PURE__ */ m(
@@ -9182,11 +8045,7 @@ function Ld(t) {
       {
         ...f,
         ref: o,
-<<<<<<< HEAD
-        className: g("fr-select", Mc["fr-select-btn"]),
-=======
         className: $("fr-select", Nc["fr-select-btn"]),
->>>>>>> staging
         "data-focus-visible": a,
         children: /* @__PURE__ */ m("span", { ...s, children: r.selectedItem ? r.selectedItem.rendered : e })
       }
@@ -9211,13 +8070,8 @@ function Ld(t) {
     ) })
   ] });
 }
-<<<<<<< HEAD
-const Ld = Vt;
-const Md = ({
-=======
 const Md = Vt;
 const Nd = ({
->>>>>>> staging
   children: t,
   className: e,
   css: n = {},
@@ -9227,42 +8081,25 @@ const Nd = ({
   title: l,
   ...s
 }) => {
-<<<<<<< HEAD
-  const u = ie(), a = g("fr-sidemenu", e, {
-=======
   const u = ne(), a = $("fr-sidemenu", e, {
->>>>>>> staging
     "fr-sidemenu--sticky": i && !r,
     "fr-sidemenu--sticky-full-height": r,
     "fr-sidemenu--right": o === "right"
   });
-<<<<<<< HEAD
-  return /* @__PURE__ */ m("nav", { className: a, "aria-label": "Menu latéral", ...je(s), children: /* @__PURE__ */ O("div", { className: g("fr-sidemenu__inner", n["fr-sidemenu__inner"]), children: [
-=======
   return /* @__PURE__ */ m("nav", { className: a, "aria-label": "Menu latéral", ...je(s), children: /* @__PURE__ */ O("div", { className: $("fr-sidemenu__inner", n["fr-sidemenu__inner"]), children: [
->>>>>>> staging
     /* @__PURE__ */ m(
       "button",
       {
         type: "button",
-<<<<<<< HEAD
-        className: g("fr-sidemenu__btn", n["fr-sidemenu__btn"]),
-=======
         className: $("fr-sidemenu__btn", n["fr-sidemenu__btn"]),
->>>>>>> staging
         "aria-controls": u,
         "aria-expanded": !1,
         children: l || "Dans cette rubrique"
       }
     ),
     /* @__PURE__ */ O("div", { className: "fr-collapse", id: u, children: [
-<<<<<<< HEAD
-      l && /* @__PURE__ */ m("div", { className: g("fr-sidemenu__title", n["fr-sidemenu__title"]), children: l }),
-      /* @__PURE__ */ m("ul", { className: g("fr-sidemenu__list", n["fr-sidemenu__list"]), children: et(t, [es, he]).map((c, f) => $e(c) && /* @__PURE__ */ m("li", { className: g("fr-sidemenu__item", n["fr-sidemenu__item"]), children: c.type === he ? _e(c, { className: g("fr-sidemenu__link", c.props.className) }) : c }, `navitem-${u}-${f}`)) })
-=======
       l && /* @__PURE__ */ m("div", { className: $("fr-sidemenu__title", n["fr-sidemenu__title"]), children: l }),
       /* @__PURE__ */ m("ul", { className: $("fr-sidemenu__list", n["fr-sidemenu__list"]), children: et(t, [es, he]).map((c, f) => $e(c) && /* @__PURE__ */ m("li", { className: $("fr-sidemenu__item", n["fr-sidemenu__item"]), children: c.type === he ? _e(c, { className: $("fr-sidemenu__link", c.props.className) }) : c }, `navitem-${u}-${f}`)) })
->>>>>>> staging
     ] })
   ] }) });
 }, es = ({
@@ -9276,16 +8113,12 @@ const Nd = ({
   title: s,
   ...u
 }) => {
-  const a = ie(), c = et(t, [es, he]);
+  const a = ne(), c = et(t, [es, he]);
   return /* @__PURE__ */ O(In, { children: [
     /* @__PURE__ */ m(
       "button",
       {
-<<<<<<< HEAD
-        className: g("fr-sidemenu__btn", e),
-=======
         className: $("fr-sidemenu__btn", e),
->>>>>>> staging
         "aria-expanded": o,
         "aria-controls": a,
         "aria-current": r || void 0,
@@ -9293,11 +8126,7 @@ const Nd = ({
         children: /* @__PURE__ */ m("span", { className: l && `dsfr-plus-sidemenu-title--icon fr-icon-${l} fr-icon--sm`, children: s })
       }
     ),
-<<<<<<< HEAD
-    /* @__PURE__ */ m("div", { className: "fr-collapse", id: a, children: /* @__PURE__ */ m("ul", { className: g("fr-sidemenu__list", n["fr-sidemenu__list"]), children: c.map((f, p) => /* @__PURE__ */ m("li", { className: g("fr-sidemenu__item", n["fr-sidemenu__item"]), children: $e(f) && f.type === he ? _e(f, { className: g("fr-sidemenu__link", f.props.className) }) : f }, `navitem-${a}-${p}`)) }) })
-=======
     /* @__PURE__ */ m("div", { className: "fr-collapse", id: a, children: /* @__PURE__ */ m("ul", { className: $("fr-sidemenu__list", n["fr-sidemenu__list"]), children: c.map((f, p) => /* @__PURE__ */ m("li", { className: $("fr-sidemenu__item", n["fr-sidemenu__item"]), children: $e(f) && f.type === he ? _e(f, { className: $("fr-sidemenu__link", f.props.className) }) : f }, `navitem-${a}-${p}`)) }) })
->>>>>>> staging
   ] });
 }, kd = ({
   children: t,
@@ -9306,17 +8135,10 @@ const Nd = ({
   current: r,
   icon: o,
   ...i
-<<<<<<< HEAD
-}) => /* @__PURE__ */ m("li", { className: g("fr-sidemenu__item", e), children: /* @__PURE__ */ m(
-  he,
-  {
-    className: g("fr-sidemenu__link", n["fr-sidemenu__link"]),
-=======
 }) => /* @__PURE__ */ m("li", { className: $("fr-sidemenu__item", e), children: /* @__PURE__ */ m(
   he,
   {
     className: $("fr-sidemenu__link", n["fr-sidemenu__link"]),
->>>>>>> staging
     "aria-current": r || void 0,
     ...i,
     children: /* @__PURE__ */ m("span", { className: o && `dsfr-plus-sidemenu-title--icon fr-icon-${o} fr-icon--sm`, children: t })
@@ -9325,11 +8147,7 @@ const Nd = ({
 function kc(t) {
   return t && t.__esModule && Object.prototype.hasOwnProperty.call(t, "default") ? t.default : t;
 }
-<<<<<<< HEAD
-var Nn = { exports: {} }, Pt = { exports: {} }, re = {};
-=======
 var kn = { exports: {} }, Pt = { exports: {} }, oe = {};
->>>>>>> staging
 /** @license React v16.13.1
  * react-is.production.min.js
  *
@@ -9341,13 +8159,9 @@ var kn = { exports: {} }, Pt = { exports: {} }, oe = {};
 var Wr;
 function Ic() {
   if (Wr)
-    return re;
+    return oe;
   Wr = 1;
-<<<<<<< HEAD
-  var t = typeof Symbol == "function" && Symbol.for, e = t ? Symbol.for("react.element") : 60103, n = t ? Symbol.for("react.portal") : 60106, r = t ? Symbol.for("react.fragment") : 60107, o = t ? Symbol.for("react.strict_mode") : 60108, i = t ? Symbol.for("react.profiler") : 60114, l = t ? Symbol.for("react.provider") : 60109, s = t ? Symbol.for("react.context") : 60110, u = t ? Symbol.for("react.async_mode") : 60111, a = t ? Symbol.for("react.concurrent_mode") : 60111, c = t ? Symbol.for("react.forward_ref") : 60112, f = t ? Symbol.for("react.suspense") : 60113, p = t ? Symbol.for("react.suspense_list") : 60120, d = t ? Symbol.for("react.memo") : 60115, v = t ? Symbol.for("react.lazy") : 60116, $ = t ? Symbol.for("react.block") : 60121, h = t ? Symbol.for("react.fundamental") : 60117, A = t ? Symbol.for("react.responder") : 60118, w = t ? Symbol.for("react.scope") : 60119;
-=======
   var t = typeof Symbol == "function" && Symbol.for, e = t ? Symbol.for("react.element") : 60103, n = t ? Symbol.for("react.portal") : 60106, r = t ? Symbol.for("react.fragment") : 60107, o = t ? Symbol.for("react.strict_mode") : 60108, i = t ? Symbol.for("react.profiler") : 60114, l = t ? Symbol.for("react.provider") : 60109, s = t ? Symbol.for("react.context") : 60110, u = t ? Symbol.for("react.async_mode") : 60111, a = t ? Symbol.for("react.concurrent_mode") : 60111, c = t ? Symbol.for("react.forward_ref") : 60112, f = t ? Symbol.for("react.suspense") : 60113, p = t ? Symbol.for("react.suspense_list") : 60120, d = t ? Symbol.for("react.memo") : 60115, v = t ? Symbol.for("react.lazy") : 60116, h = t ? Symbol.for("react.block") : 60121, g = t ? Symbol.for("react.fundamental") : 60117, A = t ? Symbol.for("react.responder") : 60118, w = t ? Symbol.for("react.scope") : 60119;
->>>>>>> staging
   function S(x) {
     if (typeof x == "object" && x !== null) {
       var M = x.$$typeof;
@@ -9405,17 +8219,11 @@ function Ic() {
     return S(x) === o;
   }, oe.isSuspense = function(x) {
     return S(x) === f;
-<<<<<<< HEAD
-  }, re.isValidElementType = function(x) {
-    return typeof x == "string" || typeof x == "function" || x === r || x === a || x === i || x === o || x === f || x === p || typeof x == "object" && x !== null && (x.$$typeof === v || x.$$typeof === d || x.$$typeof === l || x.$$typeof === s || x.$$typeof === c || x.$$typeof === h || x.$$typeof === A || x.$$typeof === w || x.$$typeof === $);
-  }, re.typeOf = S, re;
-=======
   }, oe.isValidElementType = function(x) {
     return typeof x == "string" || typeof x == "function" || x === r || x === a || x === i || x === o || x === f || x === p || typeof x == "object" && x !== null && (x.$$typeof === v || x.$$typeof === d || x.$$typeof === l || x.$$typeof === s || x.$$typeof === c || x.$$typeof === g || x.$$typeof === A || x.$$typeof === w || x.$$typeof === h);
   }, oe.typeOf = S, oe;
->>>>>>> staging
 }
-var oe = {};
+var ie = {};
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -9427,17 +8235,10 @@ var oe = {};
 var Gr;
 function Bc() {
   return Gr || (Gr = 1, process.env.NODE_ENV !== "production" && function() {
-<<<<<<< HEAD
-    var t = typeof Symbol == "function" && Symbol.for, e = t ? Symbol.for("react.element") : 60103, n = t ? Symbol.for("react.portal") : 60106, r = t ? Symbol.for("react.fragment") : 60107, o = t ? Symbol.for("react.strict_mode") : 60108, i = t ? Symbol.for("react.profiler") : 60114, l = t ? Symbol.for("react.provider") : 60109, s = t ? Symbol.for("react.context") : 60110, u = t ? Symbol.for("react.async_mode") : 60111, a = t ? Symbol.for("react.concurrent_mode") : 60111, c = t ? Symbol.for("react.forward_ref") : 60112, f = t ? Symbol.for("react.suspense") : 60113, p = t ? Symbol.for("react.suspense_list") : 60120, d = t ? Symbol.for("react.memo") : 60115, v = t ? Symbol.for("react.lazy") : 60116, $ = t ? Symbol.for("react.block") : 60121, h = t ? Symbol.for("react.fundamental") : 60117, A = t ? Symbol.for("react.responder") : 60118, w = t ? Symbol.for("react.scope") : 60119;
-    function S(k) {
-      return typeof k == "string" || typeof k == "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-      k === r || k === a || k === i || k === o || k === f || k === p || typeof k == "object" && k !== null && (k.$$typeof === v || k.$$typeof === d || k.$$typeof === l || k.$$typeof === s || k.$$typeof === c || k.$$typeof === h || k.$$typeof === A || k.$$typeof === w || k.$$typeof === $);
-=======
     var t = typeof Symbol == "function" && Symbol.for, e = t ? Symbol.for("react.element") : 60103, n = t ? Symbol.for("react.portal") : 60106, r = t ? Symbol.for("react.fragment") : 60107, o = t ? Symbol.for("react.strict_mode") : 60108, i = t ? Symbol.for("react.profiler") : 60114, l = t ? Symbol.for("react.provider") : 60109, s = t ? Symbol.for("react.context") : 60110, u = t ? Symbol.for("react.async_mode") : 60111, a = t ? Symbol.for("react.concurrent_mode") : 60111, c = t ? Symbol.for("react.forward_ref") : 60112, f = t ? Symbol.for("react.suspense") : 60113, p = t ? Symbol.for("react.suspense_list") : 60120, d = t ? Symbol.for("react.memo") : 60115, v = t ? Symbol.for("react.lazy") : 60116, h = t ? Symbol.for("react.block") : 60121, g = t ? Symbol.for("react.fundamental") : 60117, A = t ? Symbol.for("react.responder") : 60118, w = t ? Symbol.for("react.scope") : 60119;
     function S(N) {
       return typeof N == "string" || typeof N == "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
       N === r || N === a || N === i || N === o || N === f || N === p || typeof N == "object" && N !== null && (N.$$typeof === v || N.$$typeof === d || N.$$typeof === l || N.$$typeof === s || N.$$typeof === c || N.$$typeof === g || N.$$typeof === A || N.$$typeof === w || N.$$typeof === h);
->>>>>>> staging
     }
     function K(N) {
       if (typeof N == "object" && N !== null) {
@@ -9472,13 +8273,6 @@ function Bc() {
       }
     }
     var x = u, M = a, R = s, b = l, _ = e, P = c, C = r, B = v, E = d, T = n, q = i, V = o, F = f, ue = !1;
-<<<<<<< HEAD
-    function ae(k) {
-      return ue || (ue = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), y(k) || K(k) === u;
-    }
-    function y(k) {
-      return K(k) === a;
-=======
     function ae(N) {
       return ue || (ue = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), y(N) || K(N) === u;
     }
@@ -9487,7 +8281,6 @@ function Bc() {
     }
     function D(N) {
       return K(N) === s;
->>>>>>> staging
     }
     function z(N) {
       return K(N) === l;
@@ -9513,27 +8306,14 @@ function Bc() {
     function Z(N) {
       return K(N) === i;
     }
-<<<<<<< HEAD
-    function X(k) {
-      return K(k) === i;
-=======
     function G(N) {
       return K(N) === o;
->>>>>>> staging
     }
     function J(N) {
       return K(N) === f;
     }
-<<<<<<< HEAD
-    function J(k) {
-      return K(k) === f;
-    }
-    oe.AsyncMode = x, oe.ConcurrentMode = M, oe.ContextConsumer = R, oe.ContextProvider = b, oe.Element = _, oe.ForwardRef = P, oe.Fragment = C, oe.Lazy = B, oe.Memo = E, oe.Portal = T, oe.Profiler = q, oe.StrictMode = V, oe.Suspense = F, oe.isAsyncMode = ae, oe.isConcurrentMode = y, oe.isContextConsumer = D, oe.isContextProvider = z, oe.isElement = j, oe.isForwardRef = H, oe.isFragment = Y, oe.isLazy = U, oe.isMemo = L, oe.isPortal = N, oe.isProfiler = X, oe.isStrictMode = G, oe.isSuspense = J, oe.isValidElementType = S, oe.typeOf = K;
-  }()), oe;
-=======
     ie.AsyncMode = x, ie.ConcurrentMode = M, ie.ContextConsumer = R, ie.ContextProvider = b, ie.Element = _, ie.ForwardRef = P, ie.Fragment = C, ie.Lazy = B, ie.Memo = E, ie.Portal = T, ie.Profiler = q, ie.StrictMode = V, ie.Suspense = F, ie.isAsyncMode = ae, ie.isConcurrentMode = y, ie.isContextConsumer = D, ie.isContextProvider = z, ie.isElement = j, ie.isForwardRef = H, ie.isFragment = Y, ie.isLazy = U, ie.isMemo = L, ie.isPortal = I, ie.isProfiler = Z, ie.isStrictMode = G, ie.isSuspense = J, ie.isValidElementType = S, ie.typeOf = K;
   }()), ie;
->>>>>>> staging
 }
 var qr;
 function ts() {
@@ -9702,17 +8482,6 @@ function Vc() {
     function v(y, D) {
       return y === D ? y !== 0 || 1 / y === 1 / D : y !== y && D !== D;
     }
-<<<<<<< HEAD
-    function $(y, D) {
-      this.message = y, this.data = D && typeof D == "object" ? D : {}, this.stack = "";
-    }
-    $.prototype = Error.prototype;
-    function h(y) {
-      if (process.env.NODE_ENV !== "production")
-        var D = {}, z = 0;
-      function j(Y, U, L, N, X, G, J) {
-        if (N = N || p, G = G || L, J !== n) {
-=======
     function h(y, D) {
       this.message = y, this.data = D && typeof D == "object" ? D : {}, this.stack = "";
     }
@@ -9722,7 +8491,6 @@ function Vc() {
         var D = {}, z = 0;
       function j(Y, U, L, I, Z, G, J) {
         if (I = I || p, G = G || L, J !== n) {
->>>>>>> staging
           if (u) {
             var N = new Error(
               "Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types"
@@ -9736,28 +8504,17 @@ function Vc() {
             ), D[ye] = !0, z++);
           }
         }
-<<<<<<< HEAD
-        return U[L] == null ? Y ? U[L] === null ? new $("The " + X + " `" + G + "` is marked as required " + ("in `" + N + "`, but its value is `null`.")) : new $("The " + X + " `" + G + "` is marked as required in " + ("`" + N + "`, but its value is `undefined`.")) : null : y(U, L, N, X, G);
-=======
         return U[L] == null ? Y ? U[L] === null ? new h("The " + Z + " `" + G + "` is marked as required " + ("in `" + I + "`, but its value is `null`.")) : new h("The " + Z + " `" + G + "` is marked as required in " + ("`" + I + "`, but its value is `undefined`.")) : null : y(U, L, I, Z, G);
->>>>>>> staging
       }
       var H = j.bind(null, !1);
       return H.isRequired = j.bind(null, !0), H;
     }
     function A(y) {
       function D(z, j, H, Y, U, L) {
-<<<<<<< HEAD
-        var N = z[j], X = V(N);
-        if (X !== y) {
-          var G = F(N);
-          return new $(
-=======
         var I = z[j], Z = V(I);
         if (Z !== y) {
           var G = F(I);
           return new h(
->>>>>>> staging
             "Invalid " + Y + " `" + U + "` of type " + ("`" + G + "` supplied to `" + H + "`, expected ") + ("`" + y + "`."),
             { expectedType: y }
           );
@@ -9772,16 +8529,6 @@ function Vc() {
     function S(y) {
       function D(z, j, H, Y, U) {
         if (typeof y != "function")
-<<<<<<< HEAD
-          return new $("Property `" + U + "` of component `" + H + "` has invalid PropType notation inside arrayOf.");
-        var L = z[j];
-        if (!Array.isArray(L)) {
-          var N = V(L);
-          return new $("Invalid " + Y + " `" + U + "` of type " + ("`" + N + "` supplied to `" + H + "`, expected an array."));
-        }
-        for (var X = 0; X < L.length; X++) {
-          var G = y(L, X, H, Y, U + "[" + X + "]", n);
-=======
           return new h("Property `" + U + "` of component `" + H + "` has invalid PropType notation inside arrayOf.");
         var L = z[j];
         if (!Array.isArray(L)) {
@@ -9790,7 +8537,6 @@ function Vc() {
         }
         for (var Z = 0; Z < L.length; Z++) {
           var G = y(L, Z, H, Y, U + "[" + Z + "]", n);
->>>>>>> staging
           if (G instanceof Error)
             return G;
         }
@@ -9803,57 +8549,32 @@ function Vc() {
         var U = D[z];
         if (!s(U)) {
           var L = V(U);
-<<<<<<< HEAD
-          return new $("Invalid " + H + " `" + Y + "` of type " + ("`" + L + "` supplied to `" + j + "`, expected a single ReactElement."));
-        }
-        return null;
-      }
-      return h(y);
-=======
           return new h("Invalid " + H + " `" + Y + "` of type " + ("`" + L + "` supplied to `" + j + "`, expected a single ReactElement."));
         }
         return null;
       }
       return g(y);
->>>>>>> staging
     }
     function x() {
       function y(D, z, j, H, Y) {
         var U = D[z];
         if (!t.isValidElementType(U)) {
           var L = V(U);
-<<<<<<< HEAD
-          return new $("Invalid " + H + " `" + Y + "` of type " + ("`" + L + "` supplied to `" + j + "`, expected a single ReactElement type."));
-        }
-        return null;
-      }
-      return h(y);
-=======
           return new h("Invalid " + H + " `" + Y + "` of type " + ("`" + L + "` supplied to `" + j + "`, expected a single ReactElement type."));
         }
         return null;
       }
       return g(y);
->>>>>>> staging
     }
     function M(y) {
       function D(z, j, H, Y, U) {
         if (!(z[j] instanceof y)) {
-<<<<<<< HEAD
-          var L = y.name || p, N = ae(z[j]);
-          return new $("Invalid " + Y + " `" + U + "` of type " + ("`" + N + "` supplied to `" + H + "`, expected ") + ("instance of `" + L + "`."));
-        }
-        return null;
-      }
-      return h(D);
-=======
           var L = y.name || p, I = ae(z[j]);
           return new h("Invalid " + Y + " `" + U + "` of type " + ("`" + I + "` supplied to `" + H + "`, expected ") + ("instance of `" + L + "`."));
         }
         return null;
       }
       return g(D);
->>>>>>> staging
     }
     function R(y) {
       if (!Array.isArray(y))
@@ -9861,16 +8582,6 @@ function Vc() {
           "Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z])."
         ) : i("Invalid argument supplied to oneOf, expected an array.")), l;
       function D(z, j, H, Y, U) {
-<<<<<<< HEAD
-        for (var L = z[j], N = 0; N < y.length; N++)
-          if (v(L, y[N]))
-            return null;
-        var X = JSON.stringify(y, function(J, k) {
-          var ye = F(k);
-          return ye === "symbol" ? String(k) : k;
-        });
-        return new $("Invalid " + Y + " `" + U + "` of value `" + String(L) + "` " + ("supplied to `" + H + "`, expected one of " + X + "."));
-=======
         for (var L = z[j], I = 0; I < y.length; I++)
           if (v(L, y[I]))
             return null;
@@ -9879,22 +8590,12 @@ function Vc() {
           return ye === "symbol" ? String(N) : N;
         });
         return new h("Invalid " + Y + " `" + U + "` of value `" + String(L) + "` " + ("supplied to `" + H + "`, expected one of " + Z + "."));
->>>>>>> staging
       }
       return g(D);
     }
     function b(y) {
       function D(z, j, H, Y, U) {
         if (typeof y != "function")
-<<<<<<< HEAD
-          return new $("Property `" + U + "` of component `" + H + "` has invalid PropType notation inside objectOf.");
-        var L = z[j], N = V(L);
-        if (N !== "object")
-          return new $("Invalid " + Y + " `" + U + "` of type " + ("`" + N + "` supplied to `" + H + "`, expected an object."));
-        for (var X in L)
-          if (r(L, X)) {
-            var G = y(L, X, H, Y, U + "." + X, n);
-=======
           return new h("Property `" + U + "` of component `" + H + "` has invalid PropType notation inside objectOf.");
         var L = z[j], I = V(L);
         if (I !== "object")
@@ -9902,7 +8603,6 @@ function Vc() {
         for (var Z in L)
           if (r(L, Z)) {
             var G = y(L, Z, H, Y, U + "." + Z, n);
->>>>>>> staging
             if (G instanceof Error)
               return G;
           }
@@ -9920,28 +8620,6 @@ function Vc() {
             "Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + ue(z) + " at index " + D + "."
           ), l;
       }
-<<<<<<< HEAD
-      function j(H, Y, U, L, N) {
-        for (var X = [], G = 0; G < y.length; G++) {
-          var J = y[G], k = J(H, Y, U, L, N, n);
-          if (k == null)
-            return null;
-          k.data && r(k.data, "expectedType") && X.push(k.data.expectedType);
-        }
-        var ye = X.length > 0 ? ", expected one of type [" + X.join(", ") + "]" : "";
-        return new $("Invalid " + L + " `" + N + "` supplied to " + ("`" + U + "`" + ye + "."));
-      }
-      return h(j);
-    }
-    function P() {
-      function y(D, z, j, H, Y) {
-        return T(D[z]) ? null : new $("Invalid " + H + " `" + Y + "` supplied to " + ("`" + j + "`, expected a ReactNode."));
-      }
-      return h(y);
-    }
-    function C(y, D, z, j, H) {
-      return new $(
-=======
       function j(H, Y, U, L, I) {
         for (var Z = [], G = 0; G < y.length; G++) {
           var J = y[G], N = J(H, Y, U, L, I, n);
@@ -9962,22 +8640,11 @@ function Vc() {
     }
     function C(y, D, z, j, H) {
       return new h(
->>>>>>> staging
         (y || "React class") + ": " + D + " type `" + z + "." + j + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + H + "`."
       );
     }
     function B(y) {
       function D(z, j, H, Y, U) {
-<<<<<<< HEAD
-        var L = z[j], N = V(L);
-        if (N !== "object")
-          return new $("Invalid " + Y + " `" + U + "` of type `" + N + "` " + ("supplied to `" + H + "`, expected `object`."));
-        for (var X in y) {
-          var G = y[X];
-          if (typeof G != "function")
-            return C(H, Y, U, X, F(G));
-          var J = G(L, X, H, Y, U + "." + X, n);
-=======
         var L = z[j], I = V(L);
         if (I !== "object")
           return new h("Invalid " + Y + " `" + U + "` of type `" + I + "` " + ("supplied to `" + H + "`, expected `object`."));
@@ -9986,7 +8653,6 @@ function Vc() {
           if (typeof G != "function")
             return C(H, Y, U, Z, F(G));
           var J = G(L, Z, H, Y, U + "." + Z, n);
->>>>>>> staging
           if (J)
             return J;
         }
@@ -9996,32 +8662,15 @@ function Vc() {
     }
     function E(y) {
       function D(z, j, H, Y, U) {
-<<<<<<< HEAD
-        var L = z[j], N = V(L);
-        if (N !== "object")
-          return new $("Invalid " + Y + " `" + U + "` of type `" + N + "` " + ("supplied to `" + H + "`, expected `object`."));
-        var X = e({}, z[j], y);
-        for (var G in X) {
-=======
         var L = z[j], I = V(L);
         if (I !== "object")
           return new h("Invalid " + Y + " `" + U + "` of type `" + I + "` " + ("supplied to `" + H + "`, expected `object`."));
         var Z = e({}, z[j], y);
         for (var G in Z) {
->>>>>>> staging
           var J = y[G];
           if (r(y, G) && typeof J != "function")
             return C(H, Y, U, G, F(J));
           if (!J)
-<<<<<<< HEAD
-            return new $(
-              "Invalid " + Y + " `" + U + "` key `" + G + "` supplied to `" + H + "`.\nBad object: " + JSON.stringify(z[j], null, "  ") + `
-Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
-            );
-          var k = J(L, G, H, Y, U + "." + G, n);
-          if (k)
-            return k;
-=======
             return new h(
               "Invalid " + Y + " `" + U + "` key `" + G + "` supplied to `" + H + "`.\nBad object: " + JSON.stringify(z[j], null, "  ") + `
 Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
@@ -10029,7 +8678,6 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
           var N = J(L, G, H, Y, U + "." + G, n);
           if (N)
             return N;
->>>>>>> staging
         }
         return null;
       }
@@ -10171,7 +8819,7 @@ const Wc = /* @__PURE__ */ kc(Uc), Gc = "_spinner_143d9_5", qc = "_internal_143d
   "spinner-overlay": "_spinner-overlay_143d9_57"
 };
 function rs({ size: t }) {
-  const e = ie();
+  const e = ne();
   return W(() => {
     var n, r;
     (n = document == null ? void 0 : document.getElementById(e)) == null || n.style.setProperty("width", `${t}px`), (r = document == null ? void 0 : document.getElementById(e)) == null || r.style.setProperty("height", `${t}px`);
@@ -10195,7 +8843,7 @@ rs.propTypes = {
 rs.defaultProps = {
   size: 48
 };
-const Nd = ({
+const Id = ({
   className: t,
   currentStep: e,
   currentTitle: n,
@@ -10203,11 +8851,7 @@ const Nd = ({
   steps: o,
   titleAs: i = "h4",
   ...l
-<<<<<<< HEAD
-}) => /* @__PURE__ */ O("div", { className: g("fr-stepper", t), ...l, children: [
-=======
 }) => /* @__PURE__ */ O("div", { className: $("fr-stepper", t), ...l, children: [
->>>>>>> staging
   /* @__PURE__ */ O(i, { className: "fr-stepper__title", children: [
     /* @__PURE__ */ m("span", { className: "fr-stepper__state", children: `Étape ${e} sur ${o}` }),
     n
@@ -10225,21 +8869,13 @@ const Nd = ({
   "div",
   {
     id: `${e}-panel`,
-<<<<<<< HEAD
-    className: g("fr-tabs__panel", t),
-=======
     className: $("fr-tabs__panel", t),
->>>>>>> staging
     role: "tabpanel",
     "aria-labelledby": `${e}-button`,
     tabIndex: n["aria-selected"] ? -1 : 0,
     ...n
   }
-<<<<<<< HEAD
-), Id = ({
-=======
 ), Bd = ({
->>>>>>> staging
   className: t,
   children: e,
   defaultActiveIndex: n = 0,
@@ -10247,11 +8883,7 @@ const Nd = ({
   onTabChange: o,
   ...i
 }) => {
-<<<<<<< HEAD
-  const l = ie(), s = i.id || l, u = de(e, Yc).filter((a) => $e(a)).map(
-=======
   const l = ne(), s = i.id || l, u = de(e, Xc).filter((a) => $e(a)).map(
->>>>>>> staging
     (a, c) => _e(
       a,
       { index: `${s}-${c}` }
@@ -10261,28 +8893,17 @@ const Nd = ({
     "div",
     {
       id: s,
-<<<<<<< HEAD
-      className: g("fr-tabs", t),
-      ...i,
-      children: [
-        /* @__PURE__ */ m("ul", { className: g("fr-tabs__list", r.ul), role: "tablist", children: u.map((a, c) => /* @__PURE__ */ m("li", { className: g(r.li), role: "presentation", children: /* @__PURE__ */ m(
-=======
       className: $("fr-tabs", t),
       ...i,
       children: [
         /* @__PURE__ */ m("ul", { className: $("fr-tabs__list", r.ul), role: "tablist", children: u.map((a, c) => /* @__PURE__ */ m("li", { className: $(r.li), role: "presentation", children: /* @__PURE__ */ m(
->>>>>>> staging
           "button",
           {
             onClick: (f) => {
               o && (o(c), f.preventDefault());
             },
             id: `${s}-${c}-button`,
-<<<<<<< HEAD
-            className: g(
-=======
             className: $(
->>>>>>> staging
               "fr-tabs__tab",
               {
                 [`fr-icon-${a.props.icon}`]: $e(a) && a.props.icon,
@@ -10302,11 +8923,7 @@ const Nd = ({
     }
   );
 };
-<<<<<<< HEAD
-const nr = be, rr = ({ className: t, color: e, icon: n, iconPosition: r, size: o }) => g("fr-tag", t, {
-=======
 const nr = be, rr = ({ className: t, color: e, icon: n, iconPosition: r, size: o }) => $("fr-tag", t, {
->>>>>>> staging
   "fr-tag--sm": o === "sm",
   [`fr-icon-${n}`]: n,
   [`fr-tag--icon-${r}`]: n && r,
@@ -10359,11 +8976,7 @@ const nr = be, rr = ({ className: t, color: e, icon: n, iconPosition: r, size: o
   size: i,
   ...l
 }, s) => {
-<<<<<<< HEAD
-  const u = g("fr-tag--dismiss", rr({ className: e, color: n, icon: r, iconPosition: o, size: i }));
-=======
   const u = $("custom-dismissible-tag", rr({ className: e, color: n, icon: r, iconPosition: o, size: i }));
->>>>>>> staging
   return /* @__PURE__ */ m(
     t === "a" ? he : t || "button",
     {
@@ -10372,16 +8985,6 @@ const nr = be, rr = ({ className: t, color: e, icon: n, iconPosition: r, size: o
       ...l
     }
   );
-<<<<<<< HEAD
-}), Bd = ({
-  className: t,
-  children: e,
-  ...n
-}) => {
-  const r = ie(), o = g("fr-tags-group", t);
-  return /* @__PURE__ */ m("ul", { className: o, ...je(n), children: et(e, [Xc, Zc, Jc]).map((i, l) => /* @__PURE__ */ m("li", { children: i }, `${r}-${l}`)) });
-}, to = ({
-=======
 }), Qc = ({
   children: t,
   className: e,
@@ -10445,7 +9048,6 @@ function Od({
   ] });
 }
 const to = ({
->>>>>>> staging
   alt: t,
   as: e = "p",
   bold: n,
@@ -10453,43 +9055,26 @@ const to = ({
   size: o,
   ...i
 }) => {
-<<<<<<< HEAD
-  const l = g(r, {
-=======
   const l = $(r, {
->>>>>>> staging
     "fr-text--alt": o !== "lead" && t,
     "fr-text--heavy": n,
     [`fr-text--${o}`]: o && o !== "md"
   });
   return /* @__PURE__ */ m(e, { className: l, ...i });
-<<<<<<< HEAD
-}, Od = ({
-=======
 }, Rd = ({
->>>>>>> staging
   as: t = "h1",
   className: e,
   look: n,
   ...r
 }) => {
-<<<<<<< HEAD
-  const o = n && ["xs", "sm", "md", "lg", "xl"].includes(n), i = g(e, {
-=======
   const o = n && ["xs", "sm", "md", "lg", "xl"].includes(n), i = $(e, {
->>>>>>> staging
     [`fr-${n}`]: !o && n && n !== t,
     [`fr-display-${n}`]: o
   });
   return /* @__PURE__ */ m(t, { className: i, ...r });
 };
-<<<<<<< HEAD
-function Qc(t, e) {
-  const [n, r] = Z(!1), o = I((/* @__PURE__ */ new Date()).getTime()), i = I(e), l = I(void 0), s = () => clearTimeout(l.current), u = () => {
-=======
 function ed(t, e) {
   const [n, r] = X(!1), o = k((/* @__PURE__ */ new Date()).getTime()), i = k(e), l = k(void 0), s = () => clearTimeout(l.current), u = () => {
->>>>>>> staging
     r(!0), i.current -= (/* @__PURE__ */ new Date()).getTime() - o.current, s();
   }, a = () => {
     o.current = (/* @__PURE__ */ new Date()).getTime(), r(!1);
@@ -10545,22 +9130,15 @@ const td = ({ autoDismissAfter: t = 3e3, description: e = "", id: n, remove: r =
 function nd({ children: t }) {
   return /* @__PURE__ */ m("div", { id: "toast-container", children: t });
 }
-<<<<<<< HEAD
-const os = Rt({}), Rd = ({
-  children: t
-}) => {
-  const [e, n] = Z([]), r = te((s) => {
-=======
 const is = Rt({}), Vd = ({
   children: t
 }) => {
   const [e, n] = X([]), r = te((s) => {
->>>>>>> staging
     n((u) => u.filter((a) => a.id !== s));
   }, []), o = te((s) => {
-    const u = (s == null ? void 0 : s.id) ?? `toast-${ie()}`;
+    const u = (s == null ? void 0 : s.id) ?? `toast-${ne()}`;
     return n((a) => [...a, { ...s, id: u }]), u;
-  }, []), i = ne(() => ({
+  }, []), i = re(() => ({
     remove: r,
     toast: o,
     toasts: e
@@ -10576,11 +9154,7 @@ const is = Rt({}), Vd = ({
     t,
     cs(l, document.body)
   ] });
-<<<<<<< HEAD
-}, Vd = () => Se(os), nd = be(({
-=======
 }, zd = () => Se(is), rd = be(({
->>>>>>> staging
   className: t,
   css: e = {},
   hasLabelLeft: n,
@@ -10589,11 +9163,7 @@ const is = Rt({}), Vd = ({
   label: i,
   ...l
 }, s) => {
-<<<<<<< HEAD
-  const u = ie(), a = l.id || u, c = g("fr-toggle", {
-=======
   const u = ne(), a = l.id || u, c = $("fr-toggle", {
->>>>>>> staging
     "fr-toggle--border-bottom": r,
     "fr-toggle--label-left": n
   }, t);
@@ -10607,11 +9177,7 @@ const is = Rt({}), Vd = ({
           {
             ref: s,
             type: "checkbox",
-<<<<<<< HEAD
-            className: g("fr-toggle__input", e["fr-toggle__input"]),
-=======
             className: $("fr-toggle__input", e["fr-toggle__input"]),
->>>>>>> staging
             id: a,
             ...je(l, { exclude: ["type"] })
           }
@@ -10619,27 +9185,13 @@ const is = Rt({}), Vd = ({
         /* @__PURE__ */ m(
           "label",
           {
-<<<<<<< HEAD
-            className: g("fr-toggle__label", e["fr-toggle__label"]),
-=======
             className: $("fr-toggle__label", e["fr-toggle__label"]),
->>>>>>> staging
             htmlFor: a,
             "data-fr-checked-label": "Activé",
             "data-fr-unchecked-label": "Désactivé",
             children: i
           }
         ),
-<<<<<<< HEAD
-        o && /* @__PURE__ */ m("p", { className: g("fr-hint-text", e["fr-hint-text"]), children: o })
-      ]
-    }
-  );
-}), zd = ({ children: t, className: e, ...n }) => {
-  const r = ie();
-  return /* @__PURE__ */ m("ul", { className: g("fr-toggle__list", e), ...je(n), children: de(t, nd).map((o, i) => /* @__PURE__ */ m("li", { children: o }, `${r}-${i}`)) });
-}, rd = be(({
-=======
         o && /* @__PURE__ */ m("p", { className: $("fr-hint-text", e["fr-hint-text"]), children: o })
       ]
     }
@@ -10648,18 +9200,13 @@ const is = Rt({}), Vd = ({
   const r = ne();
   return /* @__PURE__ */ m("ul", { className: $("fr-toggle__list", e), ...je(n), children: de(t, rd).map((o, i) => /* @__PURE__ */ m("li", { children: o }, `${r}-${i}`)) });
 }, od = be(({
->>>>>>> staging
   className: t,
   icon: e,
   id: n,
   label: r,
   name: o,
   ...i
-<<<<<<< HEAD
-}, l) => /* @__PURE__ */ O("div", { className: g("fr-segmented__element"), style: { width: "100%" }, children: [
-=======
 }, l) => /* @__PURE__ */ O("div", { className: $("fr-segmented__element"), style: { width: "100%" }, children: [
->>>>>>> staging
   /* @__PURE__ */ m(
     "input",
     {
@@ -10678,7 +9225,7 @@ const is = Rt({}), Vd = ({
       children: r
     }
   )
-] })), jd = ({
+] })), Hd = ({
   children: t,
   className: e,
   isVertical: n,
@@ -10689,11 +9236,7 @@ const is = Rt({}), Vd = ({
   value: s,
   ...u
 }) => {
-<<<<<<< HEAD
-  const a = ie(), c = g("fr-segmented", e), f = {};
-=======
   const a = ne(), c = $("fr-segmented", e), f = {};
->>>>>>> staging
   return n && (f.style = { display: "block" }), /* @__PURE__ */ O(
     "fieldset",
     {
@@ -10702,17 +9245,10 @@ const is = Rt({}), Vd = ({
       ...f,
       ...u,
       children: [
-<<<<<<< HEAD
-        r && /* @__PURE__ */ m("legend", { className: g("fr-segmented__legend", { "fr-segmented__legend--inline": o }), children: r }),
-        de(t, rd).map((p, d) => {
-          if (Q.isValidElement(p))
-            return /* @__PURE__ */ m("div", { className: g("fr-segmented__elements"), children: Q.cloneElement(p, {
-=======
         r && /* @__PURE__ */ m("legend", { className: $("fr-segmented__legend", { "fr-segmented__legend--inline": o }), children: r }),
         de(t, od).map((p, d) => {
           if (Q.isValidElement(p))
             return /* @__PURE__ */ m("div", { className: $("fr-segmented__elements"), children: Q.cloneElement(p, {
->>>>>>> staging
               name: i,
               id: `${i}-${d}`,
               onChange: () => {
@@ -10725,37 +9261,6 @@ const is = Rt({}), Vd = ({
   );
 };
 export {
-<<<<<<< HEAD
-  fs as Accordion,
-  ud as AccordionGroup,
-  ad as Alert,
-  ac as Autocomplete,
-  fd as AutocompleteItem,
-  dc as Badge,
-  pd as BadgeGroup,
-  bd as Breadcrumb,
-  ut as Button,
-  md as ButtonGroup,
-  vd as Checkbox,
-  $d as Col,
-  bc as Container,
-  dd as DSFRConfig,
-  Jc as DissmissibleTag,
-  vc as FastAccess,
-  hd as Fieldset,
-  gd as FileUpload,
-  yd as Header,
-  Vt as Item,
-  he as Link,
-  Ed as Listbox,
-  Pd as ListboxItem,
-  wd as ListboxSection,
-  yc as Logo,
-  Sd as MenuButton,
-  Td as MenuItem,
-  _d as MenuSection,
-  Ad as Modal,
-=======
   ps as Accordion,
   ad as AccordionGroup,
   cd as Alert,
@@ -10785,36 +9290,12 @@ export {
   _d as MenuItem,
   Ad as MenuSection,
   Kd as Modal,
->>>>>>> staging
   Bt as ModalClose,
   Jl as ModalContent,
   Ql as ModalFooter,
   Zl as ModalTitle,
   yc as Nav,
   Yl as NavItem,
-<<<<<<< HEAD
-  Kd as Notice,
-  hc as Operator,
-  Dd as Radio,
-  Hr as Row,
-  gc as SearchBar,
-  lo as Section,
-  jd as SegmentedControl,
-  rd as SegmentedElement,
-  Fd as Select,
-  Ld as SelectOption,
-  Zc as SelectableTag,
-  mc as Service,
-  Md as SideMenu,
-  es as SideMenuItem,
-  kd as SideMenuLink,
-  rs as Spinner,
-  Nd as Stepper,
-  Yc as Tab,
-  Id as Tabs,
-  Xc as Tag,
-  Bd as TagGroup,
-=======
   Dd as Notice,
   gc as Operator,
   Fd as Radio,
@@ -10837,20 +9318,15 @@ export {
   Zc as Tag,
   Qc as TagGroup,
   Od as TagInput,
->>>>>>> staging
   to as Text,
-  Cd as TextArea,
-  xd as TextInput,
-  Od as Title,
-  ed as Toast,
-  Rd as ToastContextProvider,
-  nd as Toggle,
-  zd as ToggleGroup,
-  cd as useAutocompleteList,
+  Ed as TextArea,
+  Cd as TextInput,
+  Rd as Title,
+  td as Toast,
+  Vd as ToastContextProvider,
+  rd as Toggle,
+  jd as ToggleGroup,
+  dd as useAutocompleteList,
   bt as useDSFRConfig,
-<<<<<<< HEAD
-  Vd as useToast
-=======
   zd as useToast
->>>>>>> staging
 };
