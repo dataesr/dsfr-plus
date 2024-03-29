@@ -11,6 +11,7 @@ const stepper = `
   titleAs = 'h3'
 />
 `;
+
 const stepperLastStep = `
 <Stepper 
   currentStep={4}
