@@ -8,7 +8,7 @@ const modal = `
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-    <Button onClick={(e) => {setIsOpen(true); e.preventDefault()}}>Ouvir la modale</Button>
+    <Button onClick={(e) => {setIsOpen(true); e.preventDefault()}}>Ouvrir la modale</Button>
     <Modal isOpen={isOpen} hide={() => setIsOpen(false)}>
       <ModalTitle>Opened Controlled</ModalTitle>
       <ModalContent>Hello Modal</ModalContent>
@@ -25,7 +25,7 @@ const modal = `
 `;
 const modalUncontrolled = `
 <>
-  <Button data-fr-opened="false" aria-controls="modal-4">Ouvir la modale</Button>
+  <Button data-fr-opened="false" aria-controls="modal-4">Ouvrir la modale</Button>
   <Modal isOpen id="modal-4">
     <ModalTitle>Opened Uncontrolled</ModalTitle>
     <ModalContent>Hello Modal</ModalContent>

@@ -58,7 +58,7 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
                     id: `${name}-${index}`,
                     onChange: () => {
                       onChangeValue?.(child.props.value);
-                      child.props.onChange();
+                      child?.props?.onChange?.();
                     },
                   })
                 }
