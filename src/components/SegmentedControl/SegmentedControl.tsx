@@ -51,7 +51,7 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
         getChildrenOfType(children, SegmentedElement).map((child, index) => {
           if (React.isValidElement(child)) {
             return (
-              <div className={classNames("fr-segmented__elements")}>
+              <div className={classNames("fr-segmented__elements")} key={`segmented-element-${index}`}>
                 {
                   React.cloneElement(child as React.ReactElement<SegmentedElementProps>, {
                     name,
