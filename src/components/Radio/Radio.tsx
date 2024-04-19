@@ -9,13 +9,14 @@ type RadioCss = {
 }
 
 type RadioBaseProps = {
+  checked?: boolean,
   className?: Argument,
   css?: RadioCss;
   hint?: string,
   id?: string,
-  label?: string,
   imageComponent?: React.ReactNode,
-  checked?: boolean,
+  label?: string,
+  name: string,
 }
 
 export type RadioProps = Merge<React.HTMLAttributes<HTMLInputElement>, RadioBaseProps>;
@@ -28,6 +29,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(({
   id,
   imageComponent: ImageComponent,
   label,
+  name,
   ...props
 }, ref) => {
   const _id = id || useId();
@@ -37,6 +39,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(({
       <input
         checked={checked}
         id={_id}
+        name={name}
         ref={ref}
         type="radio"
         {...props}
