@@ -50,8 +50,13 @@ export const DSFRConfig = ({
       await import("@gouvfr/dsfr/dist/utility/utility.css");
       await import("@gouvfr/dsfr/dist/dsfr.css");
       // @ts-expect-error
-      window.dsfr.start();
-      setDSFRStarted(true);
+      if (typeof window.dsfr.start === "function") {
+        // @ts-expect-error
+        window.dsfr.start();
+        setDSFRStarted(true);
+      } else {
+        console.error("dsfr.start is not a function");
+      }
     };
     const defaultPreferedTheme = window.matchMedia(
       "(prefers-color-scheme: dark)"
