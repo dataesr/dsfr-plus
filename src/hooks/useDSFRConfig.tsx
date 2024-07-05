@@ -50,7 +50,7 @@ export const DSFRConfig = ({
       await import("@gouvfr/dsfr/dist/utility/utility.css");
       await import("@gouvfr/dsfr/dist/dsfr.css");
       // @ts-expect-error
-      if (typeof window.dsfr.start === "function") {
+      if (typeof window !== undefined || typeof window.dsfr !== "undefined") {
         // @ts-expect-error
         window.dsfr.start();
         setDSFRStarted(true);
