@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode } from "react";
+import { forwardRef } from "react";
 import { OnlyAs, PolyRefFunction } from "react-polymorphed";
 import cn, { Argument } from "classnames";
 import { DSFRColors } from "../../types/colors";
