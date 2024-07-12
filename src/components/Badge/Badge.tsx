@@ -12,7 +12,7 @@ export type BadgeProps = {
   icon?: string;
   className?: Argument;
   size?: "md" | "sm";
-  children?: React.ReactNode;
+  children: React.ReactNode;
   noIcon?: boolean;
   color?: DSFRColors;
   variant?: BadgeType;
