@@ -52,7 +52,7 @@ export const DSFRConfig = ({
         await import("@gouvfr/dsfr/dist/utility/utility.css");
         await import("@gouvfr/dsfr/dist/dsfr.css");
         // @ts-expect-error
-        window.dsfr.start();
+        window.dsfr.start?.();
         setDSFRStarted(true);
       } else {
         console.error("dsfr.start is not a function");
