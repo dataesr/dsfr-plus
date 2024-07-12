@@ -37,21 +37,26 @@ export const DSFRConfig = ({
 
   useEffect(() => {
     const startDSFR = async () => {
-      if ((window as any)?.dsfr?.isStarted) {
-        return;
-      }
-      (window as any).dsfr = {
-        verbose,
-        mode: "manual",
-      };
+      // @ts-expect-error
+      if (typeof window !== undefined || typeof window.dsfr !== "undefined") {
+        if ((window as any)?.dsfr?.isStarted) {
+          return;
+        }
+        (window as any).dsfr = {
+          verbose,
+          mode: "manual",
+        };
 
-      // @ts-expect-error
-      await import("@gouvfr/dsfr/dist/dsfr/dsfr.module.min");
-      await import("@gouvfr/dsfr/dist/utility/utility.css");
-      await import("@gouvfr/dsfr/dist/dsfr.css");
-      // @ts-expect-error
-      window.dsfr.start();
-      setDSFRStarted(true);
+        // @ts-expect-error
+        await import("@gouvfr/dsfr/dist/dsfr/dsfr.module.min");
+        await import("@gouvfr/dsfr/dist/utility/utility.css");
+        await import("@gouvfr/dsfr/dist/dsfr.css");
+        // @ts-expect-error
+        window.dsfr.start?.();
+        setDSFRStarted(true);
+      } else {
+        console.error("dsfr.start is not a function");
+      }
     };
     const defaultPreferedTheme = window.matchMedia(
       "(prefers-color-scheme: dark)"
