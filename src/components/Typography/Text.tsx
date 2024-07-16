@@ -4,14 +4,16 @@ import { OnlyAs, PolymorphicComponent } from 'react-polymorphed';
 type TextTags = 'p' | 'span';
 type TextSizes = 'xs' | 'sm' | 'md' | 'lg' | 'lead';
 
-type TextProps = React.PropsWithChildren<{
+type TextPropsPartial = React.PropsWithChildren<{
   alt?: boolean;
   bold?: boolean;
   className?: Argument;
   size?: TextSizes;
 }>
 
-export const Text: PolymorphicComponent<"p", TextProps, OnlyAs<TextTags>> = ({
+export type TextProps = PolymorphicComponent<"p", TextPropsPartial, OnlyAs<TextTags>>;
+
+export const Text: TextProps = ({
   alt,
   as: As = 'p',
   bold,
