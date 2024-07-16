@@ -57,6 +57,18 @@ export const DSFRConfig = ({
       } else {
         console.error("dsfr.start is not a function");
       }
+      (window as any).dsfr = {
+        verbose,
+        mode: "manual",
+      };
+
+      // @ts-expect-error
+      await import("@gouvfr/dsfr/dist/dsfr/dsfr.module.min");
+      await import("@gouvfr/dsfr/dist/utility/utility.css");
+      await import("@gouvfr/dsfr/dist/dsfr.css");
+      // @ts-expect-error
+      window.dsfr.start();
+      setDSFRStarted(true);
     };
     const defaultPreferedTheme = window.matchMedia(
       "(prefers-color-scheme: dark)"
