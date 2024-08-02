@@ -132,6 +132,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         >
           <input
             id={inputId}
+            disabled={disabled}
             className={inputClass}
             onBlur={handleBlur}
             onChange={handleChange}
@@ -249,6 +250,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           <textarea
             id={inputId}
             className={inputClass}
+            disabled={disabled}
             onBlur={handleBlur}
             onChange={handleChange}
             ref={(node) => mergeRefs(node, [ref, inputRef])}
