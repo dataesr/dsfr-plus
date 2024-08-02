@@ -17,7 +17,6 @@
     "dist"
   ],
   "workspaces": [
-    "example",
     "example-ts"
   ],
   "scripts": {
@@ -27,7 +26,6 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint --fix 'src/**/*.{jsx,ts,tsx}'",
     "preview": "vite preview",
-    "example": "npm run dev -w example",
     "example-ts": "npm run dev -w example-ts"
   },
   "dependencies": {
