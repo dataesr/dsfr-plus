@@ -51,6 +51,9 @@ export function Side() {
               <Link current={is('/composants/en-tete')} href="/composants/en-tete">
                 Header - En-tête
               </Link>
+              <Link current={is('/composants/icons')} href="/composants/icons">
+                Icon - Icône
+              </Link>
               <Link current={is('/composants/input')} href="/composants/input">
                 Input - Champ de saisie
               </Link>
