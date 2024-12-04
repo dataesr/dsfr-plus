@@ -130,7 +130,7 @@ export function Inputs() {
         </Col>
         <Col xs={12}>
           <Title as="h2" look="h4">
-            États désactivé
+            État désactivé
           </Title>
           <Playground code={disabled} scope={{ TextInput }} />
         </Col>

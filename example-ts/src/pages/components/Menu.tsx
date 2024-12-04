@@ -41,15 +41,12 @@ export function Menus() {
         <Breadcrumb>
           <Link href="/">Accueil</Link>
           <Link href="/composants">Composants</Link>
-          <Link>MenuButton</Link>
+          <Link>MenuButton - Bouton de menu</Link>
         </Breadcrumb>
       </Row>
       <Row gutters>
         <Col xs={12}>
-          <Title as="h1">MenuButton</Title>
-          <Text>
-            MenuButton
-          </Text>
+          <Title as="h1">MenuButton - Bouton de menu</Title>
           <Playground code={sections} scope={{ MenuButton, MenuItem, MenuSection }} defaultShowCode />
         </Col>
       </Row>

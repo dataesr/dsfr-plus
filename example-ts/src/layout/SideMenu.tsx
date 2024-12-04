@@ -7,7 +7,8 @@ export function Side() {
   const { pathname } = useLocation();
   if (!pathname) return null;
 
-  const is = (str: string): boolean => pathname?.startsWith(str)
+  const is = (str: string): boolean => pathname === str;
+
   return (
     <Container>
       <Row>
@@ -54,10 +55,10 @@ export function Side() {
                 Input - Champ de saisie
               </Link>
               <Link current={is('/composants/listbox')} href="/composants/listbox">
-                Listbox
+                Listbox - Zone de liste
               </Link>
               <Link current={is('/composants/menu-button')} href="/composants/menu-button">
-                MenuButton
+                MenuButton - Bouton de menu
               </Link>
               <Link current={is('/composants/modal')} href="/composants/modal">
                 Modal - Modale
@@ -94,6 +95,9 @@ export function Side() {
               </Link>
               <Link current={is('/composants/interrupteur')} href="/composants/interrupteur">
                 Toggle - Interrupteur
+              </Link>
+              <Link current={is('/composants/typography')} href="/composants/typography">
+                Typography - Typographie
               </Link>
             </SideMenuItem>
           </SideMenu>

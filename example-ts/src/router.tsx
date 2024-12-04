@@ -1,7 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { Layout } from './layout/Layout';
-import { Side } from './layout/SideMenu';
 import { Accordions } from './pages/components/Accordions';
 import { Alerts } from './pages/components/Alerts';
 import { Autocompletes } from './pages/components/Autocomplete';
@@ -11,22 +9,26 @@ import { Buttons } from './pages/components/Buttons';
 import { Checkboxes } from './pages/components/Checkboxes';
 import { FileUploads } from './pages/components/FileUploads';
 import { Headers } from './pages/components/Headers';
+import { Icons } from './pages/components/Icons';
 import { Inputs } from './pages/components/Inputs';
+import { Layout } from './layout/Layout';
 import { Listboxes } from './pages/components/Listboxes';
 import { Menus } from './pages/components/Menu';
 import { Modals } from './pages/components/Modal';
 import { Notices } from './pages/components/Notices';
 import { QuickStart } from './pages/guides/QuickStart';
 import { Radios } from './pages/components/Radios';
+import { SegmentedControls } from './pages/components/SegmentedControls';
 import { Selects } from './pages/components/Select';
+import { Side } from './layout/SideMenu';
 import { SideMenus } from './pages/components/SideMenus';
 import { Steppers } from './pages/components/Stepper';
 import { TabsAndTab } from './pages/components/TabsAndTab';
-import { Tags } from './pages/components/Tags';
 import { TagInputs } from './pages/components/TagInputs';
+import { Tags } from './pages/components/Tags';
 import { Toasts } from './pages/components/Toasts';
 import { Toggles } from './pages/components/Toggles';
-import { SegmentedControls } from './pages/components/SegmentedControls';
+import { Typography } from './pages/components/Typography';
 
 export default function Router() {
   return (
@@ -61,6 +63,8 @@ export default function Router() {
           <Route path="tag" element={<Tags />} />
           <Route path="toast" element={<Toasts />} />
           <Route path="segmentedControl" element={<SegmentedControls />} />
+          <Route path="typography" element={<Typography />} />
+          <Route path="icons" element={<Icons />} />
         </Route>
       </Route>
     </Routes>

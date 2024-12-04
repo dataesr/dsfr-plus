@@ -79,12 +79,12 @@ export function Listboxes() {
         <Breadcrumb>
           <Link href="/">Accueil</Link>
           <Link href="/composants">Composants</Link>
-          <Link>Listbox</Link>
+          <Link>Listbox - Zone de liste</Link>
         </Breadcrumb>
       </Row>
       <Row gutters>
         <Col xs={12}>
-          <Title as="h1">Listbox</Title>
+          <Title as="h1">Listbox - Zone de liste</Title>
           <Text>
             Un composant respectant les comportements et l'accessibilité pour un rôle listbox, qui permet d'afficher une liste,
             pour laquelles l'utilisateur peut faire une selection d'une ou plusieurs options.
