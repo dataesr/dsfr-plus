@@ -55,7 +55,7 @@ export function Autocomplete<T extends object>(props: AutocompleteProps<T>) {
 
 
   return (
-    <form onSubmit={() => onSubmit?.(props?.inputValue || "")} ref={triggerRef} className={cn("fr-search-bar", { "fr-search-bar--lg": (size === 'lg') })} role="search">
+    <form onSubmit={(e) => {e.preventDefault(); onSubmit?.(props?.inputValue || "")}} ref={triggerRef} className={cn("fr-search-bar", { "fr-search-bar--lg": (size === 'lg') })} role="search">
       <input
         {...inputProps}
         type="search"
