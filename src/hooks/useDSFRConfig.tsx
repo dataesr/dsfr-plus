@@ -40,7 +40,8 @@ export const DSFRConfig = ({
 
   useEffect(() => {
     const startDSFR = async () => {
-      if ((window as any)?.dsfr?.isStarted) {
+      if (typeof (window as any)?.dsfr?.start === "function") {
+        setDSFRStarted(true);
         return;
       }
       (window as any).dsfr = {
