@@ -21,7 +21,7 @@ export default defineConfig((configEnv) => ({
     emptyOutDir: true,
     rollupOptions: {
       external: [
-        '@gouvfr/dsfr',
+        /^@gouvfr\/dsfr/,
         'classnames',
         'react',
         'react-dom',
