@@ -7,6 +7,9 @@ import {
   useState,
 } from "react";
 
+import "@gouvfr/dsfr/dist/dsfr.min.css";
+import "@gouvfr/dsfr/dist/utility/utility.min.css";
+
 type ConfigContextObject = {
   routerComponent?: React.ElementType;
   defaultLang?: string;
@@ -37,8 +40,28 @@ export const DSFRConfig = ({
 
   useEffect(() => {
     const startDSFR = async () => {
+<<<<<<< Updated upstream
       if ((window as any)?.dsfr?.isStarted) {
         return;
+=======
+      // @ts-expect-error
+      if (typeof window !== undefined || typeof window.dsfr !== "undefined") {
+        if ((window as any)?.dsfr?.isStarted) {
+          return;
+        }
+        (window as any).dsfr = {
+          verbose,
+          mode: "manual",
+        };
+
+        // @ts-expect-error
+        await import("@gouvfr/dsfr/dist/dsfr/dsfr.module.min");
+        // @ts-expect-error
+        window.dsfr.start?.();
+        setDSFRStarted(true);
+      } else {
+        console.error("dsfr.start is not a function");
+>>>>>>> Stashed changes
       }
       (window as any).dsfr = {
         verbose,
@@ -47,8 +70,6 @@ export const DSFRConfig = ({
 
       // @ts-expect-error
       await import("@gouvfr/dsfr/dist/dsfr/dsfr.module.min");
-      await import("@gouvfr/dsfr/dist/utility/utility.css");
-      await import("@gouvfr/dsfr/dist/dsfr.css");
       // @ts-expect-error
       window.dsfr.start();
       setDSFRStarted(true);
