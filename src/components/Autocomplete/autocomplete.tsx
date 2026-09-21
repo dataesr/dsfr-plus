@@ -1,8 +1,6 @@
 import * as React from "react";
 import cn, { Argument } from 'classnames';
-import type { ComboBoxProps } from "@react-types/combobox";
-import type { LoadingState } from "@react-types/shared";
-import { Item, ItemProps, useAsyncList, useComboBoxState } from "react-stately";
+import { AsyncListData, ComboBoxProps, Item, ItemProps, useAsyncList, useComboBoxState } from "react-stately";
 import { useComboBox, useFilter } from "react-aria";
 
 import Listbox from "../Listbox/listbox-wrapper";
@@ -12,6 +10,8 @@ import { DSFRColors } from "../../types/colors";
 export { Item, Section } from "react-stately";
 
 import { Spinner } from "./spinner";
+
+type LoadingState = AsyncListData<object>["loadingState"];
 
 interface AutocompleteProps<T> extends ComboBoxProps<T> {
   loadingState?: LoadingState;
