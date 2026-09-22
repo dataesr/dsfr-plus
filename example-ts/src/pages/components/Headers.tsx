@@ -22,7 +22,7 @@ const autocomplete = `
   return (
     <Header>
       <Logo text="Gouvernement" />
-      <Service name="React DSFR" tagline="Une bibliothèque de composants React" />
+      <Service name="DSFR+" tagline="Une bibliothèque de composants React" />
       <Autocomplete
         label="Star Wars Character Lookup"
         items={list.items}
@@ -53,14 +53,14 @@ const autocomplete = `
 
 const simplestHeader = `
 <Header>
-  <Service name="React DSFR" tagline="Une bibliothèque de composants React" />
-  <Logo text="Ministère de | l'enseignement supérieur | et de la recherche" />
+  <Service name="DSFR+" tagline="Une bibliothèque de composants React" />
+  <Logo text="Ministère de | l'enseignement supérieur, | de la recherche | et de l'espace" />
 </Header>
 `;
 const headerWithFastAccess = `
 <Header>
   <Logo text="Gouvernement" />
-  <Service name="React DSFR" tagline="Une bibliothèque de composants React" />
+  <Service name="DSFR+" tagline="Une bibliothèque de composants React" />
   <FastAccess>
     <Button
       href="https://github.com/dataesr/dsfr-plus"
@@ -88,14 +88,14 @@ const headerWithFastAccess = `
 const headerWithSearchBar = `
 <Header>
   <Logo text="Gouvernement" />
-  <Service name="React DSFR" tagline="Une bibliothèque de composants React" />
+  <Service name="DSFR+" tagline="Une bibliothèque de composants React" />
   <SearchBar />
 </Header>
 `;
 const headerWithFastAccessAndSearchBar = `
 <Header>
   <Logo text="Gouvernement" />
-  <Service name="React DSFR" tagline="Une bibliothèque de composants React" />
+  <Service name="DSFR+" tagline="Une bibliothèque de composants React" />
   <FastAccess>
     <Button
       href="https://github.com/dataesr/dsfr-plus"
@@ -124,7 +124,7 @@ const headerWithFastAccessAndSearchBar = `
 const headerWithNav = `
 <Header>
   <Logo text="Gouvernement" />
-  <Service name="React DSFR" tagline="Une bibliothèque de composants React" />
+  <Service name="DSFR+" tagline="Une bibliothèque de composants React" />
   <FastAccess>
     <Button
       href="https://github.com/dataesr/dsfr-plus"
