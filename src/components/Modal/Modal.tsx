@@ -72,6 +72,22 @@ const ControlledModal = ({
     }
   }, [])
 
+  useEffect(() => {
+    const modal: HTMLDialogElement = modalRef.current!
+    if (!modal) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      e.stopPropagation()
+      if (e.key === "Escape") {
+        hide();
+      }
+    };
+
+    modal.addEventListener('keydown', handleKeyDown);
+
+    return () => modal.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (!canClose) return;
     if (!modalRef.current || (modalRef.current === e.target) || (e.target as Element).className.indexOf('closing-overlay') > -1) {
@@ -92,10 +108,10 @@ const ControlledModal = ({
       aria-labelledby={`${modalId}-title`}
       aria-modal="true"
       className={_classes}
-      ref={modalRef}
       id={modalId}
-      role="dialog"
       onClick={(e) => handleOverlayClick(e)}
+      ref={modalRef}
+      role="dialog"
       {...props}
     >
       <div className="fr-container fr-container--fluid fr-container-md">
