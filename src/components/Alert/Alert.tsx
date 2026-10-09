@@ -27,13 +27,13 @@ type AlertProps = Merge<React.HTMLAttributes<HTMLDivElement>, AlertBaseProps>;
 export const Alert = forwardRef<HTMLDivElement, AlertProps>(({
   className,
   closeMode = "disallow",
-  description,
-  size,
-  onClose,
-  title,
   css = {},
+  description,
+  onClose,
+  size,
+  title,
   titleAs: TitleAs = "h3",
-  variant = 'info',
+  variant = "info",
   ...props
 }, ref) => {
   const alertRef = useRef<HTMLDivElement>(null);
@@ -48,6 +48,7 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(({
     <div
       ref={(node) => mergeRefs(node, [ref, alertRef])}
       className={cn(`fr-alert fr-alert--${variant}`, { 'fr-alert--sm': size === "sm" }, className)}
+      role="alert"
       {...props as React.HTMLAttributes<HTMLDivElement>}
     >
       {title && <TitleAs className={cn("fr-alert__title", css.title)}>{title}</TitleAs>}
