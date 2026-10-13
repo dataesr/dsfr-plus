@@ -23,10 +23,8 @@ Design system from the French state - React extended version
 
 ## Deployment
 
-To deploy in production, simply run this command from your staging branch :
+The version number follows [semver](https://semver.org/).
 
-```sh
-npm run deploy --level=[patch|minor|major]
-```
+To push in prod, run `npm run deploy -- [patch|minor|major]`
 
 :warning: Obviously, only members of the [dataesr organization](https://github.com/dataesr/) have rights to push on the repo.
