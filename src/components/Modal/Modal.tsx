@@ -164,6 +164,7 @@ const UncontrolledModal = ({
   const component = (
     <dialog
       aria-labelledby={`${modalId}-title`}
+      aria-modal="true"
       className={_classes}
       id={modalId}
       role="dialog"
@@ -207,12 +208,12 @@ export const Modal = ({
   if (id) return <UncontrolledModal id={id} size={size} className={className} {...props} />
   return (
     <ControlledModal
+      canClose={canClose}
+      className={className}
+      hide={hide}
       id={id}
       isOpen={isOpen}
-      className={className}
       size={size}
-      hide={hide}
-      canClose={canClose}
       {...props}
     />
   );
