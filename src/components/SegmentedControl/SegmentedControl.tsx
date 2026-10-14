@@ -6,6 +6,7 @@ import { SegmentedElement, SegmentedElementProps } from "./SegmentedElement";
 
 type SegmentedControlBaseProps = {
   className?: string;
+  isLegendHidden?: boolean,
   isVertical?: boolean;
   label?: string;
   legendInline?: boolean;
@@ -22,6 +23,7 @@ export type SegmentedControlProps = Merge<
 export const SegmentedControl: React.FC<SegmentedControlProps> = ({
   children,
   className,
+  isLegendHidden = false,
   isVertical,
   label,
   legendInline,
@@ -42,6 +44,7 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
         <legend
           className={classNames("fr-segmented__legend", {
             "fr-segmented__legend--inline": legendInline,
+            "fr-sr-only": isLegendHidden,
           })}
         >
           {label}
