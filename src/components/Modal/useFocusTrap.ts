@@ -36,9 +36,7 @@ export function useFocusTrap(ref: React.MutableRefObject<HTMLDialogElement | nul
 
   useEffect(() => {
     if (active) {
-      [
-        ...ref.current?.querySelectorAll(FOCUSABLE_ELEMENTS)!,
-      ].filter((el) => !el.hasAttribute('disabled')) as HTMLElement[]
+      requestAnimationFrame(() => requestAnimationFrame(() => ref.current?.querySelector<HTMLElement>(FOCUSABLE_ELEMENTS)?.focus()));
       document.addEventListener('keydown', handleFocus);
     } else {
       prevElement?.focus();

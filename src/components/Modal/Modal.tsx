@@ -77,8 +77,8 @@ const ControlledModal = ({
     if (!modal) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      e.stopPropagation()
       if (e.key === "Escape") {
+        e.stopPropagation()
         hide();
       }
     };
