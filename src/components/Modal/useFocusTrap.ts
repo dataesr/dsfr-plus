@@ -19,16 +19,29 @@ export function useFocusTrap(ref: React.MutableRefObject<HTMLDialogElement | nul
 
     // Logic to focus only the current modal focusable items
     if (!isTabPressed) return;
+    if (!focusableEls.length) return;
+
+    const activeElement = document.activeElement;
+    const activeDialog = activeElement?.closest('dialog');
+    if (activeDialog && activeDialog !== ref.current) return;
+
+    const isOutsideModal =
+      !activeElement ||
+      activeElement === ref.current ||
+      !ref.current?.contains(activeElement);
+
+    if (isOutsideModal) {
+      (event.shiftKey ? lastFocusableEl : firstFocusableEl).focus();
+      event.preventDefault();
+      return;
+    }
 
     if (event.shiftKey) {
-      if (document.activeElement === firstFocusableEl) {
+      if (activeElement === firstFocusableEl) {
         lastFocusableEl.focus();
         event.preventDefault();
       }
-    } else if (document.activeElement === lastFocusableEl) {
-      firstFocusableEl.focus();
-      event.preventDefault();
-    } else if (document.activeElement === prevElement) {
+    } else if (activeElement === lastFocusableEl) {
       firstFocusableEl.focus();
       event.preventDefault();
     }
