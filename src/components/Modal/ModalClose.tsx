@@ -18,6 +18,7 @@ export const ModalClose: React.FC<ModalCloseProps> = forwardRef<HTMLButtonElemen
     id={`${controls}-close`}
     aria-controls={controls || undefined}
     className={cn('fr-btn--close fr-btn', className)}
+    title={typeof children === "string" ? children : "Fermer"}
     type="button"
     {...props}
   >
