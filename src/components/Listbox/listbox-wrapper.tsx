@@ -23,19 +23,19 @@ export type ListboxProps<T> = {
   topContent?: React.ReactNode;
   bottomContent?: React.ReactNode;
   state: ListState<T>;
-  triggerRef?: React.RefObject<HTMLButtonElement>;
-  listBoxRef?: React.MutableRefObject<null>;
+  triggerRef?: React.RefObject<HTMLElement | null>;
+  listBoxRef?: React.RefObject<HTMLElement | null>;
 }
 
 
 
 export default function Listbox<T extends object>(props: AriaListBoxOptions<T> & ListboxProps<T>) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const { listBoxRef = ref, state, className, css = {}, color, topContent, bottomContent, ...rest } = props;
   const { listBoxProps } = useListBox(rest, state, listBoxRef);
   const { isFocusVisible } = useFocusRing();
 
-  const ElementType: React.ElementType = [...state.collection].find((item) => item.props.href) ? 'div' : 'ul';
+  const ElementType = ([...state.collection].find((item) => item.props.href) ? 'div' : 'ul') as React.ElementType<React.HTMLAttributes<HTMLElement> & React.RefAttributes<HTMLElement>>;
 
   const triggerWidth = props?.triggerRef?.current?.offsetWidth || 0;
 

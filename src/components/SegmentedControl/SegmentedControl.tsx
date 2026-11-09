@@ -51,7 +51,7 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
         </legend>
       )}
       {getChildrenOfType(children, SegmentedElement).map((child, index) => {
-        if (React.isValidElement(child)) {
+        if (React.isValidElement<SegmentedElementProps>(child)) {
           return (
             <div
               className={classNames("fr-segmented__elements")}
@@ -62,9 +62,9 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
                 {
                   name,
                   id: `${id}-${index}`,
-                  onChange: () => {
+                  onChange: (event) => {
                     onChangeValue?.(child.props.value);
-                    child?.props?.onChange?.();
+                    child.props.onChange?.(event);
                   },
                 },
               )}

@@ -7,7 +7,7 @@ export interface LogoProps {
 
 export const Logo = ({ text, splitCharacter = '|' }: LogoProps) => {
   const lines = text.split(splitCharacter);
-  const brText = lines.reduce<JSX.Element[]>((acc, cur, i) => {
+  const brText = lines.reduce<React.JSX.Element[]>((acc, cur, i) => {
     return (i > 0)
       ? [...acc, <br key={`br-${i}`} />, <Fragment key={i}>{cur}</Fragment>]
       : [<Fragment key={i}>{cur}</Fragment>]

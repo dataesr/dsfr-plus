@@ -6,12 +6,12 @@ import styles from './styles.module.scss';
 
 interface PopoverProps extends Omit<AriaPopoverProps, "popoverRef"> {
   children: React.ReactNode;
-  popoverRef?: React.RefObject<HTMLDivElement>;
+  popoverRef?: React.RefObject<HTMLDivElement | null>;
   state: OverlayTriggerState;
 }
 
 export default function Popover({ children, state, ...props }: PopoverProps) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const { isNonModal = false, popoverRef = ref } = props;
   const { popoverProps, underlayProps } = usePopover({
     ...props,

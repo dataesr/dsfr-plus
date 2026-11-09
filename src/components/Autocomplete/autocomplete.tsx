@@ -30,10 +30,10 @@ export function Autocomplete<T extends object>(props: AutocompleteProps<T>) {
     allowsCustomValue: true,
   });
 
-  const inputRef = React.useRef(null);
-  const listBoxRef = React.useRef(null);
-  const popoverRef = React.useRef(null);
-  const triggerRef = React.useRef(null);
+  const inputRef = React.useRef<HTMLInputElement>(null);
+  const listBoxRef = React.useRef<HTMLElement>(null);
+  const popoverRef = React.useRef<HTMLDivElement>(null);
+  const triggerRef = React.useRef<HTMLFormElement>(null);
 
   const { size = "md", color, onSubmit, topContent, bottomContent, ...rest } = props;
 
@@ -113,6 +113,6 @@ export type AutocompleteItemProps = {
 
 export const AutocompleteItem = Item as <T extends object>(
   props: AutocompleteItemProps & ItemProps<T>,
-) => JSX.Element;
+) => React.JSX.Element;
 
 export { useAsyncList as useAutocompleteList };

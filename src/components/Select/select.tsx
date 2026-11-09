@@ -15,7 +15,7 @@ export function Select<T extends object>(props: AriaSelectProps<T> & { buttonLab
   const state = useSelectState(rest);
 
   // Get props for child elements from useSelect
-  const ref = useRef(null);
+  const ref = useRef<HTMLButtonElement>(null);
   const {
     labelProps,
     triggerProps,
@@ -72,5 +72,5 @@ export type SelectOptionProps = {
 
 export const SelectOption = Item as <T extends object>(
   props: SelectOptionProps & ItemProps<T>,
-) => JSX.Element;
+) => React.JSX.Element;
 

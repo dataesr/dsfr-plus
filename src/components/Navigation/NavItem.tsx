@@ -45,7 +45,7 @@ export const NavItem = ({
           {childs.map((child, i) => (
             <li className="fr-nav__item" key={`navitem-${id}-${i}`}>
               {
-                (isValidElement(child) && child.type === Link)
+                (isValidElement<LinkProps>(child) && child.type === Link)
                   ? cloneElement((child as React.ReactElement<LinkProps>), { className: cn("fr-nav__link", child.props.className) })
                   : child
               }

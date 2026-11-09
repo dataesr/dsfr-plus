@@ -1,9 +1,8 @@
-import PropTypes from "prop-types";
 import { useEffect, useId } from "react";
 
 import styles from "./spinner.module.scss";
 
-export function Spinner({ size }: { size: number }) {
+export function Spinner({ size = 48 }: { size?: number }) {
   const id = useId();
   useEffect(() => {
     document?.getElementById(id)?.style.setProperty("width", `${size}px`);
@@ -22,9 +21,3 @@ export function Spinner({ size }: { size: number }) {
     </svg>
   );
 }
-Spinner.propTypes = {
-  size: PropTypes.number,
-};
-Spinner.defaultProps = {
-  size: 48,
-};

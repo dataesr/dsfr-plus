@@ -13,7 +13,7 @@ const names = Object.keys(pictograms);
 
 export type PictogramBaseProps = {
   name: typeof names[number];
-  size: string;
+  size?: string;
 }
 
 export type PictogramProps = Merge<React.HTMLAttributes<SVGSVGElement>, PictogramBaseProps>;
@@ -23,7 +23,3 @@ export const Pictogram = ({ name, size = '80px', ...props }: PictogramProps) => 
   if (!PictogramComponent) return null;
   return <PictogramComponent style={{ height: size, width: size }} {...props} />;
 };
-
-Pictogram.defaultProps = {
-  size: '80px',
-}

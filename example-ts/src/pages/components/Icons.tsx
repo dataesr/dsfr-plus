@@ -1,6 +1,6 @@
 import { Container, Row, Col, Breadcrumb, Link, Title } from '@dataesr/dsfr-plus';
 
-function getCode(icon_string: string, exact: boolean = false): JSX.Element {
+function getCode(icon_string: string, exact: boolean = false): React.JSX.Element {
   if (exact) {
     return (
       <div>

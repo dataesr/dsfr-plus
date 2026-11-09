@@ -42,7 +42,7 @@ export const Header = ({ children, className, css = {}, ...props }: HeaderProps)
   const menu = getChildrenOfType(children, Nav)?.[0];
   const logo = getChildrenOfType(children, Logo);
   const operator = getChildrenOfType(children, Operator);
-  const searchTitle = isValidElement(searchBar) ? searchBar.props.title : 'Rechercher';
+  const searchTitle = isValidElement<{ title?: string }>(searchBar) ? searchBar.props.title : 'Rechercher';
   return (
     <header role="banner" className={cn("fr-header", className)} {...props}>
       <div className={cn("fr-header__body", css["fr-header__body"])}>

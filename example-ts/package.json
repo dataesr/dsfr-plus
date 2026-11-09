@@ -11,16 +11,16 @@
   },
   "dependencies": {
     "@dataesr/dsfr-plus": "file:..",
-    "@gouvfr/dsfr": "^1.9.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@gouvfr/dsfr": "^1.15.4",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-live": "^4.1.8",
     "react-router-dom": "^6.30.6",
     "sass": "^1.108.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^6.3.0",

@@ -51,7 +51,7 @@ export const SideMenuItem = ({
           {childs.map((child, i) => (
             <li className={cn("fr-sidemenu__item", css["fr-sidemenu__item"])} key={`navitem-${id}-${i}`}>
               {
-                (isValidElement(child) && child.type === Link)
+                (isValidElement<LinkProps>(child) && child.type === Link)
                   ? cloneElement((child as React.ReactElement<LinkProps>), { className: cn("fr-sidemenu__link", child.props.className) })
                   : child
               }

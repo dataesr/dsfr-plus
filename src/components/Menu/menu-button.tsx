@@ -74,7 +74,7 @@ export type MenuItemProps = {
 
 export const MenuItem = Item as <T extends object>(
   props: MenuItemProps & ItemProps<T>,
-) => JSX.Element;
+) => React.JSX.Element;
 
 export type MenuSectionCss = {
   base?: Argument;
@@ -90,4 +90,4 @@ export type MenuSectionProps = {
 
 export const MenuSection = Section as <T extends object>(
   props: MenuSectionProps & SectionProps<T>,
-) => JSX.Element;
+) => React.JSX.Element;

@@ -54,7 +54,7 @@ export const SideMenu = ({
           {title && <div className={cn("fr-sidemenu__title", css["fr-sidemenu__title"])}>{title}</div>}
           <ul className={cn("fr-sidemenu__list", css["fr-sidemenu__list"])}>
             {getChildrenOfTypes(children, [SideMenuItem, Link]).map((child, i) => (
-              isValidElement(child) && (
+              isValidElement<LinkProps>(child) && (
                 <li className={cn("fr-sidemenu__item", css["fr-sidemenu__item"])} key={`navitem-${id}-${i}`}>
                   {
                     (child.type === Link)

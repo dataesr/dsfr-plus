@@ -37,7 +37,7 @@ export type ListboxItemProps = {
 
 export const ListboxItem = Item as <T extends object>(
   props: ListboxItemProps & ItemProps<T>,
-) => JSX.Element;
+) => React.JSX.Element;
 
 export type ListboxSectionCss = {
   base?: Argument;
@@ -53,7 +53,7 @@ export type ListboxSectionProps = {
 
 export const ListboxSection = Section as <T extends object>(
   props: ListboxSectionProps & SectionProps<T>,
-) => JSX.Element;
+) => React.JSX.Element;
 
 
 

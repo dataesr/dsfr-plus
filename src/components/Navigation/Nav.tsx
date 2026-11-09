@@ -29,7 +29,7 @@ export const Nav = ({
     <nav className={cn("fr-nav", className)} id={id} role="navigation" {...props}>
       <ul className={cn('fr-nav__list', css['fr-nav__list'])}>
         {getChildrenOfTypes(children, [NavItem, Link]).map((child, i) => (
-          isValidElement(child) && (
+          isValidElement<LinkProps>(child) && (
             <li className={cn("fr-nav__item", css["fr-nav__item"])} key={`navitem-${id}-${i}`}>
               {
                 (child.type === Link)
