@@ -6,16 +6,17 @@ interface OperatorCss {
 }
 
 export type OperatorBaseProps = {
+  alt: string;
   className?: Argument;
   css?: OperatorCss;
 }
 
-export type OperatorProps = Merge<React.HTMLAttributes<HTMLImageElement>, OperatorBaseProps>;
+export type OperatorProps = Merge<React.ImgHTMLAttributes<HTMLImageElement>, OperatorBaseProps>;
 
-export const Operator = ({ className, css = {}, ...props }: OperatorProps) => {
+export const Operator = ({ alt, className, css = {}, ...props }: OperatorProps) => {
   return (
     <div className={cn("fr-header__operator", className)}>
-      <img className={cn("fr-responsive-img", css["fr-responsive-img"])} {...props} />
+      <img alt={alt} className={cn("fr-responsive-img", css["fr-responsive-img"])} {...props} />
     </div>
   )
 }

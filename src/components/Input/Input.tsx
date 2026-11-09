@@ -58,7 +58,8 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     const { extendRequiredFieldsLabelsWith, extendOptionalFieldsLabelsWith } =
       useDSFRConfig();
     const [inputState, setInputState] = useState("");
-    const inputId = id || useId();
+    const generatedId = useId();
+    const inputId = id || generatedId;
     const inputRef = useRef<HTMLInputElement>(null);
     const isInputStateControlled =
       message !== undefined || messageType !== undefined;
@@ -175,7 +176,8 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     const { extendRequiredFieldsLabelsWith, extendOptionalFieldsLabelsWith } =
       useDSFRConfig();
     const [inputState, setInputState] = useState("");
-    const inputId = id || useId();
+    const generatedId = useId();
+    const inputId = id || generatedId;
     const inputRef = useRef<HTMLTextAreaElement>(null);
     const isInputStateControlled =
       message !== undefined || messageType !== undefined;

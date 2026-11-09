@@ -9,10 +9,10 @@ const pictograms: Record<string, Record<string, React.FunctionComponent<React.SV
   return acc;
 }, {});
 
-const names = Object.keys(pictograms);
+type PictogramName = keyof typeof pictograms;
 
 export type PictogramBaseProps = {
-  name: typeof names[number];
+  name: PictogramName;
   size?: string;
 }
 

@@ -7,9 +7,9 @@ const KEYCODE_TAB = 9;
 export function useFocusTrap(ref: React.MutableRefObject<HTMLDialogElement | null>, active: boolean, prevElement: HTMLElement | null) {
   // Focus trap function
   function handleFocus(event: KeyboardEvent) {
-    const focusableEls = [
-      ...ref.current?.querySelectorAll(FOCUSABLE_ELEMENTS)!,
-    ].filter((el) => !el.hasAttribute('disabled')) as HTMLElement[];
+    const focusableEls = Array.from(
+      ref.current?.querySelectorAll(FOCUSABLE_ELEMENTS) ?? [],
+    ).filter((el) => !el.hasAttribute('disabled')) as HTMLElement[];
     // First focusable element
     const firstFocusableEl = focusableEls[0];
     // Last focusable element

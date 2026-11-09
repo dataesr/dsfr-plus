@@ -3,7 +3,6 @@ import {
   PropsWithChildren,
   useCallback,
   useContext,
-  useId,
   useMemo,
   useState,
 } from 'react';
@@ -11,6 +10,8 @@ import { createPortal } from 'react-dom';
 
 import { Toast } from './Toast';
 import { ToastType, ToastTypeWithId } from './types';
+
+let toastCounter = 0;
 
 type ToastContextObject = {
   remove?: (id: string) => void,
@@ -38,7 +39,7 @@ export const ToastContextProvider = ({
   }, []);
 
   const toast = useCallback((toastObject: ToastType) => {
-    const id = toastObject?.id ?? `toast-${useId()}`;
+    const id = toastObject?.id ?? `toast-${++toastCounter}`;
     setToasts((toastList) => [...toastList, { ...toastObject, id }]);
     return id;
   }, []);

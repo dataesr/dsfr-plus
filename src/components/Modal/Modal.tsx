@@ -14,7 +14,7 @@ type ModalProps = Merge<React.HTMLAttributes<HTMLDialogElement>, {
   size?: ModalSizes;
   isOpen: boolean;
   canClose?: boolean;
-  hide: Function;
+  hide: () => void;
   id?: string;
   className?: Argument;
 }>
@@ -40,7 +40,8 @@ const ControlledModal = ({
   const content = getChildrenOfType(children, ModalContent);
   const footer = getChildrenOfType(children, ModalFooter)?.[0];
   const close = getChildrenOfType(children, ModalClose)?.[0];
-  const modalId = id || useId();
+  const generatedId = useId();
+  const modalId = id || generatedId;
 
   useEffect(() => {
     const modal: HTMLDialogElement = modalRef.current!
@@ -104,6 +105,7 @@ const ControlledModal = ({
       : null
 
   const component = (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions -- overlay click closes the modal; keyboard users close it with Escape
     <dialog
       aria-labelledby={`${modalId}-title`}
       aria-modal="true"

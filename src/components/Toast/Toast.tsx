@@ -32,6 +32,7 @@ export const Toast = (({ autoDismissAfter = 3000, description = '', id, remove =
   }, [id, autoDismissAfter]);
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions -- pauses auto-dismiss on hover; TODO: also pause on focus
     <div
       id={`${id}`}
       role="alert"

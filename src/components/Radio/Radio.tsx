@@ -24,7 +24,7 @@ export type RadioProps = Merge<React.HTMLAttributes<HTMLInputElement>, RadioBase
 export const Radio = forwardRef<HTMLInputElement, RadioProps>(({
   checked,
   className,
-  css = {},
+  css,
   hint,
   id,
   imageComponent: ImageComponent,
@@ -32,7 +32,8 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(({
   name,
   ...props
 }, ref) => {
-  const _id = id || useId();
+  const generatedId = useId();
+  const _id = id || generatedId;
 
   return (
     <div className={cn('fr-radio-group', { 'fr-radio-rich': ImageComponent }, className)}>
