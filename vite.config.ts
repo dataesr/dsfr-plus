@@ -17,6 +17,7 @@ export default defineConfig((configEnv) => ({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       formats: ['es'],
+      cssFileName: 'style',
     },
     emptyOutDir: true,
     rollupOptions: {
