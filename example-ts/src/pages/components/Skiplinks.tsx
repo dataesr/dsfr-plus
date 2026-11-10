@@ -50,15 +50,6 @@ const english = `
 />
 `;
 
-// This demo runs on a HashRouter, where a native "#anchor" link would be read as a route.
-// The focus is moved by hand here; a real application has nothing to do.
-const moveFocusToTarget = (event: React.MouseEvent<HTMLDivElement>) => {
-  const link = (event.target as HTMLElement).closest('.fr-skiplinks a');
-  if (!link) return;
-  event.preventDefault();
-  document.getElementById(link.getAttribute('href')!.slice(1))?.focus();
-};
-
 export function SkiplinksPage() {
   return (
     <Container fluid className="fr-mb-5w">
@@ -98,9 +89,7 @@ export function SkiplinksPage() {
             Appuyez sur <code>Entrée</code> pour rejoindre une des zones de démonstration.
           </Text>
           <Button variant="secondary" size="sm" className="fr-mb-2w">Placer le focus ici, puis Tab</Button>
-          <div onClick={moveFocusToTarget}>
-            <Playground code={example} scope={{ Skiplinks }} defaultShowCode />
-          </div>
+          <Playground code={example} scope={{ Skiplinks }} defaultShowCode />
           <ul className="fr-mt-2w">
             <li><span id="demo-menu" tabIndex={-1}>Zone « Menu »</span></li>
             <li><span id="demo-contenu" tabIndex={-1}>Zone « Contenu »</span></li>
@@ -113,9 +102,7 @@ export function SkiplinksPage() {
             Les liens sont annoncés « Accès rapide » aux lecteurs d'écran.
             Sur une page dans une autre langue, changez ce nom avec <code>aria-label</code>.
           </Text>
-          <div onClick={moveFocusToTarget}>
-            <Playground code={english} scope={{ Skiplinks }} />
-          </div>
+          <Playground code={english} scope={{ Skiplinks }} />
         </Col>
         <Col xs={12}>
           <Title as="h2" look="h4">Bonnes pratiques</Title>

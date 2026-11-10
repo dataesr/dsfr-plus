@@ -1,10 +1,23 @@
-import { Button, Header, Logo, Service, FastAccess } from '@dataesr/dsfr-plus';
+import { Button, Header, Logo, Service, FastAccess, Skiplinks } from '@dataesr/dsfr-plus';
 import { Outlet } from 'react-router-dom';
+
+const moveFocusToTarget = (event: React.MouseEvent<HTMLDivElement>) => {
+  const link = (event.target as HTMLElement).closest('.fr-skiplinks a');
+  if (!link) return;
+  event.preventDefault();
+  document.getElementById(link.getAttribute('href')!.slice(1))?.focus();
+};
 
 export function Layout() {
 
   return (
-    <>
+    <div onClick={moveFocusToTarget}>
+      <Skiplinks
+        links={[
+          { label: 'Contenu', href: '#content' },
+          { label: 'Menu', href: '#menu' },
+        ]}
+      />
       <Header>
         <Logo text="Ministère de | l'enseignement supérieur, | de la recherche | et de l'espace" />
         <Service name="DSFR+" tagline="Une bibliothèque de composants React" />
@@ -14,7 +27,6 @@ export function Layout() {
         </FastAccess>
       </Header>
       <Outlet />
-    </>
+    </div>
   )
 }
-
