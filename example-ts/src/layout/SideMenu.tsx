@@ -81,6 +81,9 @@ export function Side() {
               <Link current={is('/composants/menu-lateral')} href="/composants/menu-lateral">
                 Sidemenu - Menu latéral
               </Link>
+              <Link current={is('/composants/liens-d-evitement')} href="/composants/liens-d-evitement">
+                Skiplinks - Liens d'évitement
+              </Link>
               <Link current={is('/composants/indicateur-d-etape')} href="/composants/indicateur-d-etape">
                 Stepper - Indicateur d'étapes
               </Link>
