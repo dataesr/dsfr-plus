@@ -66,6 +66,9 @@ export function Side() {
               <Link current={is('/composants/modal')} href="/composants/modal">
                 Modal - Modale
               </Link>
+              <Link current={is('/composants/navigation-principale')} href="/composants/navigation-principale">
+                Nav - Navigation principale
+              </Link>
               <Link current={is('/composants/notice')} href="/composants/notice">
                 Notice - Bandeau d'information importante
               </Link>

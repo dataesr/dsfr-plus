@@ -31,7 +31,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(({
   return (
     <Component
       ref={ref}
-      aria-current={current || undefined}
+      aria-current={current ? 'page' : undefined}
       className={cn({
         'fr-link': isSimple,
         [`fr-link-${size}`]: size !== 'md',
