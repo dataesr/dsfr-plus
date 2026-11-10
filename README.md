@@ -21,6 +21,19 @@ Design system from the French state - React extended version
 `npm run example-ts`
 
 
+## About 1.15 version of DSFR
+
+`@dataesr/dsfr-plus` requires the DSFR (`@gouvfr/dsfr` ≥ 1.15), which asks you to accept its terms of use once per project:
+
+```bash
+npm create @gouvfr/dsfr@latest   # creates .dsfr.yml — commit it
+npm install @dataesr/dsfr-plus
+```
+
+## Versionning
+
+DSFR-plus will now try to fit with the major version of de DSFR (passing from 0.6.8 direclty to 1.15.0)
+
 ## Deployment
 
 The version number follows [semver](https://semver.org/).
