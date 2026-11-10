@@ -19,6 +19,7 @@ export type NavProps = Merge<React.HTMLAttributes<HTMLDivElement>, NavBaseProps>
 
 export const Nav = ({
   children,
+  'aria-label': ariaLabel = 'Menu principal',
   className,
   css = {},
   ...props
@@ -26,7 +27,7 @@ export const Nav = ({
   const _id = useId();
   const id = props.id || _id;
   return (
-    <nav className={cn("fr-nav", className)} id={id} role="navigation" {...props}>
+    <nav aria-label={ariaLabel} className={cn("fr-nav", className)} id={id} role="navigation" {...props}>
       <ul className={cn('fr-nav__list', css['fr-nav__list'])}>
         {getChildrenOfTypes(children, [NavItem, Link]).map((child, i) => (
           isValidElement<LinkProps>(child) && (
