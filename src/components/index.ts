@@ -24,6 +24,7 @@ export * from './Radio';
 export * from './SearchBar';
 export * from './Select';
 export * from './SideMenu';
+export * from './Skiplinks';
 export * from './Spinner';
 export * from './Stepper';
 export * from './Tabs';

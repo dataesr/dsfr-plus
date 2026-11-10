@@ -22,6 +22,7 @@ import { SegmentedControls } from './pages/components/SegmentedControls';
 import { Selects } from './pages/components/Select';
 import { Side } from './layout/SideMenu';
 import { SideMenus } from './pages/components/SideMenus';
+import { SkiplinksPage } from './pages/components/Skiplinks';
 import { Steppers } from './pages/components/Stepper';
 import { TabsAndTab } from './pages/components/TabsAndTab';
 import { TagInputs } from './pages/components/TagInputs';
@@ -53,6 +54,7 @@ export default function Router() {
           <Route path="interrupteur" element={<Toggles />} />
           <Route path="listbox" element={<Listboxes />} />
           <Route path="menu-button" element={<Menus />} />
+          <Route path="liens-d-evitement" element={<SkiplinksPage />} />
           <Route path="menu-lateral" element={<SideMenus />} />
           <Route path="modal" element={<Modals />} />
           <Route path="notice" element={<Notices />} />

@@ -13,7 +13,7 @@ export function Side() {
     <Container>
       <Row>
         <Col xs={12} md={4}>
-          <SideMenu title="" sticky fullHeight className="padded-sidemenu">
+          <SideMenu id="menu" tabIndex={-1} title="" sticky fullHeight className="padded-sidemenu">
             <SideMenuItem
               defaultExpanded={is('/utilisation')}
               title="Utilisation"
@@ -81,6 +81,9 @@ export function Side() {
               <Link current={is('/composants/menu-lateral')} href="/composants/menu-lateral">
                 Sidemenu - Menu latéral
               </Link>
+              <Link current={is('/composants/liens-d-evitement')} href="/composants/liens-d-evitement">
+                Skiplinks - Liens d'évitement
+              </Link>
               <Link current={is('/composants/indicateur-d-etape')} href="/composants/indicateur-d-etape">
                 Stepper - Indicateur d'étapes
               </Link>
@@ -106,7 +109,9 @@ export function Side() {
           </SideMenu>
         </Col>
         <Col xs={12} md={8} className="fr-pt-6w">
-          <Outlet />
+          <main id="content" tabIndex={-1}>
+            <Outlet />
+          </main>
         </Col>
       </Row>
     </Container>
