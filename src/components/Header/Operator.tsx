@@ -11,15 +11,16 @@ export type OperatorBaseProps = {
   className?: Argument;
   css?: OperatorCss;
   href?: string;
+  linkTitle?: string;
 }
 
 export type OperatorProps = Merge<React.ImgHTMLAttributes<HTMLImageElement>, OperatorBaseProps>;
 
-export const Operator = ({ alt, className, css = {}, href, ...props }: OperatorProps) => {
+export const Operator = ({ alt, className, css = {}, href, linkTitle = `Accueil - ${alt}`, ...props }: OperatorProps) => {
   const logo = <img alt={alt} className={cn("fr-responsive-img", css["fr-responsive-img"])} {...props} />;
   return (
     <div className={cn("fr-header__operator", className)}>
-      {href ? <Link href={href} title={`Accueil - ${alt}`}>{logo}</Link> : logo}
+      {href ? <Link href={href} title={linkTitle}>{logo}</Link> : logo}
     </div>
   )
 }

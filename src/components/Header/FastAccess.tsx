@@ -1,5 +1,5 @@
 import cn, { Argument } from 'classnames';
-import { useId } from "react";
+import { Children, useId } from "react";
 import { filterChildrenOfTypes, getChildrenOfType } from "../../utils/children";
 import { Button } from '../Button';
 import { Merge } from '../../types/polymophic';
@@ -19,6 +19,7 @@ export const FastAccess = ({ children, className, css = {}, ...props }: FastAcce
   const _id = useId()
   const id = props.id || _id
   const buttons = getChildrenOfType(children, Button)
+  if (Children.toArray(children).length === 0) return null
   return (
     <div className={cn("fr-header__tools-links", className)} {...props}>
       {buttons.length === 1 && (
