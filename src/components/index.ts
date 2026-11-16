@@ -9,6 +9,7 @@ export * from './Button';
 export * from './Checkbox';
 export * from './Fieldset';
 export * from './FileUpload';
+export * from './Footer';
 export * from './Grid';
 export * from './Header';
 export * from './Input';
