@@ -1,4 +1,4 @@
-import { Button, Header, Logo, Service, FastAccess, Skiplinks } from '@dataesr/dsfr-plus';
+import { Button, FastAccess, Header, Logo, Service, Skiplinks } from '@dataesr/dsfr-plus';
 import { Outlet } from 'react-router-dom';
 
 const moveFocusToTarget = (event: React.MouseEvent<HTMLDivElement>) => {
