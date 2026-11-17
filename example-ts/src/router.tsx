@@ -15,6 +15,7 @@ import { Layout } from './layout/Layout';
 import { Listboxes } from './pages/components/Listboxes';
 import { Menus } from './pages/components/Menu';
 import { Modals } from './pages/components/Modal';
+import { Navigations } from './pages/components/Navigations';
 import { Notices } from './pages/components/Notices';
 import { QuickStart } from './pages/guides/QuickStart';
 import { Radios } from './pages/components/Radios';
@@ -55,6 +56,7 @@ export default function Router() {
           <Route path="menu-button" element={<Menus />} />
           <Route path="menu-lateral" element={<SideMenus />} />
           <Route path="modal" element={<Modals />} />
+          <Route path="navigation-principale" element={<Navigations />} />
           <Route path="notice" element={<Notices />} />
           <Route path="radio" element={<Radios />} />
           <Route path="select" element={<Selects />} />

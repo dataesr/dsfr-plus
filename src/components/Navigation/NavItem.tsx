@@ -36,6 +36,7 @@ export const NavItem = ({
         aria-expanded="false"
         aria-controls={id}
         aria-current={current || undefined}
+        type="button"
         {...props}
       >
         {title}
@@ -43,7 +44,7 @@ export const NavItem = ({
       <div className={cn("fr-collapse", "fr-menu", css["fr-menu"])} id={id}>
         <ul className={cn("fr-menu__list", css["fr-menu__list"])}>
           {childs.map((child, i) => (
-            <li className="fr-nav__item" key={`navitem-${id}-${i}`}>
+            <li key={`navitem-${id}-${i}`}>
               {
                 (isValidElement<LinkProps>(child) && child.type === Link)
                   ? cloneElement((child as React.ReactElement<LinkProps>), { className: cn("fr-nav__link", child.props.className) })
