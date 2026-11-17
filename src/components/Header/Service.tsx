@@ -18,14 +18,15 @@ export type ServiceProps = Merge<React.HTMLAttributes<HTMLAnchorElement>, Servic
 
 
 
-export const Service = ({ href = '/', name, tagline, className, css = {}, ...props }: ServiceProps) => {
+export const Service = ({ children, href = '/', name, tagline, className, css = {}, ...props }: ServiceProps) => {
   return (
     <div className={cn("fr-header__service", className)}>
-      <p className={cn("fr-header__service-title", css["fr-header__service-title"])}>
-        <Link href={href} {...props}>
+      <Link href={href} title={`Accueil - ${name}`} {...props}>
+        <p className={cn("fr-header__service-title", css["fr-header__service-title"])}>
           {name}
-        </Link>
-      </p>
+          {children && <> {children}</>}
+        </p>
+      </Link>
       {tagline && <p className={cn("fr-header__service-tagline", css["fr-header__service-tagline"])}>{tagline}</p>}
     </div>
   )
