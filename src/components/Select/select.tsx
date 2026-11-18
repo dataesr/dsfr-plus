@@ -13,7 +13,7 @@ import styles from './styles.module.scss';
 type SelectProps<T> = AriaSelectProps<T> & {
   buttonLabel?: string;
   message?: React.ReactNode;
-  messageType?: 'error' | 'valid';
+  messageType?: "error" | "valid" | "" | null;
 }
 
 export function Select<T extends object>(props: SelectProps<T>) {
