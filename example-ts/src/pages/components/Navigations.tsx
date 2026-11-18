@@ -1,11 +1,20 @@
-import { useState } from 'react';
 import {
-  Header, Service, Logo, Nav, NavItem, Link,
-  Breadcrumb, Container, Title, Text, Row, Col,
+  Breadcrumb,
+  Button,
+  Col,
+  Container,
+  Header,
+  Link,
+  Logo, Nav, NavItem,
+  Row,
+  Service,
+  Text,
+  Title,
 } from '@dataesr/dsfr-plus';
+import { useState } from 'react';
 
-import Playground from '../../components/Playground';
 import { Code } from '../../components/Code';
+import Playground from '../../components/Playground';
 
 const directLinks = `
 <Header>
@@ -100,6 +109,17 @@ const customLabel = `
 </Header>
 `;
 
+const withExtra = `
+<Header>
+  <Logo text="Gouvernement" />
+  <Service name="DSFR+" />
+  <Nav extra={<Button size="sm" variant="tertiary" icon="global-line">Pays : France</Button>}>
+    <Link href="#" current>Accueil</Link>
+    <Link href="#">Établissements</Link>
+  </Nav>
+</Header>
+`;
+
 export function Navigations() {
   return (
     <Container fluid className="fr-mb-5w">
@@ -168,6 +188,14 @@ export function Navigations() {
             Sur une page dans une autre langue, changez ce nom avec <code>aria-label</code>.
           </Text>
           <Playground code={customLabel} scope={{ Header, Logo, Service, Nav, Link }} />
+        </Col>
+        <Col xs={12}>
+          <Title as="h2" look="h4">Élément supplémentaire</Title>
+          <Text>
+            La propriété <code>extra</code> ajoute un élément libre à la fin de la navigation, par exemple un sélecteur.
+            Il est centré verticalement et aligné à droite sur grand écran.
+          </Text>
+          <Playground code={withExtra} scope={{ Header, Logo, Service, Nav, Link, Button }} />
         </Col>
         <Col xs={12}>
           <Title as="h2" look="h4">Accessibilité</Title>
