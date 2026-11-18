@@ -1,17 +1,26 @@
-import { useRef } from 'react';
+import { useId, useRef } from 'react';
 import cn from 'classnames';
 import { Item, ItemProps, useSelectState } from 'react-stately';
 import { AriaSelectProps, HiddenSelect, mergeProps, useButton, useFocusRing, useSelect } from 'react-aria';
 import { Argument } from 'classnames';
 
+import { useDSFRConfig } from '../../hooks/useDSFRConfig';
 import { DSFRColors } from '../../types/colors';
 import Listbox from "../Listbox/listbox-wrapper";
 import Popover from '../Popover';
 import styles from './styles.module.scss';
 
-export function Select<T extends object>(props: AriaSelectProps<T> & { buttonLabel?: string }) {
+type SelectProps<T> = AriaSelectProps<T> & {
+  buttonLabel?: string;
+  message?: React.ReactNode;
+  messageType?: 'error' | 'valid';
+}
+
+export function Select<T extends object>(props: SelectProps<T>) {
   // Create state based on the incoming props
-  const { buttonLabel, ...rest } = props;
+  const { buttonLabel, message, messageType, ...rest } = props;
+  const { extendRequiredFieldsLabelsWith } = useDSFRConfig();
+  const messagesId = useId();
   const state = useSelectState(rest);
 
   // Get props for child elements from useSelect
@@ -26,10 +35,16 @@ export function Select<T extends object>(props: AriaSelectProps<T> & { buttonLab
   const { buttonProps } = useButton({ ...mergeProps(triggerProps, focusProps) }, ref);
 
   return (
-    <div className="fr-select-group">
-      {props.label && <label {...labelProps} className="fr-label">{props.label}</label>}
+    <div className={cn("fr-select-group", { [`fr-select-group--${messageType}`]: messageType })}>
+      {props.label && (
+        <label {...labelProps} className="fr-label">
+          {props.label}
+          {props.isRequired && extendRequiredFieldsLabelsWith}
+        </label>
+      )}
       <button
         {...buttonProps}
+        aria-describedby={messagesId}
         ref={ref}
         className={cn("fr-select", styles["fr-select-btn"])}
         data-focus-visible={isFocusVisible}
@@ -57,6 +72,9 @@ export function Select<T extends object>(props: AriaSelectProps<T> & { buttonLab
             />
           </Popover>
         )}
+      <div className="fr-messages-group" id={messagesId} aria-live="polite">
+        {messageType && <p className={`fr-message fr-message--${messageType}`}>{message}</p>}
+      </div>
     </div>
   );
 }
