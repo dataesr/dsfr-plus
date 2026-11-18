@@ -107,7 +107,7 @@ export const Footer = ({
                     href="https://github.com/etalab/licence-ouverte/blob/master/LO.md"
                     rel="noopener external"
                     target="_blank"
-                    title="Licence etalab - nouvelle fenêtre"
+                    title={`Licence etalab - ${newWindowLabel}`}
                   >
                     licence etalab-2.0
                   </a>
