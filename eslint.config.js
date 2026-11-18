@@ -36,6 +36,8 @@ export default tseslint.config(
       // <dialog role="dialog"> for the Modale, <ul role="tablist"> for the Onglets.
       'jsx-a11y/no-redundant-roles': ['error', { dialog: ['dialog'] }],
       'jsx-a11y/no-noninteractive-element-to-interactive-role': ['error', { ul: ['tablist'] }],
+      // The DSFR external links use rel="noopener external", without noreferrer.
+      'react/jsx-no-target-blank': ['error', { allowReferrer: true }],
 
       // Technical debt: reported as warnings so `npm run lint` passes; bring these to zero
       // when the components are reworked (see the accessibility issues on GitHub).

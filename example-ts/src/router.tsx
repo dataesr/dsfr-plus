@@ -8,6 +8,7 @@ import { Breadcrumbs } from './pages/components/Breadcrumb';
 import { Buttons } from './pages/components/Buttons';
 import { Checkboxes } from './pages/components/Checkboxes';
 import { FileUploads } from './pages/components/FileUploads';
+import { Footers } from './pages/components/Footers';
 import { Headers } from './pages/components/Headers';
 import { Icons } from './pages/components/Icons';
 import { Inputs } from './pages/components/Inputs';
@@ -23,6 +24,7 @@ import { SegmentedControls } from './pages/components/SegmentedControls';
 import { Selects } from './pages/components/Select';
 import { Side } from './layout/SideMenu';
 import { SideMenus } from './pages/components/SideMenus';
+import { SkiplinksPage } from './pages/components/Skiplinks';
 import { Steppers } from './pages/components/Stepper';
 import { TabsAndTab } from './pages/components/TabsAndTab';
 import { TagInputs } from './pages/components/TagInputs';
@@ -51,9 +53,11 @@ export default function Router() {
           <Route path="fil-d-ariane" element={<Breadcrumbs />} />
           <Route path="indicateur-d-etape" element={<Steppers />} />
           <Route path="input" element={<Inputs />} />
+          <Route path="pied-de-page" element={<Footers />} />
           <Route path="interrupteur" element={<Toggles />} />
           <Route path="listbox" element={<Listboxes />} />
           <Route path="menu-button" element={<Menus />} />
+          <Route path="liens-d-evitement" element={<SkiplinksPage />} />
           <Route path="menu-lateral" element={<SideMenus />} />
           <Route path="modal" element={<Modals />} />
           <Route path="navigation-principale" element={<Navigations />} />
