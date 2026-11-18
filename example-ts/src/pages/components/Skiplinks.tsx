@@ -1,9 +1,18 @@
 import {
-  Skiplinks, Breadcrumb, Container, Title, Text, Row, Col, Link, Button,
+  Breadcrumb,
+  Button,
+  Col,
+  Container,
+  Link,
+  Row,
+  Skiplinks,
+  Text,
+  Title,
 } from '@dataesr/dsfr-plus';
 
-import Playground from '../../components/Playground';
+import { useEffect } from 'react';
 import { Code } from '../../components/Code';
+import Playground from '../../components/Playground';
 
 const usage = `import { Skiplinks, Header, Logo, Service, Nav, Link } from '@dataesr/dsfr-plus';
 
@@ -51,6 +60,24 @@ const english = `
 `;
 
 export function SkiplinksPage() {
+
+// Demo only: the HashRouter already uses the "#" of the URL, so we scroll to the target ourselves.
+const scrollToTarget = (event: MouseEvent) => {
+  event.preventDefault();
+  const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('.fr-skiplinks a');
+  if (!link) return;
+  const target = document.querySelector<HTMLElement>(link.hash);
+  target?.scrollIntoView();
+  target?.focus();
+};
+
+
+
+  useEffect(() => {
+    document.addEventListener('click', scrollToTarget);
+    return () => document.removeEventListener('click', scrollToTarget);
+  }, []);
+
   return (
     <Container fluid className="fr-mb-5w">
       <Row>

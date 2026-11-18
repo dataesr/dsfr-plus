@@ -1,33 +1,12 @@
-import { Button, FastAccess, Header, Logo, Service, Skiplinks } from '@dataesr/dsfr-plus';
-import { useEffect } from 'react';
+import { Button, FastAccess, Header, Logo, Service } from '@dataesr/dsfr-plus';
 import { Outlet } from 'react-router-dom';
 
-// Demo only: the HashRouter already uses the "#" of the URL, so we scroll to the target ourselves.
-const scrollToTarget = (event: MouseEvent) => {
-  event.preventDefault();
-  const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('.fr-skiplinks a');
-  if (!link) return;
-  const target = document.querySelector<HTMLElement>(link.hash);
-  target?.scrollIntoView();
-  target?.focus();
-};
 
 export function Layout() {
-  useEffect(() => {
-    document.addEventListener('click', scrollToTarget);
-    return () => document.removeEventListener('click', scrollToTarget);
-  }, []);
+ 
 
   return (
     <>
-      <Skiplinks
-        links={[
-          { label: 'Contenu', href: '#content' },
-          // Sidemenu holds ids missing here, in real router, we set ids on outlet here
-          { label: 'Menu', href: '#menu' },
-          { label: 'Pied de page', href: '#footer' },
-        ]}
-      />
       <Header>
         <Logo text="Ministère de | l'enseignement supérieur, | de la recherche | et de l'espace" />
         <Service name="DSFR+" tagline="Une bibliothèque de composants React" />
@@ -38,7 +17,7 @@ export function Layout() {
       </Header>
       <Outlet />
       <footer id="footer" tabIndex={-1} className="fr-container fr-py-4w">
-        Faux pied de page, validez la pr SVPPPPPPPPPPPPP.
+        Pied de page.
       </footer>
     </>
   )
