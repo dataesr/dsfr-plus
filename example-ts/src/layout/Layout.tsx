@@ -1,7 +1,9 @@
-import { Button, Header, Logo, Service, FastAccess } from '@dataesr/dsfr-plus';
+import { Button, FastAccess, Header, Logo, Service } from '@dataesr/dsfr-plus';
 import { Outlet } from 'react-router-dom';
 
+
 export function Layout() {
+ 
 
   return (
     <>
@@ -14,7 +16,9 @@ export function Layout() {
         </FastAccess>
       </Header>
       <Outlet />
+      <footer id="footer" tabIndex={-1} className="fr-container fr-py-4w">
+        Pied de page.
+      </footer>
     </>
   )
 }
-
