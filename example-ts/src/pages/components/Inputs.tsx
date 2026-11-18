@@ -22,7 +22,6 @@ const states = `
     label="Nom"
     messageType="error"
     message="Votre message d'erreur"
-    isOptional
   />
   <TextInput
     label="Nom"
@@ -49,7 +48,6 @@ const textarea = `
 <TextArea
   label="Commentaire"
   hint="Zone de texte libre"
-  isOptional
 />
 `;
 
@@ -108,8 +106,7 @@ export function Inputs() {
         <Col xs={12}>
           <Text>
             Si vous ajoutez la props "required", le champ de saisie sera affiché
-            avec un astérisque. Si vous ajoutez la props "isOptional", le champ
-            de saisie sera affiché avec un "(optionnel)".
+            avec un astérisque.
           </Text>
         </Col>
         <Col xs={12}>

@@ -20,7 +20,6 @@ export type TextInputBaseProps = {
   label?: React.ReactNode;
   hint?: React.ReactNode;
   icon?: string;
-  isOptional?: boolean;
   required?: boolean;
 };
 
@@ -50,13 +49,11 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       onChange,
       disabled,
       required,
-      isOptional,
       ...props
     },
     ref
   ) => {
-    const { extendRequiredFieldsLabelsWith, extendOptionalFieldsLabelsWith } =
-      useDSFRConfig();
+    const { extendRequiredFieldsLabelsWith } = useDSFRConfig();
     const [inputState, setInputState] = useState("");
     const generatedId = useId();
     const inputId = id || generatedId;
@@ -116,8 +113,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       <div className={inputGroupClass}>
         <label className={cn("fr-label", css["fr-label"])} htmlFor={inputId}>
           {label}
-          {required && !isOptional && extendRequiredFieldsLabelsWith}
-          {isOptional && !required && extendOptionalFieldsLabelsWith}
+          {required && extendRequiredFieldsLabelsWith}
           {hint && (
             <span className={cn("fr-hint-text", css["fr-hint-text"])}>
               {hint}
@@ -168,13 +164,11 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       onChange,
       disabled,
       required,
-      isOptional,
       ...props
     },
     ref
   ) => {
-    const { extendRequiredFieldsLabelsWith, extendOptionalFieldsLabelsWith } =
-      useDSFRConfig();
+    const { extendRequiredFieldsLabelsWith } = useDSFRConfig();
     const [inputState, setInputState] = useState("");
     const generatedId = useId();
     const inputId = id || generatedId;
@@ -234,8 +228,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       <div className={inputGroupClass}>
         <label className={cn("fr-label", css["fr-label"])} htmlFor={inputId}>
           {label}
-          {required && !isOptional && extendRequiredFieldsLabelsWith}
-          {isOptional && !required && extendOptionalFieldsLabelsWith}
+          {required && extendRequiredFieldsLabelsWith}
           {hint && (
             <span className={cn("fr-hint-text", css["fr-hint-text"])}>
               {hint}
