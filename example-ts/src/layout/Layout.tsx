@@ -1,21 +1,31 @@
 import { Button, FastAccess, Header, Logo, Service, Skiplinks } from '@dataesr/dsfr-plus';
+import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
-const moveFocusToTarget = (event: React.MouseEvent<HTMLDivElement>) => {
-  const link = (event.target as HTMLElement).closest('.fr-skiplinks a');
+// Demo only: the HashRouter already uses the "#" of the URL, so we scroll to the target ourselves.
+const scrollToTarget = (event: MouseEvent) => {
+  const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('.fr-skiplinks a');
   if (!link) return;
   event.preventDefault();
-  document.getElementById(link.getAttribute('href')!.slice(1))?.focus();
+  const target = document.querySelector<HTMLElement>(link.hash);
+  target?.scrollIntoView();
+  target?.focus();
 };
 
 export function Layout() {
+  useEffect(() => {
+    document.addEventListener('click', scrollToTarget);
+    return () => document.removeEventListener('click', scrollToTarget);
+  }, []);
 
   return (
-    <div onClick={moveFocusToTarget}>
+    <>
       <Skiplinks
         links={[
           { label: 'Contenu', href: '#content' },
+          // Sidemenu holds ids missing here, in real router, we set ids on outlet here
           { label: 'Menu', href: '#menu' },
+          { label: 'Pied de page', href: '#footer' },
         ]}
       />
       <Header>
@@ -27,6 +37,9 @@ export function Layout() {
         </FastAccess>
       </Header>
       <Outlet />
-    </div>
+      <footer id="footer" tabIndex={-1} className="fr-container fr-py-4w">
+        Faux pied de page, validez la pr SVPPPPPPPPPPPPP.
+      </footer>
+    </>
   )
 }
