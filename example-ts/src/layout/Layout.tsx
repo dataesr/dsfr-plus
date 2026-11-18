@@ -4,9 +4,9 @@ import { Outlet } from 'react-router-dom';
 
 // Demo only: the HashRouter already uses the "#" of the URL, so we scroll to the target ourselves.
 const scrollToTarget = (event: MouseEvent) => {
+  event.preventDefault();
   const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('.fr-skiplinks a');
   if (!link) return;
-  event.preventDefault();
   const target = document.querySelector<HTMLElement>(link.hash);
   target?.scrollIntoView();
   target?.focus();
