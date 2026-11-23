@@ -32,6 +32,7 @@ import { TagInputs } from './pages/components/TagInputs';
 import { Tags } from './pages/components/Tags';
 import { Toasts } from './pages/components/Toasts';
 import { Toggles } from './pages/components/Toggles';
+import { Translates } from './pages/components/Translates';
 import { Typography } from './pages/components/Typography';
 
 export default function Router() {
@@ -69,6 +70,7 @@ export default function Router() {
           <Route path="tag-input" element={<TagInputs />} />
           <Route path="tag" element={<Tags />} />
           <Route path="tuile" element={<Tiles />} />
+          <Route path="selecteur-de-langues" element={<Translates />} />
           <Route path="toast" element={<Toasts />} />
           <Route path="segmentedControl" element={<SegmentedControls />} />
           <Route path="typography" element={<Typography />} />

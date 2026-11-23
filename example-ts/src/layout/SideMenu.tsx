@@ -111,6 +111,9 @@ export function Side() {
               <Link current={is('/composants/interrupteur')} href="/composants/interrupteur">
                 Toggle - Interrupteur
               </Link>
+              <Link current={is('/composants/selecteur-de-langues')} href="/composants/selecteur-de-langues">
+                Translate - Sélecteur de langues
+              </Link>
               <Link current={is('/composants/typography')} href="/composants/typography">
                 Typography - Typographie
               </Link>

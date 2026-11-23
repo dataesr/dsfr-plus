@@ -34,5 +34,6 @@ export * from './TagInput';
 export * from './Tile';
 export * from './Toast';
 export * from './Toggle';
+export * from './Translate';
 export * from './Typography';
 export * from './SegmentedControl';
