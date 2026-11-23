@@ -107,27 +107,3 @@ export const Tile = ({
     </div>
   );
 };
-
-
-<div class="fr-tile fr-enlarge-link" id="tile-3">
-  <div class="fr-tile__body">
-    <div class="fr-tile__content">
-      <h3 class="fr-tile__title">
-        <a href="[URL - à modifier]">Intitulé de la tuile</a>
-      </h3>
-      <p class="fr-tile__detail">Détail (optionnel)</p>
-      <div class="fr-tile__start">
-        <p class="fr-tag">Libellé tag</p>
-      </div>
-    </div>
-  </div>
-  <div class="fr-tile__header">
-    <div class="fr-tile__pictogram">
-      <svg aria-hidden="true" class="fr-artwork" viewBox="0 0 80 80" width="80px" height="80px">
-        <use class="fr-artwork-decorative" href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-decorative"></use>
-        <use class="fr-artwork-minor" href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-minor"></use>
-        <use class="fr-artwork-major" href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-major"></use>
-      </svg>
-    </div>
-  </div>
-</div>
