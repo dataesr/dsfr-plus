@@ -6,6 +6,7 @@ export * from './Autocomplete';
 export * from './Badge';
 export * from './Breadcrumb';
 export * from './Button';
+export * from './Callout';
 export * from './Checkbox';
 export * from './Fieldset';
 export * from './FileUpload';

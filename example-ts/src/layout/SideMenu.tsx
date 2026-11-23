@@ -42,6 +42,9 @@ export function Side() {
               <Link current={is('/composants/button')} href="/composants/button">
                 Button - Bouton
               </Link>
+              <Link current={is('/composants/mise-en-avant')} href="/composants/mise-en-avant">
+                Callout - Mise en avant
+              </Link>
               <Link current={is('/composants/checkbox')} href="/composants/checkbox">
                 Checkbox - Case à cocher
               </Link>
