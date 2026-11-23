@@ -99,6 +99,9 @@ export function Side() {
               <Link current={is('/composants/tag-input')} href="/composants/tag-input">
                 TagInput - TagInput
               </Link>
+              <Link current={is('/composants/tuile')} href="/composants/tuile">
+                Tile - Tuile
+              </Link>
               <Link current={is('/composants/toast')} href="/composants/toast">
                 Toast - Toast
               </Link>

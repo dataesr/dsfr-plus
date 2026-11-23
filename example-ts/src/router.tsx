@@ -24,6 +24,7 @@ import { Selects } from './pages/components/Select';
 import { Side } from './layout/SideMenu';
 import { SideMenus } from './pages/components/SideMenus';
 import { SkiplinksPage } from './pages/components/Skiplinks';
+import { Tiles } from './pages/components/Tiles';
 import { Steppers } from './pages/components/Stepper';
 import { TabsAndTab } from './pages/components/TabsAndTab';
 import { TagInputs } from './pages/components/TagInputs';
@@ -65,6 +66,7 @@ export default function Router() {
           <Route path="tab" element={<TabsAndTab />} />
           <Route path="tag-input" element={<TagInputs />} />
           <Route path="tag" element={<Tags />} />
+          <Route path="tuile" element={<Tiles />} />
           <Route path="toast" element={<Toasts />} />
           <Route path="segmentedControl" element={<SegmentedControls />} />
           <Route path="typography" element={<Typography />} />

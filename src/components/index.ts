@@ -30,6 +30,7 @@ export * from './Stepper';
 export * from './Tabs';
 export * from './Tag';
 export * from './TagInput';
+export * from './Tile';
 export * from './Toast';
 export * from './Toggle';
 export * from './Typography';
