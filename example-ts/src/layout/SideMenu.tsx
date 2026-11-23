@@ -93,6 +93,9 @@ export function Side() {
               <Link current={is('/composants/indicateur-d-etape')} href="/composants/indicateur-d-etape">
                 Stepper - Indicateur d'étapes
               </Link>
+              <Link current={is('/composants/sommaire')} href="/composants/sommaire">
+                Summary - Sommaire
+              </Link>
               <Link current={is('/composants/tab')} href="/composants/tab">
                 Tab - Onglet
               </Link>

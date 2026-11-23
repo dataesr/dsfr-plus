@@ -28,6 +28,7 @@ export * from './SideMenu';
 export * from './Skiplinks';
 export * from './Spinner';
 export * from './Stepper';
+export * from './Summary';
 export * from './Tabs';
 export * from './Tag';
 export * from './TagInput';

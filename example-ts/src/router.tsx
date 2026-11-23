@@ -25,6 +25,7 @@ import { Selects } from './pages/components/Select';
 import { Side } from './layout/SideMenu';
 import { SideMenus } from './pages/components/SideMenus';
 import { SkiplinksPage } from './pages/components/Skiplinks';
+import { Summaries } from './pages/components/Summaries';
 import { Tiles } from './pages/components/Tiles';
 import { Steppers } from './pages/components/Stepper';
 import { TabsAndTab } from './pages/components/TabsAndTab';
@@ -71,6 +72,7 @@ export default function Router() {
           <Route path="tag" element={<Tags />} />
           <Route path="tuile" element={<Tiles />} />
           <Route path="selecteur-de-langues" element={<Translates />} />
+          <Route path="sommaire" element={<Summaries />} />
           <Route path="toast" element={<Toasts />} />
           <Route path="segmentedControl" element={<SegmentedControls />} />
           <Route path="typography" element={<Typography />} />
