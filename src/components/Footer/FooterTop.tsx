@@ -29,9 +29,9 @@ export const FooterTopCategory = ({ children, title }: FooterTopCategoryProps) =
     <div className="fr-col-12 fr-col-sm-3 fr-col-md-2">
       <h2 className="fr-footer__top-cat">{title}</h2>
       <ul className="fr-footer__top-list">
-        {Children.toArray(children).map((child, i) => (
+        {Children.toArray(children).map((child) => (
           isValidElement<{ className?: Argument }>(child) && (
-            <li key={i}>
+            <li key={child.key}>
               {cloneElement(child, { className: cn("fr-footer__top-link", child.props.className) })}
             </li>
           )

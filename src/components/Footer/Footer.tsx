@@ -69,7 +69,7 @@ export const Footer = ({
             <ul className="fr-footer__content-list">
               {STATE_SITES.map((site) => (
                 <li className="fr-footer__content-item" key={site}>
-                  <a
+                  <Link
                     className="fr-footer__content-link"
                     href={`https://${site}`}
                     rel="noopener external"
@@ -77,7 +77,7 @@ export const Footer = ({
                     title={`${site} - ${newWindowLabel}`}
                   >
                     {site}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -87,9 +87,9 @@ export const Footer = ({
         <div className="fr-footer__bottom">
           {bottomLinks.length > 0 && (
             <ul className="fr-footer__bottom-list">
-              {bottomLinks.map((child, i) => (
+              {bottomLinks.map((child) => (
                 isValidElement<{ className?: Argument }>(child) && (
-                  <li className="fr-footer__bottom-item" key={i}>
+                  <li className="fr-footer__bottom-item" key={child.key}>
                     {' '}
                     {cloneElement(child, { className: cn("fr-footer__bottom-link", child.props.className) })}
                     {' '}
@@ -103,14 +103,14 @@ export const Footer = ({
               {license || (
                 <>
                   Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous{' '}
-                  <a
+                  <Link
                     href="https://github.com/etalab/licence-ouverte/blob/master/LO.md"
                     rel="noopener external"
                     target="_blank"
-                    title={`Licence etalab - ${newWindowLabel}`}
+                    title={`Licence Ouverte 2.0 par Etalab - ${newWindowLabel}`}
                   >
-                    licence etalab-2.0
-                  </a>
+                    Licence Ouverte 2.0 par Etalab
+                  </Link>
                 </>
               )}
             </p>
