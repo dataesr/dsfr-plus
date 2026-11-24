@@ -1,4 +1,4 @@
-import { Fragment, cloneElement, isValidElement } from 'react';
+import { Fragment, cloneElement, isValidElement, useId } from 'react';
 import cn, { Argument } from 'classnames';
 import { filterChildrenOfTypes, getChildrenOfType } from '../../utils/children';
 import { Merge } from '../../types/polymophic';
@@ -39,12 +39,13 @@ export const Footer = ({
   operator,
   ...props
 }: FooterProps) => {
+  const id = useId();
   const lines = brand.split('|').map((line) => line.trim());
   const bottomLinks = filterChildrenOfTypes(children, [FooterTop, FooterPartners]);
   const homeLinkTitle = homeTitle || `Retour à l’accueil du site - ${operator ? `${operator.alt} - ` : ''}${lines.join(' ')}`;
   const logo = (
     <p className="fr-logo">
-      {lines.map((line, i) => <Fragment key={i}>{i > 0 && <br />}{line}</Fragment>)}
+      {lines.map((line, i) => <Fragment key={`${id}-${line}`}>{i > 0 && <br />}{line}</Fragment>)}
     </p>
   );
   return (
@@ -89,7 +90,7 @@ export const Footer = ({
             <ul className="fr-footer__bottom-list">
               {bottomLinks.map((child) => (
                 isValidElement<{ className?: Argument }>(child) && (
-                  <li className="fr-footer__bottom-item" key={child.key}>
+                  <li className="fr-footer__bottom-item" key={`${id}-${child.key}`}>
                     {' '}
                     {cloneElement(child, { className: cn("fr-footer__bottom-link", child.props.className) })}
                     {' '}

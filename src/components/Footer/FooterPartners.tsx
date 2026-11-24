@@ -1,4 +1,4 @@
-import { Children, isValidElement } from 'react';
+import { Children, isValidElement, useId } from 'react';
 import { Link } from '../Link';
 
 export type FooterPartnersProps = {
@@ -8,6 +8,7 @@ export type FooterPartnersProps = {
 }
 
 export const FooterPartners = ({ children, main, title = 'Nos partenaires' }: FooterPartnersProps) => {
+  const id = useId();
   const others = Children.toArray(children).filter(isValidElement);
   if (!main && others.length === 0) return null;
   return (
@@ -18,7 +19,7 @@ export const FooterPartners = ({ children, main, title = 'Nos partenaires' }: Fo
         {others.length > 0 && (
           <div className="fr-footer__partners-sub">
             <ul>
-              {others.map((partner) => <li key={partner.key}>{partner}</li>)}
+              {others.map((partner) => <li key={`${id}-${partner.key}`}>{partner}</li>)}
             </ul>
           </div>
         )}

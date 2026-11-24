@@ -1,4 +1,4 @@
-import { Children, cloneElement, isValidElement } from 'react';
+import { Children, cloneElement, isValidElement, useId } from 'react';
 import cn, { Argument } from 'classnames';
 
 export type FooterTopProps = {
@@ -24,6 +24,7 @@ export type FooterTopCategoryProps = {
 }
 
 export const FooterTopCategory = ({ children, title }: FooterTopCategoryProps) => {
+  const id = useId();
   if (Children.toArray(children).length === 0) return null;
   return (
     <div className="fr-col-12 fr-col-sm-3 fr-col-md-2">
@@ -31,7 +32,7 @@ export const FooterTopCategory = ({ children, title }: FooterTopCategoryProps) =
       <ul className="fr-footer__top-list">
         {Children.toArray(children).map((child) => (
           isValidElement<{ className?: Argument }>(child) && (
-            <li key={child.key}>
+            <li key={`${id}-${child.key}`}>
               {cloneElement(child, { className: cn("fr-footer__top-link", child.props.className) })}
             </li>
           )
