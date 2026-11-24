@@ -1,4 +1,5 @@
-import { Children } from 'react';
+import { Children, isValidElement } from 'react';
+import { Link } from '../Link';
 
 export type FooterPartnersProps = {
   children?: React.ReactNode;
@@ -7,7 +8,7 @@ export type FooterPartnersProps = {
 }
 
 export const FooterPartners = ({ children, main, title = 'Nos partenaires' }: FooterPartnersProps) => {
-  const others = Children.toArray(children);
+  const others = Children.toArray(children).filter(isValidElement);
   if (!main && others.length === 0) return null;
   return (
     <div className="fr-footer__partners">
@@ -17,7 +18,7 @@ export const FooterPartners = ({ children, main, title = 'Nos partenaires' }: Fo
         {others.length > 0 && (
           <div className="fr-footer__partners-sub">
             <ul>
-              {others.map((partner, i) => <li key={i}>{partner}</li>)}
+              {others.map((partner) => <li key={partner.key}>{partner}</li>)}
             </ul>
           </div>
         )}
@@ -34,5 +35,5 @@ export type FooterPartnerProps = {
 
 export const FooterPartner = ({ alt, href, src }: FooterPartnerProps) => {
   const logo = <img className="fr-footer__logo" style={{ height: '5.625rem' }} src={src} alt={alt} />;
-  return href ? <a className="fr-footer__partners-link" href={href}>{logo}</a> : logo;
+  return href ? <Link className="fr-footer__partners-link" href={href}>{logo}</Link> : logo;
 }
