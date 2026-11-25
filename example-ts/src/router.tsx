@@ -10,6 +10,7 @@ import { Callouts } from './pages/components/Callouts';
 import { Cards } from './pages/components/Cards';
 import { Checkboxes } from './pages/components/Checkboxes';
 import { FileUploads } from './pages/components/FileUploads';
+import { Footers } from './pages/components/Footers';
 import { Headers } from './pages/components/Headers';
 import { Icons } from './pages/components/Icons';
 import { Inputs } from './pages/components/Inputs';
@@ -59,6 +60,7 @@ export default function Router() {
           <Route path="fil-d-ariane" element={<Breadcrumbs />} />
           <Route path="indicateur-d-etape" element={<Steppers />} />
           <Route path="input" element={<Inputs />} />
+          <Route path="pied-de-page" element={<Footers />} />
           <Route path="interrupteur" element={<Toggles />} />
           <Route path="listbox" element={<Listboxes />} />
           <Route path="menu-button" element={<Menus />} />

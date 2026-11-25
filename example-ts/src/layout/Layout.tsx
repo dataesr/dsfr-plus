@@ -1,14 +1,13 @@
-import { Button, FastAccess, Header, Logo, Service } from '@dataesr/dsfr-plus';
+import { Button, FastAccess, Header, Service } from '@dataesr/dsfr-plus';
 import { Outlet } from 'react-router-dom';
 
+const { VITE_VERSION } = import.meta.env;
 
 export function Layout() {
- 
 
   return (
     <>
       <Header>
-        <Logo text="Ministère de | l'enseignement supérieur, | de la recherche | et de l'espace" />
         <Service name="DSFR+" tagline="Une bibliothèque de composants React" />
         <FastAccess>
           <Button as="a" href="https://github.com/dataesr/dsfr-plus" target="_blank" rel="noreferer noopener" icon="github-fill" size="sm" variant="text">Github</Button>
@@ -17,7 +16,7 @@ export function Layout() {
       </Header>
       <Outlet />
       <footer id="footer" tabIndex={-1} className="fr-container fr-py-4w">
-        Pied de page.
+        v{VITE_VERSION}
       </footer>
     </>
   )

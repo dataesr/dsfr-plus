@@ -54,6 +54,9 @@ export function Side() {
               <Link current={is('/composants/ajout-de-fichier')} href="/composants/ajout-de-fichier">
                 FileUpload - Ajout de fichier
               </Link>
+              <Link current={is('/composants/pied-de-page')} href="/composants/pied-de-page">
+                Footer - Pied de page
+              </Link>
               <Link current={is('/composants/en-tete')} href="/composants/en-tete">
                 Header - En-tête
               </Link>
