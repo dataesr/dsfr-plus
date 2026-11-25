@@ -7,6 +7,7 @@ import { Badges } from './pages/components/Badges';
 import { Breadcrumbs } from './pages/components/Breadcrumb';
 import { Buttons } from './pages/components/Buttons';
 import { Callouts } from './pages/components/Callouts';
+import { Cards } from './pages/components/Cards';
 import { Checkboxes } from './pages/components/Checkboxes';
 import { FileUploads } from './pages/components/FileUploads';
 import { Headers } from './pages/components/Headers';
@@ -52,6 +53,7 @@ export default function Router() {
           <Route path="badge" element={<Badges />} />
           <Route path="button" element={<Buttons />} />
           <Route path="mise-en-avant" element={<Callouts />} />
+          <Route path="carte" element={<Cards />} />
           <Route path="checkbox" element={<Checkboxes />} />
           <Route path="en-tete" element={<Headers />} />
           <Route path="fil-d-ariane" element={<Breadcrumbs />} />
