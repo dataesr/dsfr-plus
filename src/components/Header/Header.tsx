@@ -26,12 +26,23 @@ interface HeaderCss {
 
 export type HeaderBaseProps = {
   className?: Argument;
+  closeLabel?: string;
   css?: HeaderCss;
+  menuLabel?: string;
+  searchLabel?: string;
 }
 
 export type HeaderProps = Merge<React.HTMLAttributes<HTMLDivElement>, HeaderBaseProps>;
 
-export const Header = ({ children, className, css = {}, ...props }: HeaderProps) => {
+export const Header = ({
+  children,
+  className,
+  closeLabel = 'Fermer',
+  css = {},
+  menuLabel = 'Menu',
+  searchLabel = 'Rechercher',
+  ...props
+}: HeaderProps) => {
   const searchId = useId();
   const searchModalId = useId();
   const menuModalId = useId();
@@ -42,7 +53,8 @@ export const Header = ({ children, className, css = {}, ...props }: HeaderProps)
   const menu = getChildrenOfType(children, Nav)?.[0];
   const logo = getChildrenOfType(children, Logo);
   const operator = getChildrenOfType(children, Operator);
-  const searchTitle = isValidElement<{ title?: string }>(searchBar) ? searchBar.props.title : 'Rechercher';
+  const searchTitle = (isValidElement<{ title?: string }>(searchBar) && searchBar.props.title) || searchLabel;
+  const hasMenu = Boolean(fastAccess || menu);
   return (
     <header role="banner" className={cn("fr-header", className)} {...props}>
       <div className={cn("fr-header__body", css["fr-header__body"])}>
@@ -52,16 +64,16 @@ export const Header = ({ children, className, css = {}, ...props }: HeaderProps)
               <div className={cn("fr-header__brand-top", css["fr-header__brand-top"])}>
                 {logo && logo}
                 {operator && operator}
-                {(fastAccess || searchBar) && (
+                {(hasMenu || searchBar) && (
                   <div className={cn("fr-header__navbar", css["fr-header__navbar"])}>
                     {(searchBar) && (
-                      <button className={cn("fr-btn--search fr-btn", css["fr-btn--search"])} data-fr-opened="false" aria-controls={searchModalId} id={searchId} title={searchTitle}>
+                      <button className={cn("fr-btn--search fr-btn", css["fr-btn--search"])} data-fr-opened="false" aria-controls={searchModalId} id={searchId} title={searchTitle} type="button">
                         {searchTitle}
                       </button>
                     )}
-                    {(fastAccess) && (
-                      <button className={cn("fr-btn--menu fr-btn", css["fr-btn--menu"])} data-fr-opened="false" aria-controls={menuModalId} aria-haspopup="menu" id={menuId} title="Menu">
-                        Menu
+                    {hasMenu && (
+                      <button className={cn("fr-btn--menu fr-btn", css["fr-btn--menu"])} data-fr-opened="false" aria-controls={menuModalId} id={menuId} title={menuLabel} type="button">
+                        {menuLabel}
                       </button>
                     )}
                   </div>
@@ -69,31 +81,35 @@ export const Header = ({ children, className, css = {}, ...props }: HeaderProps)
               </div>
               {service && service}
             </div>
-            <div className={cn("fr-header__tools", css["fr-header__tools"])}>
-              {fastAccess}
-              {searchBar && (
-                <div className={cn("fr-header__search fr-modal", css["fr-header__search"])} id={searchModalId}>
-                  <div className="fr-container fr-container-lg--fluid">
-                    <button className="fr-btn--close fr-btn" aria-controls={searchModalId} title="Fermer">
-                      Fermer
-                    </button>
-                    {searchBar}
+            {(fastAccess || searchBar) && (
+              <div className={cn("fr-header__tools", css["fr-header__tools"])}>
+                {fastAccess}
+                {searchBar && (
+                  <div className={cn("fr-header__search fr-modal", css["fr-header__search"])} id={searchModalId} aria-labelledby={searchId}>
+                    <div className="fr-container fr-container-lg--fluid">
+                      <button className="fr-btn--close fr-btn" aria-controls={searchModalId} title={closeLabel} type="button">
+                        {closeLabel}
+                      </button>
+                      {searchBar}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
-      <div className={cn("fr-header__menu fr-modal", css["fr-header__menu"])} id={menuModalId} aria-labelledby={menuId}>
-        <div className="fr-container">
-          <button className="fr-btn--close fr-btn" aria-controls={menuModalId} title="Fermer">
-            Fermer
-          </button>
-          <div className={cn("fr-header__menu-links", css["fr-header__menu-links"])} />
-          {menu && menu}
+      {hasMenu && (
+        <div className={cn("fr-header__menu fr-modal", css["fr-header__menu"])} id={menuModalId} aria-labelledby={menuId}>
+          <div className="fr-container">
+            <button className="fr-btn--close fr-btn" aria-controls={menuModalId} title={closeLabel} type="button">
+              {closeLabel}
+            </button>
+            <div className={cn("fr-header__menu-links", css["fr-header__menu-links"])} />
+            {menu}
+          </div>
         </div>
-      </div>
+      )}
     </header>
   )
 }

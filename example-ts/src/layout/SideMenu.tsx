@@ -13,7 +13,7 @@ export function Side() {
     <Container>
       <Row>
         <Col xs={12} md={4}>
-          <SideMenu title="" sticky fullHeight className="padded-sidemenu">
+          <SideMenu id="menu" tabIndex={-1} title="" sticky fullHeight className="padded-sidemenu">
             <SideMenuItem
               defaultExpanded={is('/utilisation')}
               title="Utilisation"
@@ -42,6 +42,12 @@ export function Side() {
               <Link current={is('/composants/button')} href="/composants/button">
                 Button - Bouton
               </Link>
+              <Link current={is('/composants/mise-en-avant')} href="/composants/mise-en-avant">
+                Callout - Mise en avant
+              </Link>
+              <Link current={is('/composants/carte')} href="/composants/carte">
+                Card - Carte
+              </Link>
               <Link current={is('/composants/checkbox')} href="/composants/checkbox">
                 Checkbox - Case à cocher
               </Link>
@@ -69,6 +75,9 @@ export function Side() {
               <Link current={is('/composants/modal')} href="/composants/modal">
                 Modal - Modale
               </Link>
+              <Link current={is('/composants/navigation-principale')} href="/composants/navigation-principale">
+                Nav - Navigation principale
+              </Link>
               <Link current={is('/composants/notice')} href="/composants/notice">
                 Notice - Bandeau d'information importante
               </Link>
@@ -84,8 +93,14 @@ export function Side() {
               <Link current={is('/composants/menu-lateral')} href="/composants/menu-lateral">
                 Sidemenu - Menu latéral
               </Link>
+              <Link current={is('/composants/liens-d-evitement')} href="/composants/liens-d-evitement">
+                Skiplinks - Liens d'évitement
+              </Link>
               <Link current={is('/composants/indicateur-d-etape')} href="/composants/indicateur-d-etape">
                 Stepper - Indicateur d'étapes
+              </Link>
+              <Link current={is('/composants/sommaire')} href="/composants/sommaire">
+                Summary - Sommaire
               </Link>
               <Link current={is('/composants/tab')} href="/composants/tab">
                 Tab - Onglet
@@ -96,11 +111,17 @@ export function Side() {
               <Link current={is('/composants/tag-input')} href="/composants/tag-input">
                 TagInput - TagInput
               </Link>
+              <Link current={is('/composants/tuile')} href="/composants/tuile">
+                Tile - Tuile
+              </Link>
               <Link current={is('/composants/toast')} href="/composants/toast">
                 Toast - Toast
               </Link>
               <Link current={is('/composants/interrupteur')} href="/composants/interrupteur">
                 Toggle - Interrupteur
+              </Link>
+              <Link current={is('/composants/selecteur-de-langues')} href="/composants/selecteur-de-langues">
+                Translate - Sélecteur de langues
               </Link>
               <Link current={is('/composants/typography')} href="/composants/typography">
                 Typography - Typographie
@@ -109,7 +130,9 @@ export function Side() {
           </SideMenu>
         </Col>
         <Col xs={12} md={8} className="fr-pt-6w">
-          <Outlet />
+          <main id="content" tabIndex={-1}>
+            <Outlet />
+          </main>
         </Col>
       </Row>
     </Container>

@@ -30,6 +30,10 @@ npm create @gouvfr/dsfr@latest   # creates .dsfr.yml — commit it
 npm install @dataesr/dsfr-plus
 ```
 
+Be carefull, under 1.0.0 version of dsfr-plus, you won't have a warning if your upgrade sticks to 0.6.7.
+That's because you need to have the file `.dsfr.yml`in your project.
+We don't need to install @gouvfr/dsfr@latest in our other projects (it would load 2 same javascripts scripts)
+
 ## Versionning
 
 DSFR-plus will now try to fit with the major version of de DSFR (passing from 0.6.8 direclty to 1.15.0)

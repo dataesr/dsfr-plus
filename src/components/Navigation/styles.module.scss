@@ -1,0 +1,14 @@
+// Free content (e.g. a country selector) at the end of the navigation:
+// centered, and pushed to the right on desktop.
+// The selector is deliberately specific: the DSFR sets a left margin on the items of short lists.
+// Notice that it's not a normal usage of the dsfr, there shouldn't be extras on nav
+:global(.fr-nav__list) > li.nav-extra:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 0.5rem;
+
+  @media (min-width: 62em) {
+    margin-inline-start: auto;
+  }
+}

@@ -6,6 +6,8 @@ import { Autocompletes } from './pages/components/Autocomplete';
 import { Badges } from './pages/components/Badges';
 import { Breadcrumbs } from './pages/components/Breadcrumb';
 import { Buttons } from './pages/components/Buttons';
+import { Callouts } from './pages/components/Callouts';
+import { Cards } from './pages/components/Cards';
 import { Checkboxes } from './pages/components/Checkboxes';
 import { FileUploads } from './pages/components/FileUploads';
 import { Footers } from './pages/components/Footers';
@@ -16,6 +18,7 @@ import { Layout } from './layout/Layout';
 import { Listboxes } from './pages/components/Listboxes';
 import { Menus } from './pages/components/Menu';
 import { Modals } from './pages/components/Modal';
+import { Navigations } from './pages/components/Navigations';
 import { Notices } from './pages/components/Notices';
 import { QuickStart } from './pages/guides/QuickStart';
 import { Radios } from './pages/components/Radios';
@@ -23,12 +26,16 @@ import { SegmentedControls } from './pages/components/SegmentedControls';
 import { Selects } from './pages/components/Select';
 import { Side } from './layout/SideMenu';
 import { SideMenus } from './pages/components/SideMenus';
+import { SkiplinksPage } from './pages/components/Skiplinks';
+import { Summaries } from './pages/components/Summaries';
+import { Tiles } from './pages/components/Tiles';
 import { Steppers } from './pages/components/Stepper';
 import { TabsAndTab } from './pages/components/TabsAndTab';
 import { TagInputs } from './pages/components/TagInputs';
 import { Tags } from './pages/components/Tags';
 import { Toasts } from './pages/components/Toasts';
 import { Toggles } from './pages/components/Toggles';
+import { Translates } from './pages/components/Translates';
 import { Typography } from './pages/components/Typography';
 
 export default function Router() {
@@ -46,6 +53,8 @@ export default function Router() {
           <Route path="autocomplete" element={<Autocompletes />} />
           <Route path="badge" element={<Badges />} />
           <Route path="button" element={<Buttons />} />
+          <Route path="mise-en-avant" element={<Callouts />} />
+          <Route path="carte" element={<Cards />} />
           <Route path="checkbox" element={<Checkboxes />} />
           <Route path="en-tete" element={<Headers />} />
           <Route path="fil-d-ariane" element={<Breadcrumbs />} />
@@ -55,14 +64,19 @@ export default function Router() {
           <Route path="interrupteur" element={<Toggles />} />
           <Route path="listbox" element={<Listboxes />} />
           <Route path="menu-button" element={<Menus />} />
+          <Route path="liens-d-evitement" element={<SkiplinksPage />} />
           <Route path="menu-lateral" element={<SideMenus />} />
           <Route path="modal" element={<Modals />} />
+          <Route path="navigation-principale" element={<Navigations />} />
           <Route path="notice" element={<Notices />} />
           <Route path="radio" element={<Radios />} />
           <Route path="select" element={<Selects />} />
           <Route path="tab" element={<TabsAndTab />} />
           <Route path="tag-input" element={<TagInputs />} />
           <Route path="tag" element={<Tags />} />
+          <Route path="tuile" element={<Tiles />} />
+          <Route path="selecteur-de-langues" element={<Translates />} />
+          <Route path="sommaire" element={<Summaries />} />
           <Route path="toast" element={<Toasts />} />
           <Route path="segmentedControl" element={<SegmentedControls />} />
           <Route path="typography" element={<Typography />} />

@@ -1,9 +1,10 @@
-import { cloneElement, isValidElement, useId } from 'react';
-import { getChildrenOfTypes } from '../../utils/children';
 import cn, { Argument } from 'classnames';
-import { Link, LinkProps } from '../Link';
+import { cloneElement, isValidElement, useId } from 'react';
 import { Merge } from '../../types/polymophic';
+import { getChildrenOfTypes } from '../../utils/children';
+import { Link, LinkProps } from '../Link';
 import { NavItem } from './NavItem';
+import styles from './styles.module.scss';
 
 type NavCss = {
   'fr-nav__list'?: Argument;
@@ -13,20 +14,23 @@ type NavCss = {
 export type NavBaseProps = {
   className?: Argument;
   css?: NavCss;
+  extra?: React.ReactNode;
 }
 
 export type NavProps = Merge<React.HTMLAttributes<HTMLDivElement>, NavBaseProps>;
 
 export const Nav = ({
   children,
+  'aria-label': ariaLabel = 'Menu principal',
   className,
   css = {},
+  extra,
   ...props
 }: NavProps) => {
   const _id = useId();
   const id = props.id || _id;
   return (
-    <nav className={cn("fr-nav", className)} id={id} role="navigation" {...props}>
+    <nav aria-label={ariaLabel} className={cn("fr-nav", className)} id={id} {...props}>
       <ul className={cn('fr-nav__list', css['fr-nav__list'])}>
         {getChildrenOfTypes(children, [NavItem, Link]).map((child, i) => (
           isValidElement<LinkProps>(child) && (
@@ -39,6 +43,7 @@ export const Nav = ({
             </li>
           )
         ))}
+        {extra && <li className={cn("fr-nav__item", styles["nav-extra"])}>{extra}</li>}
       </ul>
     </nav>
   );
